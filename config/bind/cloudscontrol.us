@@ -4,10 +4,12 @@ $TTL 2d
 
 @ IN	SOA	donk.sniz.org.	keegan.sniz.org. (
 		; serial	refresh	retry	expiry	minimum
-		2011072500	30M	15M	4W	1h	)
+		2011073100	30M	15M	4W	1h	)
 
 	NS	donk.sniz.org.
 	NS	iris.sniz.org.
+
+	MX	10	donk.sniz.org.
 
 	A	70.102.34.162
 
