@@ -1,0 +1,12 @@
+source 'http://rubygems.org'
+
+gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '3-1-stable'
+
+gem 'capistrano'
+gem 'haml'
+gem 'mysql2'
+
+group :development, :test do
+  gem 'autotest-rails'
+  gem 'rspec-rails'
+end
