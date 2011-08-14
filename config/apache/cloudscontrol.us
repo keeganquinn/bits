@@ -11,4 +11,12 @@
 		Allow from all
 		Options -Indexes -MultiViews
 	</Directory>
+
+	# This allows us to put the site in 'maintenance mode' with Capistrano
+	ErrorDocument 503 /system/maintenance.html
+	RewriteEngine on
+	RewriteCond %{REQUEST_URI} !.(css|gif|jpg|png)$
+	RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
+	RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+	RewriteRule ^.*$ - [redirect=503,last]
 </VirtualHost>
