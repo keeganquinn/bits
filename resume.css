@@ -1,0 +1,30 @@
+/**
+ * Resume stylesheet
+ * © 2011 Keegan Quinn
+ */
+
+body {
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+#skills {
+  clear: left;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+
+#systems {
+  float: left;
+  width: 30%;
+}
+
+#software {
+  float: left;
+  width: 30%;
+}
+
+#management {
+  float: left;
+  width: 30%;
+}
