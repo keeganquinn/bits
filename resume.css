@@ -18,17 +18,7 @@ body {
   overflow: hidden;
 }
 
-#systems {
-  float: left;
-  width: 30%;
-}
-
-#software {
-  float: left;
-  width: 30%;
-}
-
-#management {
+#skills div {
   float: left;
   width: 30%;
 }
