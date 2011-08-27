@@ -1,7 +1,7 @@
 <VirtualHost *:80>
 	ServerName renewabletoner.com
 	ServerAlias www.renewabletoner.com
-	ServerAdmin keegan@sniz.org
+	ServerAdmin webmaster@renewabletoner.com
 
 	CustomLog /var/log/apache2/renewabletoner.com-access.log combined
 	ErrorLog /var/log/apache2/renewabletoner.com-error.log
