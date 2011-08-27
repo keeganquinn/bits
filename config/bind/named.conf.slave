@@ -1,0 +1,209 @@
+zone "sniz.org" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/sniz.org";
+};
+
+zone "sniz.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/sniz.net";
+};
+
+zone "cloudscontrol.us" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/cloudscontrol.us";
+};
+
+zone "basslin.es" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/basslin.es";
+};
+
+zone "renewabletoner.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/renewabletoner.com";
+};
+
+zone "micrtonerarizona.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerarizona.com";
+};
+
+zone "micrtonercalifornia.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonercalifornia.com";
+};
+
+zone "micrtonercarolina.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonercarolina.com";
+};
+
+zone "micrtonerchicago.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerchicago.com";
+};
+
+zone "micrtonercolorado.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonercolorado.com";
+};
+
+zone "micrtonercolumbus.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonercolumbus.com";
+};
+
+zone "micrtonerdakota.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerdakota.com";
+};
+
+zone "micrtonerdallas.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerdallas.com";
+};
+
+zone "micrtonerdenver.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerdenver.com";
+};
+
+zone "micrtonerflorida.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerflorida.com";
+};
+
+zone "micrtonerlasvegas.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerlasvegas.com";
+};
+
+zone "micrtonermiami.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonermiami.com";
+};
+
+zone "micrtonermichigan.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonermichigan.com";
+};
+
+zone "micrtonermontana.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonermontana.com";
+};
+
+zone "micrtonernevada.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonernevada.com";
+};
+
+zone "micrtonernewjersey.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonernewjersey.com";
+};
+
+zone "micrtonernewyork.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonernewyork.com";
+};
+
+zone "micrtoneroregon.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtoneroregon.com";
+};
+
+zone "micrtonerphoenix.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerphoenix.com";
+};
+
+zone "micrtonersanfrancisco.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonersanfrancisco.com";
+};
+
+zone "micrtonerseattle.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerseattle.com";
+};
+
+zone "micrtonertexas.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonertexas.com";
+};
+
+zone "micrtonerutah.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerutah.com";
+};
+
+zone "micrtonervirginia.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonervirginia.com";
+};
+
+zone "micrtonerwashington.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/micrtonerwashington.com";
+};
