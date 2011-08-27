@@ -1,0 +1,243 @@
+acl iris {
+  66.206.86.173;
+};
+
+zone "sniz.org" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/sniz.org";
+};
+
+zone "sniz.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+};
+
+zone "cloudscontrol.us" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+};
+
+zone "basslin.es" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+};
+
+zone "renewabletoner.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+};
+
+zone "micrtonerarizona.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonercalifornia.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonercarolina.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerchicago.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonercolorado.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonercolumbus.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerdakota.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerdallas.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerdenver.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerflorida.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerlasvegas.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonermiami.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonermichigan.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonermontana.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonernevada.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonernewjersey.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonernewyork.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtoneroregon.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerphoenix.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonersanfrancisco.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerseattle.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonertexas.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerutah.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonervirginia.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
+
+zone "micrtonerwashington.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+};
