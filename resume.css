@@ -3,14 +3,31 @@
  * © 2011 Keegan Quinn
  */
 
-#skills {
-  clear: left;
-  float: left;
-  width: 100%;
-  overflow: hidden;
+@media all {
+  .page-break {
+    display: none;
+  }
+
+  #skills {
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #skills div {
+    float: left;
+    width: 30%;
+  }
 }
 
-#skills div {
-  float: left;
-  width: 30%;
+@media print {
+  body {
+    font-size: 80%;
+  }
+
+  .page-break {
+    display: block;
+    page-break-before: always;
+  }
 }
