@@ -13,6 +13,14 @@
     color: black;
   }
 
+  .secondary {
+    color: dimgray;
+  }
+
+  .secondary a {
+    color: dimgray;
+  }
+
   .page-break {
     display: none;
   }
@@ -26,7 +34,7 @@
 
   #skills div {
     float: left;
-    width: 45%;
+    width: 50%;
   }
 }
 
