@@ -32,9 +32,17 @@
     overflow: hidden;
   }
 
-  #skills div {
+  #skills section {
     float: left;
     width: 50%;
+  }
+
+  #skills li {
+    padding-bottom: 1em;
+  }
+
+  #skills li li {
+    padding-bottom: 0em;
   }
 }
 
