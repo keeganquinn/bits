@@ -4,6 +4,7 @@ gem 'rails'
 
 gem 'capistrano'
 gem 'haml'
+gem 'jquery-rails'
 gem 'mysql2'
 
 group :development, :test do
