@@ -2,6 +2,14 @@ acl iris {
   66.206.86.173;
 };
 
+zone "keegan.ws" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/keegan.ws";
+};
+
 zone "sniz.org" {
   type master;
   allow-query { any; };

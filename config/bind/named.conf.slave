@@ -1,3 +1,10 @@
+zone "keegan.ws" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/keegan.ws";
+};
+
 zone "sniz.org" {
   type slave;
   allow-query { any; };
