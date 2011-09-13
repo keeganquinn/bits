@@ -2,7 +2,6 @@
 	ServerName basslin.es
 	ServerAlias www.basslin.es
 	ServerAdmin keeganquinn@gmail.com
-	ServerTokens prod
 
 	CustomLog /var/log/apache2/basslin.es-access.log combined
 	ErrorLog /var/log/apache2/basslin.es-error.log
