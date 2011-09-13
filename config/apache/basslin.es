@@ -68,8 +68,7 @@
 		Header set Access-Control-Allow-Origin "*"
 	</FilesMatch>
 
-	# Force deflate for mangled headers developer.yahoo.com/blogs/ydn/posts/2010/12/
-	pushing-beyond-gzipping/
+	# Force deflate for mangled headers
 	SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
 	RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
 
