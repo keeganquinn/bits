@@ -2,14 +2,14 @@
 
 $TTL 2d
 
-@ IN  SOA donk.sniz.org.  keeganquinn.gmail.com.  (
-    ; serial  refresh retry expiry  minimum
-    2011090800  30M 15M 4W  1h  )
+@ IN	SOA	donk.personaltelco.net.	keeganquinn.gmail.com. (
+		; serial	refresh	retry	expiry	minimum
+		2011111000	30M	15M	4W	1h	)
 
-	NS	donk.sniz.org.
-	NS	iris.sniz.org.
+	NS	donk.personaltelco.net.
+	NS	iris.personaltelco.net.
 
-	MX	10	donk.sniz.org.
+	MX	10	donk.personaltelco.net.
 
 	A	216.239.32.21
 	A	216.239.34.21
@@ -17,3 +17,5 @@ $TTL 2d
 	A	216.239.38.21
 
 www	CNAME	ghs.google.com.
+
+zero	AAAA	2001:470:e962:1601:ca2a:14ff:fe0a:58b7
