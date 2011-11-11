@@ -5,6 +5,13 @@ zone "keegan.ws" {
   file "sec/keegan.ws";
 };
 
+zone "ircreator.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.162; };
+  file "sec/ircreator.com";
+};
+
 zone "sniz.org" {
   type slave;
   allow-query { any; };

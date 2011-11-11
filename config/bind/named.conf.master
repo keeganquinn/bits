@@ -10,6 +10,14 @@ zone "keegan.ws" {
   file "/home/keegan/public_html/bits/config/bind/keegan.ws";
 };
 
+zone "ircreator.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { iris; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+};
+
 zone "sniz.org" {
   type master;
   allow-query { any; };
