@@ -1,28 +1,7 @@
 <VirtualHost *:80>
-	ServerName cloudscontrol.us
-	ServerAlias www.cloudscontrol.us
-	ServerAdmin keeganquinn@gmail.com
+    ServerName cloudscontrol.us
+    ServerAlias www.cloudscontrol.us
 
-	CustomLog /var/log/apache2/cloudscontrol.us-access.log combined
-	ErrorLog /var/log/apache2/cloudscontrol.us-error.log
-
-	DocumentRoot /srv/rails/clouds/current/public
-	<Directory /srv/rails/clouds/current/public>
-		Allow from all
-	</Directory>
-
-	Options +FollowSymLinks -MultiViews -Indexes
-	RewriteEngine on
-
-	# Rewrite to remove 'www' from hostname, if present
-	RewriteCond %{HTTPS} !=on
-	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
-
-	# This allows us to put the site in 'maintenance mode' with Capistrano
-	ErrorDocument 503 /system/maintenance.html
-	RewriteCond %{REQUEST_URI} !.(css|gif|jpg|png)$
-	RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
-	RewriteCond %{SCRIPT_FILENAME} !maintenance.html
-	RewriteRule ^.*$ - [redirect=503,last]
+    ServerAdmin keeganquinn@gmail.com
+    RedirectMatch 301 ^/(.*)$ https://cloudscontrol.us/$1
 </VirtualHost>

@@ -1,0 +1,35 @@
+<VirtualHost 70.102.34.165:443 [2001:470:b:143::165]:443>
+    ServerName cloudscontrol.us
+    ServerAlias www.cloudscontrol.us
+    ServerAdmin keeganquinn@gmail.com
+
+    SSLEngine on
+    SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP
+    SSLCertificateFile /etc/ssl/certs/cloudscontrol.us.crt
+    SSLCertificateKeyFile /etc/ssl/private/cloudscontrol.us.key
+    SSLCertificateChainFile /etc/ssl/certs/startssl-class1-cachain.pem
+    SSLOptions +FakeBasicAuth +StrictRequire
+
+    CustomLog /var/log/apache2/cloudscontrol.us-access.log combined
+    ErrorLog /var/log/apache2/cloudscontrol.us-error.log
+
+    DocumentRoot /srv/rails/clouds/current/public
+    <Directory /srv/rails/clouds/current/public>
+        Allow from all
+    </Directory>
+
+    Options +FollowSymLinks -MultiViews -Indexes
+
+    # Rewrite to remove 'www' from hostname, if present
+    RewriteEngine on
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+    # This allows us to put the site in 'maintenance mode' with Capistrano
+    ErrorDocument 503 /system/maintenance.html
+    RewriteCond %{REQUEST_URI} !.(css|gif|jpg|png)$
+    RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
+    RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+    RewriteRule ^.*$ - [redirect=503,last]
+</VirtualHost>
