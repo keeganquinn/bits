@@ -39,7 +39,7 @@ zone "cloudscontrol.us" {
   allow-query { any; };
   allow-transfer { iris; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+  file "/home/keegan/public_html/bits/config/bind/cloudscontrol.us";
 };
 
 zone "basslin.es" {
@@ -47,7 +47,7 @@ zone "basslin.es" {
   allow-query { any; };
   allow-transfer { iris; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+  file "/home/keegan/public_html/bits/config/bind/basslin.es";
 };
 
 zone "renewabletoner.com" {
