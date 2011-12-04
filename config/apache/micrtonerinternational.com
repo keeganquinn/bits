@@ -12,12 +12,6 @@
 		Options -Indexes -MultiViews
 	</Directory>
 
-	Alias /wp-uploads/ /srv/www/wp-uploads/micrtonerinternational.com/
-	<Directory /srv/www/wp-uploads/micrtonerinternational.com>
-		Allow from all
-		Options -Indexes -MultiViews
-	</Directory>
-
 	# Rewrite to remove 'www' from hostname, if present
 	RewriteEngine on
 	RewriteCond %{HTTPS} !=on
