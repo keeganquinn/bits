@@ -17,4 +17,10 @@
 		Allow from all
 		Options -Indexes -MultiViews
 	</Directory>
+
+	# Rewrite to remove 'www' from hostname, if present
+	RewriteEngine on
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
 </VirtualHost>
