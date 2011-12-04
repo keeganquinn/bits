@@ -6,8 +6,8 @@
 	CustomLog /var/log/apache2/renewabletoner.com-access.log combined
 	ErrorLog /var/log/apache2/renewabletoner.com-error.log
 
-	DocumentRoot /srv/www/renewabletoner
-	<Directory /srv/www/renewabletoner>
+	DocumentRoot /srv/www/renewabletoner.com
+	<Directory /srv/www/renewabletoner.com>
 		Allow from all
 		Options -Indexes -MultiViews
 	</Directory>
