@@ -15,8 +15,6 @@
 
 	ErrorDocument 404 /404.html
 
-	Alias /blog /usr/share/wordpress
-
 	# UTF-8 encoding
 	AddDefaultCharset utf-8
 	AddCharset utf-8 .html .css .js .xml .json .rss .atom
