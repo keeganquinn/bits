@@ -1,0 +1,36 @@
+biff = no
+append_dot_mydomain = no
+alias_maps = hash:/etc/aliases
+mailbox_size_limit = 0
+recipient_delimiter = +
+
+# TLS parameters
+smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_use_tls = yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# Local configuration
+inet_interfaces = all
+inet_protocols = all
+myhostname = nil.keegan.ws
+mynetworks = 
+  70.102.34.167,
+  127.0.0.0/8, 
+  [::1]/128
+mydestination = 
+  nil.keegan.ws,
+  sniz.org,
+  sniz.net,
+  localhost
+relay_domains =
+
+# Virtual aliasing
+virtual_alias_domains =
+  basslin.es,
+  cloudscontrol.us,
+  keegan.ws,
+  renewabletoner.com
+virtual_alias_maps = hash:/etc/postfix/virtual
+
