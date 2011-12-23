@@ -11,7 +11,7 @@ zone "ircreator.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "sniz.org" {
@@ -19,7 +19,7 @@ zone "sniz.org" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "sniz.net" {
@@ -27,7 +27,7 @@ zone "sniz.net" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "cloudscontrol.us" {
@@ -51,7 +51,7 @@ zone "renewabletoner.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-with-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerarizona.com" {
@@ -59,7 +59,7 @@ zone "micrtonerarizona.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonercalifornia.com" {
@@ -67,7 +67,7 @@ zone "micrtonercalifornia.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonercarolina.com" {
@@ -75,7 +75,7 @@ zone "micrtonercarolina.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerchicago.com" {
@@ -83,7 +83,7 @@ zone "micrtonerchicago.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonercolorado.com" {
@@ -91,7 +91,7 @@ zone "micrtonercolorado.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonercolumbus.com" {
@@ -99,7 +99,7 @@ zone "micrtonercolumbus.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerdakota.com" {
@@ -107,7 +107,7 @@ zone "micrtonerdakota.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerdallas.com" {
@@ -115,7 +115,7 @@ zone "micrtonerdallas.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerdenver.com" {
@@ -123,7 +123,7 @@ zone "micrtonerdenver.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerflorida.com" {
@@ -131,7 +131,7 @@ zone "micrtonerflorida.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerlasvegas.com" {
@@ -139,7 +139,7 @@ zone "micrtonerlasvegas.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonermiami.com" {
@@ -147,7 +147,7 @@ zone "micrtonermiami.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonermichigan.com" {
@@ -155,7 +155,7 @@ zone "micrtonermichigan.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonermontana.com" {
@@ -163,7 +163,7 @@ zone "micrtonermontana.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonernevada.com" {
@@ -171,7 +171,7 @@ zone "micrtonernevada.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonernewjersey.com" {
@@ -179,7 +179,7 @@ zone "micrtonernewjersey.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonernewyork.com" {
@@ -187,7 +187,7 @@ zone "micrtonernewyork.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtoneroregon.com" {
@@ -195,7 +195,7 @@ zone "micrtoneroregon.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerphoenix.com" {
@@ -203,7 +203,7 @@ zone "micrtonerphoenix.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonersanfrancisco.com" {
@@ -211,7 +211,7 @@ zone "micrtonersanfrancisco.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerseattle.com" {
@@ -219,7 +219,7 @@ zone "micrtonerseattle.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonertexas.com" {
@@ -227,7 +227,7 @@ zone "micrtonertexas.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerutah.com" {
@@ -235,7 +235,7 @@ zone "micrtonerutah.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonervirginia.com" {
@@ -243,7 +243,7 @@ zone "micrtonervirginia.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "micrtonerwashington.com" {
@@ -251,5 +251,5 @@ zone "micrtonerwashington.com" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic-no-mx";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
