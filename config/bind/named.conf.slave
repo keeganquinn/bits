@@ -54,6 +54,13 @@ zone "micrtonerarizona.com" {
   file "sec/micrtonerarizona.com";
 };
 
+zone "micrtonerca.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/micrtonerca.com";
+};
+
 zone "micrtonercalifornia.com" {
   type slave;
   allow-query { any; };
@@ -103,6 +110,13 @@ zone "micrtonerdallas.com" {
   file "sec/micrtonerdallas.com";
 };
 
+zone "micrtonerdc.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/micrtonerdc.com";
+};
+
 zone "micrtonerdenver.com" {
   type slave;
   allow-query { any; };
@@ -115,6 +129,13 @@ zone "micrtonerflorida.com" {
   allow-query { any; };
   masters { 70.102.34.167; };
   file "sec/micrtonerflorida.com";
+};
+
+zone "micrtonerla.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/micrtonerla.com";
 };
 
 zone "micrtonerlasvegas.com" {
@@ -166,6 +187,13 @@ zone "micrtonernewyork.com" {
   file "sec/micrtonernewyork.com";
 };
 
+zone "micrtonerny.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/micrtonerny.com";
+};
+
 zone "micrtoneroregon.com" {
   type slave;
   allow-query { any; };
@@ -199,6 +227,13 @@ zone "micrtonertexas.com" {
   allow-query { any; };
   masters { 70.102.34.167; };
   file "sec/micrtonertexas.com";
+};
+
+zone "micrtonerus.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/micrtonerus.com";
 };
 
 zone "micrtonerutah.com" {
