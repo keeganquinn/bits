@@ -12,5 +12,6 @@ $TTL 2d
 	MX	10	nil.keegan.ws.
 
 	A	70.102.34.165
+	AAAA	2001:470:1f05:3f::165
 
 www	CNAME	@
