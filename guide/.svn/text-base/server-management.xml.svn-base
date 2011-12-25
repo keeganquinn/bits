@@ -1,0 +1,1230 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY sniz "Sniz Studios">
+<!ENTITY tsniz "<glossterm>&sniz;</glossterm>">
+]>
+<book>
+<!-- $Id$ -->
+
+<title>&sniz; Server Management Guide</title>
+
+<bookinfo>
+  <legalnotice><para>Copyright 2006-2007 Keegan Quinn.</para></legalnotice>
+  <author><firstname>Keegan</firstname><surname>Quinn</surname></author>
+</bookinfo>
+
+<chapter id="general"><title>General information</title>
+  <section id="general-overview"><title>Overview</title>
+    <para>This chapter describes techniques and settings which are common to
+      all &tsniz; computer systems. Later chapters describe
+      configuration details for individual systems. These techniques
+      and configurations have been consistently refined since 1999, and at
+      this point I optimistically consider them best practices.</para>
+
+    <para>My goal is that this text should serve as a reference for myself
+      and as a set of guidelines for curious system administrators.
+      It started off in January 2006 as a notebook documenting a disaster
+      recovery plan and has rapidly evolved since then. Any feedback
+      is very welcome. Contact information of all sorts can be found on
+      <ulink url="http://keegan.sniz.net">my blog</ulink>.</para>
+
+    <para>It is important to note that I do not cover any part of the
+      Debian base installation procedure, nor do I make any attempt to
+      document the usage of any administration tools. I kindly
+      refer you to the
+      <ulink url="http://www.debian.org/releases/stable/installmanual">Debian
+      installation manual</ulink>, the <literal>man</literal> command
+      and the directory <literal>/usr/share/doc</literal> on your
+      friendly neighborhood Debian system for more information on those
+      wonderful subjects.</para>
+  </section>
+
+  <section id="general-software"><title>Software</title>
+    <para>These systems are all based on
+      <ulink url="http://www.debian.org">Debian</ulink>
+      <acronym>GNU</acronym>/Linux
+      <ulink url="http://www.debian.org/releases/stable">stable</ulink>.
+      The full rationale for this decision is not described here, but a
+      <ulink url="http://keegan.sniz.net/articles/2006/01/27/sarge-rules">blog
+      article</ulink> is available which includes some relevant
+      information.</para>
+
+    <para>Several software packages and configuration elements are used
+      on all &tsniz; systems. A
+      <link linkend="metapackages">metapackage</link> called
+      <literal><link linkend="sniz-common">sniz-common</link></literal>
+      exists to depend on these packages, easing system management.</para>
+  </section>
+
+  <section id="general-maintenance"><title>Regular maintenance</title>
+    <para>After using the unstable suite of Debian nearly exclusively for
+      many years, I developed the nasty habit of running software update
+      commands like <literal>aptitude update</literal>,
+      <literal>aptitude upgrade</literal> and
+      <literal>aptitude dist-upgrade</literal> ad nauseum, regardless of
+      whether I expected them to actually do anything.</para>
+
+    <para>If this trap can be avoided, a couple of invocations of
+      <literal>aptitude</literal> every now and then is the single most
+      important routine system maintenance task there is. I
+      subscribe to the
+      <ulink url="http://lists.debian.org/debian-security-announce/">debian-security-announce</ulink>
+      mailing list, which provides me with an announcement whenever a
+      security update is released for stable. It's time to run
+      <literal>aptitude</literal> when an update is released for a
+      package I have installed.</para>
+
+    <para>After making changes on a system - software installations,
+      upgrades or removals, or configuration changes - it's important
+      to update the data integrity database with the changes.
+      <emphasis>samhain</emphasis> is used for this purpose.
+      More information on samhain is available
+      <ulink url="http://la-samhna.de/samhain/">on the web</ulink>.</para>
+  </section>
+
+  <section id="general-backup"><title>Backup procedure</title>
+    <para>Thanks to the organized structure of &tsniz; systems and the
+      help of several scripts, the procedure for creating backups is
+      quite simple. First, run the backup script from a safe
+      directory with a large amount of free space and compress the
+      result:</para>
+
+<programlisting>
+cd /var/backups
+/etc/misc/backup.sh
+tar cvfj `hostname`-backup-`date +%Y%m%d`.tar.bz2 backup
+rm -rf backup
+</programlisting>
+
+    <para>This leaves you with a hostname-tagged, dated
+      <literal>tar.bz2</literal> file, which can then be copied to
+      another system for transfer to <acronym>CD</acronym>,
+      <acronym>DVD</acronym> or tape media for long-term storage.</para>
+  </section>
+
+  <section id="general-installation"><title>Installation procedure</title>
+    <para>This section begins with the assumption that the base
+      system installation has just been completed and all of the
+      appropriate backup files are available (in a mounted or
+      easily-mountable filesystem).</para>
+
+    <para>It is strongly recommended that the base installation
+      process and this process are performed with the target
+      system either completely disconnected from any network or
+      on a network thoroughly protected by a firewall.
+      In the event of a security vulnerability in one of the
+      extra services which are automatically installed and started
+      during the Debian base installation, failure to properly
+      protect a system in this way may result in a security breach
+      before the system is even configured.</para>
+
+    <para>Additional measures may be pertinent if reinstalling
+      prior to a security breach or other extenuating
+      circumstances. This text does not attempt to address
+      all possible aspects of disaster recovery - instead, it
+      focuses on common elements.</para>
+
+    <para>First, stop all extra services which are running by
+      default:</para>
+
+<programlisting>
+/etc/init.d/inetd stop
+/etc/init.d/lpd stop
+/etc/init.d/portmap stop
+/etc/init.d/nfs-common stop
+/etc/init.d/exim4 stop
+</programlisting>
+
+    <para>Ensure they are not restarted automatically:</para>
+
+<programlisting>
+rm -f /etc/rc2.d/S20inetd /etc/rc2.d/S20exim4
+aptitude purge lpr nfs-common pidentd portmap
+</programlisting>
+
+    <para>Remove other unnecessary software:</para>
+
+<programlisting>
+aptitude purge ppp pppconfig pppoe pppoeconf tasksel bison dpkg-dev ed \
+  fdutils flex g++ g++-3.3 gcc gcc-3.3 gdb gnu-efi ipchains libc6-dev \
+  libnss-db libstdc++5-3.3-dev linux-kernel-headers m4 make manpages-dev \
+  mtools nano rcs cpp cpp-3.3 bin86 doc-debian doc-linux-text base-config \
+  binutils bc dc
+</programlisting>
+
+    <para>(That's all one enormous command - the \ characters are
+      line continuation markers. Remove only the packages you
+      don't need. For example, if you are a C/C++ developer, you
+      should not remove the C/C++ development tools.)</para>
+
+    <para>Configure the system to use Unicode by default:</para>
+
+<programlisting>
+dpkg-reconfigure locales
+</programlisting>
+
+    <para>Ensure that <literal>en_US.UTF-8</literal> is selected on both
+      of the menus which are presented.</para>
+
+    <para>At this point, we are ready to restore most backups, including
+      configuration files and user data. That means
+      <literal>/home</literal>, <literal>/srv</literal>,
+      <literal>/etc/misc</literal>, <literal>/etc/postfix</literal>,
+      <literal>/etc/bind</literal> and authentication subsystem backups.
+      The specific paths which will need to be restored depend on the
+      system. This restoration process is most easily accomplished
+      with a <literal>restore.sh</literal> script included with the
+      backup:</para>
+
+<programlisting>
+cd backupdir
+etc/misc/restore.sh
+</programlisting>
+
+    <para>As a compromise between backing up single files and
+      backing up all of <literal>/etc</literal>, I use
+      <literal>/etc/misc</literal> and a special script to populate
+      <literal>/etc</literal> with symlinks:</para>
+
+<programlisting>
+/etc/misc/activate.sh
+</programlisting>
+
+    <para>Ensure package lists and installed software is all current:</para>
+
+<programlisting>
+aptitude update
+aptitude dist-upgrade
+</programlisting>
+
+    <para>Now we're ready to install local standard packages:</para>
+
+<programlisting>
+aptitude install sniz-common
+</programlisting>
+
+    <para>Remove leftover bits of replaced packages:</para>
+
+<programlisting>
+aptitude purge exim4-base exim4-config sysklogd klogd
+</programlisting>
+
+    <para>Finally, clean up downloaded packages:</para>
+
+<programlisting>
+aptitude clean
+</programlisting>
+
+    <para>Note: the <acronym>SSH</acronym> service is running
+      normally at this point. You may wish to continue by logging
+      in over the network instead of the console, or stop and remove the
+      <acronym>SSH</acronym> service if you do not wish to use it.</para>
+
+    <para>The common portion of the installation procedure is
+      now complete. Proceed with system-specific configuration
+      at this point.</para>
+  </section>
+</chapter>
+
+<chapter id="beast"><title>beast</title>
+  <section id="beast-overview"><title>Overview</title>
+    <para>beast is the heart of the &tsniz; network.</para>
+
+    <para>All traffic from the local network to the
+      <link linkend="network-integra">Integra DSL</link> circuit passes
+      through this system. It is the primary web server, the
+      primary <acronym>DNS</acronym> server and the primary mail
+      server. beast also provides <acronym>NTP</acronym>
+      synchronization at stratum 3 or better, Subversion repository
+      hosting and <acronym>DHCP</acronym> service on the local
+      network.</para>
+
+    <itemizedlist>
+      <listitem><para>Processor: <emphasis>AMD Duron</emphasis> at
+        600.342MHz</para></listitem>
+      <listitem><para>RAM: <emphasis>1536MiB</emphasis></para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="beast-disk"><title>Disk configuration</title>
+    <para>This section contains physical disk and partition information.</para>
+
+    <itemizedlist>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 0 master -
+          <emphasis>Quantum Fireball ST6400A</emphasis> at 6448MiB</para>
+        <orderedlist>
+          <listitem><para>243MiB (<literal>0xFD</literal>) -
+            <emphasis>md0</emphasis></para></listitem>
+          <listitem><para>5820MiB (<literal>0xFD</literal>) -
+            <emphasis>md1</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 1 master -
+          <emphasis>Western Digital WD200EB</emphasis> at 19092MiB</para>
+        <orderedlist>
+          <listitem><para>243MiB (<literal>0xFD</literal>) -
+            <emphasis>md0</emphasis></para></listitem>
+          <listitem><para>5820MiB (<literal>0xFD</literal>) -
+            <emphasis>md1</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+    </itemizedlist>
+
+    <para><emphasis>md0</emphasis> is a <acronym>RAID</acronym> at
+      level 1 formatted as an <acronym>EXT3</acronym> filesystem
+      and mounted as the root (<literal>/</literal>).</para>
+
+    <para><emphasis>md1</emphasis> is also a <acronym>RAID</acronym>
+      at level 1 and is configured as an <acronym>LVM</acronym>
+      <acronym>PV</acronym> in <acronym>VG</acronym>
+      <literal>data0</literal>. This <acronym>VG</acronym>
+      contains 5 <acronym>LV</acronym>s:</para>
+
+    <itemizedlist>
+      <listitem><para><literal>swap</literal> was initially allocated
+        <emphasis>512MiB</emphasis> and is used as virtual memory
+        swap space.</para></listitem>
+      <listitem><para><literal>var</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/var</literal>.</para></listitem>
+      <listitem><para><literal>usr</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/usr</literal>.</para></listitem>
+      <listitem><para><literal>home</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/home</literal>.</para></listitem>
+      <listitem><para><literal>srv</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/srv</literal>.</para></listitem>
+    </itemizedlist>
+
+    <para>After all of the initial <acronym>LV</acronym> allocations
+      were complete within the <acronym>VG</acronym>
+      <literal>data0</literal>, <emphasis>1208MiB</emphasis> was
+      still available.</para>
+
+    <para>No special configuration was done to support booting off the
+      <acronym>IDE</acronym> disk on channel 1, since the
+      <acronym>BIOS</acronym> on this system does not reliably support
+      that feature. If the disk on channel 0 fails, manual
+      intervention will be necessary.</para>
+  </section>
+
+  <section id="beast-software"><title>Software packages</title>
+    <para>In addition to all of the common packages listed in the
+      <link linkend="general-software">general software</link>
+      section, beast has several specific packages installed.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>apache2-utils</literal></para></listitem>
+      <listitem><para><literal>bind9</literal></para></listitem>
+      <listitem><para><literal>dcraw</literal></para></listitem>
+      <listitem><para><literal>docbook-utils</literal></para></listitem>
+      <listitem><para><literal>docbook-xsl</literal></para></listitem>
+      <listitem><para><literal>dovecot-imapd</literal></para></listitem>
+      <listitem><para><literal>enscript</literal></para></listitem>
+      <listitem><para><literal>ffmpeg</literal></para></listitem>
+      <listitem><para><literal>jhead</literal></para></listitem>
+      <listitem><para><literal>netpbm</literal></para></listitem>
+      <listitem><para><literal>ntp-simple</literal></para></listitem>
+      <listitem><para><literal>php4-cgi</literal></para></listitem>
+      <listitem><para><literal>php4-pear</literal></para></listitem>
+      <listitem><para><literal>php4-pgsql</literal></para></listitem>
+      <listitem><para><literal>procmail</literal></para></listitem>
+      <listitem><para><literal>quota</literal></para></listitem>
+      <listitem><para><literal>radvd</literal></para></listitem>
+      <listitem><para><literal>slocate</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-rails">sniz-rails</link></literal></para></listitem>
+      <listitem><para><literal>snort</literal></para></listitem>
+      <listitem><para><literal>squirrelmail</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="trac">trac</link></literal></para></listitem>
+      <listitem><para><literal>udhcpd</literal></para></listitem>
+      <listitem><para><literal>unzip</literal></para></listitem>
+      <listitem><para><literal>usermin-changepass</literal></para></listitem>
+      <listitem><para><literal>usermin-chfn</literal></para></listitem>
+      <listitem><para><literal>usermin-forward</literal></para></listitem>
+      <listitem><para><literal>usermin-procmail</literal></para></listitem>
+      <listitem><para><literal>xsltproc</literal></para></listitem>
+      <listitem><para><literal>zip</literal></para></listitem>
+    </itemizedlist>
+
+    <para>A <link linkend="metapackages">metapackage</link> called
+      <literal>host-beast</literal> exists to depend on these packages,
+      easing system management.</para>
+
+    <para>The remainder of this section describes packages which are
+      used on beast but are not included in Debian GNU/Linux stable.</para>
+
+    <section id="trac"><title>trac</title>
+      <para>trac is available in sarge, but the version is too old to
+        run under FastCGI, doesn't work with lighttpd and is quite seriously
+        inferior to the version in sid. Fortunately, being written
+        in Python and having reasonable dependencies, the trac package in
+        sid is directly installable on sarge systems.</para>
+
+      <para>To simplify this usage of this package, a copy of the
+        sid trac package is available from the &tsniz;
+        APT repository, described in the
+        <link linkend="metapackages">Metapackages</link> appendix.</para>
+    </section>
+  </section>
+
+  <section id="beast-configuration"><title>Configuration details</title>
+    <para>This section assumes that the process outlined in the
+      <link linkend="general-installation">general installation</link>
+      section has been completed.</para>
+
+    <para>Install host-specific packages:</para>
+
+<programlisting>
+aptitude install host-beast
+</programlisting>
+
+    <para>Restore databases from backups. This is most easily
+      accomplished with a <literal>dbrestore.sh</literal> script
+      included with the backup:</para>
+
+<programlisting>
+cd backupdir
+etc/misc/dbrestore.sh
+</programlisting>
+
+    <para>Perform any necessary static code generation:</para>
+
+<programlisting>
+cd /srv/www &amp;&amp; rake
+</programlisting>
+
+    <para>At this point, the system is ready for production. However,
+      there are still a couple of minor optimizations which can be made.</para>
+
+    <para>One of the web applications used on this system is
+      <ulink url="http://trac.edgewall.com">Trac</ulink>. Trac makes
+      use of the <literal>enscript</literal> tool for syntax highlighting in
+      code displays, but the <literal>enscript</literal> package in Debian
+      GNU/Linux 3.1 does not include Ruby syntax highlighting rules by
+      default. Check
+      <ulink url="http://neugierig.org/software/ruby/">here</ulink> for
+      Ruby syntax highlighting rules which can be added.</para>
+  </section>
+</chapter>
+
+<chapter id="oxygen"><title>oxygen</title>
+  <section id="oxygen-overview"><title>Overview</title>
+    <para>oxygen is a storage server which primarily serves local
+      users. It has the longest history of all surviving systems
+      at &tsniz;. Portions of the filesystem are traceable as far
+      back as November 2001.</para>
+
+    <para>The system provides read-only and write-only storage access
+      via <acronym>FTP</acronym> and Samba, and read-write storage
+      access via <acronym>SFTP</acronym>. oxygen also provides
+      secondary <acronym>DNS</acronym> and <acronym>NTP</acronym>
+      synchronization at stratum 3 or better.</para>
+
+    <itemizedlist>
+      <listitem><para>Processor: <emphasis>AMD Athlon XP</emphasis> at
+        1467.351MHz</para></listitem>
+      <listitem><para>RAM: <emphasis>512MiB</emphasis>
+        DDR 3200</para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="oxygen-disk"><title>Disk configuration</title>
+    <para>This section contains physical disk and partition information.</para>
+
+    <itemizedlist>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 0 master -
+          <emphasis>N/A</emphasis></para>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 1 master -
+          <emphasis>IC35L060AVVA07-0</emphasis> at 58644MiB</para>
+        <orderedlist>
+          <listitem><para>256MiB (<literal>0xFD</literal>) -
+            <emphasis>md0</emphasis></para></listitem>
+          <listitem><para>10240MiB (<literal>0xFD</literal>) -
+            <emphasis>md1</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 2 master -
+          <emphasis>Maxtor 4G120J6</emphasis> at 117246MiB</para>
+        <orderedlist>
+          <listitem><para>112639MiB (<literal>0xFD</literal>) -
+            <emphasis>md2</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 3 master -
+          <emphasis>Samsung SV1204H</emphasis> at 114498MiB</para>
+        <orderedlist>
+          <listitem><para>114494MiB (<literal>0xFD</literal>) -
+            <emphasis>md3</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 3 slave -
+          <emphasis>Samsung SV1204H</emphasis> at 114498MiB</para>
+        <orderedlist>
+          <listitem><para>114494MiB (<literal>0xFD</literal>) -
+            <emphasis>md3</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 4 master -
+          <emphasis>Western Digital WD120BB</emphasis> at 114473MiB</para>
+        <orderedlist>
+          <listitem><para>112639MiB (<literal>0xFD</literal>) -
+            <emphasis>md2</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 5 master -
+          <emphasis>Samsung SV1204H</emphasis> at 114498MiB</para>
+        <orderedlist>
+          <listitem><para>112639MiB (<literal>0xFD</literal>) -
+            <emphasis>md2</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 5 slave -
+          <emphasis>Samsung SV1204H</emphasis> at 114498MiB</para>
+        <orderedlist>
+          <listitem><para>114494MiB (<literal>0xFD</literal>) -
+            <emphasis>md3</emphasis></para></listitem>
+        </orderedlist>
+      </listitem>
+    </itemizedlist>
+
+    <para><emphasis>md0</emphasis> is a <acronym>RAID</acronym> at
+      level 1 formatted as an <acronym>EXT3</acronym> filesystem and
+      mounted as the root (<literal>/</literal>).</para>
+
+    <para><emphasis>md1</emphasis> is also a <acronym>RAID</acronym> at
+      level 1 and is configured as an <acronym>LVM</acronym>
+      <acronym>PV</acronym> in <acronym>VG</acronym>
+      <literal>data0</literal>. This <acronym>VG</acronym> contains
+      4 <acronym>LV</acronym>s:</para>
+
+    <itemizedlist>
+      <listitem><para><literal>swap</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is used as virtual memory
+        swap space.</para></listitem>
+      <listitem><para><literal>var</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/var</literal>.</para></listitem>
+      <listitem><para><literal>usr</literal> was initially allocated
+        <emphasis>1024MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/usr</literal>.</para></listitem>
+      <listitem><para><literal>home</literal> was initially allocated
+        <emphasis>4096MiB</emphasis> and is formatted with an
+        <acronym>EXT3</acronym> filesystem mounted as
+        <literal>/home</literal>.</para></listitem>
+    </itemizedlist>
+
+    <para><emphasis>md2</emphasis> and <emphasis>md3</emphasis> are
+      both <acronym>RAID</acronym>s at level 5 and are configured
+      as <acronym>LVM</acronym> <acronym>PV</acronym>s in
+      <acronym>VG</acronym> <literal>music</literal>.
+      This VG contains 3 <acronym>LV</acronym>s:</para>
+
+    <itemizedlist>
+      <listitem><para><literal>core</literal> was initially allocated
+        <emphasis>350GiB</emphasis> and is formatted with a
+        ReiserFS filesystem mounted as
+        <literal>/music</literal>.</para></listitem>
+      <listitem><para><literal>data</literal> was initially allocated
+        <emphasis>108GiB</emphasis> and is formatted with a
+        ReiserFS filesystem mounted as
+        <literal>/data</literal>.</para></listitem>
+      <listitem><para><literal>public</literal> was initially allocated
+        <emphasis>30GiB</emphasis> and is formatted with a
+        ReiserFS filesystem mounted as
+        <literal>/public</literal>.</para></listitem>
+    </itemizedlist>
+
+    <para>No special configuration was done to support booting off the
+      <acronym>IDE</acronym> disk on channel 1, since the
+      <acronym>BIOS</acronym> on this system does not reliably support that
+      feature. If the disk on channel 0 fails, manual intervention will
+      be necessary.</para>
+  </section>
+
+  <section id="oxygen-software"><title>Software packages</title>
+    <para>In addition to all of the common packages listed in the
+      <link linkend="general-software">general software</link>
+      section, oxygen has several specific packages installed.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>bind9</literal></para></listitem>
+      <listitem><para><literal>ntp-simple</literal></para></listitem>
+      <listitem><para><literal>polipo</literal></para></listitem>
+      <listitem><para><literal>proftpd</literal></para></listitem>
+      <listitem><para><literal>reiserfsprogs</literal></para></listitem>
+      <listitem><para><literal>samba</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-common">sniz-common</link></literal></para></listitem>
+    </itemizedlist>
+
+    <para>A <link linkend="metapackages">metapackage</link> called
+      <literal>host-oxygen</literal> exists to depend on these packages,
+      easing system management.</para>
+  </section>
+
+  <section id="oxygen-configuration"><title>Configuration details</title>
+    <para>This section assumes that the process outlined in the
+      <link linkend="general-installation">general installation</link>
+      section has been completed.</para>
+
+    <para>Install host-specific packages:</para>
+
+<programlisting>
+aptitude install host-oxygen
+</programlisting>
+
+    <para>At this point, the system is ready for production.</para>
+  </section>
+</chapter>
+
+<chapter id="noise"><title>noise</title>
+  <section id="noise-overview"><title>Overview</title>
+    <para>noise is the most powerful of the managed hosts. It
+      serves as a multi-purpose workstation, with a focus on music
+      production and software development.</para>
+
+    <itemizedlist>
+      <listitem><para>Processor: <emphasis>Intel Celeron</emphasis> at
+        2205.434MHz</para></listitem>
+      <listitem><para>RAM: <emphasis>512MiB</emphasis>
+        DDR 3200</para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="noise-disk"><title>Disk configuration</title>
+    <para>This section contains physical disk and partition information.</para>
+
+    <itemizedlist>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 0 master -
+          <emphasis>WD25000JB</emphasis> at 238475MiB</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>noise may be partitioned automatically by the Debian installer.
+      It has no special needs regarding the configuration of the disk
+      subsystem.</para>
+  </section>
+
+  <section id="noise-software"><title>Software packages</title>
+    <para>In addition to all of the common packages listed in the
+      <link linkend="general-software">general software</link>
+      section, noise has several specific packages installed.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>acm</literal></para></listitem>
+      <listitem><para><literal>amphetamine</literal></para></listitem>
+      <listitem><para><literal>ams</literal></para></listitem>
+      <listitem><para><literal>amsynth</literal></para></listitem>
+      <listitem><para><literal>ardour-gtk</literal></para></listitem>
+      <listitem><para><literal>armagetron</literal></para></listitem>
+      <listitem><para><literal>atanks</literal></para></listitem>
+      <listitem><para><literal>audacity</literal></para></listitem>
+      <listitem><para><literal>bitscope</literal></para></listitem>
+      <listitem><para><literal>blast</literal></para></listitem>
+      <listitem><para><literal>blobwars</literal></para></listitem>
+      <listitem><para><literal>bos</literal></para></listitem>
+      <listitem><para><literal>brutefir</literal></para></listitem>
+      <listitem><para><literal>caps</literal></para></listitem>
+      <listitem><para><literal>chromium</literal></para></listitem>
+      <listitem><para><literal>cmt</literal></para></listitem>
+      <listitem><para><literal>creox</literal></para></listitem>
+      <listitem><para><literal>criticalmass</literal></para></listitem>
+      <listitem><para><literal>cupsys-driver-gimpprint</literal></para></listitem>
+      <listitem><para><literal>defendguin</literal></para></listitem>
+      <listitem><para><literal>ecamegapedal</literal></para></listitem>
+      <listitem><para><literal>egoboo</literal></para></listitem>
+      <listitem><para><literal>flac</literal></para></listitem>
+      <listitem><para><literal>freqtweak</literal></para></listitem>
+      <listitem><para><literal>gnomebaker</literal></para></listitem>
+      <listitem><para><literal>gstreamer0.8-misc</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="gtk-gnutella">gtk-gnutella</link></literal></para></listitem>
+      <listitem><para><literal>hydrogen</literal></para></listitem>
+      <listitem><para><literal>jack</literal></para></listitem>
+      <listitem><para><literal>jack-rack</literal></para></listitem>
+      <listitem><para><literal>jack-tools</literal></para></listitem>
+      <listitem><para><literal>jackeq</literal></para></listitem>
+      <listitem><para><literal>jamin</literal></para></listitem>
+      <listitem><para><literal>mcp-plugins</literal></para></listitem>
+      <listitem><para><literal>meterbridge</literal></para></listitem>
+      <listitem><para><literal>puredata</literal></para></listitem>
+      <listitem><para><literal>qjackctl</literal></para></listitem>
+      <listitem><para><literal>rezound</literal></para></listitem>
+      <listitem><para><literal>seq24</literal></para></listitem>
+      <listitem><para><literal>smbfs</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-dev">sniz-dev</link></literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-fonts">sniz-fonts</link></literal></para></listitem>
+      <listitem><para><literal>spiralsynthmodular</literal></para></listitem>
+      <listitem><para><literal>supertux</literal></para></listitem>
+      <listitem><para><literal>swh-plugins</literal></para></listitem>
+      <listitem><para><literal>tap-plugins</literal></para></listitem>
+      <listitem><para><literal>terminatorx</literal></para></listitem>
+      <listitem><para><literal>tetrinetx</literal></para></listitem>
+      <listitem><para><literal>tuxkart</literal></para></listitem>
+      <listitem><para><literal>vcdimager</literal></para></listitem>
+      <listitem><para><literal>xine-ui</literal></para></listitem>
+      <listitem><para><literal>xmlstarlet</literal></para></listitem>
+      <listitem><para><literal>zynaddsubfx</literal></para></listitem>
+    </itemizedlist>
+
+    <para>A <link linkend="metapackages">metapackage</link> called
+      <literal>host-noise</literal> exists to depend on these packages,
+      easing system management.</para>
+
+    <para>The remainder of this section describes packages which are
+      used on noise but are not included in Debian GNU/Linux stable.</para>
+
+    <section id="gtk-gnutella"><title>gtk-gnutella</title>
+      <para>gtk-gnutella is available in sarge, but the version is too
+        old to work properly. Fortunately, the gtk-gnutella
+        upstream website offers a Debian package for sarge.</para>
+
+      <para>To simplify this usage of this package, a copy of the
+        upstream gtk-gnutella package is available from the &tsniz;
+        APT repository, described in the
+        <link linkend="metapackages">Metapackages</link> appendix.</para>
+    </section>
+  </section>
+
+  <section id="noise-configuration"><title>Configuration details</title>
+    <para>This section assumes that the process outlined in the
+      <link linkend="general-installation">general installation</link>
+      section has been completed.</para>
+
+    <para>Install host-specific packages:</para>
+
+<programlisting>
+aptitude install host-noise
+</programlisting>
+
+    <para>At this point, the system is ready for production.</para>
+  </section>
+</chapter>
+
+<chapter id="paperweight"><title>paperweight</title>
+  <section id="paperweight-overview"><title>Overview</title>
+    <para>paperweight is a secondary multi-purpose workstation.</para>
+
+    <para>This system is equipped with the complete GNOME suite and a
+      few other goodies. The design is suitable for use as a
+      &quot;normal&quot; desktop system, as might be used in an office
+      environment.</para>
+
+    <itemizedlist>
+      <listitem><para>Processor: <emphasis>Intel Celeron</emphasis> at
+        996.947MHz</para></listitem>
+      <listitem><para>RAM: <emphasis>128MiB</emphasis></para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="paperweight-disk"><title>Disk configuration</title>
+    <para>This section contains physical disk and partition information.</para>
+
+    <itemizedlist>
+      <listitem>
+        <para><acronym>IDE</acronym> channel 0 master -
+          <emphasis>ST320410A</emphasis> at 20020MiB</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>paperweight may be partitioned automatically by the Debian
+      installer. It has no special needs regarding the configuration
+      of the disk subsystem.</para>
+  </section>
+
+  <section id="paperweight-software"><title>Software packages</title>
+    <para>In addition to all of the common packages listed in the
+      <link linkend="general-software">general software</link>
+      section, paperweight has several specific packages installed.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>ace-of-penguins</literal></para></listitem>
+      <listitem><para><literal>amphetamine</literal></para></listitem>
+      <listitem><para><literal>blast</literal></para></listitem>
+      <listitem><para><literal>blobwars</literal></para></listitem>
+      <listitem><para><literal>bos</literal></para></listitem>
+      <listitem><para><literal>burgerspace</literal></para></listitem>
+      <listitem><para><literal>criticalmass</literal></para></listitem>
+      <listitem><para><literal>defendguin</literal></para></listitem>
+      <listitem><para><literal>gimp-help-en</literal></para></listitem>
+      <listitem><para><literal>gnome</literal></para></listitem>
+      <listitem><para><literal>gtkpool</literal></para></listitem>
+      <listitem><para><literal>pacman</literal></para></listitem>
+      <listitem><para><literal>smbfs</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-desktop">sniz-desktop</link></literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-fonts">sniz-fonts</link></literal></para></listitem>
+      <listitem><para><literal>supertux</literal></para></listitem>
+      <listitem><para><literal>xine-ui</literal></para></listitem>
+      <listitem><para><literal>xmahjongg</literal></para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="paperweight-configuration"><title>Configuration details</title>
+    <para>This section assumes that the process outlined in the
+      <link linkend="general-installation">general installation</link>
+      section has been completed.</para>
+
+    <para>Install host-specific packages:</para>
+
+<programlisting>
+aptitude install host-paperweight
+</programlisting>
+
+    <para>At this point, the system is ready for production.</para>
+  </section>
+</chapter>
+
+<appendix id="network"><title>Network information</title>
+  <section id="network-integra"><title>Integra Telecom DSL</title>
+    <para>The primary (and currently, the only) Internet connection at our
+      primary office in Portland is a <acronym>DSL</acronym> circuit from
+      <ulink url="http://www.integratelecom.com">Integra Telecom</ulink>.
+      This connection is assigned eight consecutive Internet IP addresses
+      from a subnet with a 24-bit mask.</para>
+
+    <table id="integra-ip-allocations">
+      <title>Integra Telecom DSL IP address allocations</title>
+      <tgroup cols="2">
+        <colspec colname="address"/>
+        <colspec colname="hostname"/>
+        <thead>
+          <row>
+            <entry>IP address</entry>
+            <entry>Hostname</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><literal>64.122.198.168</literal></entry>
+            <entry><link linkend="beast">beast</link></entry>
+          </row>
+          <row>
+            <entry><literal>64.122.198.169</literal></entry>
+            <entry><link linkend="oxygen">oxygen</link></entry>
+          </row>
+          <row>
+            <entry><literal>64.122.198.170</literal></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><literal>64.122.198.171</literal></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><literal>64.122.198.172</literal></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><literal>64.122.198.173</literal></entry>
+            <entry><literal>mail.sniz.net</literal> SSL virtual host</entry>
+          </row>
+          <row>
+            <entry><literal>64.122.198.174</literal></entry>
+            <entry/>
+          </row>
+          <row>
+            <entry><literal>64.122.198.175</literal></entry>
+            <entry/>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+
+  <section id="network-wireless"><title>IEEE 802.11 wireless link</title>
+    <para>A secondary/backup Internet connection via IEEE 802.11
+      wireless link is planned, but has not yet been configured.</para>
+  </section>
+</appendix>
+
+<appendix id="metapackages"><title>Metapackages</title>
+  <para>Often, groups of software packages are used together very
+    commonly. To ease the administrative burden created by this
+    situation, &quot;metapackages&quot; are used.</para>
+
+  <para>These metapackages are all primarily available from the &tsniz;
+    APT repository. This repository is accessible using the
+    following line in <literal>/etc/apt/sources.list</literal>:</para>
+
+<programlisting>
+deb http://www.sniz.net/debian stable sniz
+</programlisting>
+
+  <section id="sniz-common"><title>sniz-common</title>
+    <para>This metapackage depends on all software packages which are common
+      to all &tsniz; systems.</para>
+
+    <itemizedlist>
+      <listitem><para><literal><link
+        linkend="avahi-daemon">avahi-daemon</link></literal></para></listitem>
+      <listitem><para><literal>bzip2</literal></para></listitem>
+      <listitem><para><literal>checksecurity</literal></para></listitem>
+      <listitem><para><literal>chkrootkit</literal></para></listitem>
+      <listitem><para><literal>harden-clients</literal></para></listitem>
+      <listitem><para><literal>harden-servers</literal></para></listitem>
+      <listitem><para><literal>iproute</literal></para></listitem>
+      <listitem><para><literal>iputils-tracepath</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="libnss-mdns">libnss-mdns</link></literal></para></listitem>
+      <listitem><para><literal>lsof</literal></para></listitem>
+      <listitem><para><literal>memtest86+</literal></para></listitem>
+      <listitem><para><literal>noshell</literal></para></listitem>
+      <listitem><para><literal>ntpdate</literal></para></listitem>
+      <listitem><para><literal>postfix</literal></para></listitem>
+      <listitem><para><literal>samhain</literal></para></listitem>
+      <listitem><para><literal>subversion</literal></para></listitem>
+      <listitem><para><literal>sudo</literal></para></listitem>
+      <listitem><para><literal>syslog-ng</literal></para></listitem>
+      <listitem><para><literal>tiger</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="vrms">vrms</link></literal></para></listitem>
+    </itemizedlist>
+
+    <para>Note that the dependency on the <literal>noshell</literal> package
+      will become superfluous when the next release of Debian, 'etch', is
+      released. 'etch' includes an essential <literal>login</literal>
+      package which includes a new <literal>nologin</literal> binary,
+      serving the same function as <literal>noshell</literal> in
+      'sarge'.</para>
+
+    <para>The remainder of this section describes packages which are
+      dependencies of the sniz-common metapackage but are not included in
+      Debian GNU/Linux stable.</para>
+
+    <section id="avahi-daemon"><title>avahi-daemon</title>
+      <para>Avahi is not available in sarge, but is available in etch
+        and sid. The package from sid has been backported to sarge,
+        and is available from the &tsniz; APT repository. These
+        backported Avahi packages do not contain the complete functionality
+        of the Avahi suite because the infrastructure required to support
+        it was not available in sarge.</para>
+    </section>
+
+    <section id="libnss-mdns"><title>libnss-mdns</title>
+      <para>libnss-mdns is not available in sarge, but is available in
+        etch and sid. The package from sid has been backported
+        directly to sarge, and is available from the &tsniz;
+        APT repository.</para>
+    </section>
+
+    <section id="vrms"><title>vrms</title>
+      <para>vrms is already available in sarge, but the version does not
+        work correctly. Fortunately, the updated version of vrms
+        from sid is directly installable on sarge systems.</para>
+
+      <para>To simplify the upgrade of this package, a copy of the
+        sid vrms package is available from the &tsniz;
+        APT repository.</para>
+    </section>
+  </section>
+
+  <section id="sniz-desktop"><title>sniz-desktop</title>
+    <para>This metapackage depends on all software packages which are used on
+      all systems which function as workstations for &tsniz;.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>acpid</literal></para></listitem>
+      <listitem><para><literal>beep-media-player</literal></para></listitem>
+      <listitem><para><literal>bittorrent-gui</literal></para></listitem>
+      <listitem><para><literal>blogtk</literal></para></listitem>
+      <listitem><para><literal>ca-certificates</literal></para></listitem>
+      <listitem><para><literal>cupsys</literal></para></listitem>
+      <listitem><para><literal>cupsys-driver-gimpprint</literal></para></listitem>
+      <listitem><para><literal>dict</literal></para></listitem>
+      <listitem><para><literal>gaim-otr</literal></para></listitem>
+      <listitem><para><literal>gdm</literal></para></listitem>
+      <listitem><para><literal>gimp</literal></para></listitem>
+      <listitem><para><literal>gnupg</literal></para></listitem>
+      <listitem><para><literal>gtetrinet</literal></para></listitem>
+      <listitem><para><literal>lbreakout2</literal></para></listitem>
+      <listitem><para><literal>lftp</literal></para></listitem>
+      <listitem><para><literal>mdns-scan</literal></para></listitem>
+      <listitem><para><literal>menu</literal></para></listitem>
+      <listitem><para><literal>mozilla-firefox</literal></para></listitem>
+      <listitem><para><literal>mutt</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="offlineimap">offlineimap</link></literal></para></listitem>
+      <listitem><para><literal>openbox</literal></para></listitem>
+      <listitem><para><literal>openoffice.org</literal></para></listitem>
+      <listitem><para><literal>qiv</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-common">sniz-common</link></literal></para></listitem>
+      <listitem><para><literal>visualboyadvance</literal></para></listitem>
+      <listitem><para><literal>x-window-system-core</literal></para></listitem>
+      <listitem><para><literal>xterm</literal></para></listitem>
+      <listitem><para><literal>zsnes</literal></para></listitem>
+    </itemizedlist>
+
+    <para>The remainder of this section describes packages which are
+      dependencies of the sniz-desktop metapackage but are not included in
+      Debian GNU/Linux stable.</para>
+
+    <section id="offlineimap"><title>offlineimap</title>
+      <para>offlineimap is already available in sarge, but the version
+        is too old to support IMAPS connections over IPv6.
+        Fortunately, the updated version of offlineimap from sid is
+        directly installable on sarge systems.</para>
+
+      <para>To simplify the upgrade of this package, a copy of the
+        sid offlineimap package is available from the &tsniz;
+        APT repository.</para>
+    </section>
+  </section>
+
+  <section id="sniz-dev"><title>sniz-dev</title>
+    <para>This metapackage depends on all software packages used on
+      systems which are used for software development.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>cdbs</literal></para></listitem>
+      <listitem><para><literal>cvs</literal></para></listitem>
+      <listitem><para><literal>darcs</literal></para></listitem>
+      <listitem><para><literal>docbook-utils</literal></para></listitem>
+      <listitem><para><literal>docbook-xsl</literal></para></listitem>
+      <listitem><para><literal>emacs21</literal></para></listitem>
+      <listitem><para><literal>ethereal</literal></para></listitem>
+      <listitem><para><literal>nessus</literal></para></listitem>
+      <listitem><para><literal>nessusd</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="netcat">netcat</link></literal></para></listitem>
+      <listitem><para><literal>nmap</literal></para></listitem>
+      <listitem><para><literal>pbuilder</literal></para></listitem>
+      <listitem><para><literal>php4-cgi</literal></para></listitem>
+      <listitem><para><literal>php4-pear</literal></para></listitem>
+      <listitem><para><literal>php4-pgsql</literal></para></listitem>
+      <listitem><para><literal>php-elisp</literal></para></listitem>
+      <listitem><para><literal>psgml</literal></para></listitem>
+      <listitem><para><literal>ruby-elisp</literal></para></listitem>
+      <listitem><para><literal>sniz-desktop</literal></para></listitem>
+      <listitem><para><literal>sniz-rails</literal></para></listitem>
+      <listitem><para><literal>w3c-markup-validator</literal></para></listitem>
+      <listitem><para><literal>xsltproc</literal></para></listitem>
+    </itemizedlist>
+
+    <para>The remainder of this section describes packages which are
+      dependencies of the sniz-dev metapackage but are not included in
+      Debian GNU/Linux stable.</para>
+
+    <section id="netcat"><title>netcat</title>
+      <para>netcat is already available in sarge, but the version is too
+        old to support IPv6. Fortunately, the Debian IPv6 group
+        has published a package which has this support and is compatible
+        with sarge.</para>
+
+      <para>To simplify the upgrade of this package, a copy of this
+        updated netcat package is available from the &tsniz;
+        APT repository.</para>
+    </section>
+  </section>
+
+  <section id="sniz-fonts"><title>sniz-fonts</title>
+    <para>This metapackage depends on virtually all of the fonts included in
+      Debian main. It also suggests several fonts included in the
+      non-free section of Debian.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>ttf-alee</literal></para></listitem>
+      <listitem><para><literal>ttf-arabeyes</literal></para></listitem>
+      <listitem><para><literal>ttf-arhangai</literal></para></listitem>
+      <listitem><para><literal>ttf-arphic-bkai00mp</literal></para></listitem>
+      <listitem><para><literal>ttf-arphic-bsmi00lp</literal></para></listitem>
+      <listitem><para><literal>ttf-arphic-gbsn00lp</literal></para></listitem>
+      <listitem><para><literal>ttf-arphic-gkai00mp</literal></para></listitem>
+      <listitem><para><literal>ttf-arphic-ukai</literal></para></listitem>
+      <listitem><para><literal>ttf-arphic-uming</literal></para></listitem>
+      <listitem><para><literal>ttf-baekmuk</literal></para></listitem>
+      <listitem><para><literal>ttf-bengali-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-devanagari-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-dustin</literal></para></listitem>
+      <listitem><para><literal>ttf-f500</literal></para></listitem>
+      <listitem><para><literal>ttf-farsiweb</literal></para></listitem>
+      <listitem><para><literal>ttf-freefont</literal></para></listitem>
+      <listitem><para><literal>ttf-gentium</literal></para></listitem>
+      <listitem><para><literal>ttf-gujarati-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-indic-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-isabella</literal></para></listitem>
+      <listitem><para><literal>ttf-junicode</literal></para></listitem>
+      <listitem><para><literal>ttf-kacst</literal></para></listitem>
+      <listitem><para><literal>ttf-kannada-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-kochi-gothic</literal></para></listitem>
+      <listitem><para><literal>ttf-kochi-mincho</literal></para></listitem>
+      <listitem><para><literal>ttf-larabie-deco</literal></para></listitem>
+      <listitem><para><literal>ttf-larabie-straight</literal></para></listitem>
+      <listitem><para><literal>ttf-larabie-uncommon</literal></para></listitem>
+      <listitem><para><literal>ttf-malayalam-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-mgopen</literal></para></listitem>
+      <listitem><para><literal>ttf-mikachan</literal></para></listitem>
+      <listitem><para><literal>ttf-oriya-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-paktype</literal></para></listitem>
+      <listitem><para><literal>ttf-punjabi-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-sazanami-gothic</literal></para></listitem>
+      <listitem><para><literal>ttf-sazanami-mincho</literal></para></listitem>
+      <listitem><para><literal>ttf-staypuft</literal></para></listitem>
+      <listitem><para><literal>ttf-summersby</literal></para></listitem>
+      <listitem><para><literal>ttf-tamil-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-telugu-fonts</literal></para></listitem>
+      <listitem><para><literal>ttf-thryomanes</literal></para></listitem>
+      <listitem><para><literal>ttf-tmuni</literal></para></listitem>
+      <listitem><para><literal>ttf-unfonts</literal></para></listitem>
+      <listitem><para><literal>ttf-uralic</literal></para></listitem>
+      <listitem><para><literal>xfonts-a12k12</literal></para></listitem>
+      <listitem><para><literal>xfonts-artwiz</literal></para></listitem>
+      <listitem><para><literal>xfonts-ay</literal></para></listitem>
+      <listitem><para><literal>xfonts-ayu</literal></para></listitem>
+      <listitem><para><literal>xfonts-baekmuk</literal></para></listitem>
+      <listitem><para><literal>xfonts-bitmap-mule</literal></para></listitem>
+      <listitem><para><literal>xfonts-biznet-100dpi</literal></para></listitem>
+      <listitem><para><literal>xfonts-biznet-75dpi</literal></para></listitem>
+      <listitem><para><literal>xfonts-biznet-base</literal></para></listitem>
+      <listitem><para><literal>xfonts-bolkhov-75dpi</literal></para></listitem>
+      <listitem><para><literal>xfonts-cronyx-100dpi</literal></para></listitem>
+      <listitem><para><literal>xfonts-cronyx-75dpi</literal></para></listitem>
+      <listitem><para><literal>xfonts-cronyx-misc</literal></para></listitem>
+      <listitem><para><literal>xfonts-cyrillic</literal></para></listitem>
+      <listitem><para><literal>xfonts-dosemu</literal></para></listitem>
+      <listitem><para><literal>xfonts-efont-unicode</literal></para></listitem>
+      <listitem><para><literal>xfonts-efont-unicode-ib</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-arabic</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-asian</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-chinese</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-chinese-big</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-european</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-japanese</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-japanese-big</literal></para></listitem>
+      <listitem><para><literal>xfonts-intl-phonetic</literal></para></listitem>
+      <listitem><para><literal>xfonts-jmk</literal></para></listitem>
+      <listitem><para><literal>xfonts-kaname</literal></para></listitem>
+      <listitem><para><literal>xfonts-kapl</literal></para></listitem>
+      <listitem><para><literal>xfonts-kappa20</literal></para></listitem>
+      <listitem><para><literal>xfonts-knickers</literal></para></listitem>
+      <listitem><para><literal>xfonts-konsole</literal></para></listitem>
+      <listitem><para><literal>xfonts-marumoji</literal></para></listitem>
+      <listitem><para><literal>xfonts-mona</literal></para></listitem>
+      <listitem><para><literal>xfonts-mplus</literal></para></listitem>
+      <listitem><para><literal>xfonts-naga10</literal></para></listitem>
+      <listitem><para><literal>xfonts-nexus</literal></para></listitem>
+      <listitem><para><literal>xfonts-shinonome</literal></para></listitem>
+      <listitem><para><literal>xfonts-terminus</literal></para></listitem>
+      <listitem><para><literal>xfonts-terminus-dos</literal></para></listitem>
+      <listitem><para><literal>xfonts-terminus-oblique</literal></para></listitem>
+      <listitem><para><literal>xfonts-thai</literal></para></listitem>
+      <listitem><para><literal>xfonts-thai-etl</literal></para></listitem>
+      <listitem><para><literal>xfonts-thai-manop</literal></para></listitem>
+      <listitem><para><literal>xfonts-thai-nectec</literal></para></listitem>
+      <listitem><para><literal>xfonts-thai-ttf</literal></para></listitem>
+      <listitem><para><literal>xfonts-thai-vor</literal></para></listitem>
+      <listitem><para><literal>xfonts-tipa</literal></para></listitem>
+    </itemizedlist>
+  </section>
+
+  <section id="sniz-rails"><title>sniz-rails</title>
+    <para>This metapackage depends on all software packages used for
+      the hosting and development of
+      <ulink url="http://www.rubyonrails.com">Ruby on Rails</ulink>
+      web applications, including all of the dependencies necessary
+      to support running
+      <ulink url="http://www.typosphere.org">Typo</ulink> HEAD.</para>
+
+    <itemizedlist>
+      <listitem><para><literal>graphviz</literal></para></listitem>
+      <listitem><para><literal>irb</literal></para></listitem>
+      <listitem><para><literal>libfcgi-ruby1.8</literal></para></listitem>
+      <listitem><para><literal>libpgsql-ruby</literal></para></listitem>
+      <listitem><para><literal>librmagick-ruby</literal></para></listitem>
+      <listitem><para><literal>librmail-ruby1.8</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="lighttpd">lighttpd</link></literal></para></listitem>
+      <listitem><para><literal>postgresql</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="rails">rails</link></literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="rake">rake</link></literal></para></listitem>
+      <listitem><para><literal>rdoc</literal></para></listitem>
+      <listitem><para><literal>ruby</literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="rubygems">rubygems</link></literal></para></listitem>
+      <listitem><para><literal><link
+        linkend="sniz-common">sniz-common</link></literal></para></listitem>
+    </itemizedlist>
+
+    <para>The remainder of this section describes packages which are
+      dependencies of the sniz-rails metapackage but are not included in
+      Debian GNU/Linux stable.</para>
+
+    <section id="lighttpd"><title>lighttpd</title>
+      <para>lighttpd is not available in sarge, but is available in
+        etch and sid. The package from sid has been backported
+        directly to sarge, and is available from the &tsniz;
+        APT repository.</para>
+    </section>
+
+    <section id="rails"><title>rails</title>
+      <para>Similar to the situation with lighttpd, Rails is not
+        available in sarge, but is available in etch and sid.
+        However, since it is written in Ruby and has a reasonable
+        set of dependencies, the Rails package in sid is directly
+        installable on sarge systems.</para>
+
+      <para>To simplify this usage of this package, a copy of the
+        sid rails package is available from the &tsniz;
+        APT repository.</para>
+    </section>
+
+    <section id="rake"><title>rake</title>
+      <para>rake is already available in sarge, but the version is
+        too old to run Rails. Fortunately, like the Rails
+        package, the updated version of rake from sid is directly
+        installable on sarge systems.</para>
+
+      <para>To simplify the upgrade of this package, a copy of the
+        sid rake package is available from the &tsniz;
+        APT repository.</para>
+    </section>
+
+    <section id="rubygems"><title>rubygems</title>
+      <para>RubyGems is not yet available in sid, and is not
+        likely to be in the near future, as far as I can tell.
+        In fact, since all of the necessary Ruby software and
+        libraries are already available natively on Debian systems
+        via APT, RubyGems is entirely superfluous here.
+        Unfortunately, some pieces of software (notably Typo HEAD,
+        our baseline Rails application) depend on it specifically.</para>
+
+      <para>Fortunately, Akira Yamada (a Debian developer) has created an
+        <ulink url="http://people.debian.org/~akira/rubygems">unofficial
+        package</ulink> of RubyGems, so we can use this package to
+        satisfy this dependency non-destructively. Since Mr. Yamada
+        has not provided an APT repository, I have provided a copy of his
+        package on the &tsniz; APT repository.</para>
+    </section>
+  </section>
+</appendix>
+
+</book>
