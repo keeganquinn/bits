@@ -1,3 +1,10 @@
+zone "f.3.0.0.5.0.f.1.0.7.4.0.1.0.0.2.ip6.arpa" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/ip6-nil";
+};
+
 zone "keegan.ws" {
   type slave;
   allow-query { any; };
