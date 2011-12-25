@@ -1,7 +1,7 @@
 <VirtualHost *:80>
     ServerName cloudscontrol.us
     ServerAlias www.cloudscontrol.us
+    ServerAdmin webmaster@cloudscontrol.us
 
-    ServerAdmin keeganquinn@gmail.com
     RedirectMatch 301 ^/(.*)$ https://cloudscontrol.us/$1
 </VirtualHost>

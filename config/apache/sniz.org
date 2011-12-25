@@ -1,10 +1,10 @@
 <VirtualHost *:80>
-	ServerName sniz.org
-	ServerAlias www.sniz.org
-	ServerAdmin keeganquinn@gmail.com
+    ServerName sniz.org
+    ServerAlias www.sniz.org
+    ServerAdmin webmaster@keegan.ws
 
-	CustomLog /var/log/apache2/sniz.org-access.log combined
-	ErrorLog /var/log/apache2/sniz.org-error.log
+    CustomLog /var/log/apache2/sniz.org-access.log combined
+    ErrorLog /var/log/apache2/sniz.org-error.log
 
-	RedirectMatch /(.*) http://keegan.ws/$1
+    RedirectMatch /(.*) http://keegan.ws/$1
 </VirtualHost>

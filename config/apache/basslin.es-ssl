@@ -1,7 +1,7 @@
 <VirtualHost 70.102.34.164:443 [2001:470:1f05:3f::164]:443>
     ServerName basslin.es
     ServerAlias www.basslin.es
-    ServerAdmin keeganquinn@gmail.com
+    ServerAdmin webmaster@basslin.es
 
     SSLEngine on
     SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP

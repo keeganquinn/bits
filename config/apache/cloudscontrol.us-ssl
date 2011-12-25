@@ -1,7 +1,7 @@
 <VirtualHost 70.102.34.165:443 [2001:470:1f05:3f::165]:443>
     ServerName cloudscontrol.us
     ServerAlias www.cloudscontrol.us
-    ServerAdmin keeganquinn@gmail.com
+    ServerAdmin webmaster@cloudscontrol.us
 
     SSLEngine on
     SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP
