@@ -301,3 +301,99 @@ zone "micrtonerwashington.com" {
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
+
+zone "matthewklug.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "adjustech.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "turnontv.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "clicktopick.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "tunetvonline.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "freetunetv.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "theiptv.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "diptv.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "oregoniptv.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "portlandiptv.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "salemiptv.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "kernelklug.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};

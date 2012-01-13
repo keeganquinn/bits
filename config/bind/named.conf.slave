@@ -263,3 +263,87 @@ zone "micrtonerwashington.com" {
   masters { 70.102.34.167; };
   file "sec/micrtonerwashington.com";
 };
+
+zone "matthewklug.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/matthewklug.com";
+};
+
+zone "adjustech.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/adjustech.com";
+};
+
+zone "turnontv.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/turnontv.net";
+};
+
+zone "clicktopick.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/clicktopick.net";
+};
+
+zone "tunetvonline.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/tunetvonline.com";
+};
+
+zone "freetunetv.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/freetunetv.com";
+};
+
+zone "theiptv.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/theiptv.net";
+};
+
+zone "diptv.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/diptv.net";
+};
+
+zone "oregoniptv.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/oregoniptv.com";
+};
+
+zone "portlandiptv.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/portlandiptv.com";
+};
+
+zone "salemiptv.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/salemiptv.com";
+};
+
+zone "kernelklug.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "sec/kernelklug.com";
+};
