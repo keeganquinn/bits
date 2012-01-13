@@ -2,348 +2,348 @@ zone "f.3.0.0.5.0.f.1.0.7.4.0.1.0.0.2.ip6.arpa" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/ip6-nil";
+  file "ip6-nil";
 };
 
 zone "keegan.ws" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/keegan.ws";
+  file "keegan.ws";
 };
 
 zone "ircreator.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/ircreator.com";
+  file "ircreator.com";
 };
 
 zone "sniz.org" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/sniz.org";
+  file "sniz.org";
 };
 
 zone "sniz.net" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/sniz.net";
+  file "sniz.net";
 };
 
 zone "cloudscontrol.us" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/cloudscontrol.us";
+  file "cloudscontrol.us";
 };
 
 zone "basslin.es" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/basslin.es";
+  file "basslin.es";
 };
 
 zone "renewabletoner.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/renewabletoner.com";
+  file "renewabletoner.com";
 };
 
 zone "micrtonerarizona.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerarizona.com";
+  file "micrtonerarizona.com";
 };
 
 zone "micrtonerca.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerca.com";
+  file "micrtonerca.com";
 };
 
 zone "micrtonercalifornia.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonercalifornia.com";
+  file "micrtonercalifornia.com";
 };
 
 zone "micrtonercarolina.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonercarolina.com";
+  file "micrtonercarolina.com";
 };
 
 zone "micrtonerchicago.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerchicago.com";
+  file "micrtonerchicago.com";
 };
 
 zone "micrtonercolorado.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonercolorado.com";
+  file "micrtonercolorado.com";
 };
 
 zone "micrtonercolumbus.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonercolumbus.com";
+  file "micrtonercolumbus.com";
 };
 
 zone "micrtonerdakota.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerdakota.com";
+  file "micrtonerdakota.com";
 };
 
 zone "micrtonerdallas.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerdallas.com";
+  file "micrtonerdallas.com";
 };
 
 zone "micrtonerdc.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerdc.com";
+  file "micrtonerdc.com";
 };
 
 zone "micrtonerdenver.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerdenver.com";
+  file "micrtonerdenver.com";
 };
 
 zone "micrtonerflorida.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerflorida.com";
+  file "micrtonerflorida.com";
 };
 
 zone "micrtonerla.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerla.com";
+  file "micrtonerla.com";
 };
 
 zone "micrtonerlasvegas.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerlasvegas.com";
+  file "micrtonerlasvegas.com";
 };
 
 zone "micrtonermiami.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonermiami.com";
+  file "micrtonermiami.com";
 };
 
 zone "micrtonermichigan.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonermichigan.com";
+  file "micrtonermichigan.com";
 };
 
 zone "micrtonermontana.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonermontana.com";
+  file "micrtonermontana.com";
 };
 
 zone "micrtonernevada.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonernevada.com";
+  file "micrtonernevada.com";
 };
 
 zone "micrtonernewjersey.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonernewjersey.com";
+  file "micrtonernewjersey.com";
 };
 
 zone "micrtonernewyork.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonernewyork.com";
+  file "micrtonernewyork.com";
 };
 
 zone "micrtonerny.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerny.com";
+  file "micrtonerny.com";
 };
 
 zone "micrtoneroregon.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtoneroregon.com";
+  file "micrtoneroregon.com";
 };
 
 zone "micrtonerphoenix.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerphoenix.com";
+  file "micrtonerphoenix.com";
 };
 
 zone "micrtonersanfrancisco.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonersanfrancisco.com";
+  file "micrtonersanfrancisco.com";
 };
 
 zone "micrtonerseattle.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerseattle.com";
+  file "micrtonerseattle.com";
 };
 
 zone "micrtonertexas.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonertexas.com";
+  file "micrtonertexas.com";
 };
 
 zone "micrtonerus.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerus.com";
+  file "micrtonerus.com";
 };
 
 zone "micrtonerutah.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerutah.com";
+  file "micrtonerutah.com";
 };
 
 zone "micrtonervirginia.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonervirginia.com";
+  file "micrtonervirginia.com";
 };
 
 zone "micrtonerwashington.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/micrtonerwashington.com";
+  file "micrtonerwashington.com";
 };
 
 zone "matthewklug.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/matthewklug.com";
+  file "matthewklug.com";
 };
 
 zone "adjustech.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/adjustech.com";
+  file "adjustech.com";
 };
 
 zone "turnontv.net" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/turnontv.net";
+  file "turnontv.net";
 };
 
 zone "clicktopick.net" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/clicktopick.net";
+  file "clicktopick.net";
 };
 
 zone "tunetvonline.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/tunetvonline.com";
+  file "tunetvonline.com";
 };
 
 zone "freetunetv.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/freetunetv.com";
+  file "freetunetv.com";
 };
 
 zone "theiptv.net" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/theiptv.net";
+  file "theiptv.net";
 };
 
 zone "diptv.net" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/diptv.net";
+  file "diptv.net";
 };
 
 zone "oregoniptv.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/oregoniptv.com";
+  file "oregoniptv.com";
 };
 
 zone "portlandiptv.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/portlandiptv.com";
+  file "portlandiptv.com";
 };
 
 zone "salemiptv.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/salemiptv.com";
+  file "salemiptv.com";
 };
 
 zone "kernelklug.com" {
   type slave;
   allow-query { any; };
   masters { 70.102.34.167; };
-  file "sec/kernelklug.com";
+  file "kernelklug.com";
 };
