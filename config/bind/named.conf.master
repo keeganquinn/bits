@@ -14,6 +14,14 @@ zone "keegan.ws" {
   file "/home/keegan/public_html/bits/config/bind/keegan.ws";
 };
 
+zone "quinn.tk" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
 zone "ircreator.com" {
   type master;
   allow-query { any; };

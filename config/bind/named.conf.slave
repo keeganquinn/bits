@@ -12,6 +12,13 @@ zone "keegan.ws" {
   file "keegan.ws";
 };
 
+zone "quinn.tk" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "quinn.tk";
+};
+
 zone "ircreator.com" {
   type slave;
   allow-query { any; };
