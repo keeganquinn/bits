@@ -30,6 +30,6 @@ relay_domains =
 virtual_alias_domains =
   basslin.es,
   cloudscontrol.us,
-  keegan.ws
+  keegan.ws,
+  quinn.tk
 virtual_alias_maps = hash:/etc/postfix/virtual
-
