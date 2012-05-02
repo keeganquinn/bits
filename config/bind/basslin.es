@@ -12,7 +12,7 @@ $TTL 2d
 	MX	10	nil.basslin.es.
 
 	A	70.102.34.167
-	AAAA	2001:470:1f05:3f::167
+	AAAA	2001:470:1f05:3f::1
 
 www	CNAME	@
 
