@@ -151,3 +151,10 @@ zone "grandmalseizure.net" {
   masters { 70.102.34.167; };
   file "grandmalseizure.net";
 };
+
+zone "themgmglass.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "themgmglass.com";
+};
