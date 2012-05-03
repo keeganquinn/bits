@@ -157,3 +157,19 @@ zone "kernelklug.com" {
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
+
+zone "celebritygreen.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "grandmalseizure.net" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
