@@ -137,3 +137,24 @@ zone "kernelklug.com" {
   masters { 70.102.34.167; };
   file "kernelklug.com";
 };
+
+zone "celebritygreen.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "celebritygreen.net";
+};
+
+zone "grandmalseizure.net" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "grandmalseizure.net";
+};
+
+zone "themgmglass.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "themgmglass.com";
+};
