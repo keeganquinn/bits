@@ -4,7 +4,7 @@ $TTL 2d
 
 @ IN	SOA	nil.keegan.ws.	keeganquinn.gmail.com. (
 		; serial	refresh	retry	expiry	minimum
-		2012050800	30M	15M	4W	1h	)
+		2012050801	30M	15M	4W	1h	)
 
 	NS	nil.keegan.ws.
 	NS	athena.keegan.ws.
@@ -30,3 +30,4 @@ zero		AAAA	2001:470:e962:1601:e2f8:47ff:fe09:7f2e
 
 mesh0		AAAA	2001:470:e962:1601:212:cfff:fe83:7202
 mesh1		AAAA	2001:470:e962:1601:212:cfff:fe89:9463
+mesh2		AAAA	2001:470:e962:1601:212:cfff:fe83:7b30
