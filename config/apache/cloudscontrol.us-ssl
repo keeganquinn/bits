@@ -1,4 +1,4 @@
-<VirtualHost 70.102.34.166:443 [2001:470:1f05:3f::166]:443>
+<VirtualHost 70.102.34.166:443 [2001:470:1f05:3f:166::1]:443>
     ServerName cloudscontrol.us
     ServerAlias www.cloudscontrol.us
     ServerAdmin webmaster@cloudscontrol.us
