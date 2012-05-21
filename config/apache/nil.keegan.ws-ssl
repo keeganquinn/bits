@@ -22,10 +22,7 @@
     ErrorDocument 404 /404.html
 
     # Redmine instance at /redmine
-    <Directory /srv/www/nil.keegan.ws/redmine>
-        PassengerEnabled on
-        PassengerAppRoot /srv/rails/redmine
-    </Directory>
+    RackBaseURI /redmine
 
     # UTF-8 encoding
     AddDefaultCharset utf-8
