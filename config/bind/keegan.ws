@@ -4,7 +4,7 @@ $TTL 2d
 
 @ IN	SOA	nil.keegan.ws.	keeganquinn.gmail.com. (
 		; serial	refresh	retry	expiry	minimum
-		2012050801	30M	15M	4W	1h	)
+		2012052100	30M	15M	4W	1h	)
 
 	NS	nil.keegan.ws.
 	NS	athena.keegan.ws.
@@ -12,7 +12,7 @@ $TTL 2d
 	MX	10	nil.keegan.ws.
 
 	A	70.102.34.167
-	AAAA	2001:470:1f05:3f::1
+	AAAA	2001:470:1f05:3f:167::1
 
 www	CNAME	ghs.google.com.
 
@@ -20,7 +20,7 @@ athena	A	207.189.107.20
 	AAAA	2001:470:1f05:41::1
 
 nil	A	70.102.34.167
-	AAAA	2001:470:1f05:3f::1
+	AAAA	2001:470:1f05:3f:167::1
 
 electron	AAAA	2001:470:e962:1601:4261:86ff:fe3a:15c4
 minus		AAAA	2001:470:e962:1601::1

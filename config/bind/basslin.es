@@ -2,22 +2,16 @@
 
 $TTL 2d
 
-@ IN	SOA	nil.basslin.es.	keeganquinn.gmail.com. (
+@ IN	SOA	nil.keegan.ws.	keeganquinn.gmail.com. (
 		; serial	refresh	retry	expiry	minimum
-		2012050100	30M	15M	4W	1h	)
+		2012052100	30M	15M	4W	1h	)
 
-	NS	nil.basslin.es.
-	NS	athena.basslin.es.
+	NS	nil.keegan.ws.
+	NS	athena.keegan.ws.
 
-	MX	10	nil.basslin.es.
+	MX	10	nil.keegan.ws.
 
-	A	70.102.34.167
-	AAAA	2001:470:1f05:3f::1
+	A	70.102.34.165
+	AAAA	2001:470:1f05:3f:165::1
 
 www	CNAME	@
-
-athena	A	207.189.107.20
-	AAAA	2001:470:1f05:41::1
-
-nil	A	70.102.34.167
-	AAAA	2001:470:1f05:3f::1
