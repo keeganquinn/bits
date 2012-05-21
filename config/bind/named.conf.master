@@ -46,12 +46,12 @@ zone "sniz.net" {
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
-zone "cloudscontrol.us" {
+zone "animamagica.tk" {
   type master;
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/cloudscontrol.us";
+  file "/home/keegan/public_html/bits/config/bind/animamagica.tk";
 };
 
 zone "basslin.es" {
@@ -61,6 +61,15 @@ zone "basslin.es" {
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/basslin.es";
 };
+
+zone "cloudscontrol.us" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/cloudscontrol.us";
+};
+
 
 zone "matthewklug.com" {
   type master;
