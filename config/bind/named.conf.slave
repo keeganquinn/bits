@@ -166,3 +166,17 @@ zone "themgmglass.com" {
   masters { 70.102.34.167; };
   file "themgmglass.com";
 };
+
+zone "alphabetashop.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "alphabetashop.com";
+};
+
+zone "mailballotvote.com" {
+  type slave;
+  allow-query { any; };
+  masters { 70.102.34.167; };
+  file "mailballotvote.com";
+};
