@@ -47,13 +47,6 @@ zone "basslin.es" {
   file "basslin.es";
 };
 
-zone "cloudscontrol.us" {
-  type slave;
-  allow-query { any; };
-  masters { 70.102.34.167; };
-  file "cloudscontrol.us";
-};
-
 
 zone "matthewklug.com" {
   type slave;

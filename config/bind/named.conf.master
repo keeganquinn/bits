@@ -54,14 +54,6 @@ zone "basslin.es" {
   file "/home/keegan/public_html/bits/config/bind/basslin.es";
 };
 
-zone "cloudscontrol.us" {
-  type master;
-  allow-query { any; };
-  allow-transfer { 207.189.107.20; };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/cloudscontrol.us";
-};
-
 
 zone "matthewklug.com" {
   type master;
