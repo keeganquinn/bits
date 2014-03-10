@@ -1,42 +1,42 @@
 zone "keegan.ws" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "keegan.ws";
 };
 
 zone "quinn.tk" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "quinn.tk";
 };
 
 zone "sniz.org" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "sniz.org";
 };
 
 zone "sniz.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "sniz.net";
 };
 
 zone "animamagica.tk" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "animamagica.tk";
 };
 
 zone "basslin.es" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "basslin.es";
 };
 
@@ -44,118 +44,118 @@ zone "basslin.es" {
 zone "matthewklug.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "matthewklug.com";
 };
 
 zone "adjustech.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "adjustech.com";
 };
 
 zone "turnontv.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "turnontv.net";
 };
 
 zone "clicktopick.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "clicktopick.net";
 };
 
 zone "tunetvonline.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "tunetvonline.com";
 };
 
 zone "freetunetv.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "freetunetv.com";
 };
 
 zone "theiptv.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "theiptv.net";
 };
 
 zone "diptv.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "diptv.net";
 };
 
 zone "oregoniptv.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "oregoniptv.com";
 };
 
 zone "portlandiptv.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "portlandiptv.com";
 };
 
 zone "salemiptv.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "salemiptv.com";
 };
 
 zone "kernelklug.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "kernelklug.com";
 };
 
 zone "celebritygreen.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "celebritygreen.net";
 };
 
 zone "grandmalseizure.net" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "grandmalseizure.net";
 };
 
 zone "themgmglass.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "themgmglass.com";
 };
 
 zone "alphabetashop.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "alphabetashop.com";
 };
 
 zone "mailballotvote.com" {
   type slave;
   allow-query { any; };
-  masters { 70.102.34.167; };
+  masters { 54.186.81.53; };
   file "mailballotvote.com";
 };
