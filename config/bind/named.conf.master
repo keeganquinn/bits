@@ -35,7 +35,7 @@ zone "animamagica.tk" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/animamagica.tk";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 zone "basslin.es" {
@@ -43,7 +43,7 @@ zone "basslin.es" {
   allow-query { any; };
   allow-transfer { 207.189.107.20; };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/basslin.es";
+  file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
 
