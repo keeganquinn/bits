@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     nil.keegan.ws.  keeganquinn.gmail.com. (
+@ IN    SOA     none.keegan.ws.  keeganquinn.gmail.com. (
         ; serial
-        2014030900
+        2014030901
         ; refresh
         30M
         ; retry
@@ -17,7 +17,7 @@ $TTL 2d
         1h
         )
 
-        NS      nil.keegan.ws.
+        NS      none.keegan.ws.
         NS      athena.keegan.ws.
 
         MX      10      nil.keegan.ws.
