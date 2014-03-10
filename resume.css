@@ -25,6 +25,22 @@
     display: none;
   }
 
+  #companies {
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #companies section {
+    float: left;
+    width: 50%;
+  }
+
+  #companies ul {
+    margin-top: 0px;
+  }
+
   #skills {
     clear: left;
     float: left;
