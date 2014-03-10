@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+    ServerName cloudscontrol.us
+    ServerAlias www.cloudscontrol.us
+    ServerAdmin webmaster@keegan.ws
+
+    CustomLog /var/log/apache2/cloudscontrol.us-access.log combined
+    ErrorLog /var/log/apache2/cloudscontrol.us-error.log
+
+    RedirectMatch /(.*) http://keegan.ws/$1
+</VirtualHost>

@@ -15,20 +15,21 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 inet_interfaces = all
 inet_protocols = all
 myhostname = none.keegan.ws
-mynetworks = 
+mynetworks =
   54.186.81.53,
-  127.0.0.0/8, 
+  127.0.0.0/8,
   [::1]/128
-mydestination = 
+mydestination =
   none.keegan.ws,
-  sniz.org,
-  sniz.net,
   localhost
 relay_domains =
 
 # Virtual aliasing
 virtual_alias_domains =
   basslin.es,
+  cloudscontrol.us,
   keegan.ws,
-  quinn.tk
+  quinn.tk,
+  sniz.net,
+  sniz.org
 virtual_alias_maps = hash:/etc/postfix/virtual
