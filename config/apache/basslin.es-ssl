@@ -1,4 +1,4 @@
-<VirtualHost 70.102.34.165:443 [2001:470:1f05:3f:165::1]:443>
+<VirtualHost 70.102.34.165:443>
     ServerName basslin.es
     ServerAlias www.basslin.es
     ServerAdmin webmaster@basslin.es
