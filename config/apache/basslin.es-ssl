@@ -6,7 +6,7 @@
     SSLEngine on
     SSLCertificateFile /etc/ssl/certs/basslin.es.crt
     SSLCertificateKeyFile /etc/ssl/private/basslin.es.key
-    SSLCertificateChainFile /etc/ssl/certs/startssl-class1-cachain.pem
+    SSLCertificateChainFile /etc/ssl/certs/positivessl-cachain.pem
     SSLOptions +FakeBasicAuth +StrictRequire
 
     # Use custom SSL settings recommended by Mozilla/Qualys.
