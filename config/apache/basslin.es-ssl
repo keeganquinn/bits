@@ -4,11 +4,16 @@
     ServerAdmin webmaster@basslin.es
 
     SSLEngine on
-    SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP
     SSLCertificateFile /etc/ssl/certs/basslin.es.crt
     SSLCertificateKeyFile /etc/ssl/private/basslin.es.key
     SSLCertificateChainFile /etc/ssl/certs/startssl-class1-cachain.pem
     SSLOptions +FakeBasicAuth +StrictRequire
+
+    # Use custom SSL settings recommended by Mozilla/Qualys.
+    SSLCipherSuite ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
+    SSLHonorCipherOrder on
+    SSLCompression off
+    Header add Strict-Transport-Security "max-age=15768000"
 
     CustomLog /var/log/apache2/basslin.es-access.log combined
     ErrorLog /var/log/apache2/basslin.es-error.log
@@ -45,7 +50,7 @@
     AddType video/mp4                      mp4 m4v
     AddType video/webm                     webm
 
-    AddType image/svg+xml                  svg svgz 
+    AddType image/svg+xml                  svg svgz
     AddEncoding gzip                       svgz
 
     AddType application/vnd.ms-fontobject  eot
