@@ -1,0 +1,13 @@
+#!/bin/sh
+
+zero="192.168.1.249"
+ports="500 1701 1723 4500"
+
+for port in ${ports}; do
+    iptables -t nat -A PREROUTING -p tcp -i eth1 \
+        --dport ${port} -j DNAT --to ${zero}:${port}
+    iptables -t nat -A PREROUTING -p udp -i eth1 \
+        --dport ${port} -j DNAT --to ${zero}:${port}
+done
+
+exit 0
