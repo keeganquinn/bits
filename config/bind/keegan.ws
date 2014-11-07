@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     none.keegan.ws.  keeganquinn.gmail.com. (
         ; serial
-        2014103000
+        2014110700
         ; refresh
         30M
         ; retry
@@ -34,4 +34,4 @@ ore             AAAA    2601:7:2200:11a0::52c
 wave            A       24.20.142.245
 wave            AAAA    2601:7:2200:11a0::1
 zero            A       24.20.142.245
-zero            AAAA    2601:7:2200:11a0::224
+zero            AAAA    2601:7:2200:11a0::670

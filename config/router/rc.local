@@ -1,6 +1,6 @@
 #!/bin/sh
 
-zero="192.168.1.249"
+zero="192.168.1.2"
 ports="500 1701 1723 4500"
 
 for port in ${ports}; do
