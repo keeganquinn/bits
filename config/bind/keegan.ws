@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     none.keegan.ws.  keeganquinn.gmail.com. (
         ; serial
-        2014110701
+        2014122100
         ; refresh
         30M
         ; retry
@@ -28,6 +28,6 @@ www     CNAME   ghs.google.com.
 
 athena          A       207.189.107.20
 none            A       54.186.81.53
-ore             A       24.20.142.245
-wave            A       24.20.142.245
-zero            A       24.20.142.245
+ore             A       50.139.27.86
+wave            A       50.139.27.86
+zero            A       50.139.27.86
