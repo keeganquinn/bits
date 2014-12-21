@@ -29,5 +29,6 @@ www     CNAME   ghs.google.com.
 athena          A       207.189.107.20
 none            A       54.186.81.53
 ore             A       50.139.27.86
+pi              A       89.18.165.159
 wave            A       50.139.27.86
 zero            A       50.139.27.86
