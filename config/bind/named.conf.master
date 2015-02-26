@@ -190,3 +190,11 @@ zone "mailballotvote.com" {
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
+
+zone "klug.pw" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};

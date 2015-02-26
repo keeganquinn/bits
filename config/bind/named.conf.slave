@@ -166,3 +166,10 @@ zone "mailballotvote.com" {
   masters { 54.186.81.53; };
   file "mailballotvote.com";
 };
+
+zone "klug.pw" {
+  type slave;
+  allow-query { any; };
+  masters { 54.186.81.53; };
+  file "klug.pw";
+};
