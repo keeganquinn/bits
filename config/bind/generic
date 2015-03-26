@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     none.keegan.ws.  keeganquinn.gmail.com. (
+@ IN    SOA     pi.keegan.ws.  keeganquinn.gmail.com. (
         ; serial
-        2014031000
+        2015032600
         ; refresh
         30M
         ; retry
@@ -17,11 +17,11 @@ $TTL 2d
         1h
         )
 
-        NS      none.keegan.ws.
+        NS      pi.keegan.ws.
         NS      athena.keegan.ws.
 
-        MX      10      none.keegan.ws.
+        MX      10      pi.keegan.ws.
 
-        A       54.186.81.53
+        A       89.18.165.159
 
 www     CNAME   @
