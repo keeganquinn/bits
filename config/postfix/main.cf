@@ -14,13 +14,13 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 # Local configuration
 inet_interfaces = all
 inet_protocols = all
-myhostname = none.keegan.ws
+myhostname = pi.keegan.ws
 mynetworks =
-  54.186.81.53,
+  89.18.165.159,
   127.0.0.0/8,
   [::1]/128
 mydestination =
-  none.keegan.ws,
+  pi.keegan.ws,
   localhost
 relay_domains =
 
