@@ -1,7 +1,7 @@
 zone "keegan.ws" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/keegan.ws";
 };
@@ -9,7 +9,7 @@ zone "keegan.ws" {
 zone "quinn.tk" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -17,7 +17,7 @@ zone "quinn.tk" {
 zone "sniz.org" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -25,7 +25,7 @@ zone "sniz.org" {
 zone "sniz.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -33,7 +33,7 @@ zone "sniz.net" {
 zone "animamagica.tk" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -41,7 +41,7 @@ zone "animamagica.tk" {
 zone "basslin.es" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -49,7 +49,7 @@ zone "basslin.es" {
 zone "cloudscontrol.us" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -58,7 +58,7 @@ zone "cloudscontrol.us" {
 zone "matthewklug.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -66,7 +66,7 @@ zone "matthewklug.com" {
 zone "adjustech.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -74,7 +74,7 @@ zone "adjustech.com" {
 zone "turnontv.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -82,7 +82,7 @@ zone "turnontv.net" {
 zone "clicktopick.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -90,7 +90,7 @@ zone "clicktopick.net" {
 zone "tunetvonline.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -98,7 +98,7 @@ zone "tunetvonline.com" {
 zone "freetunetv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -106,7 +106,7 @@ zone "freetunetv.com" {
 zone "theiptv.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -114,7 +114,7 @@ zone "theiptv.net" {
 zone "diptv.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -122,7 +122,7 @@ zone "diptv.net" {
 zone "oregoniptv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -130,7 +130,7 @@ zone "oregoniptv.com" {
 zone "portlandiptv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -138,7 +138,7 @@ zone "portlandiptv.com" {
 zone "salemiptv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -146,7 +146,7 @@ zone "salemiptv.com" {
 zone "kernelklug.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -154,7 +154,7 @@ zone "kernelklug.com" {
 zone "celebritygreen.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -162,7 +162,7 @@ zone "celebritygreen.net" {
 zone "grandmalseizure.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -170,7 +170,7 @@ zone "grandmalseizure.net" {
 zone "themgmglass.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -178,7 +178,7 @@ zone "themgmglass.com" {
 zone "alphabetashop.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -186,7 +186,7 @@ zone "alphabetashop.com" {
 zone "mailballotvote.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -194,7 +194,7 @@ zone "mailballotvote.com" {
 zone "klug.pw" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 70.102.34.167; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
