@@ -27,6 +27,11 @@
 
     ErrorDocument 404 /404.html
 
+    # Expose the local Icecast server.
+    ProxyPass /cast/ http://127.0.0.1:8000/
+    ProxyPassReverse /cast/ http://127.0.0.1:8000/
+    ProxyPreserveHost on
+
     # UTF-8 encoding
     AddDefaultCharset utf-8
     AddCharset utf-8 .html .css .js .xml .json .rss .atom
