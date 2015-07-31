@@ -33,3 +33,7 @@ virtual_alias_domains =
   sniz.net,
   sniz.org
 virtual_alias_maps = hash:/etc/postfix/virtual
+
+# ClamAV virus filter.
+content_filter = scan:127.0.0.1:10025
+receive_override_options = no_address_mappings
