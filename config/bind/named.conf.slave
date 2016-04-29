@@ -5,11 +5,60 @@ zone "keegan.ws" {
   file "keegan.ws";
 };
 
+zone "keegan.ga" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "keegan.ga";
+};
+
+zone "keegan.gq" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "keegan.gq";
+};
+
+zone "quinn.ml" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "quinn.ml";
+};
+
 zone "quinn.tk" {
   type slave;
   allow-query { any; };
   masters { 89.18.165.159; };
   file "quinn.tk";
+};
+
+zone "str1ng.ml" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "str1ng.ml";
+};
+
+zone "str1ng.ga" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "str1ng.ga";
+};
+
+zone "str1ng.cf" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "str1ng.cf";
+};
+
+zone "str1ng.gq" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "str1ng.gq";
 };
 
 zone "sniz.org" {

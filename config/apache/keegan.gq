@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+    ServerName keegan.gq
+    ServerAlias www.keegan.gq
+    ServerAdmin webmaster@keegan.gq
+
+    CustomLog /var/log/apache2/keegan.gq-access.log combined
+    ErrorLog /var/log/apache2/keegan.gq-error.log
+
+    RedirectMatch /(.*) http://keegan.ws/$1
+</VirtualHost>

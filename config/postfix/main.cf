@@ -29,7 +29,14 @@ virtual_alias_domains =
   basslin.es,
   cloudscontrol.us,
   keegan.ws,
+  keegan.ga,
+  keegan.gq,
+  quinn.ml,
   quinn.tk,
+  str1ng.ml,
+  str1ng.ga,
+  str1ng.cf,
+  str1ng.gq,
   sniz.net,
   sniz.org
 virtual_alias_maps = hash:/etc/postfix/virtual
