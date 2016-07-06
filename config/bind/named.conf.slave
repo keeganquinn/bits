@@ -110,6 +110,76 @@ zone "unplug.gq" {
   file "unplug.gq";
 };
 
+zone "ni-guild.tk" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ni-guild.tk";
+};
+
+zone "ni-guild.ml" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ni-guild.ml";
+};
+
+zone "ni-guild.ga" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ni-guild.ga";
+};
+
+zone "ni-guild.cf" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ni-guild.cf";
+};
+
+zone "ni-guild.gq" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ni-guild.gq";
+};
+
+zone "ugraal.tk" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ugraal.tk";
+};
+
+zone "ugraal.ml" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ugraal.ml";
+};
+
+zone "ugraal.ga" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ugraal.ga";
+};
+
+zone "ugraal.cf" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ugraal.cf";
+};
+
+zone "ugraal.gq" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "ugraal.gq";
+};
+
 
 zone "matthewklug.com" {
   type slave;

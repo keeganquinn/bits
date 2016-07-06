@@ -126,6 +126,86 @@ zone "unplug.gq" {
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
+zone "ni-guild.tk" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ni-guild.ml" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ni-guild.ga" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ni-guild.cf" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ni-guild.gq" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ugraal.tk" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ugraal.ml" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ugraal.ga" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ugraal.cf" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "ugraal.gq" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
 
 zone "matthewklug.com" {
   type master;

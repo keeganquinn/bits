@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+    ServerName ugraal.ga
+    ServerAlias www.ugraal.ga
+    ServerAdmin webmaster@ugraal.ga
+
+    RedirectMatch 301 ^/(.*)$ http://ni-guild.tk/$1
+</VirtualHost>

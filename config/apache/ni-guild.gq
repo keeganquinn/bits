@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+    ServerName ni-guild.gq
+    ServerAlias www.ni-guild.gq
+    ServerAdmin webmaster@ni-guild.gq
+
+    RedirectMatch 301 ^/(.*)$ http://ni-guild.tk/$1
+</VirtualHost>
