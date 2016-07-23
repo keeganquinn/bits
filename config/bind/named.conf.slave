@@ -180,6 +180,34 @@ zone "ugraal.gq" {
   file "ugraal.gq";
 };
 
+zone "abusive.ml" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "abusive.ml";
+};
+
+zone "abusive.ga" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "abusive.ga";
+};
+
+zone "abusive.cf" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "abusive.cf";
+};
+
+zone "abusive.gq" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "abusive.gq";
+};
+
 
 zone "matthewklug.com" {
   type slave;

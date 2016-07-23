@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+    ServerName abusive.ga
+    ServerAlias www.abusive.ga
+    ServerAdmin webmaster@abusive.ga
+
+    RedirectMatch 301 ^/(.*)$ http://abusive.gq/$1
+</VirtualHost>
