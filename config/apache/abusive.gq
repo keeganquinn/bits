@@ -3,6 +3,8 @@
     ServerAlias www.abusive.gq
     ServerAdmin webmaster@abusive.gq
 
+    RedirectMatch 301 ^/(.*)$ http://abusive.enjin.com/$1
+
     CustomLog /var/log/apache2/abusive.gq-access.log combined
     ErrorLog /var/log/apache2/abusive.gq-error.log
 
