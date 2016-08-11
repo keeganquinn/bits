@@ -382,3 +382,27 @@ zone "klug.pw" {
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
+
+zone "fernhillmeadow.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "fernhillmarket.com" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};
+
+zone "fernhillschool.org" {
+  type master;
+  allow-query { any; };
+  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  notify yes;
+  file "/home/keegan/public_html/bits/config/bind/generic";
+};

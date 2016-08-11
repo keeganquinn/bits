@@ -334,3 +334,24 @@ zone "klug.pw" {
   masters { 89.18.165.159; };
   file "klug.pw";
 };
+
+zone "fernhillmeadow.com" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "fernhillmeadow.com";
+};
+
+zone "fernhillmarket.com" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "fernhillmarket.com";
+};
+
+zone "fernhillschool.org" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "fernhillschool.org";
+};
