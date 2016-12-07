@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi.keegan.ws.  keeganquinn.gmail.com. (
         ; serial
-        2015032600
+        2016120700
         ; refresh
         30M
         ; retry
@@ -18,10 +18,14 @@ $TTL 2d
         )
 
         NS      pi.keegan.ws.
-        NS      athena.keegan.ws.
+        NS      d.ns.buddyns.com.
+        NS      g.ns.buddyns.com.
+        NS      i.ns.buddyns.com.
+        NS      e.ns.buddyns.com.
 
         MX      10      pi.keegan.ws.
 
         A       89.18.165.159
+        AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
 
 www     CNAME   @

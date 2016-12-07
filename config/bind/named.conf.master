@@ -1,7 +1,13 @@
 zone "keegan.ws" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/keegan.ws";
 };
@@ -9,7 +15,13 @@ zone "keegan.ws" {
 zone "keegan.ga" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -17,7 +29,13 @@ zone "keegan.ga" {
 zone "keegan.gq" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -25,7 +43,13 @@ zone "keegan.gq" {
 zone "quinn.ml" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -33,7 +57,13 @@ zone "quinn.ml" {
 zone "quinn.tk" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -41,7 +71,13 @@ zone "quinn.tk" {
 zone "str1ng.ml" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -49,7 +85,13 @@ zone "str1ng.ml" {
 zone "str1ng.ga" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -57,7 +99,13 @@ zone "str1ng.ga" {
 zone "str1ng.cf" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -65,7 +113,13 @@ zone "str1ng.cf" {
 zone "str1ng.gq" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -73,7 +127,13 @@ zone "str1ng.gq" {
 zone "sniz.org" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -81,7 +141,13 @@ zone "sniz.org" {
 zone "sniz.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -89,7 +155,13 @@ zone "sniz.net" {
 zone "animamagica.tk" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -97,7 +169,13 @@ zone "animamagica.tk" {
 zone "basslin.es" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -105,7 +183,13 @@ zone "basslin.es" {
 zone "cloudscontrol.us" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -113,7 +197,13 @@ zone "cloudscontrol.us" {
 zone "unplug.ml" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -121,7 +211,13 @@ zone "unplug.ml" {
 zone "unplug.gq" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -129,7 +225,13 @@ zone "unplug.gq" {
 zone "ni-guild.tk" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -137,7 +239,13 @@ zone "ni-guild.tk" {
 zone "ni-guild.ml" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -145,7 +253,13 @@ zone "ni-guild.ml" {
 zone "ni-guild.ga" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -153,7 +267,13 @@ zone "ni-guild.ga" {
 zone "ni-guild.cf" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -161,7 +281,13 @@ zone "ni-guild.cf" {
 zone "ni-guild.gq" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -169,7 +295,13 @@ zone "ni-guild.gq" {
 zone "ugraal.tk" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -177,7 +309,13 @@ zone "ugraal.tk" {
 zone "ugraal.ml" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -185,7 +323,13 @@ zone "ugraal.ml" {
 zone "ugraal.ga" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -193,7 +337,13 @@ zone "ugraal.ga" {
 zone "ugraal.cf" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -201,7 +351,13 @@ zone "ugraal.cf" {
 zone "ugraal.gq" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -209,7 +365,13 @@ zone "ugraal.gq" {
 zone "abusive.ml" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -217,7 +379,13 @@ zone "abusive.ml" {
 zone "abusive.ga" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -225,7 +393,13 @@ zone "abusive.ga" {
 zone "abusive.cf" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -233,7 +407,13 @@ zone "abusive.cf" {
 zone "abusive.gq" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -242,7 +422,13 @@ zone "abusive.gq" {
 zone "matthewklug.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -250,7 +436,13 @@ zone "matthewklug.com" {
 zone "adjustech.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -258,7 +450,13 @@ zone "adjustech.com" {
 zone "turnontv.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -266,7 +464,13 @@ zone "turnontv.net" {
 zone "clicktopick.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -274,7 +478,13 @@ zone "clicktopick.net" {
 zone "tunetvonline.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -282,7 +492,13 @@ zone "tunetvonline.com" {
 zone "freetunetv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -290,7 +506,13 @@ zone "freetunetv.com" {
 zone "theiptv.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -298,7 +520,13 @@ zone "theiptv.net" {
 zone "diptv.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -306,7 +534,13 @@ zone "diptv.net" {
 zone "oregoniptv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -314,7 +548,13 @@ zone "oregoniptv.com" {
 zone "portlandiptv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -322,7 +562,13 @@ zone "portlandiptv.com" {
 zone "salemiptv.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -330,7 +576,13 @@ zone "salemiptv.com" {
 zone "kernelklug.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -338,7 +590,13 @@ zone "kernelklug.com" {
 zone "celebritygreen.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -346,7 +604,13 @@ zone "celebritygreen.net" {
 zone "grandmalseizure.net" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -354,7 +618,13 @@ zone "grandmalseizure.net" {
 zone "themgmglass.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -362,7 +632,13 @@ zone "themgmglass.com" {
 zone "alphabetashop.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -370,7 +646,13 @@ zone "alphabetashop.com" {
 zone "mailballotvote.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -378,7 +660,13 @@ zone "mailballotvote.com" {
 zone "klug.pw" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -386,7 +674,13 @@ zone "klug.pw" {
 zone "fernhillmeadow.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -394,7 +688,13 @@ zone "fernhillmeadow.com" {
 zone "fernhillmarket.com" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
@@ -402,7 +702,13 @@ zone "fernhillmarket.com" {
 zone "fernhillschool.org" {
   type master;
   allow-query { any; };
-  allow-transfer { 207.189.107.20; 54.186.81.53; };
+  allow-transfer {
+    # BuddyNS
+    173.244.206.26;
+    88.198.106.11;
+    2607:f0d0:1005:72::100;
+    2a01:4f8:d12:d01::10:100;
+  };
   notify yes;
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
