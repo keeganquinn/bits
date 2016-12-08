@@ -503,20 +503,6 @@ zone "freetunetv.com" {
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
-zone "theiptv.net" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
 zone "diptv.net" {
   type master;
   allow-query { any; };
@@ -531,91 +517,7 @@ zone "diptv.net" {
   file "/home/keegan/public_html/bits/config/bind/generic";
 };
 
-zone "oregoniptv.com" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
-zone "portlandiptv.com" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
-zone "salemiptv.com" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
 zone "kernelklug.com" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
-zone "celebritygreen.net" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
-zone "grandmalseizure.net" {
-  type master;
-  allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
-  notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
-};
-
-zone "themgmglass.com" {
   type master;
   allow-query { any; };
   allow-transfer {
