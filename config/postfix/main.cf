@@ -17,6 +17,7 @@ inet_protocols = all
 myhostname = pi.keegan.ws
 mynetworks =
   89.18.165.159,
+  [2a00:f10:103:201:ba27:ebff:fe73:17b5],
   127.0.0.0/8,
   [::1]/128
 mydestination =
