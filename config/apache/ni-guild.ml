@@ -3,5 +3,5 @@
     ServerAlias www.ni-guild.ml
     ServerAdmin webmaster@ni-guild.ml
 
-    RedirectMatch 301 ^/(.*)$ http://ni-guild.tk/$1
+    RedirectMatch 301 ^/(.*)$ http://abusive.gq/$1
 </VirtualHost>

@@ -6,5 +6,5 @@
     CustomLog /var/log/apache2/str1ng.ga-access.log combined
     ErrorLog /var/log/apache2/str1ng.ga-error.log
 
-    RedirectMatch /(.*) http://keegan.ws/$1
+    RedirectMatch /(.*) https://basslin.es/str1ng/$1
 </VirtualHost>
