@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2016120800
+        2016120801
         ; refresh
         30M
         ; retry
@@ -37,6 +37,8 @@ www     CNAME   ghs.google.com.
 
 pi      A       89.18.165.159
 pi      AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
+pi      TXT     "v=spf1 a -all"
 
 scrap   A       73.164.202.148
 scrap   AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
+scrap   TXT     "v=spf1 a -all"
