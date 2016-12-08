@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     pi.keegan.ws.  keeganquinn.gmail.com. (
+@ IN    SOA     pi hostmaster (
         ; serial
-        2016120701
+        2016120800
         ; refresh
         30M
         ; retry
@@ -17,18 +17,21 @@ $TTL 2d
         1h
         )
 
-        NS      pi.keegan.ws.
+        NS      pi
         NS      d.ns.buddyns.com.
         NS      g.ns.buddyns.com.
         NS      i.ns.buddyns.com.
         NS      e.ns.buddyns.com.
 
-        MX      10      pi.keegan.ws.
-
-        TXT     "google-site-verification=1T8y8CABlRTWxGO9l4_5Uz8KAyDa9WHO5Fv928Azg7U"
+        MX      10      pi
 
         A       89.18.165.159
         AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
+
+        TXT     "google-site-verification=1T8y8CABlRTWxGO9l4_5Uz8KAyDa9WHO5Fv928Azg7U"
+        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@keegan.ws"
+        TXT     "v=spf1 mx a include:_spf.google.com ~all"
+mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/99IBr17xO4t61WBOl46n5W0WN3zeRg6HDIMKzXDtFZ0051OI2kqWmIFJOuTRXE82yJVtZnQVVoealfGBf1Ly2YuAfxOKdgIb93UGVzcB2oVhOJl3JYQBAKSQS4eFeI18MN/LT8NpEGK16T9qOWJKdG18YeodoGaiXLK3iWkUrwIDAQAB"
 
 www     CNAME   ghs.google.com.
 
