@@ -8,7 +8,6 @@ recipient_delimiter = +
 smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem
 smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
 smtpd_tls_security_level = may
-smtpd_tls_auth_only = yes
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 
 smtp_tls_security_level = may
@@ -28,6 +27,8 @@ mydestination =
   pi.keegan.ws,
   localhost
 relay_domains =
+
+smtpd_sasl_local_domain = keegan.ws
 
 postscreen_dnsbl_threshold = 2
 postscreen_dnsbl_sites = zen.spamhaus.org*2 bl.spamcop.net*2
