@@ -29,6 +29,7 @@ mydestination =
 relay_domains =
 
 smtpd_sasl_local_domain = keegan.ws
+smtpd_sasl_security_options = noanonymous
 
 postscreen_dnsbl_threshold = 2
 postscreen_dnsbl_sites = zen.spamhaus.org*2 bl.spamcop.net*2
