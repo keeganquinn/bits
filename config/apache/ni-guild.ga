@@ -1,7 +1,0 @@
-<VirtualHost *:80>
-    ServerName ni-guild.ga
-    ServerAlias www.ni-guild.ga
-    ServerAdmin webmaster@ni-guild.ga
-
-    RedirectMatch 301 ^/(.*)$ http://abusive.gq/$1
-</VirtualHost>
