@@ -1,7 +1,7 @@
 <VirtualHost *:80>
     ServerName animamagica.tk
     ServerAlias www.animamagica.tk
-    ServerAdmin webmaster@keegan.ws
+    ServerAdmin webmaster@animamagica.tk
 
     CustomLog /var/log/apache2/animamagica.tk-access.log combined
     ErrorLog /var/log/apache2/animamagica.tk-error.log

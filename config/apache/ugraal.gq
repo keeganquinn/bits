@@ -3,5 +3,8 @@
     ServerAlias www.ugraal.gq
     ServerAdmin webmaster@ugraal.gq
 
+    CustomLog /var/log/apache2/ugraal.gq-access.log combined
+    ErrorLog /var/log/apache2/ugraal.gq-error.log
+
     RedirectMatch 301 ^/(.*)$ http://abusive.gq/$1
 </VirtualHost>

@@ -1,7 +1,7 @@
 <VirtualHost *:80>
     ServerName sniz.org
     ServerAlias www.sniz.org
-    ServerAdmin webmaster@keegan.ws
+    ServerAdmin webmaster@sniz.org
 
     CustomLog /var/log/apache2/sniz.org-access.log combined
     ErrorLog /var/log/apache2/sniz.org-error.log
