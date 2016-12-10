@@ -32,7 +32,7 @@ relay_domains =
 smtpd_sasl_local_domain = keegan.ws
 smtpd_sasl_security_options = noanonymous, noplaintext
 smtpd_sasl_tls_security_options = noanonymous
-smtpd_recipient_restrictions =
+smtpd_relay_restrictions =
   permit_mynetworks
   permit_sasl_authenticated
   reject_unauth_destination
