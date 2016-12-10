@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/mailballotvote.com
     <Directory /srv/www/mailballotvote.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

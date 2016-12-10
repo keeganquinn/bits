@@ -20,7 +20,7 @@
 
     DocumentRoot /srv/www/basslin.es
     <Directory /srv/www/basslin.es>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

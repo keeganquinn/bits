@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/fernhillmeadow.com
     <Directory /srv/www/fernhillmeadow.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

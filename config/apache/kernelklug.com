@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/kernelklug.com
     <Directory /srv/www/kernelklug.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

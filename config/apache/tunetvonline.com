@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/tunetvonline.com
     <Directory /srv/www/tunetvonline.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

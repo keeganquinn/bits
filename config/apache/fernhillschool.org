@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/fernhillschool.org
     <Directory /srv/www/fernhillschool.org>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

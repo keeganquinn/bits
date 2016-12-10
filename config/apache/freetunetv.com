@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/freetunetv.com
     <Directory /srv/www/freetunetv.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

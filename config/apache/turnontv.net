@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/turnontv.net
     <Directory /srv/www/turnontv.net>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

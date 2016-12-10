@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/matthewklug.com
     <Directory /srv/www/matthewklug.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

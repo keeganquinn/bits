@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/adjustech.com
     <Directory /srv/www/adjustech.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

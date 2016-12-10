@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/diptv.net
     <Directory /srv/www/diptv.net>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

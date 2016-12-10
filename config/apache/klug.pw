@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/klug.pw
     <Directory /srv/www/klug.pw>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes

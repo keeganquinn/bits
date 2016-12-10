@@ -8,7 +8,7 @@
 
     DocumentRoot /srv/www/fernhillmarket.com
     <Directory /srv/www/fernhillmarket.com>
-        Allow from all
+        Require all granted
     </Directory>
 
     Options +FollowSymLinks -MultiViews -Indexes
