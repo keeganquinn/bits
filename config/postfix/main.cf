@@ -42,7 +42,6 @@ postscreen_dnsbl_sites = zen.spamhaus.org*2 bl.spamcop.net*2
 postscreen_dnsbl_action = enforce
 postscreen_greet_action = enforce
 
-content_filter = smtp-amavis:[127.0.0.1]:10024
 milter_protocol = 6
 milter_default_action = accept
 smtpd_milters = inet:localhost:12301
