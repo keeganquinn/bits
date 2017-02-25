@@ -26,10 +26,12 @@
 
     ErrorDocument 404 /404.html
 
-    # Expose the local Icecast server.
-    ProxyPass /cast/ http://127.0.0.1:8000/
-    ProxyPassReverse /cast/ http://127.0.0.1:8000/
-    ProxyPreserveHost on
+    # Expose Jenkins.
+    ProxyPass /jenkins http://127.0.0.1:8080/jenkins nocanon
+    ProxyPassReverse /jenkins http://127.0.0.1:8080/jenkins
+    ProxyRequests Off
+    ProxyPreserveHost On
+    AllowEncodedSlashes NoDecode
 
     # UTF-8 encoding
     AddDefaultCharset utf-8
