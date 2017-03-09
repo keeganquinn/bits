@@ -1,0 +1,35 @@
+; -*- zone -*-
+
+; quinn.tk. Keegan's.
+
+$TTL 2d
+
+@ IN    SOA     pi.keegan.ws. hostmaster (
+        ; serial
+        2017030900
+        ; refresh
+        30M
+        ; retry
+        15M
+        ; expiry
+        4W
+        ; minimum
+        1h
+        )
+
+        NS      pi.keegan.ws.
+        NS      d.ns.buddyns.com.
+        NS      g.ns.buddyns.com.
+        NS      i.ns.buddyns.com.
+        NS      e.ns.buddyns.com.
+
+        MX      10      pi.keegan.ws.
+
+        A       73.164.202.148
+        AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
+
+        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@keegan.ws"
+        TXT     "v=spf1 mx a include:_spf.google.com ~all"
+mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/99IBr17xO4t61WBOl46n5W0WN3zeRg6HDIMKzXDtFZ0051OI2kqWmIFJOuTRXE82yJVtZnQVVoealfGBf1Ly2YuAfxOKdgIb93UGVzcB2oVhOJl3JYQBAKSQS4eFeI18MN/LT8NpEGK16T9qOWJKdG18YeodoGaiXLK3iWkUrwIDAQAB"
+
+www     CNAME   @

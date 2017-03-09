@@ -65,7 +65,7 @@ zone "quinn.tk" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/home/keegan/public_html/bits/config/bind/quinn.tk";
 };
 
 zone "str1ng.ml" {
