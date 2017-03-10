@@ -17,6 +17,7 @@ server {
     ssl_dhparam /etc/nginx/dhparams.pem;
     ssl_stapling on;
     ssl_stapling_verify on;
+    ssl_trusted_certificate /etc/ssl/certs/quinn.tk.crt-ca;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
     root /srv/www/quinn.tk;
