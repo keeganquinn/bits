@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_name quinn.tk scrap.keegan.ws scrap.local;
+    return 301 https://quinn.tk$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name quinn.tk;
+    ssl on;
+    ssl_certificate /etc/ssl/certs/quinn.tk.crt;
+    ssl_certificate_key /etc/ssl/private/quinn.tk.key;
+    root /srv/www/quinn.tk;
+
+    location ~ ^/~(.+?)(/.*)?$ {
+        alias /home/$1/public_html$2;
+        index index.html index.htm;
+        autoindex on;
+    }
+}
