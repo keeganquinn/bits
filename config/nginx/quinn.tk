@@ -56,19 +56,11 @@ server {
     location /zabbix {
         alias /usr/share/zabbix;
         index index.php;
-        error_page 403 404 502 503 504 /zabbix/index.php;
 
         location ~ \.php$ {
-                if (!-f $request_filename) { return 404; }
-                expires epoch;
-                include /etc/nginx/fastcgi_params;
-                fastcgi_index index.php;
-                fastcgi_pass unix:/var/run/php5-fpm.sock;
-        }
-
-        location ~ \.(jpg|jpeg|gif|png|ico)$ {
-                access_log off;
-                expires 33d;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME /usr/share$fastcgi_script_name;
         }
     }
 }
