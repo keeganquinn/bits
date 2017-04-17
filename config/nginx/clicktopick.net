@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.clicktopick.net;
+
+    return 301 http://clicktopick.net$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name clicktopick.net;
+
+    root /srv/www/clicktopick.net;
+
+    error_page 404 /404.html;
+}

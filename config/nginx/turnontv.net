@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.turnontv.net;
+
+    return 301 http://turnontv.net$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name turnontv.net;
+
+    root /srv/www/turnontv.net;
+
+    error_page 404 /404.html;
+}

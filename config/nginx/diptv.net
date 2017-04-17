@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.diptv.net;
+
+    return 301 http://diptv.net$request_uri;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name diptv.net;
+
+    root /srv/www/diptv.net;
+
+    error_page 404 /404.html;
+}

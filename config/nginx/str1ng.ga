@@ -1,0 +1,7 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name str1ng.ga www.str1ng.ga;
+
+    return 301 https://basslin.es/str1ng$request_uri;
+}

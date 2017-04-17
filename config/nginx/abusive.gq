@@ -1,0 +1,7 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name abusive.gq www.abusive.gq;
+
+    return 301 http://abusive.enjin.com$request_uri;
+}

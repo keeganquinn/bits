@@ -1,0 +1,7 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name cloudscontrol.us www.cloudscontrol.us;
+
+    return 301 http://www.keegan.ws$request_uri;
+}
