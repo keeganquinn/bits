@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2016120801
+        2017041900
         ; refresh
         30M
         ; retry
@@ -42,3 +42,6 @@ pi      TXT     "v=spf1 a -all"
 scrap   A       73.164.202.148
 scrap   AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
 scrap   TXT     "v=spf1 a -all"
+
+spark   A       34.206.222.35
+spark   TXT     "v=spf1 a -all"
