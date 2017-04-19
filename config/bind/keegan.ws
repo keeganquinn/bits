@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2017041900
+        2017041901
         ; refresh
         30M
         ; retry
@@ -25,8 +25,7 @@ $TTL 2d
 
         MX      10      pi
 
-        A       89.18.165.159
-        AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
+        A       34.206.222.35
 
         TXT     "google-site-verification=1T8y8CABlRTWxGO9l4_5Uz8KAyDa9WHO5Fv928Azg7U"
         TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@keegan.ws"
