@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     pi.keegan.ws. hostmaster (
+@ IN    SOA     pi.quinn.tk. hostmaster (
         ; serial
-        2017041900
+        2017042700
         ; refresh
         30M
         ; retry
@@ -17,13 +17,13 @@ $TTL 2d
         1h
         )
 
-        NS      pi.keegan.ws.
+        NS      pi.quinn.tk.
         NS      d.ns.buddyns.com.
         NS      g.ns.buddyns.com.
         NS      i.ns.buddyns.com.
         NS      e.ns.buddyns.com.
 
-        MX      10      pi.keegan.ws.
+        MX      10      pi.quinn.tk.
 
         A       34.206.222.35
 

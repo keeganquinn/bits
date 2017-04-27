@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     pi.keegan.ws. hostmaster (
+@ IN    SOA     pi hostmaster (
         ; serial
-        2017030900
+        2017042700
         ; refresh
         30M
         ; retry
@@ -17,19 +17,34 @@ $TTL 2d
         1h
         )
 
-        NS      pi.keegan.ws.
+        NS      pi
         NS      d.ns.buddyns.com.
         NS      g.ns.buddyns.com.
         NS      i.ns.buddyns.com.
         NS      e.ns.buddyns.com.
 
-        MX      10      pi.keegan.ws.
+        MX      10      pi
 
         A       73.164.202.148
         AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
 
-        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@keegan.ws"
+        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@quinn.tk"
         TXT     "v=spf1 mx a include:_spf.google.com ~all"
 mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/99IBr17xO4t61WBOl46n5W0WN3zeRg6HDIMKzXDtFZ0051OI2kqWmIFJOuTRXE82yJVtZnQVVoealfGBf1Ly2YuAfxOKdgIb93UGVzcB2oVhOJl3JYQBAKSQS4eFeI18MN/LT8NpEGK16T9qOWJKdG18YeodoGaiXLK3iWkUrwIDAQAB"
 
 www     CNAME   @
+
+len     A       45.79.65.28
+len     AAAA    2600:3c01::f03c:91ff:fee9:47cb
+len     TXT     "v=spf1 a -all"
+
+pi      A       89.18.165.159
+pi      AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
+pi      TXT     "v=spf1 a -all"
+
+scrap   A       73.164.202.148
+scrap   AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
+scrap   TXT     "v=spf1 a -all"
+
+spark   A       34.206.222.35
+spark   TXT     "v=spf1 a -all"

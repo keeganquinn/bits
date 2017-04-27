@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     pi hostmaster (
+@ IN    SOA     pi.quinn.tk. hostmaster (
         ; serial
-        2017041901
+        2017042700
         ; refresh
         30M
         ; retry
@@ -17,18 +17,18 @@ $TTL 2d
         1h
         )
 
-        NS      pi
+        NS      pi.quinn.tk.
         NS      d.ns.buddyns.com.
         NS      g.ns.buddyns.com.
         NS      i.ns.buddyns.com.
         NS      e.ns.buddyns.com.
 
-        MX      10      pi
+        MX      10      pi.quinn.tk.
 
         A       34.206.222.35
 
         TXT     "google-site-verification=1T8y8CABlRTWxGO9l4_5Uz8KAyDa9WHO5Fv928Azg7U"
-        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@keegan.ws"
+        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@quinn.tk"
         TXT     "v=spf1 mx a include:_spf.google.com ~all"
 mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/99IBr17xO4t61WBOl46n5W0WN3zeRg6HDIMKzXDtFZ0051OI2kqWmIFJOuTRXE82yJVtZnQVVoealfGBf1Ly2YuAfxOKdgIb93UGVzcB2oVhOJl3JYQBAKSQS4eFeI18MN/LT8NpEGK16T9qOWJKdG18YeodoGaiXLK3iWkUrwIDAQAB"
 
