@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi.quinn.tk. hostmaster (
         ; serial
-        2017042700
+        2017042800
         ; refresh
         30M
         ; retry
@@ -25,7 +25,8 @@ $TTL 2d
 
         MX      10      pi.quinn.tk.
 
-        A       34.206.222.35
+        A       45.79.65.28
+        AAAA    2600:3c01::f03c:91ff:fee9:47cb
 
         TXT     "google-site-verification=1T8y8CABlRTWxGO9l4_5Uz8KAyDa9WHO5Fv928Azg7U"
         TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@quinn.tk"
@@ -37,10 +38,3 @@ www     CNAME   ghs.google.com.
 pi      A       89.18.165.159
 pi      AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
 pi      TXT     "v=spf1 a -all"
-
-scrap   A       73.164.202.148
-scrap   AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
-scrap   TXT     "v=spf1 a -all"
-
-spark   A       34.206.222.35
-spark   TXT     "v=spf1 a -all"
