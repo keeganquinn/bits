@@ -18,18 +18,18 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 inet_interfaces = all
 inet_protocols = all
 
-myhostname = pi.keegan.ws
+myhostname = pi.quinn.tk
 mynetworks =
   89.18.165.159,
   [2a00:f10:103:201:ba27:ebff:fe73:17b5],
   127.0.0.0/8,
   [::1]/128
 mydestination =
-  pi.keegan.ws,
+  pi.quinn.tk,
   localhost
 relay_domains =
 
-smtpd_sasl_local_domain = keegan.ws
+smtpd_sasl_local_domain = quinn.tk
 smtpd_sasl_security_options = noanonymous, noplaintext
 smtpd_sasl_tls_security_options = noanonymous
 smtpd_relay_restrictions =
