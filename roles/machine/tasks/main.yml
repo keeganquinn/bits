@@ -1,5 +1,5 @@
 ---
-- name: Install package updates
+- name: Update and upgrade packages
   become: yes
   apt: update_cache=yes upgrade=dist
 
