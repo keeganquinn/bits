@@ -1,0 +1,11 @@
+---
+- name: Install nginx package
+  become: yes
+  apt: name=nginx state=present
+
+- name: Copy nginx configuration
+  become: yes
+  copy:
+    src: "config/{{ ansible_hostname }}/nginx/"
+    dest: /etc/nginx/sites-enabled
+  notify: restart nginx

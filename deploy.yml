@@ -4,3 +4,9 @@
 
   roles:
     - machine
+
+- name: Webserver configuration
+  hosts: scrap.quinn.tk, len.quinn.tk
+
+  roles:
+    - webserver
