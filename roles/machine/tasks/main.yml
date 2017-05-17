@@ -1,0 +1,17 @@
+---
+- name: Install package updates
+  become: yes
+  apt: update_cache=yes upgrade=dist
+
+- name: Install deborphan package
+  become: yes
+  apt: name=deborphan state=present
+
+- name: Install screen package
+  become: yes
+  apt: name=screen state=present
+
+- name: Sync bits
+  git:
+    repo: https://github.com/keeganquinn/bits.git
+    dest: /home/keegan/public_html/bits
