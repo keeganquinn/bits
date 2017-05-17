@@ -10,3 +10,9 @@
 
   roles:
     - webserver
+
+- name: Creature comforts
+  hosts: scrap.quinn.tk
+
+  roles:
+    - comfort
