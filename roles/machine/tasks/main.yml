@@ -10,6 +10,10 @@
   become: yes
   apt: update_cache=yes upgrade=dist
 
+- name: Install zabbix-agent package
+  become: yes
+  apt: name=zabbix-agent state=present
+
 - name: Install deborphan package
   become: yes
   apt: name=deborphan state=present
@@ -22,3 +26,4 @@
   git:
     repo: https://github.com/keeganquinn/bits.git
     dest: /home/keegan/public_html/bits
+    version: master

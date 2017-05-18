@@ -16,3 +16,23 @@
 
   roles:
     - comfort
+
+- name: quinn.tk
+  hosts: scrap.quinn.tk
+
+  tasks:
+  - name: Sync site
+    git:
+      repo: scrap.quinn.tk:/srv/data/git/quinn.tk.git
+      dest: /srv/www/quinn.tk
+      version: master
+
+- name: basslin.es
+  hosts: len.quinn.tk
+
+  tasks:
+  - name: Sync site
+    git:
+      repo: scrap.quinn.tk:/srv/data/git/basslin.es.git
+      dest: /srv/www/basslin.es
+      version: master
