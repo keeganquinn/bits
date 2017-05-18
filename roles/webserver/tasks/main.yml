@@ -3,6 +3,10 @@
   become: yes
   apt: name=nginx state=present
 
+- name: Install certbot package
+  become: yes
+  apt: name=certbot state=present default_release=jessie-backports
+
 - name: Copy nginx configuration
   become: yes
   copy:

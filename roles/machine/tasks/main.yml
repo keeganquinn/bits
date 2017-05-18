@@ -1,4 +1,11 @@
 ---
+- name: Enable backports source
+  become: yes
+  apt_repository:
+    repo: deb http://ftp.debian.org/debian jessie-backports main
+    state: present
+    filename: backports
+
 - name: Update and upgrade packages
   become: yes
   apt: update_cache=yes upgrade=dist
