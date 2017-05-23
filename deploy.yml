@@ -1,6 +1,6 @@
 ---
 - name: Standard machine configuration
-  hosts: all
+  hosts: servers
 
   roles:
     - machine

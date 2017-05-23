@@ -1,3 +1,6 @@
+localhost ansible_connection=local
+
+[servers]
 len.quinn.tk
 pi.quinn.tk
 scrap.quinn.tk
