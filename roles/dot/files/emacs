@@ -1,0 +1,30 @@
+(if (string-equal "darwin" (symbol-name system-type))
+    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
+(setq exec-path (split-string (getenv "PATH") ":"))
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(inhibit-startup-screen t)
+ '(js2-auto-indent-p nil)
+ '(js2-bounce-indent-p t))
+
+(setq-default indent-tabs-mode nil)
+(setq ring-bell-function 'ignore)
+
+(global-whitespace-mode 1)
+(setq-default whitespace-style
+              '(face tab-mark tabs trailing lines-tail empty
+                     indentation::space))
+
+(when window-system (set-frame-size (selected-frame) 170 60))
+
+(add-hook 'after-init-hook #'global-flycheck-mode)

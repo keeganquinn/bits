@@ -1,0 +1,22 @@
+ServerAliveInterval 60
+
+# Personal machines
+Host electron
+    Hostname electron.local
+    ForwardAgent yes
+
+Host one
+    Hostname one.local
+    ForwardAgent yes
+
+Host pi
+    Hostname pi.keegan.ws
+    ForwardAgent yes
+
+
+# PTP servers
+Host iris
+    Hostname iris.personaltelco.net
+
+Host knod
+    Hostname knod.personaltelco.net

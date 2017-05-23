@@ -1,0 +1,9 @@
+---
+- name: Copy the SSH public key
+  copy: src=authorized_keys dest="{{ ansible_env.HOME }}/.ssh/authorized_keys"
+
+- name: Copy the SSH configuration file
+  copy: src=ssh_config dest="{{ ansible_env.HOME }}/.ssh/config"
+
+- name: Copy the Emacs configuration file
+  copy: src=emacs dest="{{ ansible_env.HOME }}/.emacs"
