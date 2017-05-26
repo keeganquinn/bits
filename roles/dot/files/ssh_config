@@ -1,6 +1,20 @@
 ServerAliveInterval 60
 
-# Personal machines
+# Servers
+Host len
+    Hostname len.quinn.tk
+    ForwardAgent yes
+
+Host pi
+    Hostname pi.quinn.tk
+    ForwardAgent yes
+
+Host scrap
+    Hostname scrap.quinn.tk
+    ForwardAgent yes
+
+
+# Local machines
 Host electron
     Hostname electron.local
     ForwardAgent yes
@@ -9,8 +23,8 @@ Host one
     Hostname one.local
     ForwardAgent yes
 
-Host pi
-    Hostname pi.keegan.ws
+Host zero
+    Hostname zero.local
     ForwardAgent yes
 
 
