@@ -1,0 +1,175 @@
+---
+- name: Install postgresql package
+  become: yes
+  apt: name=postgresql state=present
+
+- name: Install redis-server package
+  become: yes
+  apt: name=redis-server state=present default_release=jessie-backports
+
+- name: Install nodejs package
+  become: yes
+  apt: name=nodejs state=present default_release=jessie-backports
+
+- name: Install python-psycopg2 package
+  become: yes
+  apt: name=python-psycopg2 state=present
+
+- name: Install autoconf package
+  become: yes
+  apt: name=autoconf state=present
+
+- name: Install bison package
+  become: yes
+  apt: name=bison state=present
+
+- name: Install build-essential package
+  become: yes
+  apt: name=build-essential state=present
+
+- name: Install libssl-dev package
+  become: yes
+  apt: name=libssl-dev state=present
+
+- name: Install libyaml-dev package
+  become: yes
+  apt: name=libyaml-dev state=present
+
+- name: Install libreadline6-dev package
+  become: yes
+  apt: name=libreadline6-dev state=present
+
+- name: Install zlib1g-dev package
+  become: yes
+  apt: name=zlib1g-dev state=present
+
+- name: Install libncurses5-dev package
+  become: yes
+  apt: name=libncurses5-dev state=present
+
+- name: Install libffi-dev package
+  become: yes
+  apt: name=libffi-dev state=present
+
+- name: Install libgdbm-dev package
+  become: yes
+  apt: name=libgdbm-dev state=present
+
+- name: Install libpq-dev package
+  become: yes
+  apt: name=libpq-dev state=present
+
+- name: Install libmagickwand-dev package
+  become: yes
+  apt: name=libmagickwand-dev state=present
+
+- name: Create deploy user
+  become: yes
+  user:
+    name: deploy
+    comment: Application Deployment
+    shell: /bin/bash
+    groups: sudo
+
+- name: Copy the SSH public key for the deploy user
+  become: yes
+  authorized_key:
+    user: deploy
+    key: "{{ lookup('file', 'roles/dot/files/authorized_keys') }}"
+
+- name: Copy Rails configuration
+  become: yes
+  copy:
+    src: "config/{{ ansible_hostname }}/rails/"
+    dest: /etc/rails
+    owner: deploy
+    group: deploy
+    mode: 0600
+
+- name: Install rbenv for the deploy user
+  become: yes
+  become_user: deploy
+  git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: /home/deploy/.rbenv
+    version: master
+
+- name: Install rbenv-sudo for the deploy user
+  become: yes
+  become_user: deploy
+  git:
+    repo: https://github.com/dcarley/rbenv-sudo.git
+    dest: /home/deploy/.rbenv/plugins/rbenv-sudo
+    version: master
+
+- name: Install ruby-build for the deploy user
+  become: yes
+  become_user: deploy
+  git:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: /home/deploy/.rbenv/plugins/ruby-build
+    version: master
+
+- name: Copy the bashrc for the deploy user
+  become: yes
+  become_user: deploy
+  copy: src=bashrc dest=/home/deploy/.bashrc
+
+- name: Copy the profile for the deploy user
+  become: yes
+  become_user: deploy
+  copy: src=profile dest=/home/deploy/.profile
+
+- name: Install Ruby 2.3.3 for the deploy user
+  become: yes
+  become_user: deploy
+  shell: /home/deploy/.rbenv/bin/rbenv install -s 2.3.3
+
+- name: Install Bundler for the deploy user
+  become: yes
+  become_user: deploy
+  shell: RBENV_VERSION=2.3.3 /home/deploy/.rbenv/shims/gem install bundler
+
+- name: Install Foreman for the deploy user
+  become: yes
+  become_user: deploy
+  shell: RBENV_VERSION=2.3.3 /home/deploy/.rbenv/shims/gem install foreman
+
+- name: Create /srv/rails
+  become: yes
+  file:
+    path: /srv/rails
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+
+- name: Create cwnmyr user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: cwnmyr
+    password: cwnmyr
+
+- name: Create cwnmyr database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: cwnmyr
+    owner: cwnmyr
+    encoding: UTF-8
+
+- name: Create partystarter user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: partystarter
+    password: partystarter
+
+- name: Create partystarter database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: partystarter
+    owner: partystarter
+    encoding: UTF-8

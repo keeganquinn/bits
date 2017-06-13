@@ -1,12 +1,4 @@
 ---
-- name: Install postgresql package
-  become: yes
-  apt: name=postgresql state=present
-
-- name: Install redis-server package
-  become: yes
-  apt: name=redis-server state=present default_release=jessie-backports
-
 - name: Install nginx package
   become: yes
   apt: name=nginx state=present
