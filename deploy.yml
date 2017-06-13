@@ -5,6 +5,13 @@
   roles:
     - machine
 
+- name: DNS
+  hosts: pi.quinn.tk
+
+  tasks:
+  - name: Reload BIND
+    command: /usr/sbin/rndc reload
+
 - name: Webserver configuration
   hosts: scrap.quinn.tk, len.quinn.tk
 
