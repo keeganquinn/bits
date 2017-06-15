@@ -19,11 +19,12 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(inhibit-startup-screen t)
- '(js2-auto-indent-p nil)
+ '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
- '(package-selected-packages (quote (yaml-mode haml-mode use-package flycheck))))
+ '(package-selected-packages (quote (js2-mode yaml-mode haml-mode use-package flycheck))))
 
 (setq-default indent-tabs-mode nil)
+(setq js-indent-level 2)
 (setq ring-bell-function 'ignore)
 
 (global-whitespace-mode 1)
