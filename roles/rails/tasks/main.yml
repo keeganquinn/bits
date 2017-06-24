@@ -7,6 +7,10 @@
   become: yes
   apt: name=redis-server state=present default_release=jessie-backports
 
+- name: Install graphviz package
+  become: yes
+  apt: name=graphviz state=present
+
 - name: Install nodejs package
   become: yes
   apt: name=nodejs state=present default_release=jessie-backports
