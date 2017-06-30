@@ -15,6 +15,10 @@
   become: yes
   apt: name=nodejs state=present default_release=jessie-backports
 
+- name: Install phantomjs package
+  become: yes
+  apt: name=phantomjs state=present default_release=jessie-backports
+
 - name: Install python-psycopg2 package
   become: yes
   apt: name=python-psycopg2 state=present
