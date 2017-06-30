@@ -7,7 +7,7 @@
   become: yes
   apt: name=certbot state=present default_release=jessie-backports
 
-- name: Copy nginx configuration
+- name: Copy nginx virtual hosts
   become: yes
   copy:
     src: "config/{{ ansible_hostname }}/nginx/"
