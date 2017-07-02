@@ -132,16 +132,22 @@
   become: yes
   become_user: deploy
   shell: /home/deploy/.rbenv/bin/rbenv install -s 2.3.3
+  args:
+    creates: /home/deploy/.rbenv/versions/2.3.3
 
 - name: Install Bundler for the deploy user
   become: yes
   become_user: deploy
   shell: RBENV_VERSION=2.3.3 /home/deploy/.rbenv/shims/gem install bundler
+  args:
+    creates: /home/deploy/.rbenv/versions/2.3.3/bin/bundler
 
 - name: Install Foreman for the deploy user
   become: yes
   become_user: deploy
   shell: RBENV_VERSION=2.3.3 /home/deploy/.rbenv/shims/gem install foreman
+  args:
+    creates: /home/deploy/.rbenv/versions/2.3.3/bin/foreman
 
 - name: Create /srv/rails
   become: yes
