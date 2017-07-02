@@ -7,6 +7,13 @@
   become: yes
   apt: name=certbot state=present default_release=jessie-backports
 
+- name: Generate Diffie-Hellman parameters for nginx
+  become: yes
+  command: openssl dhparam -out /etc/nginx/dhparams.pem 2048
+  args:
+    creates: /etc/nginx/dhparams.pem
+  notify: restart nginx
+
 - name: Copy nginx virtual hosts
   become: yes
   copy:
