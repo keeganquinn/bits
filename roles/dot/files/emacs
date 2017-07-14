@@ -1,5 +1,8 @@
 (if (string-equal "darwin" (symbol-name system-type))
-    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
+    (setenv "PATH" (concat
+            (getenv "HOME") "/.rbenv/shims:"
+            (getenv "HOME") "/.rbenv/bin:/usr/local/bin:"
+            (getenv "PATH"))))
 (setq exec-path (split-string (getenv "PATH") ":"))
 
 (require 'package)
@@ -21,7 +24,9 @@
  '(inhibit-startup-screen t)
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
- '(package-selected-packages (quote (js2-mode yaml-mode haml-mode use-package flycheck))))
+ '(package-selected-packages
+   (quote
+    (rbenv web-mode robe rainbow-mode projectile smartparens company js2-mode yaml-mode haml-mode use-package flycheck))))
 
 (setq-default indent-tabs-mode nil)
 (setq js-indent-level 2)
@@ -39,6 +44,28 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(require 'smartparens-config)
+(require 'smartparens-ruby)
+(smartparens-global-mode)
+(show-smartparens-global-mode t)
+
+(require 'grizzl)
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+(setq projectile-completion-system 'grizzl)
+;; Press Command-p for fuzzy find in project
+(global-set-key (kbd "s-p") 'projectile-find-file)
+;; Press Command-b for fuzzy switch buffer
+(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+
+(require 'rbenv)
+(global-rbenv-mode)
+
+(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
