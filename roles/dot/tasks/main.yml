@@ -69,6 +69,11 @@
   args:
     creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3/bin/bundler"
 
+- name: Install Rubocop for Ruby 2.3.3
+  shell: "RBENV_VERSION=2.3.3 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec"
+  args:
+    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3/bin/rubocop"
+
 - name: Set default Ruby
   shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system"
   args:
