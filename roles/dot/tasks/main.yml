@@ -7,3 +7,12 @@
 
 - name: Copy the Emacs configuration file
   copy: src=emacs dest="{{ ansible_env.HOME }}/.emacs"
+
+- name: Update and upgrade Debian packages
+  become: yes
+  apt: update_cache=yes upgrade=dist
+  when: ansible_pkg_mgr == "apt"
+
+- name: Update and upgrade Homebrew packages
+  homebrew: update_homebrew=yes upgrade_all=yes
+  when: ansible_pkg_mgr == "homebrew"
