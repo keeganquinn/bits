@@ -13,6 +13,11 @@
   apt: update_cache=yes upgrade=dist
   when: ansible_pkg_mgr == "apt"
 
+- name: Install libmagickwand-dev package on Debian
+  become: yes
+  apt: name=libmagickwand-dev state=present
+  when: ansible_pkg_mgr == "apt"
+
 - name: Install emacs package on Debian
   become: yes
   apt: name=emacs25 state=present
@@ -20,6 +25,16 @@
 
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: Install imagemagick package on Homebrew
+  homebrew: name=imagemagick@6 state=present
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: Link imagemagick package on Homebrew
+  shell: brew link --force imagemagick@6
+  args:
+    creates: /usr/local/lib/ImageMagick
   when: ansible_pkg_mgr == "homebrew"
 
 - name: Install emacs package on Homebrew
