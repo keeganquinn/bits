@@ -29,6 +29,9 @@ Host zero
 
 
 # PTP servers
+Host drei
+    Hostname drei.personaltelco.net
+
 Host iris
     Hostname iris.personaltelco.net
 
