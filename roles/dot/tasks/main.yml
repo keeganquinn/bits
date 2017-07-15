@@ -16,3 +16,20 @@
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
   when: ansible_pkg_mgr == "homebrew"
+
+- name: Install rbenv
+  git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: "{{ ansible_env.HOME }}/.rbenv"
+    version: master
+
+- name: Install ruby-build
+  git:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
+    version: master
+
+- name: Install Ruby 2.3.3
+  shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.3.3"
+  args:
+    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3"
