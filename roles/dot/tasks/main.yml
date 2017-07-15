@@ -13,8 +13,23 @@
   apt: update_cache=yes upgrade=dist
   when: ansible_pkg_mgr == "apt"
 
+- name: Install emacs package on Debian
+  become: yes
+  apt: name=emacs25 state=present
+  when: ansible_pkg_mgr == "apt"
+
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: Install emacs package on Homebrew
+  homebrew: name=emacs state=present install_options=with-cocoa
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: Link emacs application on Homebrew
+  shell: brew linkapps emacs
+  args:
+    creates: /Applications/Emacs.app
   when: ansible_pkg_mgr == "homebrew"
 
 - name: Install rbenv
@@ -33,3 +48,8 @@
   shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.3.3"
   args:
     creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3"
+
+- name: Set default Ruby
+  shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system"
+  args:
+    creates: "{{ ansible_env.HOME }}/.rbenv/version"
