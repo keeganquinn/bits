@@ -18,6 +18,7 @@
   roles:
     - rails
     - webserver
+    - palkan.phantomjs
 
 - name: Creature comforts
   hosts: scrap.quinn.tk

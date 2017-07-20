@@ -8,6 +8,41 @@
 - name: Copy the Emacs configuration file
   copy: src=emacs dest="{{ ansible_env.HOME }}/.emacs"
 
+- name: Install apt-transport-https package on Debian
+  become: yes
+  apt: update_cache=yes name=apt-transport-https state=present
+  when: ansible_pkg_mgr == "apt"
+
+- name: Add nodesource APT key
+  become: yes
+  apt_key:
+    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+    state: present
+  when: ansible_pkg_mgr == "apt"
+
+- name: Enable nodesource APT source
+  become: yes
+  apt_repository:
+    repo: deb https://deb.nodesource.com/node_8.x stable main
+    state: present
+    filename: nodesource
+  when: ansible_pkg_mgr == "apt"
+
+- name: Add yarn APT key
+  become: yes
+  apt_key:
+    url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
+    state: present
+  when: ansible_pkg_mgr == "apt"
+
+- name: Enable yarn APT source
+  become: yes
+  apt_repository:
+    repo: deb https://dl.yarnpkg.com/debian/ stable main
+    state: present
+    filename: yarn
+  when: ansible_pkg_mgr == "apt"
+
 - name: Update and upgrade Debian packages
   become: yes
   apt: update_cache=yes upgrade=dist
@@ -21,6 +56,16 @@
 - name: Install emacs package on Debian
   become: yes
   apt: name=emacs25 state=present
+  when: ansible_pkg_mgr == "apt"
+
+- name: Install nodejs package on Debian
+  become: yes
+  apt: name=nodejs state=present
+  when: ansible_pkg_mgr == "apt"
+
+- name: Install yarn package on Debian
+  become: yes
+  apt: name=yarn state=present
   when: ansible_pkg_mgr == "apt"
 
 - name: Update and upgrade Homebrew packages
@@ -47,6 +92,14 @@
     creates: /Applications/Emacs.app
   when: ansible_pkg_mgr == "homebrew"
 
+- name: Install node package on Homebrew
+  homebrew: name=node state=present
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: Install yarn package on Homebrew
+  homebrew: name=yarn state=present
+  when: ansible_pkg_mgr == "homebrew"
+
 - name: Install rbenv
   git:
     repo: https://github.com/rbenv/rbenv.git
@@ -59,20 +112,20 @@
     dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
     version: master
 
-- name: Install Ruby 2.3.3
-  shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.3.3"
+- name: Install Ruby 2.4.1
+  shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.4.1"
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3"
+    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.4.1"
 
-- name: Install Bundler for Ruby 2.3.3
-  shell: "RBENV_VERSION=2.3.3 {{ ansible_env.HOME }}/.rbenv/shims/gem install bundler"
+- name: Install Bundler for Ruby 2.4.1
+  shell: "RBENV_VERSION=2.4.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install bundler"
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3/bin/bundler"
+    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.4.1/bin/bundler"
 
-- name: Install Rubocop for Ruby 2.3.3
-  shell: "RBENV_VERSION=2.3.3 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec"
+- name: Install Rubocop for Ruby 2.4.1
+  shell: "RBENV_VERSION=2.4.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec"
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.3.3/bin/rubocop"
+    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.4.1/bin/rubocop"
 
 - name: Set default Ruby
   shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system"

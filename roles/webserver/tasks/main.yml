@@ -5,7 +5,7 @@
 
 - name: Install certbot package
   become: yes
-  apt: name=certbot state=present default_release=jessie-backports
+  apt: name=certbot state=present
 
 - name: Generate Diffie-Hellman parameters for nginx
   become: yes

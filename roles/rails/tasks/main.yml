@@ -5,7 +5,7 @@
 
 - name: Install redis-server package
   become: yes
-  apt: name=redis-server state=present default_release=jessie-backports
+  apt: name=redis-server state=present
 
 - name: Install graphviz package
   become: yes
@@ -13,11 +13,15 @@
 
 - name: Install nodejs package
   become: yes
-  apt: name=nodejs state=present default_release=jessie-backports
+  apt: name=nodejs state=present
 
-- name: Install phantomjs package
+- name: Remove phantomjs package
   become: yes
-  apt: name=phantomjs state=present default_release=jessie-backports
+  apt: name=phantomjs state=absent
+
+- name: Install yarn package
+  become: yes
+  apt: name=yarn state=present
 
 - name: Install python-psycopg2 package
   become: yes
@@ -128,26 +132,26 @@
   become_user: deploy
   copy: src=profile dest=/home/deploy/.profile
 
-- name: Install Ruby 2.3.3 for the deploy user
+- name: Install Ruby 2.4.1 for the deploy user
   become: yes
   become_user: deploy
-  shell: /home/deploy/.rbenv/bin/rbenv install -s 2.3.3
+  shell: /home/deploy/.rbenv/bin/rbenv install -s 2.4.1
   args:
-    creates: /home/deploy/.rbenv/versions/2.3.3
+    creates: /home/deploy/.rbenv/versions/2.4.1
 
 - name: Install Bundler for the deploy user
   become: yes
   become_user: deploy
-  shell: RBENV_VERSION=2.3.3 /home/deploy/.rbenv/shims/gem install bundler
+  shell: RBENV_VERSION=2.4.1 /home/deploy/.rbenv/shims/gem install bundler
   args:
-    creates: /home/deploy/.rbenv/versions/2.3.3/bin/bundler
+    creates: /home/deploy/.rbenv/versions/2.4.1/bin/bundler
 
 - name: Install Foreman for the deploy user
   become: yes
   become_user: deploy
-  shell: RBENV_VERSION=2.3.3 /home/deploy/.rbenv/shims/gem install foreman
+  shell: RBENV_VERSION=2.4.1 /home/deploy/.rbenv/shims/gem install foreman
   args:
-    creates: /home/deploy/.rbenv/versions/2.3.3/bin/foreman
+    creates: /home/deploy/.rbenv/versions/2.4.1/bin/foreman
 
 - name: Create /srv/rails
   become: yes
