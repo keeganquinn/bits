@@ -1,5 +1,13 @@
 ---
-- name: Install docker-ce package on Debian
+- name: Install zabbix-server-pgsql package
+  become: yes
+  apt: name=zabbix-server-pgsql state=present
+
+- name: Install jenkins package
+  become: yes
+  apt: name=jenkins state=present
+
+- name: Install docker-ce package
   become: yes
   apt: name=docker-ce state=present
 
