@@ -63,6 +63,11 @@
   apt: name=nodejs state=present
   when: ansible_pkg_mgr == "apt"
 
+- name: Install shellcheck package on Debian
+  become: yes
+  apt: name=shellcheck state=present
+  when: ansible_pkg_mgr == "apt"
+
 - name: Install yarn package on Debian
   become: yes
   apt: name=yarn state=present
@@ -94,6 +99,10 @@
 
 - name: Install node package on Homebrew
   homebrew: name=node state=present
+  when: ansible_pkg_mgr == "homebrew"
+
+- name: Install shellcheck package on Homebrew
+  homebrew: name=shellcheck state=present
   when: ansible_pkg_mgr == "homebrew"
 
 - name: Install yarn package on Homebrew
