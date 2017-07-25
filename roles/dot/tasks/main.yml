@@ -1,166 +1,48 @@
 ---
 - name: Copy the SSH public key
-  copy: src=authorized_keys dest="{{ ansible_env.HOME }}/.ssh/authorized_keys"
+  copy: src=authorized_keys dest='{{ ansible_env.HOME }}/.ssh/authorized_keys'
 
 - name: Copy the SSH configuration file
-  copy: src=ssh_config dest="{{ ansible_env.HOME }}/.ssh/config"
+  copy: src=ssh_config dest='{{ ansible_env.HOME }}/.ssh/config'
 
 - name: Copy the Emacs configuration file
-  copy: src=emacs dest="{{ ansible_env.HOME }}/.emacs"
-
-- name: Install apt-transport-https package on Debian
-  become: yes
-  apt: update_cache=yes name=apt-transport-https state=present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Add docker APT key
-  become: yes
-  apt_key:
-    url: "https://download.docker.com/linux/debian/gpg"
-    state: present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Add docker APT source
-  become: yes
-  apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/debian stretch stable
-    state: present
-    filename: docker
-  when: ansible_pkg_mgr == "apt"
-
-- name: Add nodesource APT key
-  become: yes
-  apt_key:
-    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-    state: present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Enable nodesource APT source
-  become: yes
-  apt_repository:
-    repo: deb [arch=amd64] https://deb.nodesource.com/node_8.x stretch main
-    state: present
-    filename: nodesource
-  when: ansible_pkg_mgr == "apt"
-
-- name: Add yarn APT key
-  become: yes
-  apt_key:
-    url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    state: present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Enable yarn APT source
-  become: yes
-  apt_repository:
-    repo: deb https://dl.yarnpkg.com/debian/ stable main
-    state: present
-    filename: yarn
-  when: ansible_pkg_mgr == "apt"
-
-- name: Update and upgrade Debian packages
-  become: yes
-  apt: update_cache=yes upgrade=dist
-  when: ansible_pkg_mgr == "apt"
-
-- name: Install libmagickwand-dev package on Debian
-  become: yes
-  apt: name=libmagickwand-dev state=present
-  when: ansible_pkg_mgr == "apt"
+  copy: src=emacs dest='{{ ansible_env.HOME }}/.emacs'
 
 - name: Install docker-ce package on Debian
   become: yes
   apt: name=docker-ce state=present
   when:
-    - ansible_machine == "x86_64"
-    - ansible_pkg_mgr == "apt"
-
-- name: Install emacs package on Debian
-  become: yes
-  apt: name=emacs25 state=present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Install nodejs package on Debian
-  become: yes
-  apt: name=nodejs state=present
-  when:
-    - ansible_machine == "x86_64"
-    - ansible_pkg_mgr == "apt"
-
-- name: Install shellcheck package on Debian
-  become: yes
-  apt: name=shellcheck state=present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Install yarn package on Debian
-  become: yes
-  apt: name=yarn state=present
-  when: ansible_pkg_mgr == "apt"
-
-- name: Update and upgrade Homebrew packages
-  homebrew: update_homebrew=yes upgrade_all=yes
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Install imagemagick package on Homebrew
-  homebrew: name=imagemagick@6 state=present
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Link imagemagick package on Homebrew
-  shell: brew link --force imagemagick@6
-  args:
-    creates: /usr/local/lib/ImageMagick
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Install emacs package on Homebrew
-  homebrew: name=emacs state=present install_options=with-cocoa
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Link emacs application on Homebrew
-  shell: brew linkapps emacs
-  args:
-    creates: /Applications/Emacs.app
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Install node package on Homebrew
-  homebrew: name=node state=present
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Install shellcheck package on Homebrew
-  homebrew: name=shellcheck state=present
-  when: ansible_pkg_mgr == "homebrew"
-
-- name: Install yarn package on Homebrew
-  homebrew: name=yarn state=present
-  when: ansible_pkg_mgr == "homebrew"
+    - ansible_machine == 'x86_64'
+    - ansible_pkg_mgr == 'apt'
 
 - name: Install rbenv
   git:
     repo: https://github.com/rbenv/rbenv.git
-    dest: "{{ ansible_env.HOME }}/.rbenv"
+    dest: '{{ ansible_env.HOME }}/.rbenv'
     version: master
 
 - name: Install ruby-build
   git:
     repo: https://github.com/rbenv/ruby-build.git
-    dest: "{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build"
+    dest: '{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build'
     version: master
 
 - name: Install Ruby 2.4.1
-  shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.4.1"
+  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.4.1'
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.4.1"
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.4.1'
 
 - name: Install Bundler for Ruby 2.4.1
-  shell: "RBENV_VERSION=2.4.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install bundler"
+  shell: 'RBENV_VERSION=2.4.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install bundler'
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.4.1/bin/bundler"
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.4.1/bin/bundler'
 
 - name: Install Rubocop for Ruby 2.4.1
-  shell: "RBENV_VERSION=2.4.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec"
+  shell: 'RBENV_VERSION=2.4.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec'
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/versions/2.4.1/bin/rubocop"
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.4.1/bin/rubocop'
 
 - name: Set default Ruby
-  shell: "{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system"
+  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
   args:
-    creates: "{{ ansible_env.HOME }}/.rbenv/version"
+    creates: '{{ ansible_env.HOME }}/.rbenv/version'

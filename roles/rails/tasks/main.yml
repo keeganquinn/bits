@@ -7,73 +7,9 @@
   become: yes
   apt: name=redis-server state=present
 
-- name: Install graphviz package
-  become: yes
-  apt: name=graphviz state=present
-
-- name: Install nodejs package
-  become: yes
-  apt: name=nodejs state=present
-
-- name: Remove phantomjs package
-  become: yes
-  apt: name=phantomjs state=absent
-
-- name: Install yarn package
-  become: yes
-  apt: name=yarn state=present
-
 - name: Install python-psycopg2 package
   become: yes
   apt: name=python-psycopg2 state=present
-
-- name: Install autoconf package
-  become: yes
-  apt: name=autoconf state=present
-
-- name: Install bison package
-  become: yes
-  apt: name=bison state=present
-
-- name: Install build-essential package
-  become: yes
-  apt: name=build-essential state=present
-
-- name: Install libssl-dev package
-  become: yes
-  apt: name=libssl-dev state=present
-
-- name: Install libyaml-dev package
-  become: yes
-  apt: name=libyaml-dev state=present
-
-- name: Install libreadline6-dev package
-  become: yes
-  apt: name=libreadline6-dev state=present
-
-- name: Install zlib1g-dev package
-  become: yes
-  apt: name=zlib1g-dev state=present
-
-- name: Install libncurses5-dev package
-  become: yes
-  apt: name=libncurses5-dev state=present
-
-- name: Install libffi-dev package
-  become: yes
-  apt: name=libffi-dev state=present
-
-- name: Install libgdbm-dev package
-  become: yes
-  apt: name=libgdbm-dev state=present
-
-- name: Install libpq-dev package
-  become: yes
-  apt: name=libpq-dev state=present
-
-- name: Install libmagickwand-dev package
-  become: yes
-  apt: name=libmagickwand-dev state=present
 
 - name: Create deploy user
   become: yes
@@ -92,7 +28,7 @@
 - name: Copy Rails configuration
   become: yes
   copy:
-    src: "config/{{ ansible_hostname }}/rails/"
+    src: 'config/{{ ansible_hostname }}/rails/'
     dest: /etc/rails
     owner: deploy
     group: deploy

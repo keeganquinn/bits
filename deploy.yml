@@ -16,6 +16,7 @@
   hosts: scrap.quinn.tk, len.quinn.tk
 
   roles:
+    - build
     - rails
     - webserver
     - palkan.phantomjs
@@ -35,6 +36,9 @@
       repo: scrap.quinn.tk:/srv/data/git/quinn.tk.git
       dest: /srv/www/quinn.tk
       version: master
+
+  roles:
+    - intranet
 
 - name: basslin.es
   hosts: len.quinn.tk

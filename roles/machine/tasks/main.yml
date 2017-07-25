@@ -1,77 +1,12 @@
 ---
-- name: Copy sudo configuration
-  become: yes
-  copy: src=nopasswd.sudoers dest=/etc/sudoers.d/nopasswd mode=0440
+- include: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_system|lower }}.yml'
+      skip: true
 
-- name: Copy APT sources
-  become: yes
-  copy: src=sources.list dest=/etc/apt/sources.list mode=0644
-  when: ansible_machine != "armv6l"
-
-- name: Disable old backports source
-  become: yes
-  apt_repository:
-    repo: deb http://ftp.debian.org/debian jessie-backports main
-    state: absent
-    filename: backports
-  when: ansible_machine != "armv6l"
-
-- name: Install apt-transport-https package on Debian
-  become: yes
-  apt: update_cache=yes name=apt-transport-https state=present
-
-- name: Add nodesource APT key
-  become: yes
-  apt_key:
-    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-    state: present
-  when: ansible_machine != "armv6l"
-
-- name: Enable nodesource APT source
-  become: yes
-  apt_repository:
-    repo: deb https://deb.nodesource.com/node_8.x stretch main
-    state: present
-    filename: nodesource
-  when: ansible_machine != "armv6l"
-
-- name: Add yarn APT key
-  become: yes
-  apt_key:
-    url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    state: present
-  when: ansible_machine != "armv6l"
-
-- name: Enable yarn APT source
-  become: yes
-  apt_repository:
-    repo: deb https://dl.yarnpkg.com/debian/ stable main
-    state: present
-    filename: yarn
-  when: ansible_machine != "armv6l"
-
-- name: Update and upgrade packages
-  become: yes
-  apt: update_cache=yes upgrade=dist
-
-- name: Install zabbix-agent package
-  become: yes
-  apt: name=zabbix-agent state=present
-
-- name: Install deborphan package
-  become: yes
-  apt: name=deborphan state=present
-
-- name: Install git package
-  become: yes
-  apt: name=git state=present
-
-- name: Install screen package
-  become: yes
-  apt: name=screen state=present
-
-- name: Sync bits
-  git:
-    repo: https://github.com/keeganquinn/bits.git
-    dest: /home/keegan/public_html/bits
-    version: master
+- include: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_pkg_mgr }}.yml'
+      skip: true

@@ -17,20 +17,20 @@
 - name: Copy nginx virtual hosts
   become: yes
   copy:
-    src: "config/{{ ansible_hostname }}/nginx/"
+    src: 'config/{{ ansible_hostname }}/nginx/'
     dest: /etc/nginx/sites-enabled
   notify: restart nginx
 
 - name: Copy SSL certificates
   become: yes
   copy:
-    src: "config/{{ ansible_hostname }}/ssl/certs/"
+    src: 'config/{{ ansible_hostname }}/ssl/certs/'
     dest: /etc/ssl/certs
   notify: restart nginx
 
 - name: Copy SSL keys
   become: yes
   copy:
-    src: "config/{{ ansible_hostname }}/ssl/private/"
+    src: 'config/{{ ansible_hostname }}/ssl/private/'
     dest: /etc/ssl/private
   notify: restart nginx

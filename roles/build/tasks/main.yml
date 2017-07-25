@@ -1,6 +1,6 @@
 ---
-- include: "{{ item }}"
+- include: '{{ item }}'
   with_first_found:
     - files:
-        - "{{ ansible_pkg_mgr }}.yml"
+        - '{{ ansible_pkg_mgr }}.yml'
       skip: true
