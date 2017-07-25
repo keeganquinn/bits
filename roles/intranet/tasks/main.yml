@@ -1,0 +1,9 @@
+---
+- name: Install docker-ce package on Debian
+  become: yes
+  apt: name=docker-ce state=present
+
+- name: Copy docker daemon configuration
+  become: yes
+  copy: src=docker-daemon.json dest=/etc/docker/daemon.json
+  notify: restart docker

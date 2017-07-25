@@ -1,0 +1,20 @@
+---
+- name: Install graphviz package on Homebrew
+  homebrew: name=graphviz state=present
+
+- name: Install node package on Homebrew
+  homebrew: name=node state=present
+
+- name: Install shellcheck package on Homebrew
+  homebrew: name=shellcheck state=present
+
+- name: Install yarn package on Homebrew
+  homebrew: name=yarn state=present
+
+- name: Install imagemagick package on Homebrew
+  homebrew: name=imagemagick@6 state=present
+
+- name: Link imagemagick package on Homebrew
+  shell: brew link --force imagemagick@6
+  args:
+    creates: /usr/local/lib/ImageMagick
