@@ -2,8 +2,5 @@
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
 
-- name: Remove emacs brew
-  homebrew: name=emacs state=absent
-
 - name: Install emacs cask
   homebrew_cask: name=emacs state=present
