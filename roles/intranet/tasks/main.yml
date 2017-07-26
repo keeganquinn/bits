@@ -3,6 +3,18 @@
   become: yes
   apt: name=zabbix-server-pgsql state=present
 
+- name: Install rsnapshot package
+  become: yes
+  apt: name=rsnapshot state=present
+
+- name: Copy rsnapshot configuration
+  become: yes
+  copy: src=rsnapshot.conf dest=/etc/rsnapshot.conf
+
+- name: Copy rsnapshot crontab
+  become: yes
+  copy: src=rsnapshot.cron dest=/etc/cron.d/rsnapshot
+
 - name: Install jenkins package
   become: yes
   apt: name=jenkins state=present
