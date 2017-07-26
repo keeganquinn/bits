@@ -1,0 +1,16 @@
+---
+- name: Install bind9 package
+  become: yes
+  apt: name=bind9 state=present
+
+- name: Copy BIND configuration
+  become: yes
+  copy: src=config/bind/ dest=/etc/bind
+  notify: restart bind9
+
+- name: Copy local BIND configuration
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/named.conf.local'
+    dest: /etc/bind
+  notify: restart bind9
