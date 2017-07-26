@@ -2,10 +2,8 @@
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
 
-- name: Install emacs package on Homebrew
-  homebrew: name=emacs state=present install_options=with-cocoa
+- name: Remove emacs brew
+  homebrew: name=emacs state=absent
 
-- name: Link emacs application on Homebrew
-  shell: brew linkapps emacs
-  args:
-    creates: /Applications/Emacs.app
+- name: Install emacs cask
+  homebrew_cask: name=emacs state=present
