@@ -1,18 +1,39 @@
 ---
+- name: Add Debian APT key for jessie
+  become: yes
+  apt_key:
+    url: 'https://ftp-master.debian.org/keys/archive-key-8.asc'
+    state: present
+
+- name: Add Debian APT key for jessie/updates
+  become: yes
+  apt_key:
+    url: 'https://ftp-master.debian.org/keys/archive-key-8-security.asc'
+    state: present
+
+- name: Add Debian APT key for stretch
+  become: yes
+  apt_key:
+    url: 'https://ftp-master.debian.org/keys/archive-key-9.asc'
+    state: present
+
+- name: Add Debian APT key for stretch/updates
+  become: yes
+  apt_key:
+    url: 'https://ftp-master.debian.org/keys/archive-key-9-security.asc'
+    state: present
+
+- name: Add Raspbian APT key
+  become: yes
+  apt_key:
+    url: 'https://archive.raspbian.org/raspbian.public.key'
+    state: present
+
 - name: Copy APT sources
   become: yes
-  copy: src=sources.list dest=/etc/apt/sources.list mode=0644
-  when: ansible_machine != 'armv6l'
+  copy: src=sources.list dest=/etc/apt/sources.list
 
-- name: Disable old backports source
-  become: yes
-  apt_repository:
-    repo: deb http://ftp.debian.org/debian jessie-backports main
-    state: absent
-    filename: backports
-  when: ansible_machine != 'armv6l'
-
-- name: Install apt-transport-https package on Debian
+- name: Install apt-transport-https package
   become: yes
   apt: update_cache=yes name=apt-transport-https state=present
 
