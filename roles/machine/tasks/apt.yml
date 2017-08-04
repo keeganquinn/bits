@@ -88,6 +88,10 @@
   become: yes
   apt: name=emacs25 state=present
 
+- name: Install file package
+  become: yes
+  apt: name=file state=present
+
 - name: Install git package
   become: yes
   apt: name=git state=present

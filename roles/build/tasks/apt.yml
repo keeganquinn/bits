@@ -28,6 +28,10 @@
   become: yes
   apt: name=build-essential state=present
 
+- name: Install imagemagick package
+  become: yes
+  apt: name=imagemagick state=present
+
 - name: Install libssl-dev package
   become: yes
   apt: name=libssl-dev state=present
