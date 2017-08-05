@@ -4,6 +4,7 @@
 
   roles:
     - machine
+    - email
 
 - name: DNS
   hosts: pi.quinn.tk

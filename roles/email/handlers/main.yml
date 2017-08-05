@@ -1,0 +1,12 @@
+---
+- name: restart postfix
+  become: yes
+  service: name=postfix state=restarted enabled=yes
+
+- name: rebuild postfix sasl_passwd
+  become: yes
+  command: postmap /etc/postfix/sasl_passwd
+
+- name: rebuild postfix virtual
+  become: yes
+  command: postmap /etc/postfix/virtual

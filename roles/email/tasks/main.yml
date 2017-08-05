@@ -2,3 +2,39 @@
 - name: Install postfix package
   become: yes
   apt: name=postfix state=present
+
+- name: Copy postfix main configuration
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/main.cf'
+    dest: /etc/postfix/main.cf
+  notify: restart postfix
+
+- name: Copy postfix master configuration
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/master.cf'
+    dest: /etc/postfix/master.cf
+  notify: restart postfix
+
+- name: Copy sasl smtpd configuration
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/sasl-smtpd.conf'
+    dest: /etc/postfix/sasl/smtpd.conf
+  notify: restart postfix
+
+- name: Copy postfix sasl_passwd file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/sasl_passwd'
+    dest: /etc/postfix/sasl_passwd
+    mode: 0600
+  notify: rebuild postfix sasl_passwd
+
+- name: Copy postfix virtual file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/virtual'
+    dest: /etc/postfix/virtual
+  notify: rebuild postfix virtual
