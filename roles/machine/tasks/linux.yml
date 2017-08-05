@@ -2,3 +2,7 @@
 - name: Copy sudo configuration
   become: yes
   copy: src=nopasswd.sudoers dest=/etc/sudoers.d/nopasswd mode=0440
+
+- name: Copy updatedb configuration
+  become: yes
+  copy: src=updatedb.conf dest=/etc/updatedb.conf
