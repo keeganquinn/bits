@@ -5,7 +5,7 @@
 
 - name: Copy BIND configuration
   become: yes
-  copy: src=config/bind/ dest=/etc/bind
+  copy: src=bind/ dest=/etc/bind
   notify: restart bind9
 
 - name: Copy local BIND configuration
