@@ -9,7 +9,7 @@ zone "keegan.ws" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/keegan.ws";
+  file "/etc/bind/keegan.ws";
 };
 
 zone "keegan.ga" {
@@ -23,7 +23,7 @@ zone "keegan.ga" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "keegan.gq" {
@@ -37,7 +37,7 @@ zone "keegan.gq" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "quinn.ml" {
@@ -51,7 +51,7 @@ zone "quinn.ml" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "quinn.tk" {
@@ -65,7 +65,7 @@ zone "quinn.tk" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/quinn.tk";
+  file "/etc/bind/quinn.tk";
 };
 
 zone "str1ng.ml" {
@@ -79,7 +79,7 @@ zone "str1ng.ml" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "str1ng.ga" {
@@ -93,7 +93,7 @@ zone "str1ng.ga" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "str1ng.cf" {
@@ -107,7 +107,7 @@ zone "str1ng.cf" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "str1ng.gq" {
@@ -121,7 +121,7 @@ zone "str1ng.gq" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "sniz.org" {
@@ -135,7 +135,7 @@ zone "sniz.org" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "sniz.net" {
@@ -149,7 +149,7 @@ zone "sniz.net" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "animamagica.tk" {
@@ -163,7 +163,7 @@ zone "animamagica.tk" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "basslin.es" {
@@ -177,7 +177,7 @@ zone "basslin.es" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "cloudscontrol.us" {
@@ -191,7 +191,7 @@ zone "cloudscontrol.us" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "unplug.ml" {
@@ -205,7 +205,7 @@ zone "unplug.ml" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "unplug.gq" {
@@ -219,7 +219,7 @@ zone "unplug.gq" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "ugraal.tk" {
@@ -233,7 +233,7 @@ zone "ugraal.tk" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "ugraal.ml" {
@@ -247,7 +247,7 @@ zone "ugraal.ml" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "ugraal.ga" {
@@ -261,7 +261,7 @@ zone "ugraal.ga" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "ugraal.cf" {
@@ -275,7 +275,7 @@ zone "ugraal.cf" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "ugraal.gq" {
@@ -289,7 +289,7 @@ zone "ugraal.gq" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "abusive.ml" {
@@ -303,7 +303,7 @@ zone "abusive.ml" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "abusive.ga" {
@@ -317,7 +317,7 @@ zone "abusive.ga" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "abusive.cf" {
@@ -331,7 +331,7 @@ zone "abusive.cf" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "abusive.gq" {
@@ -345,7 +345,7 @@ zone "abusive.gq" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 
@@ -360,7 +360,7 @@ zone "matthewklug.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "adjustech.com" {
@@ -374,7 +374,7 @@ zone "adjustech.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "turnontv.net" {
@@ -388,7 +388,7 @@ zone "turnontv.net" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "clicktopick.net" {
@@ -402,7 +402,7 @@ zone "clicktopick.net" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "tunetvonline.com" {
@@ -416,7 +416,7 @@ zone "tunetvonline.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "freetunetv.com" {
@@ -430,7 +430,7 @@ zone "freetunetv.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "diptv.net" {
@@ -444,7 +444,7 @@ zone "diptv.net" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "kernelklug.com" {
@@ -458,7 +458,7 @@ zone "kernelklug.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "alphabetashop.com" {
@@ -472,7 +472,7 @@ zone "alphabetashop.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "mailballotvote.com" {
@@ -486,7 +486,7 @@ zone "mailballotvote.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "klug.pw" {
@@ -500,7 +500,7 @@ zone "klug.pw" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "fernhillmeadow.com" {
@@ -514,7 +514,7 @@ zone "fernhillmeadow.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "fernhillmarket.com" {
@@ -528,7 +528,7 @@ zone "fernhillmarket.com" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
 
 zone "fernhillschool.org" {
@@ -542,5 +542,5 @@ zone "fernhillschool.org" {
     2a01:4f8:d12:d01::10:100;
   };
   notify yes;
-  file "/home/keegan/public_html/bits/config/bind/generic";
+  file "/etc/bind/generic";
 };
