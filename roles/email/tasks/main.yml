@@ -3,6 +3,28 @@
   become: yes
   apt: name=postfix state=present
 
+- name: Install procmail package
+  become: yes
+  apt: name=procmail state=present
+
+- name: Copy hostname file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/hostname'
+    dest: /etc/hostname
+
+- name: Copy hosts file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/hosts'
+    dest: /etc/hosts
+
+- name: Copy mailname file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/mailname'
+    dest: /etc/mailname
+
 - name: Copy postfix main configuration
   become: yes
   copy:
