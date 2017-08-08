@@ -96,9 +96,17 @@
   become: yes
   apt: name=git state=present
 
+- name: Install harden-servers package
+  become: yes
+  apt: name=harden-servers state=present
+
 - name: Install mlocate package
   become: yes
   apt: name=mlocate state=present
+
+- name: Install nmap package
+  become: yes
+  apt: name=nmap state=present
 
 - name: Install screen package
   become: yes

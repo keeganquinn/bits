@@ -5,5 +5,8 @@
 - name: Install emacs cask
   homebrew_cask: name=emacs state=present
 
+- name: Install nmap brew
+  homebrew: name=nmap state=present
+
 - name: Install p7zip brew
   homebrew: name=p7zip state=present
