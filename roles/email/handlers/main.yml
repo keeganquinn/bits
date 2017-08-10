@@ -3,6 +3,10 @@
   become: yes
   service: name=postfix state=restarted enabled=yes
 
+- name: rebuild postfix aliases
+  become: yes
+  command: postmap /etc/aliases
+
 - name: rebuild postfix sasl_passwd
   become: yes
   command: postmap /etc/postfix/sasl_passwd

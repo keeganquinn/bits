@@ -7,6 +7,13 @@
   become: yes
   apt: name=procmail state=present
 
+- name: Copy aliases file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/aliases'
+    dest: /etc/aliases
+  notify: rebuild postfix aliases
+
 - name: Copy hostname file
   become: yes
   copy:
