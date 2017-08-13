@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi.quinn.tk. hostmaster (
         ; serial
-        2017042800
+        2017081300
         ; refresh
         30M
         ; retry
@@ -23,7 +23,8 @@ $TTL 2d
         NS      i.ns.buddyns.com.
         NS      e.ns.buddyns.com.
 
-        MX      10      pi.quinn.tk.
+        MX      10      len.quinn.tk.
+        MX      20      pi.quinn.tk.
 
         A       45.79.65.28
         AAAA    2600:3c01::f03c:91ff:fee9:47cb

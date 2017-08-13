@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2017061200
+        2017081300
         ; refresh
         30M
         ; retry
@@ -23,7 +23,8 @@ $TTL 2d
         NS      i.ns.buddyns.com.
         NS      e.ns.buddyns.com.
 
-        MX      10      pi
+        MX      10      len
+        MX      20      pi
 
         A       73.164.202.148
         AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
@@ -44,7 +45,9 @@ pi      TXT     "v=spf1 a -all"
 
 scrap   A       73.164.202.148
 scrap   AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
-scrap   TXT     "v=spf1 a -all"
+scrap   MX      10      len
+scrap   MX      20      pi
+scrap   TXT     "v=spf1 mx a -all"
 
 cwnmyr                  CNAME   len
 cwnmyr-staging          CNAME   scrap
