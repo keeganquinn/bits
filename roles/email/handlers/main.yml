@@ -11,6 +11,10 @@
   become: yes
   command: postmap /etc/postfix/sasl_passwd
 
+- name: rebuild postfix transport
+  become: yes
+  command: postmap /etc/postfix/transport
+
 - name: rebuild postfix virtual
   become: yes
   command: postmap /etc/postfix/virtual

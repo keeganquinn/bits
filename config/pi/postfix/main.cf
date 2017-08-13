@@ -1,37 +1,29 @@
+mydomain = quinn.tk
+
+compatibility_level = 2
+mynetworks_style = host
 biff = no
 append_dot_mydomain = no
-alias_maps = hash:/etc/aliases
 mailbox_command = /usr/bin/procmail -a "$EXTENSION"
+mailbox_size_limit = 0
 recipient_delimiter = +
 
-# TLS parameters
+# Security
 smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem
 smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
 smtpd_tls_security_level = may
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtpd_tls_auth_only = yes
+smtpd_sasl_local_domain = quinn.tk
+smtpd_sasl_security_options = noanonymous noplaintext
+smtpd_sasl_tls_security_options = noanonymous
 
 smtp_tls_security_level = may
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 
-# Local configuration
-inet_interfaces = all
-inet_protocols = all
-
-myhostname = pi.quinn.tk
-mynetworks =
-  89.18.165.159,
-  [2a00:f10:103:201:ba27:ebff:fe73:17b5],
-  127.0.0.0/8,
-  [::1]/128
-mydestination =
-  pi.quinn.tk,
-  localhost
-relay_domains =
-
-smtpd_sasl_local_domain = quinn.tk
-smtpd_sasl_security_options = noanonymous, noplaintext
-smtpd_sasl_tls_security_options = noanonymous
+# Access control
 smtpd_relay_restrictions =
   permit_mynetworks
   permit_sasl_authenticated
@@ -42,50 +34,7 @@ postscreen_dnsbl_sites = zen.spamhaus.org*2 bl.spamcop.net*2
 postscreen_dnsbl_action = enforce
 postscreen_greet_action = enforce
 
-milter_protocol = 6
-milter_default_action = accept
-smtpd_milters = inet:localhost:12301
-non_smtpd_milters = inet:localhost:12301
-
-# Virtual aliasing
-virtual_alias_domains =
-  abusive.cf,
-  abusive.ga,
-  abusive.gq,
-  abusive.ml,
-  adjustech.com,
-  alphabetashop.com,
-  animamagica.tk,
-  basslin.es,
-  clicktopick.net,
-  cloudscontrol.us,
-  diptv.net,
-  fernhillmarket.com,
-  fernhillmeadow.com,
-  fernhillschool.org,
-  freetunetv.com,
-  keegan.ga,
-  keegan.gq,
-  keegan.ws,
-  kernelklug.com,
-  klug.pw,
-  mailballotvote.com,
-  matthewklug.com,
-  quinn.ml,
-  quinn.tk,
-  sniz.net,
-  sniz.org,
-  str1ng.cf,
-  str1ng.ga,
-  str1ng.gq,
-  str1ng.ml,
-  tunetvonline.com,
-  turnontv.net,
-  ugraal.cf,
-  ugraal.ga,
-  ugraal.gq,
-  ugraal.ml,
-  ugraal.tk,
-  unplug.gq,
-  unplug.ml
-virtual_alias_maps = hash:/etc/postfix/virtual
+# Destinations
+alias_maps = hash:/etc/aliases
+transport_maps = hash:/etc/postfix/transport
+virtual_alias_maps = hash:/etc/postfix/virtual regexp:/etc/postfix/rewrite

@@ -46,7 +46,14 @@
     dest: /etc/postfix/master.cf
   notify: restart postfix
 
-- name: Copy sasl smtpd configuration
+- name: Copy postfix rewrite file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/rewrite'
+    dest: /etc/postfix/rewrite
+  notify: restart postfix
+
+- name: Copy postfix sasl smtpd configuration
   become: yes
   copy:
     src: 'config/{{ ansible_hostname }}/postfix/sasl-smtpd.conf'
@@ -60,6 +67,13 @@
     dest: /etc/postfix/sasl_passwd
     mode: 0600
   notify: rebuild postfix sasl_passwd
+
+- name: Copy postfix transport file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/postfix/transport'
+    dest: /etc/postfix/transport
+  notify: rebuild postfix transport
 
 - name: Copy postfix virtual file
   become: yes
