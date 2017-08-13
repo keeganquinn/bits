@@ -32,18 +32,18 @@
     src: 'config/{{ ansible_hostname }}/mailname'
     dest: /etc/mailname
 
+- name: Copy sasldb2 file
+  become: yes
+  copy: src=sasldb2 dest=/etc/sasldb2
+
 - name: Copy postfix main configuration
   become: yes
-  copy:
-    src: 'config/{{ ansible_hostname }}/postfix/main.cf'
-    dest: /etc/postfix/main.cf
+  copy: src=main.cf dest=/etc/postfix/main.cf
   notify: restart postfix
 
 - name: Copy postfix master configuration
   become: yes
-  copy:
-    src: 'config/{{ ansible_hostname }}/postfix/master.cf'
-    dest: /etc/postfix/master.cf
+  copy: src=master.cf dest=/etc/postfix/master.cf
   notify: restart postfix
 
 - name: Copy postfix rewrite file
@@ -55,9 +55,7 @@
 
 - name: Copy postfix sasl smtpd configuration
   become: yes
-  copy:
-    src: 'config/{{ ansible_hostname }}/postfix/sasl-smtpd.conf'
-    dest: /etc/postfix/sasl/smtpd.conf
+  copy: src=sasl-smtpd.conf dest=/etc/postfix/sasl/smtpd.conf
   notify: restart postfix
 
 - name: Copy postfix sasl_passwd file
