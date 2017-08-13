@@ -1,13 +1,27 @@
+acl "slaves" {
+  # pi
+  89.18.165.159;
+  2a00:f10:103:201:ba27:ebff:fe73:17b5;
+
+  # len
+  45.79.65.28;
+  2600:3c01::f03c:91ff:fee9:47cb;
+
+  # scrap
+  73.164.202.148;
+  2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3;
+
+  # BuddyNS
+  173.244.206.26;
+  88.198.106.11;
+  2607:f0d0:1005:72::100;
+  2a01:4f8:d12:d01::10:100;
+};
+
 zone "keegan.ws" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/keegan.ws";
 };
@@ -15,13 +29,7 @@ zone "keegan.ws" {
 zone "keegan.ga" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -29,13 +37,7 @@ zone "keegan.ga" {
 zone "keegan.gq" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -43,13 +45,7 @@ zone "keegan.gq" {
 zone "quinn.ml" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -57,13 +53,7 @@ zone "quinn.ml" {
 zone "quinn.tk" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/quinn.tk";
 };
@@ -71,13 +61,7 @@ zone "quinn.tk" {
 zone "str1ng.ml" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -85,13 +69,7 @@ zone "str1ng.ml" {
 zone "str1ng.ga" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -99,13 +77,7 @@ zone "str1ng.ga" {
 zone "str1ng.cf" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -113,13 +85,7 @@ zone "str1ng.cf" {
 zone "str1ng.gq" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -127,13 +93,7 @@ zone "str1ng.gq" {
 zone "sniz.org" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -141,13 +101,7 @@ zone "sniz.org" {
 zone "sniz.net" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -155,13 +109,7 @@ zone "sniz.net" {
 zone "animamagica.tk" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -169,13 +117,7 @@ zone "animamagica.tk" {
 zone "basslin.es" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -183,13 +125,7 @@ zone "basslin.es" {
 zone "cloudscontrol.us" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -197,13 +133,7 @@ zone "cloudscontrol.us" {
 zone "unplug.ml" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -211,13 +141,7 @@ zone "unplug.ml" {
 zone "unplug.gq" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -225,13 +149,7 @@ zone "unplug.gq" {
 zone "ugraal.tk" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -239,13 +157,7 @@ zone "ugraal.tk" {
 zone "ugraal.ml" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -253,13 +165,7 @@ zone "ugraal.ml" {
 zone "ugraal.ga" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -267,13 +173,7 @@ zone "ugraal.ga" {
 zone "ugraal.cf" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -281,13 +181,7 @@ zone "ugraal.cf" {
 zone "ugraal.gq" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -295,13 +189,7 @@ zone "ugraal.gq" {
 zone "abusive.ml" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -309,13 +197,7 @@ zone "abusive.ml" {
 zone "abusive.ga" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -323,13 +205,7 @@ zone "abusive.ga" {
 zone "abusive.cf" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -337,13 +213,7 @@ zone "abusive.cf" {
 zone "abusive.gq" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -352,13 +222,7 @@ zone "abusive.gq" {
 zone "matthewklug.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -366,13 +230,7 @@ zone "matthewklug.com" {
 zone "adjustech.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -380,13 +238,7 @@ zone "adjustech.com" {
 zone "turnontv.net" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -394,13 +246,7 @@ zone "turnontv.net" {
 zone "clicktopick.net" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -408,13 +254,7 @@ zone "clicktopick.net" {
 zone "tunetvonline.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -422,13 +262,7 @@ zone "tunetvonline.com" {
 zone "freetunetv.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -436,13 +270,7 @@ zone "freetunetv.com" {
 zone "diptv.net" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -450,13 +278,7 @@ zone "diptv.net" {
 zone "kernelklug.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -464,13 +286,7 @@ zone "kernelklug.com" {
 zone "alphabetashop.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -478,13 +294,7 @@ zone "alphabetashop.com" {
 zone "mailballotvote.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -492,13 +302,7 @@ zone "mailballotvote.com" {
 zone "klug.pw" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -506,13 +310,7 @@ zone "klug.pw" {
 zone "fernhillmeadow.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -520,13 +318,7 @@ zone "fernhillmeadow.com" {
 zone "fernhillmarket.com" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
@@ -534,13 +326,7 @@ zone "fernhillmarket.com" {
 zone "fernhillschool.org" {
   type master;
   allow-query { any; };
-  allow-transfer {
-    # BuddyNS
-    173.244.206.26;
-    88.198.106.11;
-    2607:f0d0:1005:72::100;
-    2a01:4f8:d12:d01::10:100;
-  };
+  allow-transfer { "slaves"; };
   notify yes;
   file "/etc/bind/generic";
 };
