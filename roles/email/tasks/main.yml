@@ -1,4 +1,8 @@
 ---
+- name: Install opendkim package
+  become: yes
+  apt: name=opendkim state=present
+
 - name: Install postfix package
   become: yes
   apt: name=postfix state=present
