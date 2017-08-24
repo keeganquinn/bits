@@ -8,6 +8,9 @@
 - name: Copy the Emacs configuration file
   copy: src=emacs dest='{{ ansible_env.HOME }}/.emacs'
 
+- name: Copy the git configuration file
+  copy: src=gitconfig dest='{{ ansible_env.HOME }}/.gitconfig'
+
 - name: Install docker-ce package on Debian
   become: yes
   apt: name=docker-ce state=present
