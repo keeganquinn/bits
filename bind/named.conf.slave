@@ -19,6 +19,13 @@ zone "keegan.gq" {
   file "keegan.gq";
 };
 
+zone "keegan.info" {
+  type slave;
+  allow-query { any; };
+  masters { 89.18.165.159; };
+  file "keegan.info";
+};
+
 zone "quinn.ml" {
   type slave;
   allow-query { any; };

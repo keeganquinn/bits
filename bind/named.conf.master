@@ -42,6 +42,14 @@ zone "keegan.gq" {
   file "/etc/bind/generic";
 };
 
+zone "keegan.info" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  file "/etc/bind/generic";
+};
+
 zone "quinn.ml" {
   type master;
   allow-query { any; };
