@@ -3,6 +3,10 @@
   become: yes
   apt: name=opendkim state=present
 
+- name: Install sasl2-bin package
+  become: yes
+  apt: name=sasl2-bin state=present
+
 - name: Install postfix package
   become: yes
   apt: name=postfix state=present
@@ -38,7 +42,106 @@
 
 - name: Copy sasldb2 file
   become: yes
-  copy: src=sasldb2 dest=/etc/sasldb2
+  copy:
+    src: sasldb2
+    dest: /etc/sasldb2
+    owner: root
+    group: sasl
+    mode: 0660
+
+- name: Create postfix user
+  become: yes
+  user:
+    name: postfix
+    comment: Postfix
+    shell: /bin/false
+    groups: opendkim,sasl
+
+- name: Create /etc/opendkim
+  become: yes
+  file:
+    path: /etc/opendkim
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: Create /etc/opendkim/keys
+  become: yes
+  file:
+    path: /etc/opendkim/keys
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: Create /etc/systemd/system/opendkim.service.d
+  become: yes
+  file:
+    path: /etc/systemd/system/opendkim.service.d
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: Create /var/spool/postfix/var/lib/postfix
+  become: yes
+  file:
+    path: /var/spool/postfix/var/lib/postfix
+    state: directory
+    mode: 0755
+    owner: postfix
+    group: postfix
+
+- name: Create /var/spool/postfix/var/run/opendkim
+  become: yes
+  file:
+    path: /var/spool/postfix/var/run/opendkim
+    state: directory
+    mode: 0750
+    owner: opendkim
+    group: opendkim
+
+- name: Copy opendkim configuration
+  become: yes
+  copy: src=opendkim.conf dest=/etc/opendkim.conf
+  notify: restart opendkim
+
+- name: Copy opendkim systemd override
+  become: yes
+  copy:
+    src: opendkim-local.conf
+    dest: /etc/systemd/system/opendkim.service.d/local.conf
+  notify: restart opendkim
+
+- name: Copy opendkim key table
+  become: yes
+  copy: src=opendkim/KeyTable dest=/etc/opendkim/KeyTable
+  notify: restart opendkim
+
+- name: Copy opendkim signing table
+  become: yes
+  copy: src=opendkim/SigningTable dest=/etc/opendkim/SigningTable
+  notify: restart opendkim
+
+- name: Copy opendkim trusted hosts
+  become: yes
+  copy: src=opendkim/TrustedHosts dest=/etc/opendkim/TrustedHosts
+  notify: restart opendkim
+
+- name: Copy opendkim public key
+  become: yes
+  copy: src=opendkim/keys/mail.txt dest=/etc/opendkim/keys/mail.txt
+
+- name: Copy opendkim private key
+  become: yes
+  copy:
+    src: opendkim/keys/mail.private
+    dest: /etc/opendkim/keys/mail.private
+    owner: opendkim
+    group: opendkim
+    mode: 0600
+  notify: restart opendkim
 
 - name: Copy postfix main configuration
   become: yes
