@@ -8,7 +8,7 @@
     - email
 
 - name: Webserver configuration
-  hosts: scrap.quinn.tk, len.quinn.tk
+  hosts: scrap, len
 
   roles:
     - build
@@ -17,13 +17,13 @@
     - palkan.phantomjs
 
 - name: Creature comforts
-  hosts: scrap.quinn.tk
+  hosts: scrap
 
   roles:
     - comfort
 
 - name: quinn.tk
-  hosts: scrap.quinn.tk
+  hosts: scrap
 
   tasks:
   - name: Sync site
@@ -36,7 +36,7 @@
     - intranet
 
 - name: basslin.es
-  hosts: len.quinn.tk
+  hosts: len
 
   tasks:
   - name: Sync site
