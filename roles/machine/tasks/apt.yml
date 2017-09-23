@@ -33,10 +33,6 @@
   become: yes
   copy: src=sources.list dest=/etc/apt/sources.list
 
-- name: Install apt-transport-https package
-  become: yes
-  apt: update_cache=yes name=apt-transport-https state=present
-
 - name: Add docker APT key
   become: yes
   apt_key:
