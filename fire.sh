@@ -8,6 +8,7 @@ scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
 function cleanup {
     rm -rf "${scratch}"
+    stty echo
     exit
 }
 trap cleanup INT TERM
