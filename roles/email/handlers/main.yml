@@ -9,7 +9,7 @@
 
 - name: rebuild postfix aliases
   become: yes
-  command: postmap /etc/aliases
+  command: newaliases
 
 - name: rebuild postfix sasl_passwd
   become: yes
