@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2017092301
+        2017092302
         ; refresh
         30M
         ; retry
@@ -26,8 +26,8 @@ $TTL 2d
         MX      10      len
         MX      20      pi
 
-        A       73.164.202.148
-        AAAA    2601:1c2:4c01:6e4a:20e:cff:fe6d:9bf3
+        A       45.79.65.28
+        AAAA    2600:3c01::f03c:91ff:fee9:47cb
 
         TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@quinn.tk"
         TXT     "v=spf1 mx a include:_spf.google.com ~all"
