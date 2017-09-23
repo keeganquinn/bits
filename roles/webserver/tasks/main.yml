@@ -1,11 +1,15 @@
 ---
-- name: Install nginx package
-  become: yes
-  apt: name=nginx state=present
-
 - name: Install certbot package
   become: yes
   apt: name=certbot state=present
+
+- name: Install fcgiwrap package
+  become: yes
+  apt: name=fcgiwrap state=present
+
+- name: Install nginx package
+  become: yes
+  apt: name=nginx state=present
 
 - name: Generate Diffie-Hellman parameters for nginx
   become: yes
@@ -18,7 +22,21 @@
   become: yes
   copy:
     src: 'config/{{ ansible_hostname }}/nginx/'
-    dest: /etc/nginx/sites-enabled
+    dest: /etc/nginx/sites-available
+  notify: restart nginx
+
+- name: Enable nginx virtual hosts
+  become: yes
+  file:
+    src: '/etc/nginx/sites-available/{{ item.path }}'
+    dest: '/etc/nginx/sites-enabled/{{ item.path }}'
+    state: link
+    mode: 0644
+    owner: root
+    group: root
+    force: true
+  with_filetree:
+    - 'config/{{ ansible_hostname }}/nginx/'
   notify: restart nginx
 
 - name: Copy SSL certificates
