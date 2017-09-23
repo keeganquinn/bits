@@ -16,6 +16,12 @@
     - webserver
     - palkan.phantomjs
 
+- name: Mailing lists
+  hosts: len
+
+  roles:
+    - listserv
+
 - name: Creature comforts
   hosts: scrap
 
