@@ -4,3 +4,4 @@
 .DS_Store
 deploy.retry
 dot.retry
+roles/palkan.phantomjs
