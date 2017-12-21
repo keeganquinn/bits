@@ -1,3 +1,0 @@
-deb [arch=amd64,i386] http://debian.osuosl.org/debian/ stretch main contrib non-free
-deb [arch=amd64,i386] http://security.debian.org/ stretch/updates main contrib non-free
-deb [arch=armhf] http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi

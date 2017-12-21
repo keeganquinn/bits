@@ -31,7 +31,7 @@
 
 - name: Copy APT sources
   become: yes
-  copy: src=sources.list dest=/etc/apt/sources.list
+  copy: src='sources.list.{{ ansible_architecture }}' dest=/etc/apt/sources.list
 
 - name: Add docker APT key
   become: yes
