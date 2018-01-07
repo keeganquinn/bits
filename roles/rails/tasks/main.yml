@@ -104,6 +104,7 @@
   postgresql_user:
     name: cwnmyr
     password: cwnmyr
+    encrypted: yes
 
 - name: Create cwnmyr database in Postgres
   become: yes
@@ -119,6 +120,7 @@
   postgresql_user:
     name: partystarter
     password: partystarter
+    encrypted: yes
 
 - name: Create partystarter database in Postgres
   become: yes
