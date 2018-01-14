@@ -3,6 +3,12 @@
   become: yes
   copy: src=nopasswd.sudoers dest=/etc/sudoers.d/nopasswd mode=0440
 
+- name: Copy motd file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/motd'
+    dest: /etc/motd
+
 - name: Copy updatedb configuration
   become: yes
   copy: src=updatedb.conf dest=/etc/updatedb.conf
