@@ -3,7 +3,13 @@ server {
     listen [::]:80;
     server_name scrap.quinn.tk scrap.keegan.ws scrap.local;
 
-    return 301 https://quinn.tk$request_uri;
+    location /.well-known {
+        alias /srv/www/scrap.quinn.tk/.well-known;
+    }
+
+    location / {
+        return 301 https://quinn.tk$request_uri;
+    }
 }
 
 server {
@@ -20,5 +26,11 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/scrap.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
-    return 301 https://quinn.tk$request_uri;
+    location /.well-known {
+        alias /srv/www/scrap.quinn.tk/.well-known;
+    }
+
+    location / {
+        return 301 https://quinn.tk$request_uri;
+    }
 }

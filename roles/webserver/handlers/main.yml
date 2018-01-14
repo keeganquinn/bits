@@ -2,3 +2,7 @@
 - name: restart nginx
   become: yes
   service: name=nginx state=restarted enabled=yes
+
+- name: renew certbot
+  become: yes
+  command: certbot renew -q

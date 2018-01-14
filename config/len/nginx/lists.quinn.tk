@@ -3,7 +3,13 @@ server {
     listen [::]:80;
     server_name lists.quinn.tk;
 
-    return 301 https://lists.quinn.tk$request_uri;
+    location /.well-known {
+         alias /srv/www/lists.quinn.tk/.well-known;
+    }
+
+    location / {
+        return 301 https://lists.quinn.tk$request_uri;
+    }
 }
 
 server {
@@ -22,6 +28,9 @@ server {
 
     location / {
         return 301 https://lists.quinn.tk/cgi-bin/mailman/listinfo;
+    }
+    location /.well-known {
+         alias /srv/www/lists.quinn.tk/.well-known;
     }
     location /cgi-bin/mailman {
         root /usr/lib/;
