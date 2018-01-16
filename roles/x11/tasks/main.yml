@@ -1,0 +1,12 @@
+---
+- name: Install task-kde-desktop package
+  become: yes
+  apt: name=task-kde-desktop state=present
+
+- name: Install vlc package
+  become: yes
+  apt: name=vlc state=present
+
+- name: Enable and start the sddm service
+  become: yes
+  service: name=sddm enabled=yes state=started

@@ -23,11 +23,22 @@
     - listserv
 
 - name: Creature comforts
-  hosts: scrap
+  hosts: pi, scrap
 
   roles:
     - comfort
+
+- name: Intranet configuration
+  hosts: scrap
+
+  roles:
     - intranet
+
+- name: Desktop configuration
+  hosts: scrap
+
+  roles:
+    - x11
 
 - name: quinn.tk
   hosts: scrap, len
