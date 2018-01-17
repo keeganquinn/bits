@@ -40,6 +40,12 @@
     src: 'config/{{ ansible_hostname }}/mailname'
     dest: /etc/mailname
 
+- name: Copy motd file
+  become: yes
+  copy:
+    src: 'config/{{ ansible_hostname }}/motd'
+    dest: /etc/motd
+
 - name: Copy sasldb2 file
   become: yes
   copy:
