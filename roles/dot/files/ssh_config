@@ -12,6 +12,7 @@ Host pi
 Host scrap
     Hostname scrap.quinn.tk
     ForwardAgent yes
+    ForwardX11 yes
 
 
 # Local machines
