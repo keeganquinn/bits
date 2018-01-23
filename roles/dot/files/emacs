@@ -26,7 +26,7 @@
  '(js2-bounce-indent-p t)
  '(package-selected-packages
    (quote
-    (rbenv web-mode robe rainbow-mode projectile smartparens company js2-mode yaml-mode haml-mode use-package flycheck)))
+    (grizzl rbenv web-mode robe rainbow-mode projectile smartparens company js2-mode yaml-mode haml-mode use-package flycheck)))
  '(tool-bar-mode nil))
 
 (setq-default indent-tabs-mode nil)
