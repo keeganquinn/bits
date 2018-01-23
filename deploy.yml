@@ -34,12 +34,6 @@
   roles:
     - intranet
 
-- name: Desktop configuration
-  hosts: scrap
-
-  roles:
-    - x11
-
 - name: quinn.tk
   hosts: scrap, len
 

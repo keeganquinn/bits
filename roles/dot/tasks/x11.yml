@@ -1,0 +1,24 @@
+---
+- name: Install kde-standard package
+  become: yes
+  apt: name=kde-standard state=present
+
+- name: Install lightdm package
+  become: yes
+  apt: name=lightdm state=present
+
+- name: Install openbox package
+  become: yes
+  apt: name=openbox state=present
+
+- name: Install tigervnc-viewer package
+  become: yes
+  apt: name=tigervnc-viewer state=present
+
+- name: Install vlc package
+  become: yes
+  apt: name=vlc state=present
+
+- name: Enable and start the lightdm service
+  become: yes
+  service: name=lightdm enabled=yes state=started
