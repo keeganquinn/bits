@@ -18,6 +18,12 @@
     - ansible_machine == 'x86_64'
     - ansible_pkg_mgr == 'apt'
 
+- name: Install tigervnc-viewer package on Debian
+  become: yes
+  apt: name=tigervnc-viewer state=present
+  when:
+    - ansible_pkg_mgr == 'apt'
+
 - name: Install rbenv
   git:
     repo: https://github.com/rbenv/rbenv.git
