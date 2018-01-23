@@ -38,7 +38,8 @@
               '(face tab-mark tabs trailing lines-tail empty
                      indentation::space))
 
-(when window-system (set-frame-size (selected-frame) 170 60))
+(if (string-equal "darwin" (symbol-name system-type))
+    (when window-system (set-frame-size (selected-frame) 170 60)))
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
