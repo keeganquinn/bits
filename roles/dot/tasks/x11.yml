@@ -19,6 +19,10 @@
   become: yes
   apt: name=vlc state=present
 
+- name: Install wine package
+  become: yes
+  apt: name=wine state=present
+
 - name: Enable and start the lightdm service
   become: yes
   service: name=lightdm enabled=yes state=started
