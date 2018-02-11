@@ -11,6 +11,10 @@
   become: yes
   apt: name=openbox state=present
 
+- name: Install rdesktop package
+  become: yes
+  apt: name=rdesktop state=present
+
 - name: Install tigervnc-viewer package
   become: yes
   apt: name=tigervnc-viewer state=present
@@ -18,6 +22,10 @@
 - name: Install vlc package
   become: yes
   apt: name=vlc state=present
+
+- name: Install wireshark package
+  become: yes
+  apt: name=wireshark state=present
 
 - name: Enable and start the lightdm service
   become: yes
