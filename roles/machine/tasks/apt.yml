@@ -1,16 +1,4 @@
 ---
-- name: Add Debian APT key for jessie
-  become: yes
-  apt_key:
-    url: 'https://ftp-master.debian.org/keys/archive-key-8.asc'
-    state: present
-
-- name: Add Debian APT key for jessie/updates
-  become: yes
-  apt_key:
-    url: 'https://ftp-master.debian.org/keys/archive-key-8-security.asc'
-    state: present
-
 - name: Add Debian APT key for stretch
   become: yes
   apt_key:
