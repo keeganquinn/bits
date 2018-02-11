@@ -64,6 +64,6 @@
   become: yes
   apt: name=libpq-dev state=present
 
-- name: Install libmagickwand-dev package
+- name: Install libmagickwand-6.q16-dev package
   become: yes
-  apt: name=libmagickwand-dev state=present
+  apt: name=libmagickwand-6.q16-dev state=present
