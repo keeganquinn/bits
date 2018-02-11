@@ -29,6 +29,7 @@
     (grizzl rbenv web-mode robe rainbow-mode projectile smartparens company js2-mode yaml-mode haml-mode use-package flycheck)))
  '(tool-bar-mode nil))
 
+(menu-bar-mode -1)
 (setq-default indent-tabs-mode nil)
 (setq js-indent-level 2)
 (setq ring-bell-function 'ignore)
