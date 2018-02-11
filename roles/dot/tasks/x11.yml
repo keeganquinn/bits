@@ -32,6 +32,11 @@
   copy: src=grub dest=/etc/default/grub
   notify: update grub
 
+- name: Copy the kernel-img.conf file
+  become: yes
+  copy: src=kernel-img.conf dest=/etc/kernel-img.conf
+  notify: update grub
+
 - name: Enable and start the lightdm service
   become: yes
   service: name=lightdm enabled=yes state=started
