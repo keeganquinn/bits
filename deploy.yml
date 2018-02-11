@@ -7,6 +7,14 @@
     - nameserver
     - email
 
+- name: Zabbix agent
+  hosts: servers
+
+  tasks:
+  - name: Install zabbix-agent package
+    become: yes
+    apt: name=zabbix-agent state=present
+
 - name: Webserver configuration
   hosts: scrap, len
 

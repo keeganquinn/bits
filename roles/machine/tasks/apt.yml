@@ -115,7 +115,3 @@
 - name: Install unzip package
   become: yes
   apt: name=unzip state=present
-
-- name: Install zabbix-agent package
-  become: yes
-  apt: name=zabbix-agent state=present
