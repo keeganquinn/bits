@@ -88,6 +88,10 @@
   become: yes
   apt: name=harden-servers state=present
 
+- name: Install lftp package
+  become: yes
+  apt: name=lftp state=present
+
 - name: Install mlocate package
   become: yes
   apt: name=mlocate state=present
