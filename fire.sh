@@ -12,7 +12,7 @@ echo
 
 scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
-function cleanup {
+cleanup() {
     rm -rf "${scratch}"
     stty echo
     exit
