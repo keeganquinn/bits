@@ -72,7 +72,11 @@
   become: yes
   apt: name=apt-listchanges state=present
 
-- name: Install emacs package on Debian
+- name: Install curl package
+  become: yes
+  apt: name=curl state=present
+
+- name: Install emacs package
   become: yes
   apt: name=emacs25 state=present
 
