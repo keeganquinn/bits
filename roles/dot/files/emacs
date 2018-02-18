@@ -40,7 +40,7 @@
                      indentation::space))
 
 (if (string-equal "darwin" (symbol-name system-type))
-    (when window-system (set-frame-size (selected-frame) 170 60)))
+    (when window-system (set-frame-size (selected-frame) 162 48)))
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -70,9 +70,8 @@
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "unknown" :slant normal :weight normal :height 82 :width normal)))))
+(if (string-equal "darwin" (symbol-name system-type))
+    (custom-set-faces
+     '(default ((t (:family "Hack" :foundry "unknown" :slant normal :weight normal :height 110 :width normal)))))
+  (custom-set-faces
+   '(default ((t (:family "Hack" :foundry "unknown" :slant normal :weight normal :height 82 :width normal))))))
