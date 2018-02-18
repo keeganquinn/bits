@@ -40,7 +40,7 @@
                      indentation::space))
 
 (if (string-equal "darwin" (symbol-name system-type))
-    (when window-system (set-frame-size (selected-frame) 162 48)))
+    (when window-system (set-frame-size (selected-frame) 165 48)))
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
