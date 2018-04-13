@@ -5,6 +5,9 @@
 - name: Install node package on Homebrew
   homebrew: name=node state=present
 
+- name: Install pkg-config brew
+  homebrew: name=pkg-config state=present
+
 - name: Install postgresql brew
   homebrew: name=postgresql state=present
 
