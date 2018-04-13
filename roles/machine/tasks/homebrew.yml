@@ -5,8 +5,17 @@
 - name: Install emacs cask
   homebrew_cask: name=emacs state=present
 
+- name: Install dos2unix brew
+  homebrew: name=dos2unix state=present
+
+- name: Install lftp brew
+  homebrew: name=lftp state=present
+
 - name: Install nmap brew
   homebrew: name=nmap state=present
 
 - name: Install p7zip brew
   homebrew: name=p7zip state=present
+
+- name: Install wget brew
+  homebrew: name=wget state=present
