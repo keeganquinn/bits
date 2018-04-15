@@ -1,9 +1,12 @@
 ---
+- name: Tap caskroom/cask
+  homebrew_tap: name=caskroom/cask state=present
+
+- name: Tap caskroom/fonts
+  homebrew_tap: name=caskroom/fonts state=present
+
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
-
-- name: Install emacs cask
-  homebrew_cask: name=emacs state=present
 
 - name: Install dos2unix brew
   homebrew: name=dos2unix state=present
@@ -19,3 +22,1680 @@
 
 - name: Install wget brew
   homebrew: name=wget state=present
+
+- name: Install emacs cask
+  homebrew_cask: name=emacs state=present
+
+- name: Install font-3270 cask
+  homebrew_cask: name=font-3270 state=present
+
+- name: Install font-abeezee cask
+  homebrew_cask: name=font-abeezee state=present
+
+- name: Install font-abel cask
+  homebrew_cask: name=font-abel state=present
+
+- name: Install font-aboriginal-sans cask
+  homebrew_cask: name=font-aboriginal-sans state=present
+
+- name: Install font-aboriginal-serif cask
+  homebrew_cask: name=font-aboriginal-serif state=present
+
+- name: Install font-abril-fatface cask
+  homebrew_cask: name=font-abril-fatface state=present
+
+- name: Install font-accordance cask
+  homebrew_cask: name=font-accordance state=present
+
+- name: Install font-acme cask
+  homebrew_cask: name=font-acme state=present
+
+- name: Install font-actor cask
+  homebrew_cask: name=font-actor state=present
+
+- name: Install font-adamina cask
+  homebrew_cask: name=font-adamina state=present
+
+- name: Install font-advent-pro cask
+  homebrew_cask: name=font-advent-pro state=present
+
+- name: Install font-african-sans cask
+  homebrew_cask: name=font-african-sans state=present
+
+- name: Install font-african-serif cask
+  homebrew_cask: name=font-african-serif state=present
+
+- name: Install font-aguafina-script cask
+  homebrew_cask: name=font-aguafina-script state=present
+
+- name: Install font-akronim cask
+  homebrew_cask: name=font-akronim state=present
+
+- name: Install font-aladin cask
+  homebrew_cask: name=font-aladin state=present
+
+- name: Install font-aldrich cask
+  homebrew_cask: name=font-aldrich state=present
+
+- name: Install font-alex-brush cask
+  homebrew_cask: name=font-alex-brush state=present
+
+- name: Install font-alfa-slab-one cask
+  homebrew_cask: name=font-alfa-slab-one state=present
+
+- name: Install font-alice cask
+  homebrew_cask: name=font-alice state=present
+
+- name: Install font-alike cask
+  homebrew_cask: name=font-alike state=present
+
+- name: Install font-alike-angular cask
+  homebrew_cask: name=font-alike-angular state=present
+
+- name: Install font-allan cask
+  homebrew_cask: name=font-allan state=present
+
+- name: Install font-allerta cask
+  homebrew_cask: name=font-allerta state=present
+
+- name: Install font-allerta-stencil cask
+  homebrew_cask: name=font-allerta-stencil state=present
+
+- name: Install font-allura cask
+  homebrew_cask: name=font-allura state=present
+
+- name: Install font-almendra cask
+  homebrew_cask: name=font-almendra state=present
+
+- name: Install font-almendra-display cask
+  homebrew_cask: name=font-almendra-display state=present
+
+- name: Install font-almendra-sc cask
+  homebrew_cask: name=font-almendra-sc state=present
+
+- name: Install font-amarante cask
+  homebrew_cask: name=font-amarante state=present
+
+- name: Install font-amaranth cask
+  homebrew_cask: name=font-amaranth state=present
+
+- name: Install font-amatic-sc cask
+  homebrew_cask: name=font-amatic-sc state=present
+
+- name: Install font-amethysta cask
+  homebrew_cask: name=font-amethysta state=present
+
+- name: Install font-anaheim cask
+  homebrew_cask: name=font-anaheim state=present
+
+- name: Install font-andada cask
+  homebrew_cask: name=font-andada state=present
+
+- name: Install font-andada-sc cask
+  homebrew_cask: name=font-andada-sc state=present
+
+- name: Install font-angkor cask
+  homebrew_cask: name=font-angkor state=present
+
+- name: Install font-annie-use-your-telescope cask
+  homebrew_cask: name=font-annie-use-your-telescope state=present
+
+- name: Install font-anonymous-pro cask
+  homebrew_cask: name=font-anonymous-pro state=present
+
+- name: Install font-antic cask
+  homebrew_cask: name=font-antic state=present
+
+- name: Install font-antic-didone cask
+  homebrew_cask: name=font-antic-didone state=present
+
+- name: Install font-antic-slab cask
+  homebrew_cask: name=font-antic-slab state=present
+
+- name: Install font-anton cask
+  homebrew_cask: name=font-anton state=present
+
+- name: Install font-arapey cask
+  homebrew_cask: name=font-arapey state=present
+
+- name: Install font-arbutus cask
+  homebrew_cask: name=font-arbutus state=present
+
+- name: Install font-arbutus-slab cask
+  homebrew_cask: name=font-arbutus-slab state=present
+
+- name: Install font-architects-daughter cask
+  homebrew_cask: name=font-architects-daughter state=present
+
+- name: Install font-archivo-black cask
+  homebrew_cask: name=font-archivo-black state=present
+
+- name: Install font-archivo-narrow cask
+  homebrew_cask: name=font-archivo-narrow state=present
+
+- name: Install font-arimo cask
+  homebrew_cask: name=font-arimo state=present
+
+- name: Install font-arizonia cask
+  homebrew_cask: name=font-arizonia state=present
+
+- name: Install font-armata cask
+  homebrew_cask: name=font-armata state=present
+
+- name: Install font-artifika cask
+  homebrew_cask: name=font-artifika state=present
+
+- name: Install font-arvo cask
+  homebrew_cask: name=font-arvo state=present
+
+- name: Install font-asap cask
+  homebrew_cask: name=font-asap state=present
+
+- name: Install font-asset cask
+  homebrew_cask: name=font-asset state=present
+
+- name: Install font-astloch cask
+  homebrew_cask: name=font-astloch state=present
+
+- name: Install font-asul cask
+  homebrew_cask: name=font-asul state=present
+
+- name: Install font-atomic-age cask
+  homebrew_cask: name=font-atomic-age state=present
+
+- name: Install font-aubrey cask
+  homebrew_cask: name=font-aubrey state=present
+
+- name: Install font-audiowide cask
+  homebrew_cask: name=font-audiowide state=present
+
+- name: Install font-autour-one cask
+  homebrew_cask: name=font-autour-one state=present
+
+- name: Install font-average cask
+  homebrew_cask: name=font-average state=present
+
+- name: Install font-average-mono cask
+  homebrew_cask: name=font-average-mono state=present
+
+- name: Install font-averia-gruesa-libre cask
+  homebrew_cask: name=font-averia-gruesa-libre state=present
+
+- name: Install font-averia-libre cask
+  homebrew_cask: name=font-averia-libre state=present
+
+- name: Install font-averia-sans-libre cask
+  homebrew_cask: name=font-averia-sans-libre state=present
+
+- name: Install font-averia-serif-libre cask
+  homebrew_cask: name=font-averia-serif-libre state=present
+
+- name: Install font-bad-script cask
+  homebrew_cask: name=font-bad-script state=present
+
+- name: Install font-balthazar cask
+  homebrew_cask: name=font-balthazar state=present
+
+- name: Install font-bangers cask
+  homebrew_cask: name=font-bangers state=present
+
+- name: Install font-basic cask
+  homebrew_cask: name=font-basic state=present
+
+- name: Install font-battambang cask
+  homebrew_cask: name=font-battambang state=present
+
+- name: Install font-baumans cask
+  homebrew_cask: name=font-baumans state=present
+
+- name: Install font-bayon cask
+  homebrew_cask: name=font-bayon state=present
+
+- name: Install font-belgrano cask
+  homebrew_cask: name=font-belgrano state=present
+
+- name: Install font-belleza cask
+  homebrew_cask: name=font-belleza state=present
+
+- name: Install font-benchnine cask
+  homebrew_cask: name=font-benchnine state=present
+
+- name: Install font-bentham cask
+  homebrew_cask: name=font-bentham state=present
+
+- name: Install font-berkshire-swash cask
+  homebrew_cask: name=font-berkshire-swash state=present
+
+- name: Install font-bevan cask
+  homebrew_cask: name=font-bevan state=present
+
+- name: Install font-bigelow-rules cask
+  homebrew_cask: name=font-bigelow-rules state=present
+
+- name: Install font-bigshot-one cask
+  homebrew_cask: name=font-bigshot-one state=present
+
+- name: Install font-bilbo cask
+  homebrew_cask: name=font-bilbo state=present
+
+- name: Install font-bilbo-swash-caps cask
+  homebrew_cask: name=font-bilbo-swash-caps state=present
+
+- name: Install font-bitstream-vera cask
+  homebrew_cask: name=font-bitstream-vera state=present
+
+- name: Install font-black-ops-one cask
+  homebrew_cask: name=font-black-ops-one state=present
+
+- name: Install font-bokor cask
+  homebrew_cask: name=font-bokor state=present
+
+- name: Install font-bonbon cask
+  homebrew_cask: name=font-bonbon state=present
+
+- name: Install font-boogaloo cask
+  homebrew_cask: name=font-boogaloo state=present
+
+- name: Install font-bowlby-one cask
+  homebrew_cask: name=font-bowlby-one state=present
+
+- name: Install font-bowlby-one-sc cask
+  homebrew_cask: name=font-bowlby-one-sc state=present
+
+- name: Install font-brawler cask
+  homebrew_cask: name=font-brawler state=present
+
+- name: Install font-bree-serif cask
+  homebrew_cask: name=font-bree-serif state=present
+
+- name: Install font-bubblegum-sans cask
+  homebrew_cask: name=font-bubblegum-sans state=present
+
+- name: Install font-bubbler-one cask
+  homebrew_cask: name=font-bubbler-one state=present
+
+- name: Install font-buda cask
+  homebrew_cask: name=font-buda state=present
+
+- name: Install font-buenard cask
+  homebrew_cask: name=font-buenard state=present
+
+- name: Install font-butcherman cask
+  homebrew_cask: name=font-butcherman state=present
+
+- name: Install font-butler cask
+  homebrew_cask: name=font-butler state=present
+
+- name: Install font-butterfly-kids cask
+  homebrew_cask: name=font-butterfly-kids state=present
+
+- name: Install font-cabin cask
+  homebrew_cask: name=font-cabin state=present
+
+- name: Install font-cabin-condensed cask
+  homebrew_cask: name=font-cabin-condensed state=present
+
+- name: Install font-cabin-sketch cask
+  homebrew_cask: name=font-cabin-sketch state=present
+
+- name: Install font-caesar-dressing cask
+  homebrew_cask: name=font-caesar-dressing state=present
+
+- name: Install font-cagliostro cask
+  homebrew_cask: name=font-cagliostro state=present
+
+- name: Install font-calligraffitti cask
+  homebrew_cask: name=font-calligraffitti state=present
+
+- name: Install font-cambo cask
+  homebrew_cask: name=font-cambo state=present
+
+- name: Install font-candal cask
+  homebrew_cask: name=font-candal state=present
+
+- name: Install font-cantarell cask
+  homebrew_cask: name=font-cantarell state=present
+
+- name: Install font-cantata-one cask
+  homebrew_cask: name=font-cantata-one state=present
+
+- name: Install font-cantora-one cask
+  homebrew_cask: name=font-cantora-one state=present
+
+- name: Install font-capriola cask
+  homebrew_cask: name=font-capriola state=present
+
+- name: Install font-carme cask
+  homebrew_cask: name=font-carme state=present
+
+- name: Install font-carrois-gothic cask
+  homebrew_cask: name=font-carrois-gothic state=present
+
+- name: Install font-carrois-gothic-sc cask
+  homebrew_cask: name=font-carrois-gothic-sc state=present
+
+- name: Install font-carter-one cask
+  homebrew_cask: name=font-carter-one state=present
+
+- name: Install font-caudex cask
+  homebrew_cask: name=font-caudex state=present
+
+- name: Install font-cedarville-cursive cask
+  homebrew_cask: name=font-cedarville-cursive state=present
+
+- name: Install font-ceviche-one cask
+  homebrew_cask: name=font-ceviche-one state=present
+
+- name: Install font-changa-one cask
+  homebrew_cask: name=font-changa-one state=present
+
+- name: Install font-chango cask
+  homebrew_cask: name=font-chango state=present
+
+- name: Install font-chau-philomene-one cask
+  homebrew_cask: name=font-chau-philomene-one state=present
+
+- name: Install font-chela-one cask
+  homebrew_cask: name=font-chela-one state=present
+
+- name: Install font-chelsea-market cask
+  homebrew_cask: name=font-chelsea-market state=present
+
+- name: Install font-chenla cask
+  homebrew_cask: name=font-chenla state=present
+
+- name: Install font-cherry-cream-soda cask
+  homebrew_cask: name=font-cherry-cream-soda state=present
+
+- name: Install font-cherry-swash cask
+  homebrew_cask: name=font-cherry-swash state=present
+
+- name: Install font-chewy cask
+  homebrew_cask: name=font-chewy state=present
+
+- name: Install font-chicle cask
+  homebrew_cask: name=font-chicle state=present
+
+- name: Install font-chivo cask
+  homebrew_cask: name=font-chivo state=present
+
+- name: Install font-cinzel cask
+  homebrew_cask: name=font-cinzel state=present
+
+- name: Install font-cinzel-decorative cask
+  homebrew_cask: name=font-cinzel-decorative state=present
+
+- name: Install font-clicker-script cask
+  homebrew_cask: name=font-clicker-script state=present
+
+- name: Install font-coda cask
+  homebrew_cask: name=font-coda state=present
+
+- name: Install font-coda-caption cask
+  homebrew_cask: name=font-coda-caption state=present
+
+- name: Install font-code cask
+  homebrew_cask: name=font-code state=present
+
+- name: Install font-codystar cask
+  homebrew_cask: name=font-codystar state=present
+
+- name: Install font-combo cask
+  homebrew_cask: name=font-combo state=present
+
+- name: Install font-comfortaa cask
+  homebrew_cask: name=font-comfortaa state=present
+
+- name: Install font-coming-soon cask
+  homebrew_cask: name=font-coming-soon state=present
+
+- name: Install font-concert-one cask
+  homebrew_cask: name=font-concert-one state=present
+
+- name: Install font-condiment cask
+  homebrew_cask: name=font-condiment state=present
+
+- name: Install font-content cask
+  homebrew_cask: name=font-content state=present
+
+- name: Install font-contrail-one cask
+  homebrew_cask: name=font-contrail-one state=present
+
+- name: Install font-convergence cask
+  homebrew_cask: name=font-convergence state=present
+
+- name: Install font-cookie cask
+  homebrew_cask: name=font-cookie state=present
+
+- name: Install font-copse cask
+  homebrew_cask: name=font-copse state=present
+
+- name: Install font-corben cask
+  homebrew_cask: name=font-corben state=present
+
+- name: Install font-courgette cask
+  homebrew_cask: name=font-courgette state=present
+
+- name: Install font-cousine cask
+  homebrew_cask: name=font-cousine state=present
+
+- name: Install font-coustard cask
+  homebrew_cask: name=font-coustard state=present
+
+- name: Install font-covered-by-your-grace cask
+  homebrew_cask: name=font-covered-by-your-grace state=present
+
+- name: Install font-crafty-girls cask
+  homebrew_cask: name=font-crafty-girls state=present
+
+- name: Install font-creepster cask
+  homebrew_cask: name=font-creepster state=present
+
+- name: Install font-crete-round cask
+  homebrew_cask: name=font-crete-round state=present
+
+- name: Install font-crimson-text cask
+  homebrew_cask: name=font-crimson-text state=present
+
+- name: Install font-croissant-one cask
+  homebrew_cask: name=font-croissant-one state=present
+
+- name: Install font-crushed cask
+  homebrew_cask: name=font-crushed state=present
+
+- name: Install font-cuprum cask
+  homebrew_cask: name=font-cuprum state=present
+
+- name: Install font-cutive cask
+  homebrew_cask: name=font-cutive state=present
+
+- name: Install font-cutive-mono cask
+  homebrew_cask: name=font-cutive-mono state=present
+
+- name: Install font-damion cask
+  homebrew_cask: name=font-damion state=present
+
+- name: Install font-dancing-script cask
+  homebrew_cask: name=font-dancing-script state=present
+
+- name: Install font-dangrek cask
+  homebrew_cask: name=font-dangrek state=present
+
+- name: Install font-dawning-of-a-new-day cask
+  homebrew_cask: name=font-dawning-of-a-new-day state=present
+
+- name: Install font-days-one cask
+  homebrew_cask: name=font-days-one state=present
+
+- name: Install font-delius cask
+  homebrew_cask: name=font-delius state=present
+
+- name: Install font-delius-swash-caps cask
+  homebrew_cask: name=font-delius-swash-caps state=present
+
+- name: Install font-delius-unicase cask
+  homebrew_cask: name=font-delius-unicase state=present
+
+- name: Install font-della-respira cask
+  homebrew_cask: name=font-della-respira state=present
+
+- name: Install font-denk-one cask
+  homebrew_cask: name=font-denk-one state=present
+
+- name: Install font-devonshire cask
+  homebrew_cask: name=font-devonshire state=present
+
+- name: Install font-diplomata cask
+  homebrew_cask: name=font-diplomata state=present
+
+- name: Install font-diplomata-sc cask
+  homebrew_cask: name=font-diplomata-sc state=present
+
+- name: Install font-domine cask
+  homebrew_cask: name=font-domine state=present
+
+- name: Install font-donegal-one cask
+  homebrew_cask: name=font-donegal-one state=present
+
+- name: Install font-doppio-one cask
+  homebrew_cask: name=font-doppio-one state=present
+
+- name: Install font-dorsa cask
+  homebrew_cask: name=font-dorsa state=present
+
+- name: Install font-dosis cask
+  homebrew_cask: name=font-dosis state=present
+
+- name: Install font-dr-sugiyama cask
+  homebrew_cask: name=font-dr-sugiyama state=present
+
+- name: Install font-duru-sans cask
+  homebrew_cask: name=font-duru-sans state=present
+
+- name: Install font-dynalight cask
+  homebrew_cask: name=font-dynalight state=present
+
+- name: Install font-eagle-lake cask
+  homebrew_cask: name=font-eagle-lake state=present
+
+- name: Install font-eater cask
+  homebrew_cask: name=font-eater state=present
+
+- name: Install font-economica cask
+  homebrew_cask: name=font-economica state=present
+
+- name: Install font-electrolize cask
+  homebrew_cask: name=font-electrolize state=present
+
+- name: Install font-elsie cask
+  homebrew_cask: name=font-elsie state=present
+
+- name: Install font-elsie-swash-caps cask
+  homebrew_cask: name=font-elsie-swash-caps state=present
+
+- name: Install font-emblema-one cask
+  homebrew_cask: name=font-emblema-one state=present
+
+- name: Install font-emilys-candy cask
+  homebrew_cask: name=font-emilys-candy state=present
+
+- name: Install font-engagement cask
+  homebrew_cask: name=font-engagement state=present
+
+- name: Install font-englebert cask
+  homebrew_cask: name=font-englebert state=present
+
+- name: Install font-enriqueta cask
+  homebrew_cask: name=font-enriqueta state=present
+
+- name: Install font-erica-one cask
+  homebrew_cask: name=font-erica-one state=present
+
+- name: Install font-esteban cask
+  homebrew_cask: name=font-esteban state=present
+
+- name: Install font-euphoria-script cask
+  homebrew_cask: name=font-euphoria-script state=present
+
+- name: Install font-ewert cask
+  homebrew_cask: name=font-ewert state=present
+
+- name: Install font-exo cask
+  homebrew_cask: name=font-exo state=present
+
+- name: Install font-exo2 cask
+  homebrew_cask: name=font-exo2 state=present
+
+- name: Install font-expletus-sans cask
+  homebrew_cask: name=font-expletus-sans state=present
+
+- name: Install font-fanwood-text cask
+  homebrew_cask: name=font-fanwood-text state=present
+
+- name: Install font-fascinate cask
+  homebrew_cask: name=font-fascinate state=present
+
+- name: Install font-fascinate-inline cask
+  homebrew_cask: name=font-fascinate-inline state=present
+
+- name: Install font-faster-one cask
+  homebrew_cask: name=font-faster-one state=present
+
+- name: Install font-fasthand cask
+  homebrew_cask: name=font-fasthand state=present
+
+- name: Install font-fauna-one cask
+  homebrew_cask: name=font-fauna-one state=present
+
+- name: Install font-federant cask
+  homebrew_cask: name=font-federant state=present
+
+- name: Install font-federo cask
+  homebrew_cask: name=font-federo state=present
+
+- name: Install font-felipa cask
+  homebrew_cask: name=font-felipa state=present
+
+- name: Install font-fenix cask
+  homebrew_cask: name=font-fenix state=present
+
+- name: Install font-finger-paint cask
+  homebrew_cask: name=font-finger-paint state=present
+
+- name: Install font-fjalla-one cask
+  homebrew_cask: name=font-fjalla-one state=present
+
+- name: Install font-fjord-one cask
+  homebrew_cask: name=font-fjord-one state=present
+
+- name: Install font-flamenco cask
+  homebrew_cask: name=font-flamenco state=present
+
+- name: Install font-flavors cask
+  homebrew_cask: name=font-flavors state=present
+
+- name: Install font-fondamento cask
+  homebrew_cask: name=font-fondamento state=present
+
+- name: Install font-fontdiner-swanky cask
+  homebrew_cask: name=font-fontdiner-swanky state=present
+
+- name: Install font-forum cask
+  homebrew_cask: name=font-forum state=present
+
+- name: Install font-francois-one cask
+  homebrew_cask: name=font-francois-one state=present
+
+- name: Install font-freckle-face cask
+  homebrew_cask: name=font-freckle-face state=present
+
+- name: Install font-fredericka-the-great cask
+  homebrew_cask: name=font-fredericka-the-great state=present
+
+- name: Install font-fredoka-one cask
+  homebrew_cask: name=font-fredoka-one state=present
+
+- name: Install font-freehand cask
+  homebrew_cask: name=font-freehand state=present
+
+- name: Install font-fresca cask
+  homebrew_cask: name=font-fresca state=present
+
+- name: Install font-frijole cask
+  homebrew_cask: name=font-frijole state=present
+
+- name: Install font-fruktur cask
+  homebrew_cask: name=font-fruktur state=present
+
+- name: Install font-fugaz-one cask
+  homebrew_cask: name=font-fugaz-one state=present
+
+- name: Install font-gabriela cask
+  homebrew_cask: name=font-gabriela state=present
+
+- name: Install font-gafata cask
+  homebrew_cask: name=font-gafata state=present
+
+- name: Install font-galdeano cask
+  homebrew_cask: name=font-galdeano state=present
+
+- name: Install font-galindo cask
+  homebrew_cask: name=font-galindo state=present
+
+- name: Install font-geo cask
+  homebrew_cask: name=font-geo state=present
+
+- name: Install font-geostar cask
+  homebrew_cask: name=font-geostar state=present
+
+- name: Install font-geostar-fill cask
+  homebrew_cask: name=font-geostar-fill state=present
+
+- name: Install font-germania-one cask
+  homebrew_cask: name=font-germania-one state=present
+
+- name: Install font-gfs-didot cask
+  homebrew_cask: name=font-gfs-didot state=present
+
+- name: Install font-gfs-neohellenic cask
+  homebrew_cask: name=font-gfs-neohellenic state=present
+
+- name: Install font-gilda-display cask
+  homebrew_cask: name=font-gilda-display state=present
+
+- name: Install font-give-you-glory cask
+  homebrew_cask: name=font-give-you-glory state=present
+
+- name: Install font-glass-antiqua cask
+  homebrew_cask: name=font-glass-antiqua state=present
+
+- name: Install font-glegoo cask
+  homebrew_cask: name=font-glegoo state=present
+
+- name: Install font-gloria-hallelujah cask
+  homebrew_cask: name=font-gloria-hallelujah state=present
+
+- name: Install font-goblin-one cask
+  homebrew_cask: name=font-goblin-one state=present
+
+- name: Install font-gochi-hand cask
+  homebrew_cask: name=font-gochi-hand state=present
+
+- name: Install font-gorditas cask
+  homebrew_cask: name=font-gorditas state=present
+
+- name: Install font-goudy-bookletter1911 cask
+  homebrew_cask: name=font-goudy-bookletter1911 state=present
+
+- name: Install font-graduate cask
+  homebrew_cask: name=font-graduate state=present
+
+- name: Install font-grand-hotel cask
+  homebrew_cask: name=font-grand-hotel state=present
+
+- name: Install font-gravitas-one cask
+  homebrew_cask: name=font-gravitas-one state=present
+
+- name: Install font-great-vibes cask
+  homebrew_cask: name=font-great-vibes state=present
+
+- name: Install font-griffy cask
+  homebrew_cask: name=font-griffy state=present
+
+- name: Install font-gruppo cask
+  homebrew_cask: name=font-gruppo state=present
+
+- name: Install font-gudea cask
+  homebrew_cask: name=font-gudea state=present
+
+- name: Install font-habibi cask
+  homebrew_cask: name=font-habibi state=present
+
+- name: Install font-hack cask
+  homebrew_cask: name=font-hack state=present
+
+- name: Install font-hammersmith-one cask
+  homebrew_cask: name=font-hammersmith-one state=present
+
+- name: Install font-hanalei cask
+  homebrew_cask: name=font-hanalei state=present
+
+- name: Install font-hanalei-fill cask
+  homebrew_cask: name=font-hanalei-fill state=present
+
+- name: Install font-handlee cask
+  homebrew_cask: name=font-handlee state=present
+
+- name: Install font-hanuman cask
+  homebrew_cask: name=font-hanuman state=present
+
+- name: Install font-happy-monkey cask
+  homebrew_cask: name=font-happy-monkey state=present
+
+- name: Install font-headland-one cask
+  homebrew_cask: name=font-headland-one state=present
+
+- name: Install font-henny-penny cask
+  homebrew_cask: name=font-henny-penny state=present
+
+- name: Install font-herr-von-muellerhoff cask
+  homebrew_cask: name=font-herr-von-muellerhoff state=present
+
+- name: Install font-holtwood-one-sc cask
+  homebrew_cask: name=font-holtwood-one-sc state=present
+
+- name: Install font-homenaje cask
+  homebrew_cask: name=font-homenaje state=present
+
+- name: Install font-iceberg cask
+  homebrew_cask: name=font-iceberg state=present
+
+- name: Install font-iceland cask
+  homebrew_cask: name=font-iceland state=present
+
+- name: Install font-im-fell-double-pica cask
+  homebrew_cask: name=font-im-fell-double-pica state=present
+
+- name: Install font-im-fell-double-pica-sc cask
+  homebrew_cask: name=font-im-fell-double-pica-sc state=present
+
+- name: Install font-im-fell-dw-pica cask
+  homebrew_cask: name=font-im-fell-dw-pica state=present
+
+- name: Install font-im-fell-dw-pica-sc cask
+  homebrew_cask: name=font-im-fell-dw-pica-sc state=present
+
+- name: Install font-im-fell-english cask
+  homebrew_cask: name=font-im-fell-english state=present
+
+- name: Install font-im-fell-english-sc cask
+  homebrew_cask: name=font-im-fell-english-sc state=present
+
+- name: Install font-im-fell-french-canon cask
+  homebrew_cask: name=font-im-fell-french-canon state=present
+
+- name: Install font-im-fell-french-canon-sc cask
+  homebrew_cask: name=font-im-fell-french-canon-sc state=present
+
+- name: Install font-im-fell-great-primer cask
+  homebrew_cask: name=font-im-fell-great-primer state=present
+
+- name: Install font-im-fell-great-primer-sc cask
+  homebrew_cask: name=font-im-fell-great-primer-sc state=present
+
+- name: Install font-imprima cask
+  homebrew_cask: name=font-imprima state=present
+
+- name: Install font-inconsolata cask
+  homebrew_cask: name=font-inconsolata state=present
+
+- name: Install font-inder cask
+  homebrew_cask: name=font-inder state=present
+
+- name: Install font-indie-flower cask
+  homebrew_cask: name=font-indie-flower state=present
+
+- name: Install font-inika cask
+  homebrew_cask: name=font-inika state=present
+
+- name: Install font-istok-web cask
+  homebrew_cask: name=font-istok-web state=present
+
+- name: Install font-italiana cask
+  homebrew_cask: name=font-italiana state=present
+
+- name: Install font-italianno cask
+  homebrew_cask: name=font-italianno state=present
+
+- name: Install font-jacques-francois cask
+  homebrew_cask: name=font-jacques-francois state=present
+
+- name: Install font-jacques-francois-shadow cask
+  homebrew_cask: name=font-jacques-francois-shadow state=present
+
+- name: Install font-jim-nightshade cask
+  homebrew_cask: name=font-jim-nightshade state=present
+
+- name: Install font-jockey-one cask
+  homebrew_cask: name=font-jockey-one state=present
+
+- name: Install font-jolly-lodger cask
+  homebrew_cask: name=font-jolly-lodger state=present
+
+- name: Install font-josefin-sans cask
+  homebrew_cask: name=font-josefin-sans state=present
+
+- name: Install font-josefin-slab cask
+  homebrew_cask: name=font-josefin-slab state=present
+
+- name: Install font-joti-one cask
+  homebrew_cask: name=font-joti-one state=present
+
+- name: Install font-judson cask
+  homebrew_cask: name=font-judson state=present
+
+- name: Install font-julee cask
+  homebrew_cask: name=font-julee state=present
+
+- name: Install font-julius-sans-one cask
+  homebrew_cask: name=font-julius-sans-one state=present
+
+- name: Install font-junge cask
+  homebrew_cask: name=font-junge state=present
+
+- name: Install font-jura cask
+  homebrew_cask: name=font-jura state=present
+
+- name: Install font-just-me-again-down-here cask
+  homebrew_cask: name=font-just-me-again-down-here state=present
+
+- name: Install font-kameron cask
+  homebrew_cask: name=font-kameron state=present
+
+- name: Install font-kantumruy cask
+  homebrew_cask: name=font-kantumruy state=present
+
+- name: Install font-karla cask
+  homebrew_cask: name=font-karla state=present
+
+- name: Install font-kaushan-script cask
+  homebrew_cask: name=font-kaushan-script state=present
+
+- name: Install font-kavoon cask
+  homebrew_cask: name=font-kavoon state=present
+
+- name: Install font-kdam-thmor cask
+  homebrew_cask: name=font-kdam-thmor state=present
+
+- name: Install font-keania-one cask
+  homebrew_cask: name=font-keania-one state=present
+
+- name: Install font-kelly-slab cask
+  homebrew_cask: name=font-kelly-slab state=present
+
+- name: Install font-kenia cask
+  homebrew_cask: name=font-kenia state=present
+
+- name: Install font-khmer cask
+  homebrew_cask: name=font-khmer state=present
+
+- name: Install font-kite-one cask
+  homebrew_cask: name=font-kite-one state=present
+
+- name: Install font-knewave cask
+  homebrew_cask: name=font-knewave state=present
+
+- name: Install font-kotta-one cask
+  homebrew_cask: name=font-kotta-one state=present
+
+- name: Install font-koulen cask
+  homebrew_cask: name=font-koulen state=present
+
+- name: Install font-kreon cask
+  homebrew_cask: name=font-kreon state=present
+
+- name: Install font-krona-one cask
+  homebrew_cask: name=font-krona-one state=present
+
+- name: Install font-la-belle-aurore cask
+  homebrew_cask: name=font-la-belle-aurore state=present
+
+- name: Install font-lancelot cask
+  homebrew_cask: name=font-lancelot state=present
+
+- name: Install font-lateef cask
+  homebrew_cask: name=font-lateef state=present
+
+- name: Install font-league-script cask
+  homebrew_cask: name=font-league-script state=present
+
+- name: Install font-leckerli-one cask
+  homebrew_cask: name=font-leckerli-one state=present
+
+- name: Install font-ledger cask
+  homebrew_cask: name=font-ledger state=present
+
+- name: Install font-lekton cask
+  homebrew_cask: name=font-lekton state=present
+
+- name: Install font-lemon cask
+  homebrew_cask: name=font-lemon state=present
+
+- name: Install font-libre-baskerville cask
+  homebrew_cask: name=font-libre-baskerville state=present
+
+- name: Install font-life-savers cask
+  homebrew_cask: name=font-life-savers state=present
+
+- name: Install font-lilita-one cask
+  homebrew_cask: name=font-lilita-one state=present
+
+- name: Install font-lily-script-one cask
+  homebrew_cask: name=font-lily-script-one state=present
+
+- name: Install font-limelight cask
+  homebrew_cask: name=font-limelight state=present
+
+- name: Install font-linden-hill cask
+  homebrew_cask: name=font-linden-hill state=present
+
+- name: Install font-lobster cask
+  homebrew_cask: name=font-lobster state=present
+
+- name: Install font-lobster-two cask
+  homebrew_cask: name=font-lobster-two state=present
+
+- name: Install font-londrina-outline cask
+  homebrew_cask: name=font-londrina-outline state=present
+
+- name: Install font-londrina-shadow cask
+  homebrew_cask: name=font-londrina-shadow state=present
+
+- name: Install font-londrina-sketch cask
+  homebrew_cask: name=font-londrina-sketch state=present
+
+- name: Install font-londrina-solid cask
+  homebrew_cask: name=font-londrina-solid state=present
+
+- name: Install font-lora cask
+  homebrew_cask: name=font-lora state=present
+
+- name: Install font-love-ya-like-a-sister cask
+  homebrew_cask: name=font-love-ya-like-a-sister state=present
+
+- name: Install font-loved-by-the-king cask
+  homebrew_cask: name=font-loved-by-the-king state=present
+
+- name: Install font-lovers-quarrel cask
+  homebrew_cask: name=font-lovers-quarrel state=present
+
+- name: Install font-luckiest-guy cask
+  homebrew_cask: name=font-luckiest-guy state=present
+
+- name: Install font-lusitana cask
+  homebrew_cask: name=font-lusitana state=present
+
+- name: Install font-lustria cask
+  homebrew_cask: name=font-lustria state=present
+
+- name: Install font-macondo cask
+  homebrew_cask: name=font-macondo state=present
+
+- name: Install font-macondo-swash-caps cask
+  homebrew_cask: name=font-macondo-swash-caps state=present
+
+- name: Install font-magra cask
+  homebrew_cask: name=font-magra state=present
+
+- name: Install font-mako cask
+  homebrew_cask: name=font-mako state=present
+
+- name: Install font-marcellus cask
+  homebrew_cask: name=font-marcellus state=present
+
+- name: Install font-marcellus-sc cask
+  homebrew_cask: name=font-marcellus-sc state=present
+
+- name: Install font-marck-script cask
+  homebrew_cask: name=font-marck-script state=present
+
+- name: Install font-margarine cask
+  homebrew_cask: name=font-margarine state=present
+
+- name: Install font-marko-one cask
+  homebrew_cask: name=font-marko-one state=present
+
+- name: Install font-marmelad cask
+  homebrew_cask: name=font-marmelad state=present
+
+- name: Install font-marvel cask
+  homebrew_cask: name=font-marvel state=present
+
+- name: Install font-mate cask
+  homebrew_cask: name=font-mate state=present
+
+- name: Install font-mate-sc cask
+  homebrew_cask: name=font-mate-sc state=present
+
+- name: Install font-maven-pro cask
+  homebrew_cask: name=font-maven-pro state=present
+
+- name: Install font-mclaren cask
+  homebrew_cask: name=font-mclaren state=present
+
+- name: Install font-meddon cask
+  homebrew_cask: name=font-meddon state=present
+
+- name: Install font-medievalsharp cask
+  homebrew_cask: name=font-medievalsharp state=present
+
+- name: Install font-medula-one cask
+  homebrew_cask: name=font-medula-one state=present
+
+- name: Install font-megrim cask
+  homebrew_cask: name=font-megrim state=present
+
+- name: Install font-meie-script cask
+  homebrew_cask: name=font-meie-script state=present
+
+- name: Install font-merienda cask
+  homebrew_cask: name=font-merienda state=present
+
+- name: Install font-merienda-one cask
+  homebrew_cask: name=font-merienda-one state=present
+
+- name: Install font-merriweather cask
+  homebrew_cask: name=font-merriweather state=present
+
+- name: Install font-merriweather-sans cask
+  homebrew_cask: name=font-merriweather-sans state=present
+
+- name: Install font-metal cask
+  homebrew_cask: name=font-metal state=present
+
+- name: Install font-metal-mania cask
+  homebrew_cask: name=font-metal-mania state=present
+
+- name: Install font-metamorphous cask
+  homebrew_cask: name=font-metamorphous state=present
+
+- name: Install font-metrophobic cask
+  homebrew_cask: name=font-metrophobic state=present
+
+- name: Install font-michroma cask
+  homebrew_cask: name=font-michroma state=present
+
+- name: Install font-milonga cask
+  homebrew_cask: name=font-milonga state=present
+
+- name: Install font-miltonian cask
+  homebrew_cask: name=font-miltonian state=present
+
+- name: Install font-miltonian-tattoo cask
+  homebrew_cask: name=font-miltonian-tattoo state=present
+
+- name: Install font-miniver cask
+  homebrew_cask: name=font-miniver state=present
+
+- name: Install font-miss-fajardose cask
+  homebrew_cask: name=font-miss-fajardose state=present
+
+- name: Install font-modern-antiqua cask
+  homebrew_cask: name=font-modern-antiqua state=present
+
+- name: Install font-molengo cask
+  homebrew_cask: name=font-molengo state=present
+
+- name: Install font-molle cask
+  homebrew_cask: name=font-molle state=present
+
+- name: Install font-monda cask
+  homebrew_cask: name=font-monda state=present
+
+- name: Install font-monofett cask
+  homebrew_cask: name=font-monofett state=present
+
+- name: Install font-monoton cask
+  homebrew_cask: name=font-monoton state=present
+
+- name: Install font-monsieur-la-doulaise cask
+  homebrew_cask: name=font-monsieur-la-doulaise state=present
+
+- name: Install font-montaga cask
+  homebrew_cask: name=font-montaga state=present
+
+- name: Install font-montez cask
+  homebrew_cask: name=font-montez state=present
+
+- name: Install font-montserrat-subrayada cask
+  homebrew_cask: name=font-montserrat-subrayada state=present
+
+- name: Install font-moul cask
+  homebrew_cask: name=font-moul state=present
+
+- name: Install font-moulpali cask
+  homebrew_cask: name=font-moulpali state=present
+
+- name: Install font-mountains-of-christmas cask
+  homebrew_cask: name=font-mountains-of-christmas state=present
+
+- name: Install font-mouse-memoirs cask
+  homebrew_cask: name=font-mouse-memoirs state=present
+
+- name: Install font-mr-bedfort cask
+  homebrew_cask: name=font-mr-bedfort state=present
+
+- name: Install font-mr-dafoe cask
+  homebrew_cask: name=font-mr-dafoe state=present
+
+- name: Install font-mr-de-haviland cask
+  homebrew_cask: name=font-mr-de-haviland state=present
+
+- name: Install font-mrs-saint-delafield cask
+  homebrew_cask: name=font-mrs-saint-delafield state=present
+
+- name: Install font-mrs-sheppards cask
+  homebrew_cask: name=font-mrs-sheppards state=present
+
+- name: Install font-mystery-quest cask
+  homebrew_cask: name=font-mystery-quest state=present
+
+- name: Install font-neucha cask
+  homebrew_cask: name=font-neucha state=present
+
+- name: Install font-neuton cask
+  homebrew_cask: name=font-neuton state=present
+
+- name: Install font-new-rocker cask
+  homebrew_cask: name=font-new-rocker state=present
+
+- name: Install font-news-cycle cask
+  homebrew_cask: name=font-news-cycle state=present
+
+- name: Install font-niconne cask
+  homebrew_cask: name=font-niconne state=present
+
+- name: Install font-nixie-one cask
+  homebrew_cask: name=font-nixie-one state=present
+
+- name: Install font-nobile cask
+  homebrew_cask: name=font-nobile state=present
+
+- name: Install font-nokora cask
+  homebrew_cask: name=font-nokora state=present
+
+- name: Install font-norican cask
+  homebrew_cask: name=font-norican state=present
+
+- name: Install font-nosifer cask
+  homebrew_cask: name=font-nosifer state=present
+
+- name: Install font-nothing-you-could-do cask
+  homebrew_cask: name=font-nothing-you-could-do state=present
+
+- name: Install font-noticia-text cask
+  homebrew_cask: name=font-noticia-text state=present
+
+- name: Install font-nova-cut cask
+  homebrew_cask: name=font-nova-cut state=present
+
+- name: Install font-nova-flat cask
+  homebrew_cask: name=font-nova-flat state=present
+
+- name: Install font-nova-mono cask
+  homebrew_cask: name=font-nova-mono state=present
+
+- name: Install font-nova-oval cask
+  homebrew_cask: name=font-nova-oval state=present
+
+- name: Install font-nova-round cask
+  homebrew_cask: name=font-nova-round state=present
+
+- name: Install font-nova-script cask
+  homebrew_cask: name=font-nova-script state=present
+
+- name: Install font-nova-slim cask
+  homebrew_cask: name=font-nova-slim state=present
+
+- name: Install font-nova-square cask
+  homebrew_cask: name=font-nova-square state=present
+
+- name: Install font-numans cask
+  homebrew_cask: name=font-numans state=present
+
+- name: Install font-nunito cask
+  homebrew_cask: name=font-nunito state=present
+
+- name: Install font-odor-mean-chey cask
+  homebrew_cask: name=font-odor-mean-chey state=present
+
+- name: Install font-offside cask
+  homebrew_cask: name=font-offside state=present
+
+- name: Install font-old-standard-tt cask
+  homebrew_cask: name=font-old-standard-tt state=present
+
+- name: Install font-oldenburg cask
+  homebrew_cask: name=font-oldenburg state=present
+
+- name: Install font-oleo-script cask
+  homebrew_cask: name=font-oleo-script state=present
+
+- name: Install font-oleo-script-swash-caps cask
+  homebrew_cask: name=font-oleo-script-swash-caps state=present
+
+- name: Install font-open-sans cask
+  homebrew_cask: name=font-open-sans state=present
+
+- name: Install font-open-sans-condensed cask
+  homebrew_cask: name=font-open-sans-condensed state=present
+
+- name: Install font-oranienbaum cask
+  homebrew_cask: name=font-oranienbaum state=present
+
+- name: Install font-orbitron cask
+  homebrew_cask: name=font-orbitron state=present
+
+- name: Install font-oregano cask
+  homebrew_cask: name=font-oregano state=present
+
+- name: Install font-orienta cask
+  homebrew_cask: name=font-orienta state=present
+
+- name: Install font-original-surfer cask
+  homebrew_cask: name=font-original-surfer state=present
+
+- name: Install font-oswald cask
+  homebrew_cask: name=font-oswald state=present
+
+- name: Install font-over-the-rainbow cask
+  homebrew_cask: name=font-over-the-rainbow state=present
+
+- name: Install font-overlock cask
+  homebrew_cask: name=font-overlock state=present
+
+- name: Install font-overlock-sc cask
+  homebrew_cask: name=font-overlock-sc state=present
+
+- name: Install font-ovo cask
+  homebrew_cask: name=font-ovo state=present
+
+- name: Install font-oxygen cask
+  homebrew_cask: name=font-oxygen state=present
+
+- name: Install font-oxygen-mono cask
+  homebrew_cask: name=font-oxygen-mono state=present
+
+- name: Install font-pacifico cask
+  homebrew_cask: name=font-pacifico state=present
+
+- name: Install font-paprika cask
+  homebrew_cask: name=font-paprika state=present
+
+- name: Install font-parisienne cask
+  homebrew_cask: name=font-parisienne state=present
+
+- name: Install font-passero-one cask
+  homebrew_cask: name=font-passero-one state=present
+
+- name: Install font-passion-one cask
+  homebrew_cask: name=font-passion-one state=present
+
+- name: Install font-pathway-gothic-one cask
+  homebrew_cask: name=font-pathway-gothic-one state=present
+
+- name: Install font-patrick-hand cask
+  homebrew_cask: name=font-patrick-hand state=present
+
+- name: Install font-patrick-hand-sc cask
+  homebrew_cask: name=font-patrick-hand-sc state=present
+
+- name: Install font-patua-one cask
+  homebrew_cask: name=font-patua-one state=present
+
+- name: Install font-peralta cask
+  homebrew_cask: name=font-peralta state=present
+
+- name: Install font-permanent-marker cask
+  homebrew_cask: name=font-permanent-marker state=present
+
+- name: Install font-petit-formal-script cask
+  homebrew_cask: name=font-petit-formal-script state=present
+
+- name: Install font-petrona cask
+  homebrew_cask: name=font-petrona state=present
+
+- name: Install font-philosopher cask
+  homebrew_cask: name=font-philosopher state=present
+
+- name: Install font-piedra cask
+  homebrew_cask: name=font-piedra state=present
+
+- name: Install font-pinyon-script cask
+  homebrew_cask: name=font-pinyon-script state=present
+
+- name: Install font-pirata-one cask
+  homebrew_cask: name=font-pirata-one state=present
+
+- name: Install font-plaster cask
+  homebrew_cask: name=font-plaster state=present
+
+- name: Install font-play cask
+  homebrew_cask: name=font-play state=present
+
+- name: Install font-playball cask
+  homebrew_cask: name=font-playball state=present
+
+- name: Install font-playfair-display cask
+  homebrew_cask: name=font-playfair-display state=present
+
+- name: Install font-playfair-display-sc cask
+  homebrew_cask: name=font-playfair-display-sc state=present
+
+- name: Install font-podkova cask
+  homebrew_cask: name=font-podkova state=present
+
+- name: Install font-poiret-one cask
+  homebrew_cask: name=font-poiret-one state=present
+
+- name: Install font-poller-one cask
+  homebrew_cask: name=font-poller-one state=present
+
+- name: Install font-poly cask
+  homebrew_cask: name=font-poly state=present
+
+- name: Install font-pompiere cask
+  homebrew_cask: name=font-pompiere state=present
+
+- name: Install font-pontano-sans cask
+  homebrew_cask: name=font-pontano-sans state=present
+
+- name: Install font-port-lligat-sans cask
+  homebrew_cask: name=font-port-lligat-sans state=present
+
+- name: Install font-port-lligat-slab cask
+  homebrew_cask: name=font-port-lligat-slab state=present
+
+- name: Install font-prata cask
+  homebrew_cask: name=font-prata state=present
+
+- name: Install font-preahvihear cask
+  homebrew_cask: name=font-preahvihear state=present
+
+- name: Install font-press-start2p cask
+  homebrew_cask: name=font-press-start2p state=present
+
+- name: Install font-princess-sofia cask
+  homebrew_cask: name=font-princess-sofia state=present
+
+- name: Install font-prociono cask
+  homebrew_cask: name=font-prociono state=present
+
+- name: Install font-prosto-one cask
+  homebrew_cask: name=font-prosto-one state=present
+
+- name: Install font-puritan cask
+  homebrew_cask: name=font-puritan state=present
+
+- name: Install font-purple-purse cask
+  homebrew_cask: name=font-purple-purse state=present
+
+- name: Install font-quando cask
+  homebrew_cask: name=font-quando state=present
+
+- name: Install font-quantico cask
+  homebrew_cask: name=font-quantico state=present
+
+- name: Install font-quattrocento cask
+  homebrew_cask: name=font-quattrocento state=present
+
+- name: Install font-quattrocento-sans cask
+  homebrew_cask: name=font-quattrocento-sans state=present
+
+- name: Install font-questrial cask
+  homebrew_cask: name=font-questrial state=present
+
+- name: Install font-quicksand cask
+  homebrew_cask: name=font-quicksand state=present
+
+- name: Install font-quintessential cask
+  homebrew_cask: name=font-quintessential state=present
+
+- name: Install font-qwigley cask
+  homebrew_cask: name=font-qwigley state=present
+
+- name: Install font-racing-sans-one cask
+  homebrew_cask: name=font-racing-sans-one state=present
+
+- name: Install font-radley cask
+  homebrew_cask: name=font-radley state=present
+
+- name: Install font-raleway cask
+  homebrew_cask: name=font-raleway state=present
+
+- name: Install font-raleway-dots cask
+  homebrew_cask: name=font-raleway-dots state=present
+
+- name: Install font-rambla cask
+  homebrew_cask: name=font-rambla state=present
+
+- name: Install font-rammetto-one cask
+  homebrew_cask: name=font-rammetto-one state=present
+
+- name: Install font-ranchers cask
+  homebrew_cask: name=font-ranchers state=present
+
+- name: Install font-rancho cask
+  homebrew_cask: name=font-rancho state=present
+
+- name: Install font-rationale cask
+  homebrew_cask: name=font-rationale state=present
+
+- name: Install font-reenie-beanie cask
+  homebrew_cask: name=font-reenie-beanie state=present
+
+- name: Install font-revalia cask
+  homebrew_cask: name=font-revalia state=present
+
+- name: Install font-ribeye cask
+  homebrew_cask: name=font-ribeye state=present
+
+- name: Install font-ribeye-marrow cask
+  homebrew_cask: name=font-ribeye-marrow state=present
+
+- name: Install font-righteous cask
+  homebrew_cask: name=font-righteous state=present
+
+- name: Install font-risque cask
+  homebrew_cask: name=font-risque state=present
+
+- name: Install font-roboto cask
+  homebrew_cask: name=font-roboto state=present
+
+- name: Install font-roboto-condensed cask
+  homebrew_cask: name=font-roboto-condensed state=present
+
+- name: Install font-roboto-mono cask
+  homebrew_cask: name=font-roboto-mono state=present
+
+- name: Install font-roboto-slab cask
+  homebrew_cask: name=font-roboto-slab state=present
+
+- name: Install font-rochester cask
+  homebrew_cask: name=font-rochester state=present
+
+- name: Install font-rock-salt cask
+  homebrew_cask: name=font-rock-salt state=present
+
+- name: Install font-rokkitt cask
+  homebrew_cask: name=font-rokkitt state=present
+
+- name: Install font-romanesco cask
+  homebrew_cask: name=font-romanesco state=present
+
+- name: Install font-ropa-sans cask
+  homebrew_cask: name=font-ropa-sans state=present
+
+- name: Install font-rosario cask
+  homebrew_cask: name=font-rosario state=present
+
+- name: Install font-rosarivo cask
+  homebrew_cask: name=font-rosarivo state=present
+
+- name: Install font-rouge-script cask
+  homebrew_cask: name=font-rouge-script state=present
+
+- name: Install font-ruda cask
+  homebrew_cask: name=font-ruda state=present
+
+- name: Install font-rufina cask
+  homebrew_cask: name=font-rufina state=present
+
+- name: Install font-ruge-boogie cask
+  homebrew_cask: name=font-ruge-boogie state=present
+
+- name: Install font-ruluko cask
+  homebrew_cask: name=font-ruluko state=present
+
+- name: Install font-rum-raisin cask
+  homebrew_cask: name=font-rum-raisin state=present
+
+- name: Install font-ruslan-display cask
+  homebrew_cask: name=font-ruslan-display state=present
+
+- name: Install font-russo-one cask
+  homebrew_cask: name=font-russo-one state=present
+
+- name: Install font-ruthie cask
+  homebrew_cask: name=font-ruthie state=present
+
+- name: Install font-rye cask
+  homebrew_cask: name=font-rye state=present
+
+- name: Install font-sacramento cask
+  homebrew_cask: name=font-sacramento state=present
+
+- name: Install font-sail cask
+  homebrew_cask: name=font-sail state=present
+
+- name: Install font-salsa cask
+  homebrew_cask: name=font-salsa state=present
+
+- name: Install font-sanchez cask
+  homebrew_cask: name=font-sanchez state=present
+
+- name: Install font-sancreek cask
+  homebrew_cask: name=font-sancreek state=present
+
+- name: Install font-sarina cask
+  homebrew_cask: name=font-sarina state=present
+
+- name: Install font-satisfy cask
+  homebrew_cask: name=font-satisfy state=present
+
+- name: Install font-scada cask
+  homebrew_cask: name=font-scada state=present
+
+- name: Install font-schoolbell cask
+  homebrew_cask: name=font-schoolbell state=present
+
+- name: Install font-seaweed-script cask
+  homebrew_cask: name=font-seaweed-script state=present
+
+- name: Install font-sevillana cask
+  homebrew_cask: name=font-sevillana state=present
+
+- name: Install font-seymour-one cask
+  homebrew_cask: name=font-seymour-one state=present
+
+- name: Install font-shadows-into-light cask
+  homebrew_cask: name=font-shadows-into-light state=present
+
+- name: Install font-shadows-into-light-two cask
+  homebrew_cask: name=font-shadows-into-light-two state=present
+
+- name: Install font-shanti cask
+  homebrew_cask: name=font-shanti state=present
+
+- name: Install font-share cask
+  homebrew_cask: name=font-share state=present
+
+- name: Install font-share-tech cask
+  homebrew_cask: name=font-share-tech state=present
+
+- name: Install font-share-tech-mono cask
+  homebrew_cask: name=font-share-tech-mono state=present
+
+- name: Install font-signika-negative cask
+  homebrew_cask: name=font-signika-negative state=present
+
+- name: Install font-simonetta cask
+  homebrew_cask: name=font-simonetta state=present
+
+- name: Install font-sintony cask
+  homebrew_cask: name=font-sintony state=present
+
+- name: Install font-skranji cask
+  homebrew_cask: name=font-skranji state=present
+
+- name: Install font-sniglet cask
+  homebrew_cask: name=font-sniglet state=present
+
+- name: Install font-sorts-mill-goudy cask
+  homebrew_cask: name=font-sorts-mill-goudy state=present
+
+- name: Install font-stardos-stencil cask
+  homebrew_cask: name=font-stardos-stencil state=present
+
+- name: Install font-stoke cask
+  homebrew_cask: name=font-stoke state=present
+
+- name: Install font-syncopate cask
+  homebrew_cask: name=font-syncopate state=present
+
+- name: Install font-tangerine cask
+  homebrew_cask: name=font-tangerine state=present
+
+- name: Install font-tienne cask
+  homebrew_cask: name=font-tienne state=present
+
+- name: Install font-tinos cask
+  homebrew_cask: name=font-tinos state=present
+
+- name: Install font-titillium-web cask
+  homebrew_cask: name=font-titillium-web state=present
+
+- name: Install font-trochut cask
+  homebrew_cask: name=font-trochut state=present
+
+- name: Install font-unkempt cask
+  homebrew_cask: name=font-unkempt state=present
+
+- name: Install font-varela cask
+  homebrew_cask: name=font-varela state=present
+
+- name: Install font-volkhov cask
+  homebrew_cask: name=font-volkhov state=present
+
+- name: Install font-yanone-kaffeesatz cask
+  homebrew_cask: name=font-yanone-kaffeesatz state=present
