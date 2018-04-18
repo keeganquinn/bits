@@ -98,6 +98,22 @@
     owner: deploy
     group: deploy
 
+- name: Create animamagica user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: animamagica
+    password: animamagica
+    encrypted: yes
+
+- name: Create animamagica database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: animamagica
+    owner: animamagica
+    encoding: UTF-8
+
 - name: Create cwnmyr user in Postgres
   become: yes
   become_user: postgres
