@@ -25,6 +25,18 @@ cwnmyr-request:      "|/var/lib/mailman/mail/mailman request cwnmyr"
 cwnmyr-subscribe:    "|/var/lib/mailman/mail/mailman subscribe cwnmyr"
 cwnmyr-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe cwnmyr"
 
+## dev mailing list
+dev:              "|/var/lib/mailman/mail/mailman post dev"
+dev-admin:        "|/var/lib/mailman/mail/mailman admin dev"
+dev-bounces:      "|/var/lib/mailman/mail/mailman bounces dev"
+dev-confirm:      "|/var/lib/mailman/mail/mailman confirm dev"
+dev-join:         "|/var/lib/mailman/mail/mailman join dev"
+dev-leave:        "|/var/lib/mailman/mail/mailman leave dev"
+dev-owner:        "|/var/lib/mailman/mail/mailman owner dev"
+dev-request:      "|/var/lib/mailman/mail/mailman request dev"
+dev-subscribe:    "|/var/lib/mailman/mail/mailman subscribe dev"
+dev-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe dev"
+
 ## mailman mailing list
 mailman:              "|/var/lib/mailman/mail/mailman post mailman"
 mailman-admin:        "|/var/lib/mailman/mail/mailman admin mailman"
