@@ -2,6 +2,9 @@
 - name: Install graphviz package on Homebrew
   homebrew: name=graphviz state=present
 
+- name: Install heroku package on Homebrew
+  homebrew: name=heroku state=present
+
 - name: Install node package on Homebrew
   homebrew: name=node state=present
 
