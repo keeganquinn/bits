@@ -24,11 +24,12 @@
     - webserver
     - palkan.phantomjs
 
-- name: Mailing lists
+- name: Organization services
   hosts: len
 
   roles:
     - listserv
+    - redmine
 
 - name: Creature comforts
   hosts: pi, scrap
