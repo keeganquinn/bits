@@ -1,0 +1,4 @@
+---
+- name: restart redmine
+  become: yes
+  service: name=redmine.target state=restarted enabled=yes

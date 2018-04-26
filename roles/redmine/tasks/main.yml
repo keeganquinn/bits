@@ -1,0 +1,140 @@
+---
+- name: Create /srv/rails/redmine/releases
+  become: yes
+  become_user: deploy
+  file:
+    path: /srv/rails/redmine/releases
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+
+- name: Create /srv/rails/redmine/shared
+  become: yes
+  become_user: deploy
+  file:
+    path: /srv/rails/redmine/shared
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+
+- name: Extract Redmine 3.4.5
+  become: yes
+  become_user: deploy
+  unarchive:
+    src: http://www.redmine.org/releases/redmine-3.4.5.tar.gz
+    dest: /srv/rails/redmine/releases
+    remote_src: yes
+    creates: /srv/rails/redmine/releases/redmine-3.4.5/README.rdoc
+  notify: restart redmine
+
+- name: Link current Redmine release
+  become: yes
+  become_user: deploy
+  file:
+    src: /srv/rails/redmine/releases/redmine-3.4.5
+    dest: /srv/rails/redmine/current
+    state: link
+    mode: 0755
+    owner: deploy
+    group: deploy
+    force: true
+  notify: restart redmine
+
+- name: Link environment for Redmine
+  become: yes
+  become_user: deploy
+  file:
+    src: /etc/rails/redmine.env
+    dest: /srv/rails/redmine/current/.env.production
+    state: link
+    mode: 0644
+    owner: deploy
+    group: deploy
+    force: true
+  notify: restart redmine
+
+- name: Copy local Gemfile for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: Gemfile.local
+    dest: /srv/rails/redmine/current
+  notify: restart redmine
+
+- name: Copy Gemfile.lock for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: Gemfile.lock
+    dest: /srv/rails/redmine/current
+  notify: restart redmine
+
+- name: Copy Procfile for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: Procfile
+    dest: /srv/rails/redmine/current
+  notify: restart redmine
+
+- name: Copy setup script for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: qtk_redmine.sh
+    dest: /srv/rails/redmine/current
+  notify: restart redmine
+
+- name: Copy Ruby version selector for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: ruby-version
+    dest: /srv/rails/redmine/current/.ruby-version
+  notify: restart redmine
+
+- name: Copy Redmine database configuration
+  become: yes
+  become_user: deploy
+  copy:
+    src: database.yml
+    dest: /srv/rails/redmine/current/config
+  notify: restart redmine
+
+- name: Copy Puma configuration for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: puma.rb
+    dest: /srv/rails/redmine/current/config
+  notify: restart redmine
+
+- name: Create bundle configuration directory for Redmine
+  become: yes
+  become_user: deploy
+  file:
+    path: /srv/rails/redmine/current/.bundle
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+  notify: restart redmine
+
+- name: Copy bundle configuration for Redmine
+  become: yes
+  become_user: deploy
+  copy:
+    src: bundle.config
+    dest: /srv/rails/redmine/current/.bundle/config
+  notify: restart redmine
+
+- name: Run setup script for Redmine
+  become: yes
+  become_user: deploy
+  shell: ./qtk_redmine.sh
+  args:
+    chdir: /srv/rails/redmine/current
+    creates: /srv/rails/redmine/shared/bundle/ruby/2.4.0/bin/foreman
+  notify: restart redmine
