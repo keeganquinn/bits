@@ -84,6 +84,10 @@
   become: yes
   apt: name=file state=present
 
+- name: Install finger package
+  become: yes
+  apt: name=finger state=present
+
 - name: Install git package
   become: yes
   apt: name=git state=present
