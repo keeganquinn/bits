@@ -95,6 +95,14 @@
     dest: /srv/rails/redmine/current/.ruby-version
   notify: restart redmine
 
+- name: Copy Redmine configuration
+  become: yes
+  become_user: deploy
+  copy:
+    src: configuration.yml
+    dest: /srv/rails/redmine/current/config
+  notify: restart redmine
+
 - name: Copy Redmine database configuration
   become: yes
   become_user: deploy
