@@ -127,7 +127,7 @@ zone "basslin.es" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  file "/etc/bind/generic";
+  file "/etc/bind/basslin.es";
 };
 
 zone "cloudscontrol.us" {
