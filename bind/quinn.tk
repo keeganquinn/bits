@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2018041800
+        2018042600
         ; refresh
         30M
         ; retry
@@ -57,4 +57,5 @@ jenkins                 CNAME   scrap
 lists                   CNAME   len
 partystarter            CNAME   len
 partystarter-staging    CNAME   scrap
+redmine                 CNAME   len
 zabbix                  CNAME   scrap
