@@ -6,6 +6,7 @@
     - machine
     - nameserver
     - email
+    - webserver
 
 - name: Zabbix agent
   hosts: servers
@@ -15,13 +16,12 @@
     become: yes
     apt: name=zabbix-agent state=present
 
-- name: Webserver configuration
+- name: Application server configuration
   hosts: scrap, len
 
   roles:
     - build
     - rails
-    - webserver
     - palkan.phantomjs
 
 - name: Organization services
