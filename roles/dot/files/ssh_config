@@ -38,3 +38,6 @@ Host iris
 
 Host knod
     Hostname knod.personaltelco.net
+
+Host turn
+    Hostname turn.personaltelco.net
