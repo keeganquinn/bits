@@ -17,6 +17,9 @@
 - name: Install shellcheck package on Homebrew
   homebrew: name=shellcheck state=present
 
+- name: Install sloccount package on Homebrew
+  homebrew: name=sloccount state=present
+
 - name: Install yarn package on Homebrew
   homebrew: name=yarn state=present
 

@@ -12,6 +12,10 @@
   become: yes
   apt: name=shellcheck state=present
 
+- name: Install sloccount package
+  become: yes
+  apt: name=sloccount state=present
+
 - name: Install yarn package
   become: yes
   apt: name=yarn state=present
