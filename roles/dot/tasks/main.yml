@@ -33,20 +33,20 @@
     dest: '{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build'
     version: master
 
-- name: Install Ruby 2.4.3
-  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.4.3'
+- name: Install Ruby 2.5.1
+  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.5.1'
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.4.3'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1'
 
-- name: Install Bundler for Ruby 2.4.3
-  shell: 'RBENV_VERSION=2.4.3 {{ ansible_env.HOME }}/.rbenv/shims/gem install bundler'
+- name: Install Bundler for Ruby 2.5.1
+  shell: 'RBENV_VERSION=2.5.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install bundler'
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.4.3/bin/bundler'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1/bin/bundler'
 
-- name: Install Rubocop for Ruby 2.4.3
-  shell: 'RBENV_VERSION=2.4.3 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec'
+- name: Install Rubocop for Ruby 2.5.1
+  shell: 'RBENV_VERSION=2.5.1 {{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec'
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.4.3/bin/rubocop'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1/bin/rubocop'
 
 - name: Set default Ruby
   shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
