@@ -1,13 +1,9 @@
-upstream cwnmyr_puma {
-    server unix:///srv/rails/cwnmyr/shared/puma.sock fail_timeout=0;
-}
-
 server {
     listen 80;
     listen [::]:80;
     server_name cwnmyr.quinn.tk;
 
-    return 301 https://cwnmyr.quinn.tk$request_uri;
+    return 301 https://cwnmyr.personaltelco.net$request_uri;
 }
 
 server {
@@ -22,25 +18,6 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/cwnmyr.quinn.tk/chain.pem;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
-    root /srv/rails/cwnmyr/current/public;
-
-    location ^~ /assets/ {
-        gzip_static on;
-        expires max;
-        add_header Cache-Control public;
-    }
-
-    try_files $uri/index.html $uri @cwnmyr_puma;
-    location @cwnmyr_puma {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_redirect off;
-        proxy_pass http://cwnmyr_puma;
-    }
-
-    client_max_body_size 4G;
-    keepalive_timeout 10;
+    return 301 https://cwnmyr.personaltelco.net$request_uri;
 }
