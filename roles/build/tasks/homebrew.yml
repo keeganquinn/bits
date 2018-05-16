@@ -1,4 +1,7 @@
 ---
+- name: Install ghostscript package on Homebrew
+  homebrew: name=ghostscript state=present
+
 - name: Install graphviz package on Homebrew
   homebrew: name=graphviz state=present
 

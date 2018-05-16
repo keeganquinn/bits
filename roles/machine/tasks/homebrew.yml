@@ -8,6 +8,9 @@
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
 
+- name: Install xquartz cask
+  homebrew_cask: name=xquartz state=present
+
 - name: Install dos2unix brew
   homebrew: name=dos2unix state=present
 
@@ -1699,3 +1702,6 @@
 
 - name: Install font-yanone-kaffeesatz cask
   homebrew_cask: name=font-yanone-kaffeesatz state=present
+
+- name: Install inkscape cask
+  homebrew_cask: name=inkscape state=present
