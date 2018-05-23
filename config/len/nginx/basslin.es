@@ -36,6 +36,7 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/ssl/certs/basslin.es.crt-ca;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Access-Control-Allow-Origin "*";
 
     root /srv/www/basslin.es;
 

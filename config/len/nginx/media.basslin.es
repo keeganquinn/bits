@@ -19,6 +19,7 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/media.basslin.es/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Access-Control-Allow-Origin "*";
 
     root /srv/www/media.basslin.es;
 
