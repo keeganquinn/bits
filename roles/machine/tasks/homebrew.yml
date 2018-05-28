@@ -1,10 +1,4 @@
 ---
-- name: Tap caskroom/cask
-  homebrew_tap: name=caskroom/cask state=present
-
-- name: Tap caskroom/fonts
-  homebrew_tap: name=caskroom/fonts state=present
-
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
 
