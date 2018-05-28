@@ -23,5 +23,7 @@ server {
 
     root /srv/www/media.basslin.es;
 
+    autoindex on;
+
     error_page 404 /404.html;
 }
