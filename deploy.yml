@@ -29,6 +29,7 @@
 
   roles:
     - listserv
+    - qa
     - redmine
 
 - name: Creature comforts

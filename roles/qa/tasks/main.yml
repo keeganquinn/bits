@@ -1,0 +1,29 @@
+---
+- name: Copy dependency scan script
+  become: yes
+  become_user: deploy
+  copy:
+    src: scan.sh
+    dest: /home/deploy
+    owner: deploy
+    group: deploy
+    mode: 0755
+
+- name: Set up qa scheduling
+  become: yes
+  become_user: deploy
+  cron:
+    env: yes
+    name: MAILTO
+    value: dev@quinn.tk
+
+- name: Schedule dependency scan
+  become: yes
+  become_user: deploy
+  cron:
+    name: dependency scan
+    job: /home/deploy/scan.sh
+    minute: 0
+    hour: 10
+    weekday: 1
+    user: deploy
