@@ -2,6 +2,9 @@
 
 # Scan for updated libraries/dependencies on all qtk software packages.
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 set -e
 
 scratch=$(mktemp -d)
