@@ -1,4 +1,12 @@
 ---
+- name: Install dnsmasq package
+  become: yes
+  apt: name=dnsmasq state=present
+
+- name: Install ipv6calc package
+  become: yes
+  apt: name=ipv6calc state=present
+
 - name: Install zabbix-server-pgsql package
   become: yes
   apt: name=zabbix-server-pgsql state=present
@@ -31,3 +39,21 @@
   become: yes
   copy: src=docker-daemon.json dest=/etc/docker/daemon.json
   notify: restart docker
+
+- name: Copy network interfaces
+  become: yes
+  copy: src=interfaces dest=/etc/network/interfaces
+
+- name: Copy prefix_delegation script
+  become: yes
+  copy: src=prefix_delegation dest=/etc/dhcp/dhclient-exit-hooks.d/
+
+- name: Copy sysctl.conf
+  become: yes
+  copy: src=sysctl.conf dest=/etc/sysctl.conf
+  notify: reload sysctl
+
+- name: Copy dnsmasq configuration
+  become: yes
+  copy: src=dnsmasq.conf dest=/etc/dnsmasq.conf
+  notify: restart dnsmasq
