@@ -1,0 +1,7 @@
+*nat
+-A POSTROUTING -o eth0 -j MASQUERADE
+COMMIT
+
+*filter
+-I DOCKER-USER -j ACCEPT
+COMMIT

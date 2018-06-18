@@ -10,7 +10,7 @@ iface lo inet loopback
 # External network interface
 allow-hotplug eth0
 iface eth0 inet dhcp
-# This is an autoconfigured IPv6 interface
+  pre-up iptables-restore < /etc/network/iptables.rules
 iface eth0 inet6 dhcp
   request_prefix 1
 

@@ -44,6 +44,10 @@
   become: yes
   copy: src=interfaces dest=/etc/network/interfaces
 
+- name: Copy iptables rules
+  become: yes
+  copy: src=iptables.rules dest=/etc/network/iptables.rules
+
 - name: Copy prefix_delegation script
   become: yes
   copy: src=prefix_delegation dest=/etc/dhcp/dhclient-exit-hooks.d/
