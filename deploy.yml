@@ -44,25 +44,6 @@
   roles:
     - intranet
 
-- name: quinn.tk
-  hosts: scrap, len
-
-  tasks:
-  - name: Create directory
-    become: yes
-    file:
-      path: /srv/www/quinn.tk
-      state: directory
-      mode: 0755
-      owner: '{{ ansible_user_uid }}'
-      group: '{{ ansible_user_gid }}'
-
-  - name: Sync site
-    git:
-      repo: scrap.quinn.tk:/srv/data/git/quinn.tk.git
-      dest: /srv/www/quinn.tk
-      version: master
-
 - name: basslin.es
   hosts: len
 
