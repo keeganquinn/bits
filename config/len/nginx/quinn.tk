@@ -3,11 +3,17 @@ server {
     listen [::]:80;
     server_name quinn.tk www.quinn.tk;
 
-    return 301 https://quinn.tk$request_uri;
+    location /.well-known {
+        alias /srv/www/quinn.tk/.well-known;
+    }
+
+    location / {
+        return 301 https://quinn.tk$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy;
+    listen 443 ssl http2;
     server_name www.quinn.tk;
     ssl on;
     ssl_certificate /etc/ssl/certs/quinn.tk.crt-combined;
@@ -20,11 +26,17 @@ server {
     ssl_trusted_certificate /etc/ssl/certs/quinn.tk.crt-ca;
     add_header Strict-Transport-Security "max-age=31536000";
 
-    return 301 https://quinn.tk$request_uri;
+    location /.well-known {
+        alias /srv/www/quinn.tk/.well-known;
+    }
+
+    location / {
+        return 301 https://quinn.tk$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy;
+    listen 443 ssl http2;
     server_name quinn.tk;
     ssl on;
     ssl_certificate /etc/ssl/certs/quinn.tk.crt-combined;

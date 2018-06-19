@@ -3,11 +3,17 @@ server {
     listen [::]:80;
     server_name adjustech.com www.adjustech.com;
 
-    return 301 https://adjustech.com$request_uri;
+    location /.well-known {
+        alias /srv/www/adjustech.com/.well-known;
+    }
+
+    location / {
+        return 301 https://adjustech.com$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy;
+    listen 443 ssl http2;
     server_name www.adjustech.com;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/adjustech.com/fullchain.pem;
@@ -18,13 +24,19 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/adjustech.com/chain.pem;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Strict-Transport-Security "max-age=31536000";
 
-    return 301 https://adjustech.com$request_uri;
+    location /.well-known {
+        alias /srv/www/adjustech.com/.well-known;
+    }
+
+    location / {
+        return 301 https://adjustech.com$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy;
+    listen 443 ssl http2;
     server_name adjustech.com;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/adjustech.com/fullchain.pem;
@@ -35,7 +47,7 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/adjustech.com/chain.pem;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Strict-Transport-Security "max-age=31536000";
 
     root /srv/www/adjustech.com;
 

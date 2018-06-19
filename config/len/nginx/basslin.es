@@ -3,11 +3,17 @@ server {
     listen [::]:80;
     server_name basslin.es www.basslin.es;
 
-    return 301 https://basslin.es$request_uri;
+    location /.well-known {
+        alias /srv/www/basslin.es/.well-known;
+    }
+
+    location / {
+        return 301 https://basslin.es$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy;
+    listen 443 ssl http2;
     server_name www.basslin.es;
     ssl on;
     ssl_certificate /etc/ssl/certs/basslin.es.crt-combined;
@@ -18,13 +24,19 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/ssl/certs/basslin.es.crt-ca;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Strict-Transport-Security "max-age=31536000";
 
-    return 301 https://basslin.es$request_uri;
+    location /.well-known {
+        alias /srv/www/basslin.es/.well-known;
+    }
+
+    location / {
+        return 301 https://basslin.es$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy default_server;
+    listen 443 ssl http2 default_server;
     server_name basslin.es;
     ssl on;
     ssl_certificate /etc/ssl/certs/basslin.es.crt-combined;
@@ -35,7 +47,7 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/ssl/certs/basslin.es.crt-ca;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
     root /srv/www/basslin.es;

@@ -3,11 +3,17 @@ server {
     listen [::]:80;
     server_name zabbix.quinn.tk;
 
-    return 301 https://zabbix.quinn.tk$request_uri;
+    location /.well-known {
+        alias /usr/share/zabbix/.well-known;
+    }
+
+    location / {
+        return 301 https://zabbix.quinn.tk$request_uri;
+    }
 }
 
 server {
-    listen 443 ssl spdy;
+    listen 443 ssl http2;
     server_name zabbix.quinn.tk;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/zabbix.quinn.tk/fullchain.pem;
@@ -18,7 +24,7 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/zabbix.quinn.tk/chain.pem;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+    add_header Strict-Transport-Security "max-age=31536000";
 
     root /usr/share/zabbix;
     index index.php;
