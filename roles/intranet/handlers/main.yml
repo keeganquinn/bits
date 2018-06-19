@@ -1,4 +1,12 @@
 ---
+- name: reload sysctl
+  become: yes
+  command: sysctl -p
+
+- name: restart dnsmasq
+  become: yes
+  service: name=dnsmasq state=restarted enabled=yes
+
 - name: restart docker
   become: yes
   service: name=docker state=restarted enabled=yes
