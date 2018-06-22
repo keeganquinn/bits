@@ -2,6 +2,9 @@
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
 
+- name: Install java cask
+  homebrew_cask: name=java state=present
+
 - name: Install xquartz cask
   homebrew_cask: name=xquartz state=present
 

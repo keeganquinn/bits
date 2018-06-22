@@ -1,4 +1,7 @@
 ---
+- name: Install bfg package on Homebrew
+  homebrew: name=bfg state=present
+
 - name: Install ghostscript package on Homebrew
   homebrew: name=ghostscript state=present
 
