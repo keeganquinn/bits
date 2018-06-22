@@ -59,6 +59,6 @@
 
   - name: Sync site
     git:
-      repo: scrap.quinn.tk:/srv/data/git/basslin.es.git
+      repo: len.quinn.tk:/srv/data/git/basslin.es.git
       dest: /srv/www/basslin.es
       version: master
