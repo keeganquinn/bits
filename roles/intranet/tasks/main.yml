@@ -1,4 +1,12 @@
 ---
+- name: Install cups package
+  become: yes
+  apt: name=cups state=present
+
+- name: Copy cups configuration
+  become: yes
+  copy: src=cupsd.conf dest=/etc/cups/cupsd.conf
+
 - name: Install dnsmasq package
   become: yes
   apt: name=dnsmasq state=present
