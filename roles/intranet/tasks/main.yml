@@ -31,10 +31,6 @@
   become: yes
   copy: src=rsnapshot.cron dest=/etc/cron.d/rsnapshot
 
-- name: Install squid package
-  become: yes
-  apt: name=squid state=present
-
 - name: Install jenkins package
   become: yes
   apt: name=jenkins state=present
