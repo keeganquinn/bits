@@ -1,8 +1,8 @@
 ---
-- name: Install irssi package
+- name: Install comfort packages
   become: yes
-  apt: name=irssi state=present
-
-- name: Install nethack-console package
-  become: yes
-  apt: name=nethack-console state=present
+  apt:
+    state: present
+    name:
+      - irssi
+      - nethack-console

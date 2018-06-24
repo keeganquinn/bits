@@ -1,15 +1,12 @@
 ---
-- name: Install certbot package
+- name: Install webserver packages
   become: yes
-  apt: name=certbot state=present
-
-- name: Install fcgiwrap package
-  become: yes
-  apt: name=fcgiwrap state=present
-
-- name: Install nginx package
-  become: yes
-  apt: name=nginx state=present
+  apt:
+    state: present
+    name:
+      - certbot
+      - fcgiwrap
+      - nginx
 
 - name: Generate Diffie-Hellman parameters for nginx
   become: yes

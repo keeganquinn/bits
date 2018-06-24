@@ -1,36 +1,19 @@
 ---
-- name: Install bfg package on Homebrew
-  homebrew: name=bfg state=present
-
-- name: Install ghostscript package on Homebrew
-  homebrew: name=ghostscript state=present
-
-- name: Install graphviz package on Homebrew
-  homebrew: name=graphviz state=present
-
-- name: Install heroku package on Homebrew
-  homebrew: name=heroku state=present
-
-- name: Install node package on Homebrew
-  homebrew: name=node state=present
-
-- name: Install pkg-config brew
-  homebrew: name=pkg-config state=present
-
-- name: Install postgresql brew
-  homebrew: name=postgresql state=present
-
-- name: Install shellcheck package on Homebrew
-  homebrew: name=shellcheck state=present
-
-- name: Install sloccount package on Homebrew
-  homebrew: name=sloccount state=present
-
-- name: Install yarn package on Homebrew
-  homebrew: name=yarn state=present
-
-- name: Install imagemagick package on Homebrew
-  homebrew: name=imagemagick@6 state=present
+- name: Install build packages
+  homebrew:
+    state: present
+    name:
+      - bfg
+      - ghostscript
+      - graphviz
+      - heroku
+      - imagemagick@6
+      - node
+      - pkg-config
+      - postgresql
+      - shellcheck
+      - sloccount
+      - yarn
 
 - name: Link imagemagick package on Homebrew
   shell: brew link --force imagemagick@6

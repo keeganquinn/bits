@@ -1,15 +1,12 @@
 ---
-- name: Install postgresql package
+- name: Install rails application server packages
   become: yes
-  apt: name=postgresql state=present
-
-- name: Install redis-server package
-  become: yes
-  apt: name=redis-server state=present
-
-- name: Install python-psycopg2 package
-  become: yes
-  apt: name=python-psycopg2 state=present
+  apt:
+    state: present
+    name:
+      - postgresql
+      - python-psycopg2
+      - redis-server
 
 - name: Create deploy user
   become: yes

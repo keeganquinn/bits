@@ -1,27 +1,20 @@
 ---
-- name: Install cups package
+- name: Install intranet packages
   become: yes
-  apt: name=cups state=present
+  apt:
+    state: present
+    name:
+      - cups
+      - docker-ce
+      - dnsmasq
+      - ipv6calc
+      - jenkins
+      - rsnapshot
+      - zabbix-server-pgsql
 
 - name: Copy cups configuration
   become: yes
   copy: src=cupsd.conf dest=/etc/cups/cupsd.conf
-
-- name: Install dnsmasq package
-  become: yes
-  apt: name=dnsmasq state=present
-
-- name: Install ipv6calc package
-  become: yes
-  apt: name=ipv6calc state=present
-
-- name: Install zabbix-server-pgsql package
-  become: yes
-  apt: name=zabbix-server-pgsql state=present
-
-- name: Install rsnapshot package
-  become: yes
-  apt: name=rsnapshot state=present
 
 - name: Copy rsnapshot configuration
   become: yes
@@ -30,14 +23,6 @@
 - name: Copy rsnapshot crontab
   become: yes
   copy: src=rsnapshot.cron dest=/etc/cron.d/rsnapshot
-
-- name: Install jenkins package
-  become: yes
-  apt: name=jenkins state=present
-
-- name: Install docker-ce package
-  become: yes
-  apt: name=docker-ce state=present
 
 - name: Copy docker daemon configuration
   become: yes

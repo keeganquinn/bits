@@ -64,54 +64,21 @@
   become: yes
   apt: update_cache=yes upgrade=dist
 
-- name: Install deborphan package
+- name: Install machine packages
   become: yes
-  apt: name=deborphan state=present
-
-- name: Install apt-listchanges package
-  become: yes
-  apt: name=apt-listchanges state=present
-
-- name: Install curl package
-  become: yes
-  apt: name=curl state=present
-
-- name: Install emacs package
-  become: yes
-  apt: name=emacs25 state=present
-
-- name: Install file package
-  become: yes
-  apt: name=file state=present
-
-- name: Install finger package
-  become: yes
-  apt: name=finger state=present
-
-- name: Install git package
-  become: yes
-  apt: name=git state=present
-
-- name: Install harden-servers package
-  become: yes
-  apt: name=harden-servers state=present
-
-- name: Install lftp package
-  become: yes
-  apt: name=lftp state=present
-
-- name: Install mlocate package
-  become: yes
-  apt: name=mlocate state=present
-
-- name: Install nmap package
-  become: yes
-  apt: name=nmap state=present
-
-- name: Install screen package
-  become: yes
-  apt: name=screen state=present
-
-- name: Install unzip package
-  become: yes
-  apt: name=unzip state=present
+  apt:
+    state: present
+    name:
+      - apt-listchanges
+      - curl
+      - deborphan
+      - emacs25
+      - file
+      - finger
+      - git
+      - harden-servers
+      - lftp
+      - mlocate
+      - nmap
+      - screen
+      - unzip

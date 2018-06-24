@@ -1,19 +1,13 @@
 ---
-- name: Install opendkim package
+- name: Install email packages
   become: yes
-  apt: name=opendkim state=present
-
-- name: Install sasl2-bin package
-  become: yes
-  apt: name=sasl2-bin state=present
-
-- name: Install postfix package
-  become: yes
-  apt: name=postfix state=present
-
-- name: Install procmail package
-  become: yes
-  apt: name=procmail state=present
+  apt:
+    state: present
+    name:
+      - opendkim
+      - postfix
+      - procmail
+      - sasl2-bin
 
 - name: Copy aliases file
   become: yes

@@ -1,31 +1,16 @@
 ---
-- name: Install kde-standard package
+- name: Install desktop x11 packages
   become: yes
-  apt: name=kde-standard state=present
-
-- name: Install lightdm package
-  become: yes
-  apt: name=lightdm state=present
-
-- name: Install openbox package
-  become: yes
-  apt: name=openbox state=present
-
-- name: Install rdesktop package
-  become: yes
-  apt: name=rdesktop state=present
-
-- name: Install tigervnc-viewer package
-  become: yes
-  apt: name=tigervnc-viewer state=present
-
-- name: Install vlc package
-  become: yes
-  apt: name=vlc state=present
-
-- name: Install wireshark package
-  become: yes
-  apt: name=wireshark state=present
+  apt:
+    state: present
+    name:
+      - kde-standard
+      - lightdm
+      - openbox
+      - rdesktop
+      - tigervnc-viewer
+      - vlc
+      - wireshark
 
 - name: Copy the grub default file
   become: yes
@@ -36,7 +21,3 @@
   become: yes
   copy: src=kernel-img.conf dest=/etc/kernel-img.conf
   notify: update grub
-
-- name: Enable and start the lightdm service
-  become: yes
-  service: name=lightdm enabled=yes state=started

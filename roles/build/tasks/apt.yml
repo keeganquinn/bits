@@ -1,73 +1,28 @@
 ---
-- name: Install graphviz package
+- name: Install build packages
   become: yes
-  apt: name=graphviz state=present
+  apt:
+    state: present
+    name:
+      - autoconf
+      - bison
+      - build-essential
+      - graphviz
+      - imagemagick
+      - libffi-dev
+      - libgdbm-dev
+      - libmagickwand-6.q16-dev
+      - libncurses5-dev
+      - libpq-dev
+      - libreadline6-dev
+      - libssl-dev
+      - libyaml-dev
+      - shellcheck
+      - sloccount
+      - yarn
+      - zlib1g-dev
 
-- name: Install nodejs package
+- name: Install nodejs package on x64 systems
   become: yes
   apt: name=nodejs state=present
   when: ansible_machine == 'x86_64'
-
-- name: Install shellcheck package
-  become: yes
-  apt: name=shellcheck state=present
-
-- name: Install sloccount package
-  become: yes
-  apt: name=sloccount state=present
-
-- name: Install yarn package
-  become: yes
-  apt: name=yarn state=present
-
-- name: Install autoconf package
-  become: yes
-  apt: name=autoconf state=present
-
-- name: Install bison package
-  become: yes
-  apt: name=bison state=present
-
-- name: Install build-essential package
-  become: yes
-  apt: name=build-essential state=present
-
-- name: Install imagemagick package
-  become: yes
-  apt: name=imagemagick state=present
-
-- name: Install libssl-dev package
-  become: yes
-  apt: name=libssl-dev state=present
-
-- name: Install libyaml-dev package
-  become: yes
-  apt: name=libyaml-dev state=present
-
-- name: Install libreadline6-dev package
-  become: yes
-  apt: name=libreadline6-dev state=present
-
-- name: Install zlib1g-dev package
-  become: yes
-  apt: name=zlib1g-dev state=present
-
-- name: Install libncurses5-dev package
-  become: yes
-  apt: name=libncurses5-dev state=present
-
-- name: Install libffi-dev package
-  become: yes
-  apt: name=libffi-dev state=present
-
-- name: Install libgdbm-dev package
-  become: yes
-  apt: name=libgdbm-dev state=present
-
-- name: Install libpq-dev package
-  become: yes
-  apt: name=libpq-dev state=present
-
-- name: Install libmagickwand-6.q16-dev package
-  become: yes
-  apt: name=libmagickwand-6.q16-dev state=present
