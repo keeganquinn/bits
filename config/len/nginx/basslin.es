@@ -52,6 +52,30 @@ server {
 
     root /srv/www/basslin.es;
 
+    location /bluevertigo {
+        return 301 /str1ng;
+    }
+
+    location ~ ^/keegan(/.*)?$ {
+        return 301 /kQ$1;
+    }
+
+    location ~ ^/kQ(/.*)?$ {
+        return 301 /kQ$1;
+    }
+
+    location /order {
+        return 301 /;
+    }
+
+    location /services {
+        return 301 /;
+    }
+
+    location /stream {
+        return 301 /;
+    }
+
     location ~ ^/~(.+?)(/.*)?$ {
         alias /home/$1/public_html$2;
         index index.html index.htm;
