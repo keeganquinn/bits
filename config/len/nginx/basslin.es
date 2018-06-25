@@ -60,7 +60,7 @@ server {
         return 301 /kQ$1;
     }
 
-    location ~ ^/kQ(/.*)?$ {
+    location ~ ^/kq(/.*)?$ {
         return 301 /kQ$1;
     }
 
