@@ -43,22 +43,3 @@
 
   roles:
     - intranet
-
-- name: basslin.es
-  hosts: len
-
-  tasks:
-  - name: Create directory
-    become: yes
-    file:
-      path: /srv/www/basslin.es
-      state: directory
-      mode: 0755
-      owner: '{{ ansible_user_uid }}'
-      group: '{{ ansible_user_gid }}'
-
-  - name: Sync site
-    git:
-      repo: len.quinn.tk:/srv/data/git/basslin.es.git
-      dest: /srv/www/basslin.es
-      version: master
