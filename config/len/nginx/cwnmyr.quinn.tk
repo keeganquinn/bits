@@ -4,7 +4,7 @@ server {
     server_name cwnmyr.quinn.tk;
 
     location /.well-known {
-         alias /srv/www/cwnmyr.quinn.tk/.well-known;
+         alias /srv/rails/cwnmyr/current/public/.well-known;
     }
 
     location / {
@@ -27,7 +27,7 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
 
     location /.well-known {
-         alias /srv/www/cwnmyr.quinn.tk/.well-known;
+         alias /srv/rails/cwnmyr/current/public/.well-known;
     }
 
     location / {
