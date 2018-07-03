@@ -29,6 +29,15 @@ fi
 rm -rf "${scratch}/animamagica"
 
 
+# basslin.es
+git clone -q /srv/data/git/basslin.es.git "${scratch}/basslin.es"
+if ! yarn outdated --cwd "${scratch}/basslin.es" >/dev/null; then
+    echo 'basslin.es JS dependencies need update!'
+    echo
+fi
+rm -rf "${scratch}/basslin.es"
+
+
 # cwnmyr
 git clone -q https://github.com/keeganquinn/cwnmyr.git "${scratch}/cwnmyr"
 if ! yarn outdated --cwd "${scratch}/cwnmyr" >/dev/null; then
