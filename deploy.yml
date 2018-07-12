@@ -42,4 +42,5 @@
   hosts: scrap
 
   roles:
+    - dot
     - intranet
