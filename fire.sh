@@ -25,7 +25,7 @@ echo "${vault_password}" > "${ANSIBLE_VAULT_PASSWORD_FILE}"
 
 ansible-galaxy install -r requirements.yml
 
-ansible-playbook dot.yml
+egrep -q "^$(hostname)$" ansible.hosts || ansible-playbook dot.yml
 
 ansible-playbook deploy.yml
 
