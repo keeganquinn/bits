@@ -17,12 +17,8 @@
       - libreadline6-dev
       - libssl-dev
       - libyaml-dev
+      - nodejs
       - shellcheck
       - sloccount
       - yarn
       - zlib1g-dev
-
-- name: Install nodejs package on x64 systems
-  become: yes
-  apt: name=nodejs state=present
-  when: ansible_machine == 'x86_64'

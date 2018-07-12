@@ -43,7 +43,7 @@
 - name: Enable nodesource APT source
   become: yes
   apt_repository:
-    repo: deb [arch=amd64] https://deb.nodesource.com/node_8.x stretch main
+    repo: deb https://deb.nodesource.com/node_8.x stretch main
     state: present
     filename: nodesource
 
