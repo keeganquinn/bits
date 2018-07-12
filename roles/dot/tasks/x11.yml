@@ -6,6 +6,7 @@
     name:
       - kde-standard
       - lightdm
+      - menu
       - openbox
       - rdesktop
       - tigervnc-viewer
