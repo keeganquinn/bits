@@ -7,8 +7,11 @@
       - cups
       - docker-ce
       - dnsmasq
+      - iftop
       - ipv6calc
       - jenkins
+      - olsrd
+      - openvpn
       - rsnapshot
       - zabbix-server-pgsql
 
