@@ -19,21 +19,21 @@
     owner: deploy
     group: deploy
 
-- name: Extract Redmine 3.4.5
+- name: Extract Redmine 3.4.6
   become: yes
   become_user: deploy
   unarchive:
-    src: http://www.redmine.org/releases/redmine-3.4.5.tar.gz
+    src: http://www.redmine.org/releases/redmine-3.4.6.tar.gz
     dest: /srv/rails/redmine/releases
     remote_src: yes
-    creates: /srv/rails/redmine/releases/redmine-3.4.5/README.rdoc
+    creates: /srv/rails/redmine/releases/redmine-3.4.6/README.rdoc
   notify: restart redmine
 
 - name: Link current Redmine release
   become: yes
   become_user: deploy
   file:
-    src: /srv/rails/redmine/releases/redmine-3.4.5
+    src: /srv/rails/redmine/releases/redmine-3.4.6
     dest: /srv/rails/redmine/current
     state: link
     mode: 0755
