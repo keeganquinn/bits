@@ -4,7 +4,7 @@ server {
     server_name fernhillschool.org www.fernhillschool.org;
 
     location /.well-known {
-        alias /srv/www/fernhillschool.com/.well-known;
+        alias /srv/www/fernhillschool.org/.well-known;
     }
 
     location / {
@@ -27,7 +27,7 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
 
     location /.well-known {
-        alias /srv/www/fernhillschool.com/.well-known;
+        alias /srv/www/fernhillschool.org/.well-known;
     }
 
     location / {
