@@ -23,7 +23,7 @@ IA_PD_SERVICES="dnsmasq"
 # Define the location of the ipv6calc executable, if installed
 # If this is empty or no executable file, no EUI-64 based IPv6 address will be calculated for the interface set in IA_PD_IFACE; instead, a static interface identifier (::1) will be appended to the prefix
 # Example: IA_PD_IPV6CALC="/usr/bin/ipv6calc"
-IA_PD_IPV6CALC="/usr/bin/ipv6calc"
+IA_PD_IPV6CALC=""
 
 # Set to yes to make logging more verbose
 IA_PD_DEBUG="no"
