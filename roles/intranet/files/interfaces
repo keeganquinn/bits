@@ -15,9 +15,10 @@ iface eth0 inet6 dhcp
   request_prefix 1
   post-up sysctl -w net.ipv6.conf.eth0.accept_ra=2
 
-# Local network interface
-allow-hotplug eth1
+# Local network
+auto eth1
 iface eth1 inet static
+  bridge_ports enp4s0f0 enp4s0f1 enp5s0f0 enp5s0f1 enp7s4 enp7s5
   address 10.11.22.1
   netmask 255.255.255.0
   network 10.11.22.0
