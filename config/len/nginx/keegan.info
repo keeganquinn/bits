@@ -3,5 +3,5 @@ server {
     listen [::]:80;
     server_name keegan.info www.keegan.info;
 
-    return 301 http://www.keegan.ws$request_uri;
+    return 301 https://quinn.tk$request_uri;
 }

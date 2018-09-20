@@ -16,7 +16,6 @@ mail._domainkey.freetunetv.com freetunetv.com:mail:/etc/opendkim/keys/mail.priva
 mail._domainkey.keegan.ga keegan.ga:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.keegan.gq keegan.gq:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.keegan.info keegan.info:mail:/etc/opendkim/keys/mail.private
-mail._domainkey.keegan.ws keegan.ws:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.kernelklug.com kernelklug.com:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.klug.pw klug.pw:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.mailballotvote.com mailballotvote.com:mail:/etc/opendkim/keys/mail.private

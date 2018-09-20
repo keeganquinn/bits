@@ -18,14 +18,6 @@ acl "slaves" {
   2a01:4f8:d12:d01::10:100;
 };
 
-zone "keegan.ws" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  file "/etc/bind/generic";
-};
-
 zone "keegan.ga" {
   type master;
   allow-query { any; };

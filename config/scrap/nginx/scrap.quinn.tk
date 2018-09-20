@@ -1,7 +1,7 @@
 server {
     listen 80;
     listen [::]:80;
-    server_name scrap.quinn.tk scrap.keegan.ws scrap.local;
+    server_name scrap.quinn.tk scrap.local;
 
     location /.well-known {
         alias /srv/www/scrap.quinn.tk/.well-known;
