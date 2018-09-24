@@ -9,6 +9,7 @@
       - menu
       - openbox
       - rdesktop
+      - smbclient
       - tigervnc-viewer
       - vlc
       - wireshark
