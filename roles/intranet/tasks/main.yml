@@ -14,6 +14,7 @@
       - olsrd
       - openvpn
       - rsnapshot
+      - shairport-sync
       - zabbix-server-pgsql
 
 - name: Copy cups configuration
@@ -44,6 +45,11 @@
 - name: Copy prefix_delegation script
   become: yes
   copy: src=prefix_delegation dest=/etc/dhcp/dhclient-exit-hooks.d/
+
+- name: Copy shairport-sync.conf
+  become: yes
+  copy: src=shairport-sync.conf dest=/etc/shairport-sync.conf
+  notify: restart shairport-sync
 
 - name: Copy sysctl.conf
   become: yes

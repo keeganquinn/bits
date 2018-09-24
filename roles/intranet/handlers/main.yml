@@ -10,3 +10,7 @@
 - name: restart docker
   become: yes
   service: name=docker state=restarted enabled=yes
+
+- name: restart shairport-sync
+  become: yes
+  service: name=shairport-sync state=restarted enabled=yes
