@@ -18,24 +18,12 @@ acl "slaves" {
   2a01:4f8:d12:d01::10:100;
 };
 
-masters slaves {
-  # pi
-  89.18.165.159;
-  2a00:f10:103:201:ba27:ebff:fe73:17b5;
-
+masters hidden-slaves {
   # len
-  45.79.65.28;
   2600:3c01::f03c:91ff:fee9:47cb;
 
   # scrap
-  67.189.70.230;
   2601:1c2:4c00:e66d::1;
-
-  # BuddyNS
-  173.244.206.26;
-  88.198.106.11;
-  2607:f0d0:1005:72::100;
-  2a01:4f8:d12:d01::10:100;
 };
 
 zone "keegan.ga" {
@@ -43,7 +31,7 @@ zone "keegan.ga" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -52,7 +40,7 @@ zone "keegan.gq" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -61,7 +49,7 @@ zone "keegan.info" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -70,7 +58,7 @@ zone "quinn.ml" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -79,7 +67,7 @@ zone "quinn.tk" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/quinn.tk";
 };
 
@@ -88,7 +76,7 @@ zone "str1ng.ml" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -97,7 +85,7 @@ zone "str1ng.ga" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -106,7 +94,7 @@ zone "str1ng.cf" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -115,7 +103,7 @@ zone "str1ng.gq" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -124,7 +112,7 @@ zone "sniz.org" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -133,7 +121,7 @@ zone "sniz.net" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -142,7 +130,7 @@ zone "animamagica.tk" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -151,7 +139,7 @@ zone "basslin.es" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -160,7 +148,7 @@ zone "cloudscontrol.us" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -169,7 +157,7 @@ zone "unplug.ml" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -178,7 +166,7 @@ zone "unplug.gq" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -187,7 +175,7 @@ zone "ugraal.tk" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -196,7 +184,7 @@ zone "ugraal.ml" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -205,7 +193,7 @@ zone "ugraal.ga" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -214,7 +202,7 @@ zone "ugraal.cf" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -223,7 +211,7 @@ zone "ugraal.gq" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -232,7 +220,7 @@ zone "abusive.ml" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -241,7 +229,7 @@ zone "abusive.ga" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -250,7 +238,7 @@ zone "abusive.cf" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -259,7 +247,7 @@ zone "abusive.gq" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -269,7 +257,7 @@ zone "matthewklug.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -278,7 +266,7 @@ zone "adjustech.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -287,7 +275,7 @@ zone "turnontv.net" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -296,7 +284,7 @@ zone "clicktopick.net" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -305,7 +293,7 @@ zone "tunetvonline.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -314,7 +302,7 @@ zone "freetunetv.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -323,7 +311,7 @@ zone "diptv.net" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -332,7 +320,7 @@ zone "kernelklug.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -341,7 +329,7 @@ zone "alphabetashop.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -350,7 +338,7 @@ zone "mailballotvote.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -359,7 +347,7 @@ zone "klug.pw" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -368,7 +356,7 @@ zone "fernhillmeadow.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -377,7 +365,7 @@ zone "fernhillmarket.com" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
 
@@ -386,6 +374,6 @@ zone "fernhillschool.org" {
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
-  also-notify { slaves; };
+  also-notify { hidden-slaves; };
   file "/etc/bind/generic";
 };
