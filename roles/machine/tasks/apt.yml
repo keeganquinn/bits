@@ -47,6 +47,19 @@
     state: present
     filename: nodesource
 
+- name: Add owncloud APT key
+  become: yes
+  apt_key:
+    url: https://download.owncloud.org/download/repositories/production/Debian_9.0/Release.key
+    state: present
+
+- name: Enable owncloud APT source
+  become: yes
+  apt_repository:
+    repo: deb http://download.owncloud.org/download/repositories/production/Debian_9.0/ /
+    state: present
+    filename: owncloud
+
 - name: Add yarn APT key
   become: yes
   apt_key:

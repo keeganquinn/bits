@@ -13,6 +13,16 @@
       - jenkins
       - olsrd
       - openvpn
+      - owncloud-files
+      - php-curl
+      - php-fpm
+      - php-gd
+      - php-intl
+      - php-mbstring
+      - php-pgsql
+      - php-xml
+      - php-zip
+      - postgresql
       - rsnapshot
       - samba
       - shairport-sync
@@ -66,3 +76,28 @@
   become: yes
   copy: src=dnsmasq.conf dest=/etc/dnsmasq.conf
   notify: restart dnsmasq
+
+- name: Copy owncloud configuration
+  become: yes
+  copy:
+    src: owncloud-config.php
+    dest: /var/www/owncloud/config/config.php
+    owner: www-data
+    group: www-data
+    mode: 0640
+
+- name: Create owncloud user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: owncloud
+    password: owncloud
+    encrypted: yes
+
+- name: Create owncloud database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: owncloud
+    owner: owncloud
+    encoding: UTF-8
