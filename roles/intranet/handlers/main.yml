@@ -11,6 +11,10 @@
   become: yes
   service: name=docker state=restarted enabled=yes
 
+- name: restart php-fpm
+  become: yes
+  service: name=php7.0-fpm state=restarted enabled=yes
+
 - name: restart smbd
   become: yes
   service: name=smbd state=restarted enabled=yes

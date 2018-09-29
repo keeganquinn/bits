@@ -14,12 +14,14 @@
       - olsrd
       - openvpn
       - owncloud-files
+      - php-apcu
       - php-curl
       - php-fpm
       - php-gd
       - php-intl
       - php-mbstring
       - php-pgsql
+      - php-redis
       - php-xml
       - php-zip
       - postgresql
@@ -77,6 +79,11 @@
   copy: src=dnsmasq.conf dest=/etc/dnsmasq.conf
   notify: restart dnsmasq
 
+- name: Copy php fpm pool configuration
+  become: yes
+  copy: src=www.conf dest=/etc/php/7.0/fpm/pool.d/www.conf
+  notify: restart php-fpm
+
 - name: Copy owncloud configuration
   become: yes
   copy:
@@ -101,3 +108,11 @@
     name: owncloud
     owner: owncloud
     encoding: UTF-8
+
+- name: Schedule owncloud cron
+  become: yes
+  become_user: www-data
+  cron:
+    name: owncloud
+    job: /usr/bin/php -f /var/www/owncloud/cron.php
+    user: www-data
