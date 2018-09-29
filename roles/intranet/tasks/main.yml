@@ -14,12 +14,14 @@
       - olsrd
       - openvpn
       - owncloud-files
+      - php
       - php-apcu
       - php-bcmath
       - php-curl
       - php-fpm
       - php-gd
       - php-intl
+      - php-ldap
       - php-mbstring
       - php-pgsql
       - php-redis
