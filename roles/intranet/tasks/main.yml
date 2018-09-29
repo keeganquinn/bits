@@ -15,6 +15,7 @@
       - openvpn
       - owncloud-files
       - php-apcu
+      - php-bcmath
       - php-curl
       - php-fpm
       - php-gd
@@ -79,7 +80,12 @@
   copy: src=dnsmasq.conf dest=/etc/dnsmasq.conf
   notify: restart dnsmasq
 
-- name: Copy php fpm pool configuration
+- name: Copy php-fpm configuration
+  become: yes
+  copy: src=php.ini dest=/etc/php/7.0/fpm/php.ini
+  notify: restart php-fpm
+
+- name: Copy php-fpm pool configuration
   become: yes
   copy: src=www.conf dest=/etc/php/7.0/fpm/pool.d/www.conf
   notify: restart php-fpm

@@ -1,4 +1,4 @@
-upstream php-handler {
+upstream owncloud_handler {
     server unix:/var/run/php/php7.0-fpm.sock;
 }
 
@@ -88,7 +88,7 @@ server {
         fastcgi_param modHeadersAvailable true;
         fastcgi_param front_controller_active true;
         fastcgi_read_timeout 180;
-        fastcgi_pass php-handler;
+        fastcgi_pass owncloud_handler;
         fastcgi_intercept_errors on;
         fastcgi_request_buffering off; #Available since NGINX 1.7.11
     }

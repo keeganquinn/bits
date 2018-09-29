@@ -1,3 +1,7 @@
+upstream zabbix_handler {
+    server unix:/var/run/php/php7.0-fpm.sock;
+}
+
 server {
     listen 80;
     listen [::]:80;
@@ -30,7 +34,7 @@ server {
     index index.php;
 
     location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_pass zabbix_handler;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME /usr/share/zabbix$fastcgi_script_name;
     }
