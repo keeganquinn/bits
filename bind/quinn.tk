@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     pi hostmaster (
         ; serial
-        2018092000
+        2018092800
         ; refresh
         30M
         ; retry
@@ -53,6 +53,7 @@ scrap   TXT     "v=spf1 mx a -all"
 
 animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap
+cloud                   CNAME   scrap
 cwnmyr                  CNAME   len
 cwnmyr-staging          CNAME   scrap
 jenkins                 CNAME   scrap
