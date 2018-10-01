@@ -14,6 +14,13 @@
       - vlc
       - wireshark
 
+- name: Install ownCloud package
+  become: yes
+  apt:
+    state: present
+    name: owncloud-client
+    default_release: stretch-backports
+
 - name: Copy the grub default file
   become: yes
   copy: src=grub dest=/etc/default/grub
