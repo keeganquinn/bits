@@ -7,12 +7,13 @@
       - kde-standard
       - lightdm
       - menu
-      - openbox
       - rdesktop
       - smbclient
       - tigervnc-viewer
       - vlc
       - wireshark
+      - xfce4
+      - xfce4-battery-plugin
 
 - name: Install ownCloud package
   become: yes
