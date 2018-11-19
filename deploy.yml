@@ -28,6 +28,7 @@
   hosts: len
 
   roles:
+    - ftp
     - listserv
     - qa
     - redmine

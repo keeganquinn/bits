@@ -1,0 +1,9 @@
+---
+- name: Install vsftpd package
+  become: yes
+  apt: name=vsftpd state=present
+
+- name: Copy vsftpd configuration
+  become: yes
+  copy: src=vsftpd.conf dest=/etc/vsftpd.conf
+  notify: restart vsftpd
