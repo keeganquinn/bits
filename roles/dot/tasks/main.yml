@@ -33,31 +33,31 @@
     dest: '{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build'
     version: master
 
-- name: Install Ruby 2.5.1
-  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.5.1'
+- name: Install Ruby 2.5.3
+  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.5.3'
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.3'
 
-- name: Install Bundler for Ruby 2.5.1
+- name: Install Bundler for Ruby 2.5.3
   shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler'
   environment:
-    RBENV_VERSION: 2.5.1
+    RBENV_VERSION: 2.5.3
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1/bin/bundler'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.3/bin/bundler'
 
-- name: Install Rubocop for Ruby 2.5.1
+- name: Install Rubocop for Ruby 2.5.3
   shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec'
   environment:
-    RBENV_VERSION: 2.5.1
+    RBENV_VERSION: 2.5.3
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1/bin/rubocop'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.3/bin/rubocop'
 
-- name: Install Sass for Ruby 2.5.1
+- name: Install Sass for Ruby 2.5.3
   shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install sass'
   environment:
-    RBENV_VERSION: 2.5.1
+    RBENV_VERSION: 2.5.3
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.1/bin/scss'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.5.3/bin/scss'
 
 - name: Set default Ruby
   shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
