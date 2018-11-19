@@ -89,7 +89,6 @@
       - file
       - finger
       - git
-      - harden-servers
       - lftp
       - mlocate
       - nmap
