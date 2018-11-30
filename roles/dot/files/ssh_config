@@ -15,6 +15,13 @@ Host scrap
     ForwardX11 yes
 
 
+# Friendly boxes
+Host athlon
+    Hostname delerivm.ddns.net
+    Port 2222
+    ForwardAgent yes
+
+
 # Local machines
 Host electron
     Hostname electron.local
