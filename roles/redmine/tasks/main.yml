@@ -19,21 +19,21 @@
     owner: deploy
     group: deploy
 
-- name: Extract Redmine 3.4.6
+- name: Extract Redmine 4.0.0
   become: yes
   become_user: deploy
   unarchive:
-    src: http://www.redmine.org/releases/redmine-3.4.6.tar.gz
+    src: http://www.redmine.org/releases/redmine-4.0.0.tar.gz
     dest: /srv/rails/redmine/releases
     remote_src: yes
-    creates: /srv/rails/redmine/releases/redmine-3.4.6/README.rdoc
+    creates: /srv/rails/redmine/releases/redmine-4.0.0/README.rdoc
   notify: restart redmine
 
 - name: Link current Redmine release
   become: yes
   become_user: deploy
   file:
-    src: /srv/rails/redmine/releases/redmine-3.4.6
+    src: /srv/rails/redmine/releases/redmine-4.0.0
     dest: /srv/rails/redmine/current
     state: link
     mode: 0755
@@ -85,6 +85,7 @@
   copy:
     src: qtk_redmine.sh
     dest: /srv/rails/redmine/current
+    mode: 0755
   notify: restart redmine
 
 - name: Copy Ruby version selector for Redmine
@@ -144,5 +145,5 @@
   shell: ./qtk_redmine.sh
   args:
     chdir: /srv/rails/redmine/current
-    creates: /srv/rails/redmine/shared/bundle/ruby/2.5.0/bin/foreman
+    creates: /srv/rails/redmine/current/qtk_redmine.stamp
   notify: restart redmine

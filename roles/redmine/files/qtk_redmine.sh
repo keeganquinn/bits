@@ -12,3 +12,7 @@ export REDMINE_LANG=en
 "${rbenv}" exec bundle exec rake redmine:load_default_data
 "${rbenv}" sudo foreman export systemd /etc/systemd/system \
            -a redmine -u deploy -e /etc/rails/redmine.env
+
+sudo systemctl daemon-reload
+
+touch qtk_redmine.stamp

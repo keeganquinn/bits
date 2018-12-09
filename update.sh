@@ -13,7 +13,7 @@ trap cleanup INT TERM
 
 # Keep version/paths in sync with roles/redmine/tasks/main.yml
 
-redmine_version="redmine-3.4.6"
+redmine_version="redmine-4.0.0"
 curl -sS http://www.redmine.org/releases/"${redmine_version}".tar.gz | \
     tar xvfz - -C "${scratch}"
 
@@ -32,7 +32,7 @@ cp roles/redmine/files/database.yml \
 cp roles/redmine/files/ruby-version \
    "${scratch}/${redmine_version}/.ruby-version"
 
-(cd "${scratch}/${redmine_version}" && bundle install && bundle update)
+(cd "${scratch}/${redmine_version}" && bundle update)
 cp "${scratch}/${redmine_version}/Gemfile.lock" roles/redmine/files/
 
 
