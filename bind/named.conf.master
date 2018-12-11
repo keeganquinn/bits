@@ -134,6 +134,15 @@ zone "basslin.es" {
   file "/etc/bind/generic";
 };
 
+zone "speakeasy.tk" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/generic";
+};
+
 zone "unplug.ml" {
   type master;
   allow-query { any; };

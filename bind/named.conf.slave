@@ -99,6 +99,14 @@ zone "basslin.es" {
   file "basslin.es";
 };
 
+zone "speakeasy.tk" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "speakeasy.tk";
+};
+
 zone "unplug.ml" {
   type slave;
   notify no;
