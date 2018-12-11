@@ -19,14 +19,6 @@ zone "keegan.gq" {
   file "keegan.gq";
 };
 
-zone "keegan.info" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "keegan.info";
-};
-
 zone "quinn.ml" {
   type slave;
   notify no;
@@ -105,14 +97,6 @@ zone "basslin.es" {
   allow-query { any; };
   masters { primary; };
   file "basslin.es";
-};
-
-zone "cloudscontrol.us" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "cloudscontrol.us";
 };
 
 zone "unplug.ml" {

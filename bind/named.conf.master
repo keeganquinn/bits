@@ -44,15 +44,6 @@ zone "keegan.gq" {
   file "/etc/bind/generic";
 };
 
-zone "keegan.info" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
 zone "quinn.ml" {
   type master;
   allow-query { any; };
@@ -135,15 +126,6 @@ zone "animamagica.tk" {
 };
 
 zone "basslin.es" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "cloudscontrol.us" {
   type master;
   allow-query { any; };
   allow-transfer { "slaves"; };

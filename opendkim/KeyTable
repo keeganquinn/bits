@@ -7,7 +7,6 @@ mail._domainkey.alphabetashop.com alphabetashop.com:mail:/etc/opendkim/keys/mail
 mail._domainkey.animamagica.tk animamagica.tk:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.basslin.es basslin.es:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.clicktopick.net clicktopick.net:mail:/etc/opendkim/keys/mail.private
-mail._domainkey.cloudscontrol.us cloudscontrol.us:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.diptv.net diptv.net:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.fernhillmarket.com fernhillmarket.com:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.fernhillmeadow.com fernhillmeadow.com:mail:/etc/opendkim/keys/mail.private
@@ -15,7 +14,6 @@ mail._domainkey.fernhillschool.org fernhillschool.org:mail:/etc/opendkim/keys/ma
 mail._domainkey.freetunetv.com freetunetv.com:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.keegan.ga keegan.ga:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.keegan.gq keegan.gq:mail:/etc/opendkim/keys/mail.private
-mail._domainkey.keegan.info keegan.info:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.kernelklug.com kernelklug.com:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.klug.pw klug.pw:mail:/etc/opendkim/keys/mail.private
 mail._domainkey.mailballotvote.com mailballotvote.com:mail:/etc/opendkim/keys/mail.private
