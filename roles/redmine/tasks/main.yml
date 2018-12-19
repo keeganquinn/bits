@@ -39,7 +39,6 @@
     mode: 0755
     owner: deploy
     group: deploy
-    force: true
   notify: restart redmine
 
 - name: Link environment for Redmine
@@ -52,7 +51,6 @@
     mode: 0644
     owner: deploy
     group: deploy
-    force: true
   notify: restart redmine
 
 - name: Copy local Gemfile for Redmine
