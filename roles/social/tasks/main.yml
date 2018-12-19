@@ -1,0 +1,89 @@
+---
+- name: Install Mastodon dependency packages
+  become: yes
+  apt:
+    state: present
+    name:
+      - ffmpeg
+      - libidn11-dev
+      - libjemalloc-dev
+      - libprotobuf-dev
+      - protobuf-compiler
+
+- name: Create /srv/rails/mastodon/releases
+  become: yes
+  become_user: deploy
+  file:
+    path: /srv/rails/mastodon/releases
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+
+- name: Create /srv/rails/mastodon/shared
+  become: yes
+  become_user: deploy
+  file:
+    path: /srv/rails/mastodon/shared
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+
+- name: Check out Mastodon live
+  become: yes
+  become_user: deploy
+  git:
+    repo: https://github.com/tootsuite/mastodon.git
+    dest: /srv/rails/mastodon/releases/live
+    version: v2.6.5
+  notify: restart mastodon
+
+- name: Link current Mastodon release
+  become: yes
+  become_user: deploy
+  file:
+    src: /srv/rails/mastodon/releases/live
+    dest: /srv/rails/mastodon/current
+    state: link
+    mode: 0755
+    owner: deploy
+    group: deploy
+  notify: restart mastodon
+
+- name: Copy setup script for Mastodon
+  become: yes
+  become_user: deploy
+  copy:
+    src: setk_mastodon.sh
+    dest: /srv/rails/mastodon/current
+    mode: 0755
+  notify: restart mastodon
+
+- name: Create bundle configuration directory for Mastodon
+  become: yes
+  become_user: deploy
+  file:
+    path: /srv/rails/mastodon/current/.bundle
+    state: directory
+    mode: 0755
+    owner: deploy
+    group: deploy
+  notify: restart mastodon
+
+- name: Copy bundle configuration for Mastodon
+  become: yes
+  become_user: deploy
+  copy:
+    src: bundle.config
+    dest: /srv/rails/mastodon/current/.bundle/config
+  notify: restart mastodon
+
+- name: Run setup script for Mastodon
+  become: yes
+  become_user: deploy
+  shell: ./setk_mastodon.sh
+  args:
+    chdir: /srv/rails/mastodon/current
+    creates: /srv/rails/mastodon/current/setk_mastodon.stamp
+  notify: restart mastodon

@@ -127,6 +127,22 @@
     owner: cwnmyr
     encoding: UTF-8
 
+- name: Create mastodon user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: mastodon
+    password: mastodon
+    encrypted: yes
+
+- name: Create mastodon database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: mastodon
+    owner: mastodon
+    encoding: UTF-8
+
 - name: Create partystarter user in Postgres
   become: yes
   become_user: postgres

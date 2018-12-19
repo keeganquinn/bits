@@ -24,6 +24,7 @@
     - listserv
     - qa
     - redmine
+    - social
 
 - name: Creature comforts
   hosts: pi, scrap
