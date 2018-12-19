@@ -1,0 +1,11 @@
+[DEFAULT]
+destemail = keegan@quinn.tk
+sendername = Fail2Ban
+
+[sshd]
+enabled = true
+port = 22
+
+[sshd-ddos]
+enabled = true
+port = 22

@@ -1,4 +1,8 @@
 ---
+- name: restart fail2ban
+  become: yes
+  service: name=fail2ban state=restarted enabled=yes
+
 - name: restart nginx
   become: yes
   service: name=nginx state=restarted enabled=yes
