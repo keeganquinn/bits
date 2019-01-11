@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Update script. Intended for operations use.
+#
+# This is not [yet] containerized. Requires Ruby and Bundler.
 
 set -e
 
@@ -32,7 +34,7 @@ cp roles/redmine/files/database.yml \
 cp roles/redmine/files/ruby-version \
    "${scratch}/${redmine_version}/.ruby-version"
 
-(cd "${scratch}/${redmine_version}" && bundle update)
+(cd "${scratch}/${redmine_version}" && bundle update --bundler && bundle update)
 cp "${scratch}/${redmine_version}/Gemfile.lock" roles/redmine/files/
 
 
