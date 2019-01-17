@@ -35,6 +35,10 @@ if ! yarn outdated --cwd "${scratch}/basslin.es" >/dev/null; then
     echo 'basslin.es JS dependencies need update!'
     echo
 fi
+if ! (cd "${scratch}/basslin.es"; bundle outdated) >/dev/null; then
+    echo 'basslin.es Ruby dependencies need update!'
+    echo
+fi
 rm -rf "${scratch}/basslin.es"
 
 
