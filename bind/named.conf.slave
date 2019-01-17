@@ -1,6 +1,6 @@
 masters primary {
-  # pi
-  2a00:f10:103:201:ba27:ebff:fe73:17b5;
+  # len
+  2600:3c01::f03c:91ff:fee9:47cb;
 };
 
 zone "keegan.ga" {

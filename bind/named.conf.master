@@ -20,9 +20,6 @@ acl "slaves" {
 };
 
 masters hidden-slaves {
-  # len
-  2600:3c01::f03c:91ff:fee9:47cb;
-
   # scrap
   2601:1c2:4c00:e66d::1;
 };

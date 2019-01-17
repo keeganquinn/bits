@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     pi.quinn.tk. hostmaster.quinn.tk. (
+@ IN    SOA     len.quinn.tk. hostmaster.quinn.tk. (
         ; serial
-        2018061700
+        2019011700
         ; refresh
         30M
         ; retry
