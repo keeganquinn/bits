@@ -111,6 +111,22 @@
     owner: animamagica
     encoding: UTF-8
 
+- name: Create bln user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: bln
+    password: bln
+    encrypted: yes
+
+- name: Create bln database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: bln
+    owner: bln
+    encoding: UTF-8
+
 - name: Create cwnmyr user in Postgres
   become: yes
   become_user: postgres

@@ -1,3 +1,7 @@
+upstream bln_puma {
+    server unix:///srv/rails/bln/shared/puma.sock fail_timeout=0;
+}
+
 server {
     listen 80;
     listen [::]:80;
@@ -50,7 +54,27 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
-    root /srv/www/basslin.es;
+    root /srv/rails/bln/current/public;
+
+    location ^~ /assets/ {
+        gzip_static on;
+        expires max;
+        add_header Cache-Control public;
+    }
+
+    try_files $uri/index.html $uri @bln_puma;
+    location @bln_puma {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_redirect off;
+        proxy_pass http://bln_puma;
+    }
+
+    client_max_body_size 4G;
+    keepalive_timeout 10;
 
     location /bluevertigo {
         return 301 /str1ng;
