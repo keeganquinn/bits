@@ -1,1 +1,1 @@
-include "/etc/bind/named.conf.master";
+include "/etc/bind/named.conf.slave";
