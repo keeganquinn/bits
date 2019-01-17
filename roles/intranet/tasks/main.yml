@@ -54,6 +54,10 @@
   become: yes
   copy: src=interfaces dest=/etc/network/interfaces
 
+- name: Copy DHCP client configuration
+  become: yes
+  copy: src=dhclient.conf dest=/etc/dhcp
+
 - name: Copy iptables rules
   become: yes
   copy: src=iptables.rules dest=/etc/network/iptables.rules
