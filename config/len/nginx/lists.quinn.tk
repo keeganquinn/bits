@@ -26,6 +26,9 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/lists.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
+    access_log /var/log/nginx/lists.quinn.tk-access.log combined;
+    error_log /var/log/nginx/lists.quinn.tk-error.log warn;
+
     location / {
         return 301 https://lists.quinn.tk/cgi-bin/mailman/listinfo;
     }

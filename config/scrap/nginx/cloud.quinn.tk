@@ -37,6 +37,9 @@ server {
     add_header X-Download-Options noopen;
     add_header X-Permitted-Cross-Domain-Policies none;
 
+    access_log /var/log/nginx/cloud.quinn.tk-access.log combined;
+    error_log /var/log/nginx/cloud.quinn.tk-error.log warn;
+
     root /var/www/owncloud;
 
     location = /robots.txt {

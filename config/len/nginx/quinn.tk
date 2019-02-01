@@ -50,6 +50,9 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
+    access_log /var/log/nginx/quinn.tk-access.log combined;
+    error_log /var/log/nginx/quinn.tk-error.log warn;
+
     root /srv/www/quinn.tk;
 
     autoindex on;
@@ -59,8 +62,4 @@ server {
         index index.html index.htm;
         autoindex on;
     }
-
-    rewrite ^(/jenkins/)(.*)$ https://jenkins.quinn.tk/$2 permanent;
-    rewrite ^(/lists/)(.*)$ https://lists.quinn.tk/$2 permanent;
-    rewrite ^(/zabbix/)(.*)$ https://zabbix.quinn.tk/$2 permanent;
 }

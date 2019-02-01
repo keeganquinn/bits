@@ -30,6 +30,9 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/zabbix.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
+    access_log /var/log/nginx/zabbix.quinn.tk-access.log combined;
+    error_log /var/log/nginx/zabbix.quinn.tk-error.log warn;
+
     root /usr/share/zabbix;
     index index.php;
 

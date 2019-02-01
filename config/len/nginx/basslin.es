@@ -54,6 +54,9 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
+    access_log /var/log/nginx/basslin.es-access.log combined;
+    error_log /var/log/nginx/basslin.es-error.log warn;
+
     root /srv/rails/bln/current/public;
 
     location ^~ /assets/ {
