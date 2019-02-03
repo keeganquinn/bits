@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019011700
+        2019020300
         ; refresh
         30M
         ; retry
@@ -54,8 +54,6 @@ cwnmyr                  CNAME   len
 cwnmyr-staging          CNAME   scrap
 jenkins                 CNAME   scrap
 lists                   CNAME   len
-partystarter            CNAME   len
-partystarter-staging    CNAME   scrap
 redmine                 CNAME   len
 staging                 CNAME   scrap
 zabbix                  CNAME   scrap

@@ -159,22 +159,6 @@
     owner: mastodon
     encoding: UTF-8
 
-- name: Create partystarter user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: partystarter
-    password: partystarter
-    encrypted: yes
-
-- name: Create partystarter database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: partystarter
-    owner: partystarter
-    encoding: UTF-8
-
 - name: Create redmine user in Postgres
   become: yes
   become_user: postgres
