@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name staging.quinn.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/quinn.tk/.well-known;
@@ -27,6 +31,9 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
+    access_log /var/log/nginx/staging.quinn.tk-access.log combined if=$log_ua;
+    error_log /var/log/nginx/staging.quinn.tk-error.log warn;
+
     root /srv/www/quinn.tk;
 
     autoindex on;
@@ -34,8 +41,4 @@ server {
     location ~ ^/~(.+?)(/.*)?$ {
         return 301 https://quinn.tk$request_uri;
     }
-
-    rewrite ^(/jenkins/)(.*)$ https://jenkins.quinn.tk/$2 permanent;
-    rewrite ^(/lists/)(.*)$ https://lists.quinn.tk/$2 permanent;
-    rewrite ^(/zabbix/)(.*)$ https://zabbix.quinn.tk/$2 permanent;
 }

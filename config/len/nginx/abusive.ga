@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name abusive.ga www.abusive.ga;
+
+    access_log off;
 
     return 301 http://abusive.enjin.com$request_uri;
 }

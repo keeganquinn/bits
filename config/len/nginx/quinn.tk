@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name quinn.tk www.quinn.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/quinn.tk/.well-known;
@@ -25,6 +29,8 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/ssl/certs/quinn.tk.crt-ca;
     add_header Strict-Transport-Security "max-age=31536000";
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/quinn.tk/.well-known;
@@ -50,7 +56,7 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
-    access_log /var/log/nginx/quinn.tk-access.log combined;
+    access_log /var/log/nginx/quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/quinn.tk-error.log warn;
 
     root /srv/www/quinn.tk;

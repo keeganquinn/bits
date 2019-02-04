@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name turnontv.net www.turnontv.net;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/turnontv.net/.well-known;
@@ -26,6 +30,8 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/turnontv.net/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
+    access_log off;
+
     location /.well-known {
         alias /srv/www/turnontv.net/.well-known;
     }
@@ -48,6 +54,9 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/turnontv.net/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
+
+    access_log /var/log/nginx/turnontv.net-access.log combined if=$log_ua;
+    error_log /var/log/nginx/turnontv.net-error.log warn;
 
     root /srv/www/turnontv.net;
 

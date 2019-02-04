@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name adjustech.com www.adjustech.com;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/adjustech.com/.well-known;
@@ -26,6 +30,8 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/adjustech.com/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
+    access_log off;
+
     location /.well-known {
         alias /srv/www/adjustech.com/.well-known;
     }
@@ -48,6 +54,9 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/adjustech.com/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
+
+    access_log /var/log/nginx/adjustech.com-access.log combined if=$log_ua;
+    error_log /var/log/nginx/adjustech.com-error.log warn;
 
     root /srv/www/adjustech.com;
 

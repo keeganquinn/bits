@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name jenkins.quinn.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/jenkins.quinn.tk/.well-known;
@@ -26,7 +30,7 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/jenkins.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
-    access_log /var/log/nginx/jenkins.quinn.tk-access.log combined;
+    access_log /var/log/nginx/jenkins.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/jenkins.quinn.tk-error.log warn;
 
     location / {

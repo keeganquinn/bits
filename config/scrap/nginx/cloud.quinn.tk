@@ -1,3 +1,5 @@
+# -*- nginx -*-
+
 upstream owncloud_handler {
     server unix:/var/run/php/php7.0-fpm.sock;
 }
@@ -6,6 +8,8 @@ server {
     listen 80;
     listen [::]:80;
     server_name cloud.quinn.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /var/www/owncloud/.well-known;
@@ -37,7 +41,7 @@ server {
     add_header X-Download-Options noopen;
     add_header X-Permitted-Cross-Domain-Policies none;
 
-    access_log /var/log/nginx/cloud.quinn.tk-access.log combined;
+    access_log /var/log/nginx/cloud.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/cloud.quinn.tk-error.log warn;
 
     root /var/www/owncloud;

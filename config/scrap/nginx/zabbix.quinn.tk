@@ -1,3 +1,5 @@
+# -*- nginx -*-
+
 upstream zabbix_handler {
     server unix:/var/run/php/php7.0-fpm.sock;
 }
@@ -6,6 +8,8 @@ server {
     listen 80;
     listen [::]:80;
     server_name zabbix.quinn.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /usr/share/zabbix/.well-known;
@@ -30,7 +34,7 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/zabbix.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
-    access_log /var/log/nginx/zabbix.quinn.tk-access.log combined;
+    access_log /var/log/nginx/zabbix.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/zabbix.quinn.tk-error.log warn;
 
     root /usr/share/zabbix;

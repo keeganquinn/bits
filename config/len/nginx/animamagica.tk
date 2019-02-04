@@ -1,3 +1,5 @@
+# -*- nginx -*-
+
 upstream animamagica_puma {
     server unix:///srv/rails/animamagica/shared/puma.sock fail_timeout=0;
 }
@@ -6,6 +8,8 @@ server {
     listen 80;
     listen [::]:80;
     server_name animamagica.tk www.animamagica.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/rails/animamagica/current/public/.well-known;
@@ -30,6 +34,8 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/animamagica.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
+    access_log off;
+
     location /.well-known {
         alias /srv/rails/animamagica/current/public/.well-known;
     }
@@ -53,7 +59,7 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/animamagica.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
-    access_log /var/log/nginx/animamagica.tk-access.log combined;
+    access_log /var/log/nginx/animamagica.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/animamagica.tk-error.log warn;
 
     root /srv/rails/animamagica/current/public;

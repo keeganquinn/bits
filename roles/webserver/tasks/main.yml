@@ -26,6 +26,13 @@
     creates: /etc/nginx/dhparams.pem
   notify: restart nginx
 
+- name: Copy nginx logmap configuration
+  become: yes
+  copy:
+    src: logmap.conf
+    dest: /etc/nginx/conf.d
+  notify: restart nginx
+
 - name: Copy nginx virtual hosts
   become: yes
   copy:

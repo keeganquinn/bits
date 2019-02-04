@@ -1,7 +1,11 @@
+# -*- nginx -*-
+
 server {
     listen 80;
     listen [::]:80;
     server_name ugraal.ga www.ugraal.ga;
+
+    access_log off;
 
     return 301 https://www.twitch.tw/ugraal$request_uri;
 }

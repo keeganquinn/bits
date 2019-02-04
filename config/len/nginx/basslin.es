@@ -1,3 +1,5 @@
+# -*- nginx -*-
+
 upstream bln_puma {
     server unix:///srv/rails/bln/shared/puma.sock fail_timeout=0;
 }
@@ -6,6 +8,8 @@ server {
     listen 80;
     listen [::]:80;
     server_name basslin.es www.basslin.es;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/basslin.es/.well-known;
@@ -29,6 +33,8 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/ssl/certs/basslin.es.crt-ca;
     add_header Strict-Transport-Security "max-age=31536000";
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/basslin.es/.well-known;
@@ -54,7 +60,7 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
-    access_log /var/log/nginx/basslin.es-access.log combined;
+    access_log /var/log/nginx/basslin.es-access.log combined if=$log_ua;
     error_log /var/log/nginx/basslin.es-error.log warn;
 
     root /srv/rails/bln/current/public;

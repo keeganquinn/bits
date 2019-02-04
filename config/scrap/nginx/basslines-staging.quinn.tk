@@ -1,3 +1,5 @@
+# -*- nginx -*-
+
 upstream bln_puma {
     server unix:///srv/rails/bln/shared/puma.sock fail_timeout=0;
 }
@@ -6,6 +8,8 @@ server {
     listen 80;
     listen [::]:80;
     server_name basslines-staging.quinn.tk;
+
+    access_log off;
 
     location /.well-known {
         alias /srv/www/basslin.es/.well-known;
@@ -30,6 +34,9 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/basslines-staging.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
+
+    access_log /var/log/nginx/basslines-staging.quinn.tk-access.log combined if=$log_ua;
+    error_log /var/log/nginx/basslines-staging.quinn.tk-error.log warn;
 
     root /srv/rails/bln/current/public;
 
