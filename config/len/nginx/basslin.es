@@ -85,6 +85,11 @@ server {
     client_max_body_size 4G;
     keepalive_timeout 10;
 
+    location /dl/ {
+        alias /srv/ftp/;
+        autoindex on;
+    }
+
     location /bluevertigo {
         return 301 /str1ng;
     }
