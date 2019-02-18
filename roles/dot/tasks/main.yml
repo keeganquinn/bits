@@ -11,7 +11,7 @@
 - name: Copy the git configuration file
   copy: src=gitconfig dest='{{ ansible_env.HOME }}/.gitconfig'
 
-- name: Install docker-ce package on Debian
+- name: Install docker-ce package on x64 Debian
   become: yes
   apt: name=docker-ce state=present
   when:
@@ -63,3 +63,7 @@
   shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/version'
+
+- name: Install linode-cli package when using Homebrew
+  pip: name=linode-cli
+  when: ansible_pkg_mgr == 'homebrew'
