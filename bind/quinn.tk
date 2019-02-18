@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019020300
+        2019021800
         ; refresh
         30M
         ; retry
@@ -17,10 +17,11 @@ $TTL 2d
         1h
         )
 
-        NS      d.ns.buddyns.com.
-        NS      g.ns.buddyns.com.
-        NS      i.ns.buddyns.com.
-        NS      e.ns.buddyns.com.
+        NS      ns1.linode.com.
+        NS      ns2.linode.com.
+        NS      ns3.linode.com.
+        NS      ns4.linode.com.
+        NS      ns5.linode.com.
 
         MX      10      len
 
