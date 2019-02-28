@@ -4,7 +4,7 @@
 #
 # This is not [yet] containerized. Requires Ruby and Bundler.
 
-set -e
+set -ex
 
 scratch=$(mktemp -d)
 cleanup() {
@@ -15,7 +15,7 @@ trap cleanup INT TERM
 
 # Keep version/paths in sync with roles/redmine/tasks/main.yml
 
-redmine_version="redmine-4.0.0"
+redmine_version="redmine-4.0.2"
 curl -sS http://www.redmine.org/releases/"${redmine_version}".tar.gz | \
     tar xvfz - -C "${scratch}"
 
@@ -34,7 +34,7 @@ cp roles/redmine/files/database.yml \
 cp roles/redmine/files/ruby-version \
    "${scratch}/${redmine_version}/.ruby-version"
 
-(cd "${scratch}/${redmine_version}" && bundle update --bundler && bundle update)
+(cd "${scratch}/${redmine_version}" && gem install bundler && bundle update)
 cp "${scratch}/${redmine_version}/Gemfile.lock" roles/redmine/files/
 
 
