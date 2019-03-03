@@ -58,7 +58,6 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/ssl/certs/basslin.es.crt-ca;
     add_header Strict-Transport-Security "max-age=31536000";
-    add_header Access-Control-Allow-Origin "*";
 
     access_log /var/log/nginx/basslin.es-access.log combined if=$log_ua;
     error_log /var/log/nginx/basslin.es-error.log warn;
@@ -88,6 +87,14 @@ server {
     location /dl/ {
         alias /srv/ftp/;
         autoindex on;
+
+        if ($request_filename ~ "^.*/(.+\.mp3)$") {
+            add_header Content-Disposition 'attachment; filename="$1"';
+            add_header Access-Control-Allow-Origin "*";
+            add_header Access-Control-Allow-Methods "POST,GET,OPTIONS";
+            add_header Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Origin,Content-Type,Content-Disposition,Range";
+            add_header Access-Control-Expose-Headers 'Content-Length,Content-Range';
+        }
     }
 
     location /bluevertigo {

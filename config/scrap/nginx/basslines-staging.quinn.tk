@@ -33,7 +33,6 @@ server {
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/basslines-staging.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
-    add_header Access-Control-Allow-Origin "*";
 
     access_log /var/log/nginx/basslines-staging.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/basslines-staging.quinn.tk-error.log warn;
@@ -59,6 +58,19 @@ server {
 
     client_max_body_size 4G;
     keepalive_timeout 10;
+
+    location /dl/ {
+        alias /srv/ftp/;
+        autoindex on;
+
+        if ($request_filename ~ "^.*/(.+\.mp3)$") {
+            add_header Content-Disposition 'attachment; filename="$1"';
+            add_header Access-Control-Allow-Origin "*";
+            add_header Access-Control-Allow-Methods "POST,GET,OPTIONS";
+            add_header Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Origin,Content-Type,Content-Disposition,Range";
+            add_header Access-Control-Expose-Headers 'Content-Length,Content-Range';
+        }
+    }
 
     location /bluevertigo {
         return 301 /str1ng;
