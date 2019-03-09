@@ -95,6 +95,16 @@
     owner: deploy
     group: deploy
 
+- name: Copy Postgres configuration
+  become: yes
+  copy:
+    src: postgresql.conf
+    dest: /etc/postgresql/9.6/main/postgresql.conf
+    owner: postgres
+    group: postgres
+    mode: 0644
+  notify: restart postgresql
+
 - name: Create animamagica user in Postgres
   become: yes
   become_user: postgres
