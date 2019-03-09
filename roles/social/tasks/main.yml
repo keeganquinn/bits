@@ -30,26 +30,38 @@
     owner: deploy
     group: deploy
 
-- name: Check out Mastodon live
+- name: Check out Mastodon 2.7.4
   become: yes
   become_user: deploy
   git:
     repo: https://github.com/tootsuite/mastodon.git
-    dest: /srv/rails/mastodon/releases/live
-    version: v2.6.5
+    dest: /srv/rails/mastodon/releases/mastodon-2.7.4
+    version: v2.7.4
   notify: restart mastodon
 
 - name: Link current Mastodon release
   become: yes
   become_user: deploy
   file:
-    src: /srv/rails/mastodon/releases/live
+    src: /srv/rails/mastodon/releases/mastodon-2.7.4
     dest: /srv/rails/mastodon/current
     state: link
     mode: 0755
     owner: deploy
     group: deploy
   notify: restart mastodon
+
+- name: Link environment for Mastodon
+  become: yes
+  become_user: deploy
+  file:
+    src: /etc/rails/mastodon.env
+    dest: /srv/rails/mastodon/current/.env.production
+    state: link
+    mode: 0644
+    owner: deploy
+    group: deploy
+  notify: restart redmine
 
 - name: Copy setup script for Mastodon
   become: yes
