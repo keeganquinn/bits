@@ -13,6 +13,7 @@
 
   roles:
     - build
+    - ftp
     - rails
     - palkan.phantomjs
 
@@ -20,7 +21,6 @@
   hosts: len
 
   roles:
-    - ftp
     - listserv
     - qa
     - redmine
