@@ -13,6 +13,7 @@
   homebrew:
     state: present
     name:
+      - carthage
       - dos2unix
       - lftp
       - nmap
