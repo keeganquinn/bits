@@ -195,6 +195,78 @@ zone "abusive.gq" {
   file "abusive.gq";
 };
 
+zone "hrd503.cf" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "hrd503.cf";
+};
+
+zone "hrd503.ga" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "hrd503.ga";
+};
+
+zone "hrd503.gq" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "hrd503.gq";
+};
+
+zone "hrd503.ml" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "hrd503.ml";
+};
+
+zone "hrd503.tk" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "hrd503.tk";
+};
+
+zone "wabisabi.cf" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "wabisabi.cf";
+};
+
+zone "wabisabi.gq" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "wabisabi.gq";
+};
+
+zone "wabisabi.ml" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "wabisabi.ml";
+};
+
+zone "wabisabi.tk" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "wabisabi.tk";
+};
+
 
 zone "matthewklug.com" {
   type slave;

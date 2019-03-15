@@ -1,0 +1,11 @@
+# -*- nginx -*-
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name hrd503.tk www.hrd503.tk;
+
+    access_log off;
+
+    return 301 https://basslin.es/hrd$request_uri;
+}
