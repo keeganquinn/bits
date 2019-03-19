@@ -1,4 +1,20 @@
 ---
+- name: Create mastodon user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: mastodon
+    password: mastodon
+    encrypted: yes
+
+- name: Create mastodon database in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: mastodon
+    owner: mastodon
+    encoding: UTF-8
+
 - name: Install Mastodon dependency packages
   become: yes
   apt:
@@ -61,7 +77,7 @@
     mode: 0644
     owner: deploy
     group: deploy
-  notify: restart redmine
+  notify: restart mastodon
 
 - name: Copy setup script for Mastodon
   become: yes

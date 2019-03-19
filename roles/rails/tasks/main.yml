@@ -8,6 +8,29 @@
       - python-psycopg2
       - redis-server
 
+- name: Create root user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: root
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
+
+- name: Create keegan user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: keegan
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
+
+- name: Install database backup script
+  become: yes
+  copy:
+    src: pg_backup.sh
+    dest: /usr/local/sbin
+    owner: root
+    group: root
+    mode: 0700
+
 - name: Create deploy user
   become: yes
   user:
@@ -135,52 +158,4 @@
   postgresql_db:
     name: bln
     owner: bln
-    encoding: UTF-8
-
-- name: Create cwnmyr user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: cwnmyr
-    password: cwnmyr
-    encrypted: yes
-
-- name: Create cwnmyr database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: cwnmyr
-    owner: cwnmyr
-    encoding: UTF-8
-
-- name: Create mastodon user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: mastodon
-    password: mastodon
-    encrypted: yes
-
-- name: Create mastodon database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: mastodon
-    owner: mastodon
-    encoding: UTF-8
-
-- name: Create redmine user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: redmine
-    password: redmine
-    encrypted: yes
-
-- name: Create redmine database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: redmine
-    owner: redmine
     encoding: UTF-8
