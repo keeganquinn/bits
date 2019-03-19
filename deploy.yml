@@ -22,8 +22,6 @@
 
   roles:
     - listserv
-    - qa
-    - redmine
     - social
 
 - name: Creature comforts
@@ -38,3 +36,5 @@
   roles:
     - dot
     - intranet
+    - qa
+    - redmine
