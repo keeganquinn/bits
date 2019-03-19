@@ -3,10 +3,10 @@
   become: yes
   service: name=fail2ban state=restarted enabled=yes
 
-- name: restart nginx
-  become: yes
-  service: name=nginx state=restarted enabled=yes
-
 - name: renew certbot
   become: yes
   command: certbot renew -q
+
+- name: restart nginx
+  become: yes
+  service: name=nginx state=restarted enabled=yes
