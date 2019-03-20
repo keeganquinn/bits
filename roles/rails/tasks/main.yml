@@ -22,14 +22,24 @@
     name: keegan
     role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
 
-- name: Install database backup script
+- name: Copy database backup script
   become: yes
   copy:
     src: pg_backup.sh
     dest: /usr/local/sbin
     owner: root
     group: root
-    mode: 0700
+    mode: 0755
+
+- name: Schedule database backup
+  become: yes
+  cron:
+    name: database backup
+    cron_file: pg_backup
+    user: root
+    job: /usr/local/sbin/pg_backup.sh
+    minute: 0
+    hour: 1
 
 - name: Create deploy user
   become: yes
