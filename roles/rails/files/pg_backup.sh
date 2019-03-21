@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 DEST=/var/backups/pg
 
@@ -14,3 +14,5 @@ BACKUP_QUERY="select datname from pg_database where not datistemplate and datall
 for DATABASE in $(psql -At -c "$BACKUP_QUERY" postgres); do
     pg_dump -Fc "$DATABASE" -f "${DEST}/${DATABASE}.pgc"
 done
+
+exit 0
