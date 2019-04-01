@@ -7,10 +7,6 @@
   become: yes
   service: name=dnsmasq state=restarted enabled=yes
 
-- name: restart docker
-  become: yes
-  service: name=docker state=restarted enabled=yes
-
 - name: restart php-fpm
   become: yes
   service: name=php7.0-fpm state=restarted enabled=yes

@@ -5,7 +5,6 @@
     state: present
     name:
       - cups
-      - docker-ce
       - dnsmasq
       - firmware-linux-nonfree
       - iftop
@@ -44,11 +43,6 @@
 - name: Copy rsnapshot crontab
   become: yes
   copy: src=rsnapshot.cron dest=/etc/cron.d/rsnapshot
-
-- name: Copy docker daemon configuration
-  become: yes
-  copy: src=docker-daemon.json dest=/etc/docker/daemon.json
-  notify: restart docker
 
 - name: Copy network interfaces
   become: yes

@@ -11,13 +11,6 @@
 - name: Copy the git configuration file
   copy: src=gitconfig dest='{{ ansible_env.HOME }}/.gitconfig'
 
-- name: Install docker-ce package on x64 Debian
-  become: yes
-  apt: name=docker-ce state=present
-  when:
-    - ansible_machine == 'x86_64'
-    - ansible_pkg_mgr == 'apt'
-
 - include: x11.yml
   when: ansible_pkg_mgr == 'apt'
 

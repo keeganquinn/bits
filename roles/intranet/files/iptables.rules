@@ -5,7 +5,4 @@ COMMIT
 *filter
 -I INPUT -i eth0 -p tcp --destination-port 5000 -j DROP
 -I INPUT -i eth0 -p udp --destination-port 5000 -j DROP
--N DOCKER-USER
--I DOCKER-USER -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
--I DOCKER-USER -i eth1 -o eth0 -j ACCEPT
 COMMIT
