@@ -64,7 +64,6 @@
     src: /etc/rails/redmine.env
     dest: /srv/rails/redmine/current/.env.production
     state: link
-    mode: 0644
     owner: deploy
     group: deploy
   notify: restart redmine

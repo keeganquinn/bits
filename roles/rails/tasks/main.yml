@@ -62,7 +62,6 @@
     dest: /etc/rails
     owner: deploy
     group: deploy
-    mode: 0600
 
 - name: Install rbenv for the deploy user
   become: yes

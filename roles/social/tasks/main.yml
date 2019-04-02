@@ -74,7 +74,6 @@
     src: /etc/rails/mastodon.env
     dest: /srv/rails/mastodon/current/.env.production
     state: link
-    mode: 0644
     owner: deploy
     group: deploy
   notify: restart mastodon
