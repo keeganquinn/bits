@@ -107,14 +107,18 @@
 - name: Install Bundler for the deploy user
   become: yes
   become_user: deploy
-  shell: RBENV_VERSION=2.6.2 /home/deploy/.rbenv/shims/gem install bundler
+  shell: /home/deploy/.rbenv/shims/gem install bundler:2.0.1
+  environment:
+    RBENV_VERSION: 2.6.2
   args:
-    creates: /home/deploy/.rbenv/versions/2.6.2/bin/bundler
+    creates: /home/deploy/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/bundler-2.0.1
 
 - name: Install Foreman for the deploy user
   become: yes
   become_user: deploy
-  shell: RBENV_VERSION=2.6.2 /home/deploy/.rbenv/shims/gem install foreman
+  shell: /home/deploy/.rbenv/shims/gem install foreman
+  environment:
+    RBENV_VERSION: 2.6.2
   args:
     creates: /home/deploy/.rbenv/versions/2.6.2/bin/foreman
 
@@ -144,6 +148,7 @@
     name: animamagica
     password: animamagica
     encrypted: yes
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
 
 - name: Create animamagica database in Postgres
   become: yes
@@ -160,6 +165,7 @@
     name: bln
     password: bln
     encrypted: yes
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
 
 - name: Create bln database in Postgres
   become: yes

@@ -159,6 +159,8 @@
 - name: Install Bundler for the jenkins user
   become: yes
   become_user: jenkins
-  shell: RBENV_VERSION=2.6.2 /var/lib/jenkins/.rbenv/shims/gem install bundler
+  shell: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.0.1
+  environment:
+    RBENV_VERSION: 2.6.2
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.6.2/bin/bundler
+    creates: /var/lib/jenkins/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/bundler-2.0.1

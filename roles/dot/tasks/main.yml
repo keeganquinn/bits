@@ -32,11 +32,11 @@
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2'
 
 - name: Install Bundler for Ruby 2.6.2
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler'
+  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.0.1'
   environment:
     RBENV_VERSION: 2.6.2
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2/bin/bundler'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/bundler-2.0.1'
 
 - name: Install Rubocop for Ruby 2.6.2
   shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec'
