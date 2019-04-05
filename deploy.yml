@@ -5,13 +5,13 @@
   roles:
     - machine
     - nameserver
-    - email
-    - webserver
 
 - name: Application server configuration
   hosts: scrap, len
 
   roles:
+    - email
+    - webserver
     - build
     - ftp
     - rails
