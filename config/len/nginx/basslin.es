@@ -97,8 +97,8 @@ server {
         }
     }
 
-    location /bluevertigo {
-        return 301 /str1ng;
+    location ~ ^/bluevertigo(/.*)?$ {
+        return 301 /str1ng$1;
     }
 
     location ~ ^/keegan(/.*)?$ {

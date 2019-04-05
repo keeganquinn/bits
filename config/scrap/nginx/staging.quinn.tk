@@ -41,4 +41,24 @@ server {
     location ~ ^/~(.+?)(/.*)?$ {
         return 301 https://quinn.tk$request_uri;
     }
+
+    location ~ ^/jenkins(/.*)?$ {
+        return 301 https://jenkins.quinn.tk$1;
+    }
+
+    location ~ ^/lists(/.*)?$ {
+        return 301 https://lists.quinn.tk$1;
+    }
+
+    location ~ ^/owncloud(/.*)?$ {
+        return 301 https://cloud.quinn.tk$1;
+    }
+
+    location ~ ^/redmine(/.*)?$ {
+        return 301 https://redmine.quinn.tk$1;
+    }
+
+    location ~ ^/zabbix(/.*)?$ {
+        return 301 https://zabbix.quinn.tk$1;
+    }
 }
