@@ -7,6 +7,7 @@
     state: present
     name:
       - java
+      - homebrew/cask-versions/java8
       - xquartz
 
 - name: Install machine brews

@@ -4,28 +4,77 @@
   apt_key:
     url: 'https://ftp-master.debian.org/keys/archive-key-9.asc'
     state: present
+  when: ansible_architecture != 'armv6l'
 
 - name: Add Debian APT key for stretch/updates
   become: yes
   apt_key:
     url: 'https://ftp-master.debian.org/keys/archive-key-9-security.asc'
     state: present
+  when: ansible_architecture != 'armv6l'
 
 - name: Add Raspbian APT key
   become: yes
   apt_key:
     url: 'https://archive.raspbian.org/raspbian.public.key'
     state: present
+  when: ansible_architecture == 'armv6l'
 
 - name: Copy APT sources
   become: yes
   copy: src='sources.list.{{ ansible_architecture }}' dest=/etc/apt/sources.list
+
+- name: Add elasticsearch APT key
+  become: yes
+  apt_key:
+    url: 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
+    state: present
+  when: ansible_architecture == 'x86_64'
+
+- name: Enable elasticsearch APT source
+  become: yes
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/6.x/apt stable main
+    state: present
+    filename: elasticsearch
+  when: ansible_architecture == 'x86_64'
+
+- name: Add java APT key
+  become: yes
+  apt_key:
+    url: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC2518248EEA14886
+    state: present
+  when: ansible_architecture == 'x86_64'
+
+- name: Enable java APT source
+  become: yes
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main
+    state: present
+    filename: java
+  when: ansible_architecture == 'x86_64'
+
+- name: Add jenkins APT key
+  become: yes
+  apt_key:
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+    state: present
+  when: ansible_architecture == 'x86_64'
+
+- name: Enable jenkins APT source
+  become: yes
+  apt_repository:
+    repo: deb https://pkg.jenkins.io/debian-stable binary/
+    state: present
+    filename: jenkins
+  when: ansible_architecture == 'x86_64'
 
 - name: Add nodesource APT key
   become: yes
   apt_key:
     url: 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
     state: present
+  when: ansible_architecture == 'x86_64'
 
 - name: Enable nodesource APT source
   become: yes
@@ -33,12 +82,14 @@
     repo: deb https://deb.nodesource.com/node_8.x stretch main
     state: present
     filename: nodesource
+  when: ansible_architecture == 'x86_64'
 
 - name: Add owncloud APT key
   become: yes
   apt_key:
     url: https://download.owncloud.org/download/repositories/production/Debian_9.0/Release.key
     state: present
+  when: ansible_architecture != 'armv6l'
 
 - name: Enable owncloud APT source
   become: yes
@@ -46,12 +97,14 @@
     repo: deb http://download.owncloud.org/download/repositories/production/Debian_9.0/ /
     state: present
     filename: owncloud
+  when: ansible_architecture != 'armv6l'
 
 - name: Add yarn APT key
   become: yes
   apt_key:
     url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     state: present
+  when: ansible_architecture != 'armv6l'
 
 - name: Enable yarn APT source
   become: yes
@@ -59,6 +112,7 @@
     repo: deb https://dl.yarnpkg.com/debian/ stable main
     state: present
     filename: yarn
+  when: ansible_architecture != 'armv6l'
 
 - name: Update and upgrade packages
   become: yes

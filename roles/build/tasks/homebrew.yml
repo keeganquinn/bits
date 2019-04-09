@@ -4,6 +4,7 @@
     state: present
     name:
       - bfg
+      - elasticsearch
       - ghostscript
       - graphviz
       - heroku
