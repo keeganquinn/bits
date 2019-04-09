@@ -142,6 +142,16 @@
     mode: 0660
   notify: restart elasticsearch
 
+- name: Copy Elasticsearch JVM options
+  become: yes
+  copy:
+    src: jvm.options
+    dest: /etc/elasticsearch/jvm.options
+    owner: root
+    group: elasticsearch
+    mode: 0660
+  notify: restart elasticsearch
+
 - name: Copy Postgres configuration
   become: yes
   copy:
