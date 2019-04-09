@@ -5,6 +5,7 @@
   roles:
     - machine
     - nameserver
+    - comfort
 
 - name: Application server configuration
   hosts: scrap, len
@@ -22,13 +23,6 @@
 
   roles:
     - listserv
-    - social
-
-- name: Creature comforts
-  hosts: pi, scrap
-
-  roles:
-    - comfort
 
 - name: Intranet configuration
   hosts: scrap

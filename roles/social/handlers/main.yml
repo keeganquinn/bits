@@ -1,4 +1,0 @@
----
-- name: restart mastodon
-  become: yes
-  service: name=mastodon.target state=restarted enabled=yes

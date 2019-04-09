@@ -1,9 +1,5 @@
 # -*- nginx -*-
 
-upstream mastodon_puma {
-    server unix:///srv/rails/mastodon/shared/puma.sock fail_timeout=0;
-}
-
 server {
     listen 80;
     listen [::]:80;
@@ -12,7 +8,7 @@ server {
     access_log off;
 
     location /.well-known {
-        alias /srv/rails/mastodon/current/public/.well-known;
+        alias /srv/www/speakeasy.tk/.well-known;
     }
 
     location / {
@@ -37,7 +33,7 @@ server {
     access_log off;
 
     location /.well-known {
-        alias /srv/rails/mastodon/current/public/.well-known;
+        alias /srv/www/speakeasy.tk/.well-known;
     }
 
     location / {
@@ -62,25 +58,11 @@ server {
     access_log /var/log/nginx/speakeasy.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/speakeasy.tk-error.log warn;
 
-    root /srv/rails/mastodon/current/public;
-
-    location ^~ /assets/ {
-        gzip_static on;
-        expires max;
-        add_header Cache-Control public;
+    location /.well-known {
+        alias /srv/www/speakeasy.tk/.well-known;
     }
 
-    try_files $uri/index.html $uri @mastodon_puma;
-    location @mastodon_puma {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_redirect off;
-        proxy_pass http://mastodon_puma;
+    location / {
+        return 301 https://quinn.tk/;
     }
-
-    client_max_body_size 4G;
-    keepalive_timeout 10;
 }
