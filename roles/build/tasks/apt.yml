@@ -5,7 +5,7 @@
     name: oracle-java8-installer
     question: shared/accepted-oracle-license-v1-1
     value: 'true'
-    vtype: seen
+    vtype: select
 
 - name: Accept oracle license
   become: yes
@@ -13,7 +13,7 @@
     name: oracle-java8-installer
     question: shared/accepted-oracle-license-v1-1
     value: 'true'
-    vtype: select
+    vtype: seen
 
 - name: Install build packages
   become: yes
