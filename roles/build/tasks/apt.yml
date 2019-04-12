@@ -1,19 +1,26 @@
 ---
-- name: Accept oracle license
+- name: Mark Oracle license selected
   become: yes
   debconf:
     name: oracle-java8-installer
     question: shared/accepted-oracle-license-v1-1
     value: 'true'
     vtype: select
+  when: ansible_architecture == 'x86_64'
 
-- name: Accept oracle license
+- name: Mark Oracle license seen
   become: yes
   debconf:
     name: oracle-java8-installer
     question: shared/accepted-oracle-license-v1-1
     value: 'true'
     vtype: seen
+  when: ansible_architecture == 'x86_64'
+
+- name: Install Oracle Java package
+  become: yes
+  apt: name=oracle-java8-installer state=present
+  when: ansible_architecture == 'x86_64'
 
 - name: Install build packages
   become: yes
@@ -34,7 +41,6 @@
       - libssl-dev
       - libyaml-dev
       - nodejs
-      - oracle-java8-installer
       - shellcheck
       - sloccount
       - yarn
