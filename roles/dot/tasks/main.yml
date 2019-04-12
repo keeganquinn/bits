@@ -38,12 +38,19 @@
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/bundler-2.0.1'
 
-- name: Install Rubocop for Ruby 2.6.2
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec'
+- name: Install rubocop-performance for Ruby 2.6.2
+  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-performance:1.0.0'
   environment:
     RBENV_VERSION: 2.6.2
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2/bin/rubocop'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/rubocop-performance-1.0.0'
+
+- name: Install rubocop-rspec for Ruby 2.6.2
+  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec:1.32.0'
+  environment:
+    RBENV_VERSION: 2.6.2
+  args:
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/rubocop-rspec-1.32.0'
 
 - name: Install Sass for Ruby 2.6.2
   shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install sass'
