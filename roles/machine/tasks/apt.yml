@@ -127,6 +127,7 @@
       - curl
       - deborphan
       - emacs25
+      - ffmpeg
       - file
       - finger
       - git
@@ -134,5 +135,6 @@
       - mlocate
       - nmap
       - screen
+      - sox
       - tcpdump
       - unzip

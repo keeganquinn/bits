@@ -14,11 +14,12 @@
   homebrew:
     state: present
     name:
-      - carthage
       - dos2unix
+      - ffmpeg
       - lftp
       - nmap
       - p7zip
+      - sox
       - wget
 
 - name: Install machine casks
