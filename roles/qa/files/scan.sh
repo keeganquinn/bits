@@ -7,6 +7,12 @@ eval "$(rbenv init -)"
 
 set -e
 
+PROJECTS=(
+    "animamagica /srv/data/git/animamagica.git"
+    "basslin.es /srv/data/git/basslin.es.git"
+    "cwnmyr https://github.com/keeganquinn/cwnmyr.git"
+    "partystarter /srv/data/git/partystarter.git")
+
 scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
 cleanup() {
@@ -15,56 +21,18 @@ cleanup() {
 }
 trap cleanup INT TERM
 
+for pspec in "${PROJECTS[@]}"; do
+    IFS=" " read -r -a project <<< "${pspec}"
+    work="${scratch:?}/${project[0]}"
 
-# animamagica
-git clone -q /srv/data/git/animamagica.git "${scratch}/animamagica"
-if ! yarn outdated --cwd "${scratch}/animamagica" >/dev/null; then
-    echo 'Anima Magica JS dependencies need update!'
-    echo
-fi
-if ! (cd "${scratch}/animamagica"; bundle outdated) >/dev/null; then
-    echo 'Anima Magica Ruby dependencies need update!'
-    echo
-fi
-rm -rf "${scratch}/animamagica"
-
-
-# basslin.es
-git clone -q /srv/data/git/basslin.es.git "${scratch}/basslin.es"
-if ! yarn outdated --cwd "${scratch}/basslin.es" >/dev/null; then
-    echo 'basslin.es JS dependencies need update!'
-    echo
-fi
-if ! (cd "${scratch}/basslin.es"; bundle outdated) >/dev/null; then
-    echo 'basslin.es Ruby dependencies need update!'
-    echo
-fi
-rm -rf "${scratch}/basslin.es"
-
-
-# cwnmyr
-git clone -q https://github.com/keeganquinn/cwnmyr.git "${scratch}/cwnmyr"
-if ! yarn outdated --cwd "${scratch}/cwnmyr" >/dev/null; then
-    echo 'cwnmyr JS dependencies need update!'
-    echo
-fi
-if ! (cd "${scratch}/cwnmyr"; bundle outdated) >/dev/null; then
-    echo 'cwnmyr Ruby dependencies need update!'
-    echo
-fi
-rm -rf "${scratch}/cwnmyr"
-
-
-# partystarter
-git clone -q /srv/data/git/partystarter.git "${scratch}/partystarter"
-if ! yarn outdated --cwd "${scratch}/partystarter" >/dev/null; then
-    echo 'PartyStarter JS dependencies need update!'
-    echo
-fi
-if ! (cd "${scratch}/partystarter"; bundle outdated) >/dev/null; then
-    echo 'PartyStarter Ruby dependencies need update!'
-    echo
-fi
-rm -rf "${scratch}/partystarter"
+    git clone -q "${project[1]}" "${work}"
+    if ! yarn outdated --cwd "${work}" >/dev/null; then
+        echo "${project[0]}: JS dependencies need update"
+    fi
+    if ! (cd "${work}"; bundle outdated --strict) >/dev/null; then
+        echo "${project[0]}: Ruby dependencies need update"
+    fi
+    rm -rf "${work}"
+done
 
 cleanup
