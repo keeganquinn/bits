@@ -23,6 +23,13 @@
     name: keegan
     role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
 
+- name: Create deploy user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: deploy
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
+
 - name: Copy database backup script
   become: yes
   copy:
