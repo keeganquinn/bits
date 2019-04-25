@@ -90,15 +90,6 @@
   copy: src=www.conf dest=/etc/php/7.0/fpm/pool.d/www.conf
   notify: restart php-fpm
 
-- name: Copy owncloud configuration
-  become: yes
-  copy:
-    src: owncloud-config.php
-    dest: /var/www/owncloud/config/config.php
-    owner: www-data
-    group: www-data
-    mode: 0640
-
 - name: Create owncloud user in Postgres
   become: yes
   become_user: postgres
