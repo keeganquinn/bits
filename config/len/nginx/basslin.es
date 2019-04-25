@@ -12,7 +12,7 @@ server {
     access_log off;
 
     location /.well-known {
-        alias /srv/www/basslin.es/.well-known;
+        alias /srv/rails/bln/current/public/.well-known;
     }
 
     location / {
@@ -37,7 +37,7 @@ server {
     access_log off;
 
     location /.well-known {
-        alias /srv/www/basslin.es/.well-known;
+        alias /srv/rails/bln/current/public/.well-known;
     }
 
     location / {
