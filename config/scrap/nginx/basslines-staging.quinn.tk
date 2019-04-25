@@ -39,6 +39,10 @@ server {
 
     root /srv/rails/bln/current/public;
 
+    location /.well-known/apple-app-site-association {
+        default_type application/json;
+    }
+
     location ^~ /assets/ {
         gzip_static on;
         expires max;
