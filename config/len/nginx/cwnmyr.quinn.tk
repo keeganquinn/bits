@@ -8,7 +8,7 @@ server {
     access_log off;
 
     location /.well-known {
-         alias /srv/rails/cwnmyr/current/public/.well-known;
+         alias /srv/www/cwnmyr.quinn.tk/.well-known;
     }
 
     location / {
@@ -33,7 +33,7 @@ server {
     access_log off;
 
     location /.well-known {
-         alias /srv/rails/cwnmyr/current/public/.well-known;
+         alias /srv/www/cwnmyr.quinn.tk/.well-known;
     }
 
     location / {
