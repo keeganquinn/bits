@@ -138,3 +138,9 @@
       - sox
       - tcpdump
       - unzip
+
+- name: Install ownCloud command package
+  become: yes
+  apt:
+    state: present
+    name: owncloud-client-cmd

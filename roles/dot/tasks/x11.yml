@@ -15,12 +15,11 @@
       - xfce4
       - xfce4-battery-plugin
 
-- name: Install ownCloud package
+- name: Install ownCloud desktop package
   become: yes
   apt:
     state: present
     name: owncloud-client
-    default_release: stretch-backports
 
 - name: Copy the grub default file
   become: yes
