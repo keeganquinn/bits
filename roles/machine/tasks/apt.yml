@@ -99,6 +99,21 @@
     filename: owncloud
   when: ansible_architecture != 'armv6l'
 
+- name: Add owncloud desktop APT key
+  become: yes
+  apt_key:
+    url: https://download.opensuse.org/repositories/isv:ownCloud:desktop/Debian_9.0/Release.key
+    state: present
+  when: ansible_architecture != 'armv6l'
+
+- name: Enable owncloud desktop APT source
+  become: yes
+  apt_repository:
+    repo: deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_9.0/ /
+    state: present
+    filename: owncloud-desktop
+  when: ansible_architecture != 'armv6l'
+
 - name: Add yarn APT key
   become: yes
   apt_key:
@@ -139,8 +154,9 @@
       - tcpdump
       - unzip
 
-- name: Install ownCloud command package
+- name: Install ownCloud client package
   become: yes
   apt:
     state: present
-    name: owncloud-client-cmd
+    name: owncloud-client
+  when: ansible_architecture != 'armv6l'
