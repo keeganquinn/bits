@@ -140,18 +140,18 @@
   become_user: jenkins
   copy: src=roles/rails/files/profile dest=/var/lib/jenkins/.profile
 
-- name: Install Ruby 2.6.2 for the jenkins user
+- name: Install Ruby 2.6.3 for the jenkins user
   become: yes
   become_user: jenkins
-  shell: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.6.2
+  shell: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.6.3
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.6.2
+    creates: /var/lib/jenkins/.rbenv/versions/2.6.3
 
 - name: Install Bundler for the jenkins user
   become: yes
   become_user: jenkins
   shell: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.0.1
   environment:
-    RBENV_VERSION: 2.6.2
+    RBENV_VERSION: 2.6.3
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/bundler-2.0.1
+    creates: /var/lib/jenkins/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.0.1
