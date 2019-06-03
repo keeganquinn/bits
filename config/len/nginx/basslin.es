@@ -101,6 +101,22 @@ server {
         }
     }
 
+    location ~ ^/(.*)/ads.txt$ {
+        return 301 /ads.txt;
+    }
+
+    location ~ ^/(.*)/humans.txt$ {
+        return 301 /humans.txt;
+    }
+
+    location ~ ^/(.*)/robots.txt$ {
+        return 301 /robots.txt;
+    }
+
+    location ~ ^(.*)?/wp-login.php$ {
+        return 301 /;
+    }
+
     location ~ ^/bluevertigo(/.*)?$ {
         return 301 /str1ng$1;
     }
