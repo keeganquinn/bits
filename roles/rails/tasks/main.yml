@@ -46,8 +46,8 @@
     cron_file: pg_backup
     user: root
     job: /usr/local/sbin/pg_backup.sh
-    minute: 0
-    hour: 1
+    minute: '0'
+    hour: '1'
 
 - name: Create deploy user
   become: yes
