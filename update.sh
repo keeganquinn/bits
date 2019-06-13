@@ -15,7 +15,7 @@ trap cleanup INT TERM
 
 # Keep version/paths in sync with roles/redmine/tasks/main.yml
 
-redmine_version="redmine-4.0.2"
+redmine_version="redmine-4.0.4"
 curl -sS http://www.redmine.org/releases/"${redmine_version}".tar.gz | \
     tar xvfz - -C "${scratch}"
 
