@@ -67,13 +67,29 @@ server {
         alias /srv/ftp/;
         autoindex on;
 
-        if ($request_filename ~ "^.*/(.+\.(webm|mp3))$") {
+        if ($request_filename ~ "^.*/(.+\.(m4a|mp3|webm))$") {
             add_header Content-Disposition 'attachment; filename="$1"';
             add_header Access-Control-Allow-Origin "*";
             add_header Access-Control-Allow-Methods "POST,GET,OPTIONS";
             add_header Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Origin,Content-Type,Content-Disposition,Range";
             add_header Access-Control-Expose-Headers 'Content-Length,Content-Range';
         }
+    }
+
+    location ~ ^/(.*)/ads.txt$ {
+        return 301 /ads.txt;
+    }
+
+    location ~ ^/(.*)/humans.txt$ {
+        return 301 /humans.txt;
+    }
+
+    location ~ ^/(.*)/robots.txt$ {
+        return 301 /robots.txt;
+    }
+
+    location ~ ^(.*)?/wp-login.php$ {
+        return 301 /;
     }
 
     location ~ ^/bluevertigo(/.*)?$ {

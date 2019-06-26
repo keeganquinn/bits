@@ -92,7 +92,7 @@ server {
         alias /srv/ftp/;
         autoindex on;
 
-        if ($request_filename ~ "^.*/(.+\.(webm|mp3))$") {
+        if ($request_filename ~ "^.*/(.+\.(m4a|mp3|webm))$") {
             add_header Content-Disposition 'attachment; filename="$1"';
             add_header Access-Control-Allow-Origin "*";
             add_header Access-Control-Allow-Methods "POST,GET,OPTIONS";
