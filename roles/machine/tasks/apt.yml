@@ -89,7 +89,7 @@
   apt_key:
     url: https://download.owncloud.org/download/repositories/production/Debian_9.0/Release.key
     state: present
-  when: ansible_architecture != 'armv6l'
+  when: ansible_architecture == 'x86_64'
 
 - name: Enable owncloud APT source
   become: yes
@@ -97,22 +97,7 @@
     repo: deb http://download.owncloud.org/download/repositories/production/Debian_9.0/ /
     state: present
     filename: owncloud
-  when: ansible_architecture != 'armv6l'
-
-- name: Add owncloud desktop APT key
-  become: yes
-  apt_key:
-    url: https://download.opensuse.org/repositories/isv:ownCloud:desktop/Debian_9.0/Release.key
-    state: present
-  when: ansible_architecture != 'armv6l'
-
-- name: Enable owncloud desktop APT source
-  become: yes
-  apt_repository:
-    repo: deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_9.0/ /
-    state: present
-    filename: owncloud-desktop
-  when: ansible_architecture != 'armv6l'
+  when: ansible_architecture == 'x86_64'
 
 - name: Add yarn APT key
   become: yes
