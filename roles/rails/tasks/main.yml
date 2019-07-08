@@ -1,28 +1,4 @@
 ---
-- name: Install rails application server packages
-  become: yes
-  apt:
-    state: present
-    name:
-      - elasticsearch
-      - postgresql
-      - python-psycopg2
-      - redis-server
-
-- name: Create root user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: root
-    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
-
-- name: Create keegan user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: keegan
-    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
-
 - name: Create deploy user in Postgres
   become: yes
   become_user: postgres

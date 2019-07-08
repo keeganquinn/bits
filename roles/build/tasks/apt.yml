@@ -6,7 +6,6 @@
     question: shared/accepted-oracle-license-v1-1
     value: 'true'
     vtype: select
-  when: ansible_architecture == 'x86_64'
 
 - name: Mark Oracle license seen
   become: yes
@@ -15,12 +14,10 @@
     question: shared/accepted-oracle-license-v1-1
     value: 'true'
     vtype: seen
-  when: ansible_architecture == 'x86_64'
 
 - name: Install Oracle Java package
   become: yes
   apt: name=oracle-java8-installer state=present
-  when: ansible_architecture == 'x86_64'
 
 - name: Install build packages
   become: yes
@@ -30,6 +27,7 @@
       - autoconf
       - bison
       - build-essential
+      - elasticsearch
       - graphviz
       - imagemagick
       - libffi-dev
@@ -41,7 +39,24 @@
       - libssl-dev
       - libyaml-dev
       - nodejs
+      - postgresql
+      - python-psycopg2
+      - redis-server
       - shellcheck
       - sloccount
       - yarn
       - zlib1g-dev
+
+- name: Create root user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: root
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
+
+- name: Create keegan user in Postgres
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: keegan
+    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
