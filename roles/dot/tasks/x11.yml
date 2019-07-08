@@ -4,6 +4,9 @@
   apt:
     state: present
     name:
+      - fonts-oxygen
+      - fonts-sil-gentium
+      - fonts-sil-gentium-basic
       - kde-standard
       - lightdm
       - menu
