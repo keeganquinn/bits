@@ -82,12 +82,12 @@
 
 - name: Copy php-fpm configuration
   become: yes
-  copy: src=php.ini dest=/etc/php/7.0/fpm/php.ini
+  copy: src=php.ini dest=/etc/php/7.3/fpm/php.ini
   notify: restart php-fpm
 
 - name: Copy php-fpm pool configuration
   become: yes
-  copy: src=www.conf dest=/etc/php/7.0/fpm/pool.d/www.conf
+  copy: src=www.conf dest=/etc/php/7.3/fpm/pool.d/www.conf
   notify: restart php-fpm
 
 - name: Create owncloud user in Postgres

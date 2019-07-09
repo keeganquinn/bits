@@ -1,7 +1,7 @@
 # -*- nginx -*-
 
 upstream zabbix_handler {
-    server unix:/var/run/php/php7.0-fpm.sock;
+    server unix:/var/run/php/php7.3-fpm.sock;
 }
 
 server {
