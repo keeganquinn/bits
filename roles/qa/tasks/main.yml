@@ -57,7 +57,7 @@
   cron:
     name: dependency scan
     job: /home/deploy/scan.sh
-    minute: 30
-    hour: 0
-    weekday: 1
+    minute: '30'
+    hour: '0'
+    weekday: '1'
     user: deploy
