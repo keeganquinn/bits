@@ -39,6 +39,16 @@
     user: deploy
     key: "{{ lookup('file', 'roles/dot/files/authorized_keys') }}"
 
+- name: Copy rebundle script
+  become: yes
+  become_user: deploy
+  copy:
+    src: rebundle.sh
+    dest: /home/deploy
+    owner: deploy
+    group: deploy
+    mode: 0755
+
 - name: Copy Rails configuration
   become: yes
   copy:
