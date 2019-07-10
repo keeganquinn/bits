@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# Update script. Intended for operations use.
-#
-# This is not [yet] containerized. Requires Ruby and Bundler.
+# Update script. Intended for operations use. Requires Ruby and Bundler.
 
 set -ex
 
