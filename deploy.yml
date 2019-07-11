@@ -18,12 +18,6 @@
     - rails
     - palkan.phantomjs
 
-- name: Organization services
-  hosts: len
-
-  roles:
-    - listserv
-
 - name: Intranet configuration
   hosts: scrap
 
