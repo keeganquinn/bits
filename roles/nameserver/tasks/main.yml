@@ -11,13 +11,13 @@
 - name: Copy local BIND configuration
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/named.conf.local'
+    src: '{{ inventory_hostname }}/named.conf.local'
     dest: /etc/bind
   notify: restart bind9
 
 - name: Copy local BIND options
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/named.conf.options'
+    src: '{{ inventory_hostname }}/named.conf.options'
     dest: /etc/bind
   notify: restart bind9

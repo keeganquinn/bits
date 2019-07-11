@@ -52,7 +52,7 @@
 - name: Copy Rails configuration
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/rails/'
+    src: '{{ inventory_hostname }}/rails/'
     dest: /etc/rails
     owner: deploy
     group: deploy

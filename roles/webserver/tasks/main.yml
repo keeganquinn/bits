@@ -36,7 +36,7 @@
 - name: Copy nginx virtual hosts
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/nginx/'
+    src: '{{ inventory_hostname }}/nginx/'
     dest: /etc/nginx/sites-available
   notify: restart nginx
 
@@ -51,7 +51,7 @@
     group: root
     force: true
   with_filetree:
-    - 'config/{{ ansible_hostname }}/nginx/'
+    - '{{ inventory_hostname }}/nginx/'
   notify: restart nginx
 
 - name: Copy SSL certificates
@@ -71,7 +71,7 @@
 - name: Copy certbot renewal configuration
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/letsencrypt/renewal/'
+    src: '{{ inventory_hostname }}/letsencrypt/renewal/'
     dest: /etc/letsencrypt/renewal
   notify: renew certbot
 

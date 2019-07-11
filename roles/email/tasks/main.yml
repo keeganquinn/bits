@@ -12,32 +12,32 @@
 - name: Copy aliases file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/aliases'
+    src: '{{ inventory_hostname }}/aliases'
     dest: /etc/aliases
   notify: rebuild postfix aliases
 
 - name: Copy hostname file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/hostname'
+    src: '{{ inventory_hostname }}/hostname'
     dest: /etc/hostname
 
 - name: Copy hosts file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/hosts'
+    src: '{{ inventory_hostname }}/hosts'
     dest: /etc/hosts
 
 - name: Copy mailname file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/mailname'
+    src: '{{ inventory_hostname }}/mailname'
     dest: /etc/mailname
 
 - name: Copy motd file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/motd'
+    src: '{{ inventory_hostname }}/motd'
     dest: /etc/motd
 
 - name: Copy sasldb2 file
@@ -156,7 +156,7 @@
 - name: Copy postfix rewrite file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/postfix/rewrite'
+    src: '{{ inventory_hostname }}/postfix/rewrite'
     dest: /etc/postfix/rewrite
   notify: restart postfix
 
@@ -168,7 +168,7 @@
 - name: Copy postfix sasl_passwd file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/postfix/sasl_passwd'
+    src: '{{ inventory_hostname }}/postfix/sasl_passwd'
     dest: /etc/postfix/sasl_passwd
     mode: 0600
   notify: rebuild postfix sasl_passwd
@@ -176,13 +176,13 @@
 - name: Copy postfix transport file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/postfix/transport'
+    src: '{{ inventory_hostname }}/postfix/transport'
     dest: /etc/postfix/transport
   notify: rebuild postfix transport
 
 - name: Copy postfix virtual file
   become: yes
   copy:
-    src: 'config/{{ ansible_hostname }}/postfix/virtual'
+    src: '{{ inventory_hostname }}/postfix/virtual'
     dest: /etc/postfix/virtual
   notify: rebuild postfix virtual
