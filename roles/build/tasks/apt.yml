@@ -29,7 +29,7 @@
       - build-essential
       - elasticsearch
       - graphviz
-      - imagemagick
+      - imagemagick-6.q16
       - libffi-dev
       - libgdbm-dev
       - libmagickwand-6.q16-dev
