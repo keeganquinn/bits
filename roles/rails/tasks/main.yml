@@ -149,7 +149,7 @@
   become: yes
   copy:
     src: postgresql.conf
-    dest: /etc/postgresql/9.6/main/postgresql.conf
+    dest: /etc/postgresql/11/main/postgresql.conf
     owner: postgres
     group: postgres
     mode: 0644
