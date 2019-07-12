@@ -1,1 +1,1 @@
-deb https://mirror.neostrada.nl/raspbian/raspbian/ stretch main contrib non-free pi
+deb https://raspbian.mirror.pcextreme.nl/raspbian/ buster main contrib non-free pi
