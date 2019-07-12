@@ -10,7 +10,6 @@
       - kde-standard
       - lightdm
       - menu
-      - nextcloud-desktop
       - rdesktop
       - smbclient
       - tigervnc-viewer
