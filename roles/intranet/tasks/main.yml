@@ -12,7 +12,6 @@
       - jenkins
       - olsrd
       - openvpn
-      - owncloud-files
       - php
       - php-apcu
       - php-bcmath
@@ -20,6 +19,7 @@
       - php-fpm
       - php-gd
       - php-intl
+      - php-imagick
       - php-ldap
       - php-mbstring
       - php-pgsql
@@ -30,6 +30,7 @@
       - rsnapshot
       - samba
       - shairport-sync
+      - zabbix-frontend-php
       - zabbix-server-pgsql
 
 - name: Copy cups configuration
@@ -90,28 +91,28 @@
   copy: src=www.conf dest=/etc/php/7.3/fpm/pool.d/www.conf
   notify: restart php-fpm
 
-- name: Create owncloud user in Postgres
+- name: Create nextcloud user in Postgres
   become: yes
   become_user: postgres
   postgresql_user:
-    name: owncloud
-    password: owncloud
+    name: nextcloud
+    password: nextcloud
     encrypted: yes
 
-- name: Create owncloud database in Postgres
+- name: Create nextcloud database in Postgres
   become: yes
   become_user: postgres
   postgresql_db:
-    name: owncloud
-    owner: owncloud
+    name: nextcloud
+    owner: nextcloud
     encoding: UTF-8
 
-- name: Schedule owncloud cron
+- name: Schedule nextcloud cron
   become: yes
   become_user: www-data
   cron:
-    name: owncloud
-    job: /usr/bin/php -f /var/www/owncloud/cron.php
+    name: nextcloud
+    job: /usr/bin/php -f /var/www/nextcloud/cron.php
     user: www-data
 
 - name: Install rbenv for the jenkins user

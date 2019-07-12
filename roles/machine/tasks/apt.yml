@@ -13,13 +13,6 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
-- name: Add owncloud APT key
-  become: yes
-  apt_key:
-    url: https://download.owncloud.org/download/repositories/production/Debian_9.0/Release.key
-    state: present
-  when: ansible_architecture == 'x86_64'
-
 - name: Add nodesource APT key
   become: yes
   apt_key:
@@ -58,7 +51,7 @@
       - lftp
       - mlocate
       - nmap
-      - owncloud-client-cmd
+      - nextcloud-desktop-cmd
       - screen
       - sox
       - tcpdump

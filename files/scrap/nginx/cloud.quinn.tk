@@ -1,6 +1,6 @@
 # -*- nginx -*-
 
-upstream owncloud_handler {
+upstream nextcloud_handler {
     server unix:/var/run/php/php7.3-fpm.sock;
 }
 
@@ -12,7 +12,7 @@ server {
     access_log off;
 
     location /.well-known {
-        alias /var/www/owncloud/.well-known;
+        alias /var/www/nextcloud/.well-known;
     }
 
     location / {
@@ -34,8 +34,8 @@ server {
     ssl_trusted_certificate /etc/letsencrypt/live/cloud.quinn.tk/chain.pem;
     add_header Strict-Transport-Security "max-age=31536000";
 
+    add_header Referrer-Policy no-referrer-when-downgrade;
     add_header X-Content-Type-Options nosniff;
-    add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Robots-Tag none;
     add_header X-Download-Options noopen;
@@ -44,7 +44,7 @@ server {
     access_log /var/log/nginx/cloud.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/cloud.quinn.tk-error.log warn;
 
-    root /var/www/owncloud;
+    root /var/www/nextcloud;
 
     location = /robots.txt {
         allow all;
@@ -71,7 +71,7 @@ server {
     error_page 404 /core/templates/404.php;
 
     location /.well-known {
-        alias /var/www/owncloud/.well-known;
+        alias /var/www/nextcloud/.well-known;
     }
 
     location / {
@@ -95,7 +95,7 @@ server {
         fastcgi_param modHeadersAvailable true;
         fastcgi_param front_controller_active true;
         fastcgi_read_timeout 3600;
-        fastcgi_pass owncloud_handler;
+        fastcgi_pass nextcloud_handler;
         fastcgi_intercept_errors on;
         fastcgi_request_buffering off;
     }
@@ -109,7 +109,6 @@ server {
         try_files $uri /index.php$uri$is_args$args;
         add_header Cache-Control "max-age=15778463";
         add_header X-Content-Type-Options nosniff;
-        add_header X-Frame-Options "SAMEORIGIN";
         add_header X-XSS-Protection "1; mode=block";
         add_header X-Robots-Tag none;
         add_header X-Download-Options noopen;
