@@ -2,7 +2,7 @@ localhost ansible_connection=local
 
 [servers]
 len
-pi
+#pi
 scrap
 
 [servers:vars]
