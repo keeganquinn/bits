@@ -1,1 +1,0 @@
-include "/etc/bind/named.conf.slave";
