@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019031900
+        2019072200
         ; refresh
         30M
         ; retry
@@ -48,6 +48,7 @@ scrap   AAAA    2601:1c2:4c00:e66d::1
 scrap   MX      10      len
 scrap   TXT     "v=spf1 mx a -all"
 
+animamagica             CNAME   len
 animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap
 cloud                   CNAME   scrap
