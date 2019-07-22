@@ -48,33 +48,6 @@ masters hidden-slaves {
   2601:1c2:4c00:e66d::1;
 };
 
-zone "keegan.ga" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "keegan.gq" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "quinn.ml" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
 zone "quinn.tk" {
   type master;
   allow-query { any; };
@@ -82,42 +55,6 @@ zone "quinn.tk" {
   notify yes;
   also-notify { hidden-slaves; };
   file "/etc/bind/quinn.tk";
-};
-
-zone "str1ng.ml" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "str1ng.ga" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "str1ng.cf" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "str1ng.gq" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
 };
 
 zone "sniz.org" {
@@ -138,124 +75,7 @@ zone "sniz.net" {
   file "/etc/bind/generic";
 };
 
-zone "animamagica.tk" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
 zone "basslin.es" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "speakeasy.tk" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "unplug.ml" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "unplug.gq" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "ugraal.tk" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "ugraal.ml" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "ugraal.ga" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "ugraal.cf" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "ugraal.gq" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "abusive.ml" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "abusive.ga" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "abusive.cf" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/generic";
-};
-
-zone "abusive.gq" {
   type master;
   allow-query { any; };
   allow-transfer { "slaves"; };

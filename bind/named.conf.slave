@@ -3,68 +3,12 @@ masters primary {
   2600:3c01::f03c:91ff:fee9:47cb;
 };
 
-zone "keegan.ga" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "keegan.ga";
-};
-
-zone "keegan.gq" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "keegan.gq";
-};
-
-zone "quinn.ml" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "quinn.ml";
-};
-
 zone "quinn.tk" {
   type slave;
   notify no;
   allow-query { any; };
   masters { primary; };
   file "quinn.tk";
-};
-
-zone "str1ng.ml" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "str1ng.ml";
-};
-
-zone "str1ng.ga" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "str1ng.ga";
-};
-
-zone "str1ng.cf" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "str1ng.cf";
-};
-
-zone "str1ng.gq" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "str1ng.gq";
 };
 
 zone "sniz.org" {
@@ -83,116 +27,12 @@ zone "sniz.net" {
   file "sniz.net";
 };
 
-zone "animamagica.tk" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "animamagica.tk";
-};
-
 zone "basslin.es" {
   type slave;
   notify no;
   allow-query { any; };
   masters { primary; };
   file "basslin.es";
-};
-
-zone "speakeasy.tk" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "speakeasy.tk";
-};
-
-zone "unplug.ml" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "unplug.ml";
-};
-
-zone "unplug.gq" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "unplug.gq";
-};
-
-zone "ugraal.tk" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "ugraal.tk";
-};
-
-zone "ugraal.ml" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "ugraal.ml";
-};
-
-zone "ugraal.ga" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "ugraal.ga";
-};
-
-zone "ugraal.cf" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "ugraal.cf";
-};
-
-zone "ugraal.gq" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "ugraal.gq";
-};
-
-zone "abusive.ml" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "abusive.ml";
-};
-
-zone "abusive.ga" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "abusive.ga";
-};
-
-zone "abusive.cf" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "abusive.cf";
-};
-
-zone "abusive.gq" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "abusive.gq";
 };
 
 zone "hrd503.cf" {
