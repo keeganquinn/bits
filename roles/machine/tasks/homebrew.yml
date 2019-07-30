@@ -14,7 +14,6 @@
     state: present
     name:
       - dos2unix
-      - ffmpeg
       - lftp
       - nmap
       - p7zip
