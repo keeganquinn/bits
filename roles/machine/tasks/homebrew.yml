@@ -18,6 +18,7 @@
       - nmap
       - p7zip
       - sox
+      - unrar
       - wget
 
 - name: Install machine casks
