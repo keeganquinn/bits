@@ -10,6 +10,7 @@
       - kde-standard
       - lightdm
       - menu
+      - minicom
       - rdesktop
       - smbclient
       - tigervnc-viewer
