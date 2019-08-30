@@ -91,30 +91,30 @@
   become_user: deploy
   copy: src=profile dest=/home/deploy/.profile
 
-- name: Install Ruby 2.6.3 for the deploy user
+- name: Install Ruby 2.6.4 for the deploy user
   become: yes
   become_user: deploy
-  shell: /home/deploy/.rbenv/bin/rbenv install -s 2.6.3
+  shell: /home/deploy/.rbenv/bin/rbenv install -s 2.6.4
   args:
-    creates: /home/deploy/.rbenv/versions/2.6.3
+    creates: /home/deploy/.rbenv/versions/2.6.4
 
 - name: Install Bundler for the deploy user
   become: yes
   become_user: deploy
-  shell: /home/deploy/.rbenv/shims/gem install bundler:2.0.1
+  shell: /home/deploy/.rbenv/shims/gem install bundler:2.0.2
   environment:
-    RBENV_VERSION: 2.6.3
+    RBENV_VERSION: 2.6.4
   args:
-    creates: /home/deploy/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/bundler-2.0.1
+    creates: /home/deploy/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/bundler-2.0.2
 
 - name: Install Foreman for the deploy user
   become: yes
   become_user: deploy
   shell: /home/deploy/.rbenv/shims/gem install foreman
   environment:
-    RBENV_VERSION: 2.6.3
+    RBENV_VERSION: 2.6.4
   args:
-    creates: /home/deploy/.rbenv/versions/2.6.3/bin/foreman
+    creates: /home/deploy/.rbenv/versions/2.6.4/bin/foreman
 
 - name: Create /srv/rails
   become: yes
