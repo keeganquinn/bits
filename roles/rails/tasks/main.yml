@@ -116,6 +116,16 @@
   args:
     creates: /home/deploy/.rbenv/versions/2.6.4/bin/foreman
 
+- name: Create foreman symlink
+  become: yes
+  file:
+    src: /home/deploy/.rbenv/shims/foreman
+    dest: /usr/sbin/foreman
+    state: link
+    owner: root
+    group: root
+    force: true
+
 - name: Create /srv/rails
   become: yes
   file:
