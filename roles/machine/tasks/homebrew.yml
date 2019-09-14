@@ -2,6 +2,9 @@
 - name: Update and upgrade Homebrew packages
   homebrew: update_homebrew=yes upgrade_all=yes
 
+- name: Upgrade Homebrew casks
+  homebrew_cask: upgrade=yes
+
 - name: Install pre-dependency casks
   homebrew_cask:
     state: present
@@ -27,5 +30,5 @@
     name:
       - emacs
       - gimp
-      - inkscape
+      - inkscape-nightly
       - r128x-gui
