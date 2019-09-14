@@ -22,6 +22,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name www.basslin.es;
     ssl on;
     ssl_certificate /etc/ssl/certs/basslin.es.crt-combined;
@@ -47,6 +48,7 @@ server {
 
 server {
     listen 443 ssl http2 default_server;
+    listen [::]:443 ssl http2 default_server;
     server_name basslin.es;
     ssl on;
     ssl_certificate /etc/ssl/certs/basslin.es.crt-combined;

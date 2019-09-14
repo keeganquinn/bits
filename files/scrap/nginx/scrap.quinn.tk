@@ -16,6 +16,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name scrap.quinn.tk;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/scrap.quinn.tk/fullchain.pem;

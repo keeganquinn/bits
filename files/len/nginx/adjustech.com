@@ -18,6 +18,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name www.adjustech.com;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/adjustech.com/fullchain.pem;
@@ -43,6 +44,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name adjustech.com;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/adjustech.com/fullchain.pem;

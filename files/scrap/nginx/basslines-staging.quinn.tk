@@ -22,6 +22,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name basslines-staging.quinn.tk;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/basslines-staging.quinn.tk/fullchain.pem;

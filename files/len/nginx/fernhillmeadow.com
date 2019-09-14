@@ -18,6 +18,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name www.fernhillmeadow.com;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/fernhillmeadow.com/fullchain.pem;
@@ -43,6 +44,7 @@ server {
 
 server {
     listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name fernhillmeadow.com;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/fernhillmeadow.com/fullchain.pem;
