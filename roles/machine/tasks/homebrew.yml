@@ -29,6 +29,7 @@
     state: present
     name:
       - emacs
+      - fontforge
       - gimp
       - inkscape-nightly
       - r128x-gui
