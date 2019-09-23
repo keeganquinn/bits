@@ -68,13 +68,6 @@
     dest: /etc/ssl/private
   notify: restart nginx
 
-- name: Copy certbot renewal configuration
-  become: yes
-  copy:
-    src: '{{ inventory_hostname }}/letsencrypt/renewal/'
-    dest: /etc/letsencrypt/renewal
-  notify: renew certbot
-
 - name: Create /etc/letsencrypt/renewal-hooks
   become: yes
   file:
