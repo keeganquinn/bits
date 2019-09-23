@@ -32,4 +32,5 @@
       - fontforge
       - gimp
       - inkscape-nightly
+      - keepassxc
       - r128x-gui
