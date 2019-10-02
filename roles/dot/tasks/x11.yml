@@ -17,7 +17,7 @@
       - vlc
       - wireshark
       - xfce4
-      - xfce4-battery-plugin
+      - xfce4-goodies
 
 - name: Copy the grub default file
   become: yes
