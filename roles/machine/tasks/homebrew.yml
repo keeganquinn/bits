@@ -28,9 +28,17 @@
   homebrew_cask:
     state: present
     name:
+      - android-file-transfer
+      - android-platform-tools
+      - android-studio
+      - blender
       - emacs
       - fontforge
       - gimp
+      - handbrake
       - inkscape-nightly
       - keepassxc
+      - krita
+      - libreoffice
+      - nextcloud
       - r128x-gui
