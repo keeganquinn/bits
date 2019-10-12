@@ -5,20 +5,20 @@
   roles:
     - machine
 
-- name: Nameserver configuration
+- name: Core server configuration
   hosts: scrap.quinn.tk, len.quinn.tk
 
   roles:
+    - ftp
     - nameserver
 
 - name: Application server configuration
-  hosts: scrap.quinn.tk, len.quinn.tk
+  hosts: scrap.quinn.tk, len.quinn.tk, turn.personaltelco.net
 
   roles:
     - email
     - webserver
     - build
-    - ftp
     - rails
     - palkan.phantomjs
 
