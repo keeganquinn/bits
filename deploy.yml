@@ -4,11 +4,15 @@
 
   roles:
     - machine
+
+- name: Nameserver configuration
+  hosts: scrap.quinn.tk, len.quinn.tk
+
+  roles:
     - nameserver
-    - comfort
 
 - name: Application server configuration
-  hosts: scrap, len
+  hosts: scrap.quinn.tk, len.quinn.tk
 
   roles:
     - email
@@ -19,9 +23,10 @@
     - palkan.phantomjs
 
 - name: Intranet configuration
-  hosts: scrap
+  hosts: scrap.quinn.tk
 
   roles:
+    - comfort
     - dot
     - intranet
     - qa

@@ -1,9 +1,6 @@
 localhost ansible_connection=local
 
 [servers]
-len
-scrap
-
-[servers:vars]
-host_domain = quinn.tk
-ansible_host = '{{ inventory_hostname }}.{{ host_domain }}'
+len.quinn.tk
+scrap.quinn.tk
+turn.personaltelco.net
