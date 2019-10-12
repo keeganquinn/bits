@@ -164,37 +164,3 @@
     group: postgres
     mode: 0644
   notify: restart postgresql
-
-- name: Create animamagica user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: animamagica
-    password: animamagica
-    encrypted: yes
-    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
-
-- name: Create animamagica database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: animamagica
-    owner: animamagica
-    encoding: UTF-8
-
-- name: Create bln user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: bln
-    password: bln
-    encrypted: yes
-    role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
-
-- name: Create bln database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: bln
-    owner: bln
-    encoding: UTF-8
