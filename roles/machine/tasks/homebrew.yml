@@ -16,6 +16,7 @@
   homebrew:
     state: present
     name:
+      - bind
       - dos2unix
       - lftp
       - nmap
