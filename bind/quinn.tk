@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019101501
+        2019101502
         ; refresh
         30M
         ; retry
@@ -49,6 +49,7 @@ scrap   MX      10      len
 scrap   TXT     "v=spf1 mx a -all"
 
 beacon  A       10.11.22.2
+lilguy  A       10.11.22.6
 spot    A       10.11.22.5
 vie     A       10.11.22.4
 wave    A       10.11.22.3
