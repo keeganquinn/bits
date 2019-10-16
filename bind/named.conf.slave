@@ -11,6 +11,14 @@ zone "quinn.tk" {
   file "quinn.tk";
 };
 
+zone "22.11.10.in-addr.arpa" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "ip4-ptp-22";
+};
+
 zone "sniz.org" {
   type slave;
   notify no;

@@ -57,6 +57,15 @@ zone "quinn.tk" {
   file "/etc/bind/quinn.tk";
 };
 
+zone "22.11.10.in-addr.arpa" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/ip4-ptp-22";
+};
+
 zone "sniz.org" {
   type master;
   allow-query { any; };
