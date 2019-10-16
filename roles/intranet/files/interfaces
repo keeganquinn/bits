@@ -19,6 +19,7 @@ iface eth0 inet6 dhcp
 auto eth1
 iface eth1 inet static
   bridge_ports enp4s0f0 enp4s0f1 enp5s0f0 enp5s0f1 enp7s4 enp7s5
+  bridge_stp on
   address 10.11.22.1
   netmask 255.255.255.0
   network 10.11.22.0
