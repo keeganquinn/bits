@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019100803
+        2019101501
         ; refresh
         30M
         ; retry
@@ -49,8 +49,12 @@ scrap   MX      10      len
 scrap   TXT     "v=spf1 mx a -all"
 
 beacon  A       10.11.22.2
-
+spot    A       10.11.22.5
+vie     A       10.11.22.4
 wave    A       10.11.22.3
+
+s0gw    A       67.189.68.1
+$GENERATE 50-250 s0d${0,3,d} A 10.11.22.$
 
 animamagica             CNAME   len
 animamagica-staging     CNAME   scrap
