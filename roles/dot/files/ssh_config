@@ -22,13 +22,18 @@ Host athlon
     ForwardAgent yes
 
 
-# Local machines
+# Local devices
 Host electron
     Hostname electron.local
     ForwardAgent yes
 
 Host one
     Hostname one.local
+    ForwardAgent yes
+
+Host wave
+    Hostname wave.quinn.tk
+    User root
     ForwardAgent yes
 
 Host zero
