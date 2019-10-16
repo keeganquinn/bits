@@ -27,6 +27,11 @@ Host electron
     Hostname electron.local
     ForwardAgent yes
 
+Host lilguy
+    Hostname lilguy.quinn.tk
+    User root
+    ForwardAgent yes
+
 Host one
     Hostname one.local
     ForwardAgent yes
