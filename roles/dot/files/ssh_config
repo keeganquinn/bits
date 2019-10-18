@@ -49,12 +49,12 @@ Host zero
 # PTP servers
 Host drei
     Hostname drei.personaltelco.net
-
-Host iris
-    Hostname iris.personaltelco.net
+    ForwardAgent yes
 
 Host knod
     Hostname knod.personaltelco.net
+    ForwardAgent yes
 
 Host turn
     Hostname turn.personaltelco.net
+    ForwardAgent yes
