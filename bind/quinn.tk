@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019101502
+        2019101800
         ; refresh
         30M
         ; retry
@@ -35,28 +35,49 @@ mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/9
 
 www     CNAME   @
 
+; DC-hosted systems
 len     A       45.79.65.28
 len     AAAA    2600:3c01::f03c:91ff:fee9:47cb
 len     TXT     "v=spf1 a -all"
 
 pi      A       89.18.165.159
 pi      AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
-pi      TXT     "v=spf1 a -all"
 
+; site 0
 scrap   A       67.189.70.230
-scrap   AAAA    2601:1c2:4c00:e66d::1
+scrap   AAAA    2001:558:6025:53:e03b:c46f:8cf6:13da
 scrap   MX      10      len
 scrap   TXT     "v=spf1 mx a -all"
 
 beacon  A       10.11.22.2
 lilguy  A       10.11.22.6
+lilguy  AAAA    2601:1c2:4c00:e66d::4f38
 spot    A       10.11.22.5
+spot    AAAA    2601:1c2:4c00:e66d::ef97
 vie     A       10.11.22.4
+vie     AAAA    2601:1c2:4c00:e66d::4d47
 wave    A       10.11.22.3
+wave    AAAA    2601:1c2:4c00:e66d::a387
 
+s0edge  A       10.11.22.1
+s0edge  AAAA    2601:1c2:4c00:e66d::1
 s0gw    A       67.189.68.1
+s0gw    AAAA    2001:558:6025:53::1
 $GENERATE 50-250 s0d${0,3,d} A 10.11.22.$
 
+; site 1
+widget  A       71.193.157.21
+widget  AAAA    2001:558:6025:54:9172:5a4f:e60f:2deb
+
+base    A       10.11.23.2
+
+s1edge  A       10.11.23.1
+s1edge  AAAA    2601:1c2:4d80:21::1
+s1gw    A       71.193.156.1
+s1gw    AAAA    2001:558:4060:54::1
+$GENERATE 50-250 s1d${0,3,d} A 10.11.23.$
+
+; aliases
 animamagica             CNAME   len
 animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap

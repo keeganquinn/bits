@@ -1,6 +1,6 @@
 ; -*- zone -*-
 
-; ip4-ptp-22: reverse lookup zone for 10.11.22.0/24
+; ip4-ptp-23: reverse lookup zone for 10.11.23.0/24
 
 $TTL 2d
 
@@ -20,11 +20,7 @@ $TTL 2d
         NS      len.quinn.tk.
         NS      scrap.quinn.tk.
 
-1       PTR     s0edge.quinn.tk.
-2       PTR     beacon.quinn.tk.
-3       PTR     wave.quinn.tk.
-4       PTR     vie.quinn.tk.
-5       PTR     spot.quinn.tk.
-6       PTR     lilguy.quinn.tk.
+1       PTR     s1edge.quinn.tk.
+2       PTR     base.quinn.tk.
 
-$GENERATE 50-250 $ PTR s0d${0,3,d}.quinn.tk.
+$GENERATE 50-250 $ PTR s1d${0,3,d}.quinn.tk.

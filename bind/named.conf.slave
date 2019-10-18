@@ -19,6 +19,14 @@ zone "22.11.10.in-addr.arpa" {
   file "ip4-ptp-22";
 };
 
+zone "23.11.10.in-addr.arpa" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "ip4-ptp-23";
+};
+
 zone "sniz.org" {
   type slave;
   notify no;

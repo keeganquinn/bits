@@ -61,9 +61,18 @@ zone "22.11.10.in-addr.arpa" {
   type master;
   allow-query { any; };
   allow-transfer { "slaves"; };
-  notify yes;
+  notify explicit;
   also-notify { hidden-slaves; };
   file "/etc/bind/ip4-ptp-22";
+};
+
+zone "23.11.10.in-addr.arpa" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify explicit;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/ip4-ptp-23";
 };
 
 zone "sniz.org" {
