@@ -22,18 +22,24 @@ Host athlon
     ForwardAgent yes
 
 
-# Local devices
+# Local machines
 Host electron
     Hostname electron.local
     ForwardAgent yes
 
+Host one
+    Hostname one.local
+    ForwardAgent yes
+
+Host zero
+    Hostname zero.local
+    ForwardAgent yes
+
+
+# Network devices
 Host lilguy
     Hostname lilguy.quinn.tk
     User root
-    ForwardAgent yes
-
-Host one
-    Hostname one.local
     ForwardAgent yes
 
 Host wave
@@ -41,8 +47,9 @@ Host wave
     User root
     ForwardAgent yes
 
-Host zero
-    Hostname zero.local
+Host widget
+    Hostname widget.quinn.tk
+    User root
     ForwardAgent yes
 
 
