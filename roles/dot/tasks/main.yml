@@ -38,6 +38,13 @@
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.0.2'
 
+- name: Install haml for Ruby 2.6.5
+  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install haml'
+  environment:
+    RBENV_VERSION: 2.6.5
+  args:
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/bin/haml'
+
 - name: Install rubocop-performance for Ruby 2.6.5
   shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-performance:1.5.0'
   environment:
