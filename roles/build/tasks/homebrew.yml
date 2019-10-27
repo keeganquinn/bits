@@ -3,6 +3,8 @@
   homebrew:
     state: present
     name:
+      - autoconf
+      - automake
       - bfg
       - elasticsearch
       - ghostscript
