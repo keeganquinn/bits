@@ -29,7 +29,6 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
     ssl_trusted_certificate /etc/letsencrypt/live/xmit.quinn.tk/chain.pem;
-    add_header Strict-Transport-Security "max-age=31536000";
     add_header Access-Control-Allow-Origin "*";
 
     access_log /var/log/nginx/xmit.quinn.tk-access.log combined if=$log_ua;
