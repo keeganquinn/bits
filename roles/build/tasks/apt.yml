@@ -44,6 +44,7 @@
       - redis-server
       - shellcheck
       - sloccount
+      - tidy
       - yarn
       - zlib1g-dev
 
