@@ -11,6 +11,9 @@
 - name: Copy the git configuration file
   copy: src=gitconfig dest='{{ ansible_env.HOME }}/.gitconfig'
 
+- name: Copy the screen configuration file
+  copy: src=screenrc dest='{{ ansible_env.HOME }}/.screenrc'
+
 - include: x11.yml
   when: ansible_pkg_mgr == 'apt'
 

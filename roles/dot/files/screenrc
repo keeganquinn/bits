@@ -1,0 +1,4 @@
+defflow off
+defnonblock on
+defscrollback 10000
+shell -$SHELL
