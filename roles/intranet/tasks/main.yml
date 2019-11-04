@@ -31,6 +31,7 @@
       - rsnapshot
       - samba
       - shairport-sync
+      - tightvncserver
       - zabbix-frontend-php
       - zabbix-server-pgsql
 
@@ -76,6 +77,11 @@
   become: yes
   copy: src=sysctl.conf dest=/etc/sysctl.conf
   notify: reload sysctl
+
+- name: Copy vncserver-keegan service
+  become: yes
+  copy: src=vncserver-keegan.service dest=/etc/systemd/system/
+  notify: restart vncserver-keegan
 
 - name: Copy dnsmasq configuration
   become: yes
