@@ -11,6 +11,7 @@
       - iftop
       - ipv6calc
       - jenkins
+      - motion
       - olsrd
       - openvpn
       - php
