@@ -4,6 +4,7 @@
   apt:
     state: present
     name:
+      - ffplay
       - fonts-oxygen
       - fonts-sil-gentium
       - fonts-sil-gentium-basic
