@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2019110500
+        2019110501
         ; refresh
         30M
         ; retry
@@ -49,17 +49,17 @@ scrap   AAAA    2001:558:6025:53:e03b:c46f:8cf6:13da
 scrap   MX      10      len
 scrap   TXT     "v=spf1 mx a -all"
 
-beacon  A       10.11.22.2
-electron A      10.11.22.7
-electron AAAA   2601:1c2:4c00:e66d::f934
-lilguy  A       10.11.22.6
-lilguy  AAAA    2601:1c2:4c00:e66d::4f38
-spot    A       10.11.22.5
-spot    AAAA    2601:1c2:4c00:e66d::ef97
-vie     A       10.11.22.4
-vie     AAAA    2601:1c2:4c00:e66d::4d47
-wave    A       10.11.22.3
-wave    AAAA    2601:1c2:4c00:e66d::a387
+beacon          A       10.11.22.2
+electron        A       10.11.22.7
+electron        AAAA    2601:1c2:4c00:e66d::a6bb
+lilguy          A       10.11.22.6
+lilguy          AAAA    2601:1c2:4c00:e66d::4f38
+spot            A       10.11.22.5
+spot            AAAA    2601:1c2:4c00:e66d::ef97
+vie             A       10.11.22.4
+vie             AAAA    2601:1c2:4c00:e66d::4d47
+wave            A       10.11.22.3
+wave            AAAA    2601:1c2:4c00:e66d::a387
 
 s0edge  A       10.11.22.1
 s0edge  AAAA    2601:1c2:4c00:e66d::1
