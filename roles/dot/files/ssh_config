@@ -23,10 +23,6 @@ Host athlon
 
 
 # Local machines
-Host electron
-    Hostname electron.local
-    ForwardAgent yes
-
 Host one
     Hostname one.local
     ForwardAgent yes
@@ -37,6 +33,10 @@ Host zero
 
 
 # Network devices
+Host electron
+    Hostname electron.quinn.tk
+    ForwardAgent yes
+
 Host lilguy
     Hostname lilguy.quinn.tk
     User root
