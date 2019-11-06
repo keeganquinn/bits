@@ -23,9 +23,7 @@ export ANSIBLE_VAULT_PASSWORD_FILE="${scratch}/vault_password"
 echo "${vault_password}" > "${ANSIBLE_VAULT_PASSWORD_FILE}"
 
 
-ansible-galaxy install -r requirements.yml
-
-egrep -q "^$(hostname)$" ansible.hosts || ansible-playbook dot.yml
+grep -E -q "^$(hostname)$" ansible.hosts || ansible-playbook dot.yml
 
 ansible-playbook deploy.yml
 

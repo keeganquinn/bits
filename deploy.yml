@@ -20,7 +20,6 @@
     - webserver
     - build
     - rails
-    - palkan.phantomjs
 
 - name: Intranet configuration
   hosts: scrap.quinn.tk
