@@ -8,19 +8,16 @@
       - fonts-oxygen
       - fonts-sil-gentium
       - fonts-sil-gentium-basic
-      - kde-standard
       - keepassxc
-      - lightdm
-      - menu
+      - libreoffice
       - minicom
       - nextcloud-desktop
       - rdesktop
       - smbclient
+      - task-cinnamon-desktop
       - tigervnc-viewer
       - vlc
       - wireshark
-      - xfce4
-      - xfce4-goodies
 
 - name: Copy the grub default file
   become: yes
