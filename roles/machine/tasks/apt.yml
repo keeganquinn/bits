@@ -13,6 +13,13 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
+- name: Add multimedia APT key
+  become: yes
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 5C808C2B65558117
+  when: ansible_architecture == 'x86_64'
+
 - name: Add nodesource APT key
   become: yes
   apt_key:
