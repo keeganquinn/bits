@@ -75,5 +75,5 @@
     creates: '{{ ansible_env.HOME }}/.rbenv/version'
 
 - name: Install linode-cli package when using Homebrew
-  pip: name=linode-cli
+  pip: name=linode-cli executable=pip3
   when: ansible_pkg_mgr == 'homebrew'
