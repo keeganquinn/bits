@@ -4,6 +4,6 @@
 
   roles:
     - machine
-    - dot
     - role: build
       when: ansible_architecture == 'x86_64'
+    - dot
