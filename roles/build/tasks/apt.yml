@@ -1,24 +1,4 @@
 ---
-- name: Mark Oracle license selected
-  become: yes
-  debconf:
-    name: oracle-java8-installer
-    question: shared/accepted-oracle-license-v1-1
-    value: 'true'
-    vtype: select
-
-- name: Mark Oracle license seen
-  become: yes
-  debconf:
-    name: oracle-java8-installer
-    question: shared/accepted-oracle-license-v1-1
-    value: 'true'
-    vtype: seen
-
-- name: Install Oracle Java package
-  become: yes
-  apt: name=oracle-java8-installer state=present
-
 - name: Install build packages
   become: yes
   apt:
