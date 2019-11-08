@@ -6,7 +6,7 @@
       - autoconf
       - automake
       - bfg
-      - elasticsearch
+      - elastic/tap/elasticsearch-full
       - ghostscript
       - graphviz
       - heroku
