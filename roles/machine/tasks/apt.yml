@@ -59,6 +59,7 @@
       - mlocate
       - nmap
       - nextcloud-desktop-cmd
+      - rsync
       - screen
       - sox
       - tcpdump
