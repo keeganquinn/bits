@@ -2,7 +2,9 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 export PATH="$HOME/.rbenv/bin:/usr/local/sbin:$PATH"
-eval "$(rbenv init -)"
+if hash rbenv 2>/dev/null; then
+    eval "$(rbenv init -)"
+fi
 
 # Set prompt and window title.
 PS1='\u@\h:\w\$ '

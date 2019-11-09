@@ -142,7 +142,7 @@
 - name: Copy the bashrc for the jenkins user
   become: yes
   copy:
-    src: roles/dot/files/bashrc
+    src: roles/machine/files/bashrc
     dest: /var/lib/jenkins/.bashrc
     owner: jenkins
     group: jenkins
@@ -150,7 +150,7 @@
 - name: Copy the profile for the jenkins user
   become: yes
   copy:
-    src: roles/dot/files/profile
+    src: roles/machine/files/profile
     dest: /var/lib/jenkins/.profile
     owner: jenkins
     group: jenkins

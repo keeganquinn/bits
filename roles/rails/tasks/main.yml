@@ -37,7 +37,7 @@
   become: yes
   authorized_key:
     user: deploy
-    key: "{{ lookup('file', 'roles/dot/files/authorized_keys') }}"
+    key: "{{ lookup('file', 'roles/machine/files/authorized_keys') }}"
 
 - name: Copy rebundle script
   become: yes
@@ -84,7 +84,7 @@
 - name: Copy the bash configuration file for the deploy user
   become: yes
   copy:
-    src: roles/dot/files/bashrc
+    src: roles/machine/files/bashrc
     dest: /home/deploy/.bashrc
     owner: deploy
     group: deploy
@@ -92,7 +92,7 @@
 - name: Copy the profile for the deploy user
   become: yes
   copy:
-    src: roles/dot/files/profile
+    src: roles/machine/files/profile
     dest: /home/deploy/.profile
     owner: deploy
     group: deploy
