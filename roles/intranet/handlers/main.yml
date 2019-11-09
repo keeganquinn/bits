@@ -15,10 +15,6 @@
   become: yes
   service: name=smbd state=restarted enabled=yes
 
-- name: restart shairport-sync
-  become: yes
-  service: name=shairport-sync state=restarted enabled=yes
-
 - name: restart vncserver-keegan
   become: yes
   service: name=vncserver-keegan state=restarted enabled=yes

@@ -31,7 +31,6 @@
       - postgresql
       - rsnapshot
       - samba
-      - shairport-sync
       - tightvncserver
       - zabbix-frontend-php
       - zabbix-server-pgsql
@@ -68,11 +67,6 @@
   become: yes
   copy: src=smb.conf dest=/etc/samba/smb.conf
   notify: restart smbd
-
-- name: Copy shairport-sync.conf
-  become: yes
-  copy: src=shairport-sync.conf dest=/etc/shairport-sync.conf
-  notify: restart shairport-sync
 
 - name: Copy sysctl.conf
   become: yes
