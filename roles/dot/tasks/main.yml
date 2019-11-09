@@ -5,6 +5,12 @@
 - name: Copy the SSH configuration file
   copy: src=ssh_config dest='{{ ansible_env.HOME }}/.ssh/config'
 
+- name: Copy the bash configuration file
+  copy: src=bashrc dest='{{ ansible_env.HOME }}/.bashrc'
+
+- name: Copy the shell login profile
+  copy: src=profile dest='{{ ansible_env.HOME }}/.profile'
+
 - name: Copy the Emacs configuration file
   copy: src=emacs dest='{{ ansible_env.HOME }}/.emacs'
 
