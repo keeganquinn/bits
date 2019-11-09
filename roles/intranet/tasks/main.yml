@@ -141,13 +141,19 @@
 
 - name: Copy the bashrc for the jenkins user
   become: yes
-  become_user: jenkins
-  copy: src=roles/rails/files/bashrc dest=/var/lib/jenkins/.bashrc
+  copy:
+    src: roles/dot/files/bashrc
+    dest: /var/lib/jenkins/.bashrc
+    owner: jenkins
+    group: jenkins
 
 - name: Copy the profile for the jenkins user
   become: yes
-  become_user: jenkins
-  copy: src=roles/rails/files/profile dest=/var/lib/jenkins/.profile
+  copy:
+    src: roles/dot/files/profile
+    dest: /var/lib/jenkins/.profile
+    owner: jenkins
+    group: jenkins
 
 - name: Install Ruby 2.6.5 for the jenkins user
   become: yes

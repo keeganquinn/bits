@@ -81,15 +81,21 @@
     dest: /home/deploy/.rbenv/plugins/ruby-build
     version: master
 
-- name: Copy the bashrc for the deploy user
+- name: Copy the bash configuration file for the deploy user
   become: yes
-  become_user: deploy
-  copy: src=bashrc dest=/home/deploy/.bashrc
+  copy:
+    src: roles/dot/files/bashrc
+    dest: /home/deploy/.bashrc
+    owner: deploy
+    group: deploy
 
 - name: Copy the profile for the deploy user
   become: yes
-  become_user: deploy
-  copy: src=profile dest=/home/deploy/.profile
+  copy:
+    src: roles/dot/files/profile
+    dest: /home/deploy/.profile
+    owner: deploy
+    group: deploy
 
 - name: Install Ruby 2.6.5 for the deploy user
   become: yes
