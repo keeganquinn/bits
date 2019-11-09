@@ -7,7 +7,6 @@
       - autoconf
       - bison
       - build-essential
-      - elasticsearch
       - graphviz
       - imagemagick-6.q16
       - libffi-dev

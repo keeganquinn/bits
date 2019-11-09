@@ -1,11 +1,4 @@
 ---
-- name: Add elasticsearch APT key
-  become: yes
-  apt_key:
-    url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
-    state: present
-  when: ansible_architecture == 'x86_64'
-
 - name: Add jenkins APT key
   become: yes
   apt_key:
