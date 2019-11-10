@@ -14,6 +14,7 @@
       - minicom
       - nextcloud-desktop
       - rdesktop
+      - sakura
       - smbclient
       - task-cinnamon-desktop
       - tigervnc-viewer
