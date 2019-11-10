@@ -5,6 +5,7 @@
     state: present
     name:
       - ffplay
+      - fonts-hack
       - fonts-oxygen
       - fonts-sil-gentium
       - fonts-sil-gentium-basic
