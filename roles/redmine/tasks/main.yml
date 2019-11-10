@@ -35,21 +35,21 @@
     owner: deploy
     group: deploy
 
-- name: Extract Redmine 4.0.4
+- name: Extract Redmine 4.0.5
   become: yes
   become_user: deploy
   unarchive:
-    src: http://www.redmine.org/releases/redmine-4.0.4.tar.gz
+    src: http://www.redmine.org/releases/redmine-4.0.5.tar.gz
     dest: /srv/rails/redmine/releases
     remote_src: yes
-    creates: /srv/rails/redmine/releases/redmine-4.0.4/README.rdoc
+    creates: /srv/rails/redmine/releases/redmine-4.0.5/README.rdoc
   notify: restart redmine
 
 - name: Link current Redmine release
   become: yes
   become_user: deploy
   file:
-    src: /srv/rails/redmine/releases/redmine-4.0.4
+    src: /srv/rails/redmine/releases/redmine-4.0.5
     dest: /srv/rails/redmine/current
     state: link
     mode: 0755
