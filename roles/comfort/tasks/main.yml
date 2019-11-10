@@ -1,8 +1,0 @@
----
-- name: Install comfort packages
-  become: yes
-  apt:
-    state: present
-    name:
-      - irssi
-      - nethack-console

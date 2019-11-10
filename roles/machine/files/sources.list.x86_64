@@ -5,4 +5,5 @@ deb http://ftp.debian.org/debian buster-backports main
 deb https://pkg.jenkins.io/debian-stable binary/
 deb http://www.deb-multimedia.org buster main non-free
 deb https://deb.nodesource.com/node_12.x buster main
+deb http://repository.spotify.com stable non-free
 deb https://dl.yarnpkg.com/debian/ stable main

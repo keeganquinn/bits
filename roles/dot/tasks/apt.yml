@@ -1,23 +1,35 @@
 ---
-- name: Install desktop x11 packages
+- name: Install desktop packages
   become: yes
   apt:
     state: present
     name:
+      - blender
+      - ffmpeg
       - ffplay
+      - fontforge
       - fonts-hack
       - fonts-oxygen
       - fonts-sil-gentium
       - fonts-sil-gentium-basic
+      - gimp
+      - handbrake-gtk
+      - inkscape
+      - irssi
       - keepassxc
       - libreoffice
       - minicom
+      - nethack-console
       - nextcloud-desktop
+      - obs-studio
       - rdesktop
       - sakura
+      - scribus
       - smbclient
+      - spotify-client
       - task-cinnamon-desktop
       - tigervnc-viewer
+      - transmission
       - vlc
       - wireshark
 

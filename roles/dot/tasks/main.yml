@@ -1,6 +1,9 @@
 ---
-- include: x11.yml
-  when: ansible_pkg_mgr == 'apt'
+- include: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_pkg_mgr }}.yml'
+      skip: true
 
 - name: Install rbenv
   git:

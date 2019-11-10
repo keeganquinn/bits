@@ -19,6 +19,13 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
+- name: Add spotify APT key
+  become: yes
+  apt_key:
+    url: https://download.spotify.com/debian/pubkey.gpg
+    state: present
+  when: ansible_architecture == 'x86_64'
+
 - name: Add yarn APT key
   become: yes
   apt_key:
@@ -43,8 +50,8 @@
       - bind9utils
       - curl
       - deborphan
+      - dos2unix
       - emacs
-      - ffmpeg
       - file
       - finger
       - git
@@ -52,8 +59,10 @@
       - mlocate
       - nmap
       - nextcloud-desktop-cmd
+      - p7zip
       - rsync
       - screen
       - sox
       - tcpdump
+      - unrar
       - unzip

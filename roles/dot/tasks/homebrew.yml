@@ -1,0 +1,31 @@
+---
+- name: Install desktop brews
+  homebrew:
+    state: present
+    name:
+      - ffmpeg
+      - irssi
+      - minicom
+      - nethack
+
+- name: Install desktop casks
+  homebrew_cask:
+    state: present
+    name:
+      - android-file-transfer
+      - blender
+      - fontforge
+      - gimp
+      - handbrake
+      - inkscape
+      - libreoffice
+      - macpass
+      - nextcloud
+      - obs
+      - scribus
+      - spotify
+      - transmission
+      - vcv-rack
+      - virtualbox
+      - vlc
+      - wireshark

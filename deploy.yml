@@ -25,7 +25,6 @@
   hosts: scrap.quinn.tk
 
   roles:
-    - comfort
     - dot
     - intranet
     - qa

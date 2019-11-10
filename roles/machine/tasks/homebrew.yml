@@ -29,20 +29,4 @@
   homebrew_cask:
     state: present
     name:
-      - android-file-transfer
-      - blender
       - emacs
-      - fontforge
-      - gimp
-      - handbrake
-      - inkscape
-      - libreoffice
-      - macpass
-      - nethackcocoa
-      - nextcloud
-      - obs
-      - scribus
-      - transmission
-      - vcv-rack
-      - virtualbox
-      - vlc
