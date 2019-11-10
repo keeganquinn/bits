@@ -22,7 +22,9 @@
 - name: Install build casks
   homebrew_cask:
     state: present
-    name: android-platform-tools
+    name:
+      - android-platform-tools
+      - android-studio
 
 - name: Link imagemagick package on Homebrew
   shell: brew link --force imagemagick@6

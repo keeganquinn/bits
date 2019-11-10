@@ -30,8 +30,6 @@
     state: present
     name:
       - android-file-transfer
-      - android-platform-tools
-      - android-studio
       - blender
       - emacs
       - fontforge
@@ -39,6 +37,7 @@
       - handbrake
       - inkscape
       - libreoffice
+      - macpass
       - nethackcocoa
       - nextcloud
       - obs
