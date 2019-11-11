@@ -23,6 +23,10 @@ Host athlon
 
 
 # Local machines
+Host artifact
+    Hostname artifact.local
+    ForwardAgent yes
+
 Host one
     Hostname one.local
     ForwardAgent yes
