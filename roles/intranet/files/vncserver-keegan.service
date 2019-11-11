@@ -1,17 +1,18 @@
 [Unit]
-Description=TightVNC server :1 for keegan
+Description=TigerVNC server :1 for keegan
 After=syslog.target network.target
 
 [Service]
-Type=forking
+Type=simple
 User=keegan
 Group=keegan
+PAMName=login
 WorkingDirectory=/home/keegan
 
-PIDFile=/home/keegan/.vnc/%H:1.pid
-ExecStartPre=-/usr/bin/vncserver -kill :1 > /dev/null 2>&1
-ExecStart=/usr/bin/vncserver -geometry 1280x720 -localhost -nolisten tcp :1
-ExecStop=/usr/bin/vncserver -kill :1
+PIDFile=/home/%u/.vnc/%H:1.pid
+ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill :1 > /dev/null 2>&1 || :'
+ExecStart=/usr/bin/vncserver :1 -geometry 1280x720 -nolisten tcp -fg
+ExecStop=/bin/sh -c '/usr/bin/vncserver -kill :1 > /dev/null 2>&1 || :'
 
 [Install]
 WantedBy=multi-user.target
