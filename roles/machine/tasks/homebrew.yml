@@ -30,3 +30,4 @@
     state: present
     name:
       - emacs
+      - homebrew/cask-fonts/font-hack

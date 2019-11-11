@@ -47,6 +47,7 @@
       - emacs
       - file
       - finger
+      - fonts-hack
       - git
       - lftp
       - mlocate
