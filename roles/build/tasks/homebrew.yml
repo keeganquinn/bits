@@ -8,7 +8,6 @@
       - bfg
       - ghostscript
       - graphviz
-      - heroku
       - imagemagick@6
       - node
       - pkg-config
