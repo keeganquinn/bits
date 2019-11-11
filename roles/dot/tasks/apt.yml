@@ -37,19 +37,3 @@
   become: yes
   copy: src=kernel-img.conf dest=/etc/kernel-img.conf
   notify: update grub
-
-- name: Install snapd
-  become: yes
-  apt:
-    state: present
-    name: snapd
-  when: ansible_architecture == 'x86_64'
-
-- name: Install desktop snaps
-  become: yes
-  snap:
-    state: present
-    name:
-      - discord
-      - spotify
-  when: ansible_architecture == 'x86_64'
