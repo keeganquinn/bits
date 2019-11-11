@@ -25,13 +25,21 @@
       - rdesktop
       - sakura
       - scribus
+      - snapd
       - smbclient
-      - spotify-client
       - task-cinnamon-desktop
       - tigervnc-viewer
       - transmission
       - vlc
       - wireshark
+
+- name: Install desktop snaps
+  become: yes
+  snap:
+    state: present
+    name:
+      - discord
+      - spotify
 
 - name: Copy the grub default file
   become: yes

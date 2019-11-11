@@ -19,13 +19,6 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
-- name: Add spotify APT key
-  become: yes
-  apt_key:
-    url: https://download.spotify.com/debian/pubkey.gpg
-    state: present
-  when: ansible_architecture == 'x86_64'
-
 - name: Add yarn APT key
   become: yes
   apt_key:
@@ -37,7 +30,7 @@
   become: yes
   copy: src='sources.list.{{ ansible_architecture }}' dest=/etc/apt/sources.list
 
-- name: Update and upgrade packages
+- name: Upgrade packages
   become: yes
   apt: update_cache=yes upgrade=dist
 
