@@ -12,6 +12,7 @@
       - ipv6calc
       - jenkins
       - motion
+      - mumble-server
       - olsrd
       - openvpn
       - php
