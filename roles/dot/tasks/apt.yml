@@ -17,7 +17,6 @@
       - minicom
       - mumble
       - nethack-console
-      - nextcloud-desktop
       - obs-studio
       - rdesktop
       - sakura
@@ -28,6 +27,13 @@
       - transmission
       - vlc
       - wireshark
+
+- name: Install nextcloud-desktop from testing
+  become: yes
+  apt:
+    state: present
+    name: nextcloud-desktop
+    default_release: testing
 
 - name: Copy the grub default file
   become: yes

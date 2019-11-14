@@ -26,6 +26,10 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
+- name: Copy APT default release configuration
+  become: yes
+  copy: src=99defaultrelease dest=/etc/apt/apt.conf.d/
+
 - name: Copy APT sources
   become: yes
   copy: src='sources.list.{{ ansible_architecture }}' dest=/etc/apt/sources.list
@@ -52,7 +56,6 @@
       - lftp
       - mlocate
       - nmap
-      - nextcloud-desktop-cmd
       - p7zip
       - rsync
       - screen
@@ -60,3 +63,10 @@
       - tcpdump
       - unrar
       - unzip
+
+- name: Install nextcloud-desktop-cmd from testing
+  become: yes
+  apt:
+    state: present
+    name: nextcloud-desktop-cmd
+    default_release: testing
