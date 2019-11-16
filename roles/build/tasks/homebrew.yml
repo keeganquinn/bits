@@ -13,7 +13,6 @@
       - pkg-config
       - postgresql
       - redis
-      - shellcheck
       - sloccount
       - tidy-html5
       - yarn
@@ -29,3 +28,13 @@
   shell: brew link --force imagemagick@6
   args:
     creates: /usr/local/lib/ImageMagick
+
+- name: Check for shellcheck
+  stat: path=/usr/local/bin/shellcheck
+  register: shellcheck_result
+
+- name: Install shellcheck brew
+  homebrew:
+    state: present
+    name: shellcheck
+  when: shellcheck_result.stat.exists == False
