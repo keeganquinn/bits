@@ -4,8 +4,10 @@
   apt:
     state: present
     name:
+      - apacheds
       - cups
       - dnsmasq
+      - dovecot-imapd
       - firmware-linux-nonfree
       - icecast2
       - iftop

@@ -13,6 +13,7 @@
     state: present
     name:
       - android-file-transfer
+      - apache-directory-studio
       - blender
       - discord
       - fontforge
