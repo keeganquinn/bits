@@ -1,6 +1,5 @@
 *nat
 -A POSTROUTING -o eth0 -j MASQUERADE
--A PREROUTING -p tcp --dport 389 -j REDIRECT --to-ports 10389
 COMMIT
 
 *filter
