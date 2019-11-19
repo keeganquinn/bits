@@ -71,8 +71,5 @@
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
-(if (string-equal "darwin" (symbol-name system-type))
-    (custom-set-faces
-     '(default ((t (:family "Hack" :foundry "unknown" :slant normal :weight normal :height 110 :width normal)))))
-  (custom-set-faces
-   '(default ((t (:family "Hack" :foundry "unknown" :slant normal :weight normal :height 82 :width normal))))))
+(custom-set-faces
+   '(default ((t (:family "Hack" :foundry "unknown" :slant normal :weight normal :height 96 :width normal)))))
