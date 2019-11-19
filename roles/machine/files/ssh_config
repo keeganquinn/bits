@@ -12,7 +12,6 @@ Host pi
 Host scrap
     Hostname scrap.quinn.tk
     ForwardAgent yes
-    ForwardX11 yes
 
 
 # Friendly boxes
@@ -40,7 +39,6 @@ Host zero
 Host electron
     Hostname electron.quinn.tk
     ForwardAgent yes
-    ForwardX11 yes
 
 Host lilguy
     Hostname lilguy.quinn.tk
