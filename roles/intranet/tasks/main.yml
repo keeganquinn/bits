@@ -8,11 +8,14 @@
       - cups
       - dnsmasq
       - dovecot-imapd
+      - dovecot-ldap
+      - dovecot-lmtpd
       - firmware-linux-nonfree
       - icecast2
       - iftop
       - ipv6calc
       - jenkins
+      - ldap-utils
       - motion
       - mumble-server
       - olsrd
