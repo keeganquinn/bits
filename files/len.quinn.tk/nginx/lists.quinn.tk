@@ -34,15 +34,15 @@ server {
     access_log /var/log/nginx/lists.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/lists.quinn.tk-error.log warn;
 
-    location / {
-        return 301 https://lists.quinn.tk/cgi-bin/mailman/listinfo;
+    location = / {
+        return 301 /listinfo;
     }
     location /.well-known {
          alias /srv/www/lists.quinn.tk/.well-known;
     }
-    location /cgi-bin/mailman {
-        root /usr/lib/;
-        fastcgi_split_path_info (^/cgi-bin/mailman/[^/]*)(.*)$;
+    location / {
+        root /usr/lib/cgi-bin/mailman/;
+        fastcgi_split_path_info (^/[^/]*)(.*)$;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param PATH_INFO $fastcgi_path_info;
@@ -56,5 +56,8 @@ server {
     location /pipermail {
         alias /var/lib/mailman/archives/public;
         autoindex on;
+    }
+    location ~ ^/cgi-bin/mailman(/.*)?$ {
+        return 301 $1;
     }
 }
