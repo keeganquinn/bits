@@ -4,6 +4,7 @@
   apt:
     state: present
     name:
+      - ansible-lint
       - autoconf
       - bison
       - build-essential

@@ -3,6 +3,7 @@
   homebrew:
     state: present
     name:
+      - ansible-lint
       - autoconf
       - automake
       - bfg
