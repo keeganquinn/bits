@@ -155,7 +155,7 @@
 - name: Run setup script for Redmine
   become: yes
   become_user: deploy
-  shell: ./qtk_redmine.sh
+  command: ./qtk_redmine.sh
   args:
     chdir: /srv/rails/redmine/current
     creates: /srv/rails/redmine/current/qtk_redmine.stamp

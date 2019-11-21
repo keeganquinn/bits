@@ -26,7 +26,7 @@
       - android-studio
 
 - name: Link imagemagick package on Homebrew
-  shell: brew link --force imagemagick@6
+  command: brew link --force imagemagick@6
   args:
     creates: /usr/local/lib/ImageMagick
 
@@ -38,4 +38,4 @@
   homebrew:
     state: present
     name: shellcheck
-  when: shellcheck_result.stat.exists == False
+  when: not shellcheck_result.stat.exists

@@ -158,14 +158,14 @@
 - name: Install Ruby 2.6.5 for the jenkins user
   become: yes
   become_user: jenkins
-  shell: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.6.5
+  command: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.6.5
   args:
     creates: /var/lib/jenkins/.rbenv/versions/2.6.5
 
 - name: Install Bundler for the jenkins user
   become: yes
   become_user: jenkins
-  shell: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.0.2
+  command: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.0.2
   environment:
     RBENV_VERSION: 2.6.5
   args:

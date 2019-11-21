@@ -18,47 +18,47 @@
     version: master
 
 - name: Install Ruby 2.6.5
-  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.6.5'
+  command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.6.5'
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5'
 
 - name: Install Bundler for Ruby 2.6.5
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.0.2'
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.0.2'
   environment:
     RBENV_VERSION: 2.6.5
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.0.2'
 
 - name: Install haml for Ruby 2.6.5
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install haml'
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install haml'
   environment:
     RBENV_VERSION: 2.6.5
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/bin/haml'
 
 - name: Install rubocop-performance for Ruby 2.6.5
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-performance:1.5.0'
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-performance:1.5.0'
   environment:
     RBENV_VERSION: 2.6.5
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/rubocop-performance-1.5.0'
 
 - name: Install rubocop-rspec for Ruby 2.6.5
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec:1.36.0'
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec:1.36.0'
   environment:
     RBENV_VERSION: 2.6.5
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/rubocop-rspec-1.36.0'
 
 - name: Install Sass for Ruby 2.6.5
-  shell: '{{ ansible_env.HOME }}/.rbenv/shims/gem install sass'
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install sass'
   environment:
     RBENV_VERSION: 2.6.5
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/bin/scss'
 
 - name: Set default Ruby
-  shell: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
+  command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
   args:
     creates: '{{ ansible_env.HOME }}/.rbenv/version'
 

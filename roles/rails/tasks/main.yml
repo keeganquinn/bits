@@ -100,14 +100,14 @@
 - name: Install Ruby 2.6.5 for the deploy user
   become: yes
   become_user: deploy
-  shell: /home/deploy/.rbenv/bin/rbenv install -s 2.6.5
+  command: /home/deploy/.rbenv/bin/rbenv install -s 2.6.5
   args:
     creates: /home/deploy/.rbenv/versions/2.6.5
 
 - name: Install Bundler for the deploy user
   become: yes
   become_user: deploy
-  shell: /home/deploy/.rbenv/shims/gem install bundler:2.0.2
+  command: /home/deploy/.rbenv/shims/gem install bundler:2.0.2
   environment:
     RBENV_VERSION: 2.6.5
   args:
@@ -116,7 +116,7 @@
 - name: Install Foreman for the deploy user
   become: yes
   become_user: deploy
-  shell: /home/deploy/.rbenv/shims/gem install foreman
+  command: /home/deploy/.rbenv/shims/gem install foreman
   environment:
     RBENV_VERSION: 2.6.5
   args:
