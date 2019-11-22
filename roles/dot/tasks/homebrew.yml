@@ -14,6 +14,7 @@
     name:
       - android-file-transfer
       - apache-directory-studio
+      - barrier
       - blender
       - discord
       - fontforge
