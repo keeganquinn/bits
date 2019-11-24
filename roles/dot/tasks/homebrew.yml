@@ -14,7 +14,6 @@
     name:
       - android-file-transfer
       - apache-directory-studio
-      - barrier
       - blender
       - discord
       - fontforge
@@ -32,3 +31,13 @@
       - vcv-rack
       - virtualbox
       - vlc
+
+- name: Check for barrier
+  stat: path=/Applications/Barrier.app
+  register: barrier_result
+
+- name: Install barrier cask
+  homebrew_cask:
+    state: present
+    name: barrier
+  when: not barrier_result.stat.exists
