@@ -14,8 +14,11 @@ smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
 smtpd_tls_security_level = may
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtpd_tls_auth_only = yes
+
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
 smtpd_sasl_local_domain = quinn.tk
-smtpd_sasl_security_options = noanonymous noplaintext
+smtpd_sasl_security_options = noanonymous
 smtpd_sasl_tls_security_options = noanonymous
 
 smtp_tls_security_level = may
