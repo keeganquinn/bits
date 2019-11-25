@@ -8,10 +8,10 @@ eval "$(rbenv init -)"
 set -e
 
 PROJECTS=(
-    "animamagica /srv/data/git/animamagica.git"
-    "basslin.es /srv/data/git/basslin.es.git"
+    "animamagica /srv/git/animamagica.git"
+    "basslin.es /srv/git/basslin.es.git"
     "cwnmyr https://github.com/keeganquinn/cwnmyr.git"
-    "partystarter /srv/data/git/partystarter.git")
+    "partystarter /srv/git/partystarter.git")
 
 scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
