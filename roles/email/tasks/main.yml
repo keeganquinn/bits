@@ -152,7 +152,9 @@
 
 - name: Copy postfix master configuration
   become: yes
-  copy: src=master.cf dest=/etc/postfix/master.cf
+  copy:
+    src: '{{ inventory_hostname }}/postfix/master.cf'
+    dest: /etc/postfix/master.cf
   notify: restart postfix
 
 - name: Copy postfix rewrite file
