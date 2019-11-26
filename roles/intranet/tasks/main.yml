@@ -10,6 +10,8 @@
       - dovecot-imapd
       - dovecot-ldap
       - dovecot-lmtpd
+      - dovecot-managesieved
+      - dovecot-sieve
       - firmware-linux-nonfree
       - icecast2
       - iftop
@@ -37,6 +39,8 @@
       - postgresql
       - rsnapshot
       - samba
+      - spamassassin
+      - spamc
       - tigervnc-standalone-server
       - zabbix-frontend-php
       - zabbix-server-pgsql
