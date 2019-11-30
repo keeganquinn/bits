@@ -15,6 +15,7 @@
       - firmware-linux-nonfree
       - icecast2
       - iftop
+      - inspircd
       - ipv6calc
       - jenkins
       - ldap-utils
