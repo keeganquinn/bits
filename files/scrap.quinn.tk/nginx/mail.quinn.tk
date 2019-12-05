@@ -41,6 +41,8 @@ server {
     root /srv/www/mail.quinn.tk;
     index index.php;
 
+    client_max_body_size 16g;
+
     location ~ \.php$ {
         fastcgi_pass roundcube_handler;
         include fastcgi_params;
