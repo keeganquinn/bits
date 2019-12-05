@@ -3,3 +3,5 @@
 	email = keegan@quinn.tk
 [push]
 	default = simple
+[core]
+	excludesfile = ~/.gitignore_global

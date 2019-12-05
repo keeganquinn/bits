@@ -17,6 +17,9 @@
 - name: Copy the git configuration file
   copy: src=gitconfig dest='{{ ansible_env.HOME }}/.gitconfig'
 
+- name: Copy the global git ignore list
+  copy: src=gitignore_global dest='{{ ansible_env.HOME }}/.gitignore_global'
+
 - name: Copy the screen configuration file
   copy: src=screenrc dest='{{ ansible_env.HOME }}/.screenrc'
 

@@ -1,0 +1,7 @@
+# Never store or copy
+.DS_Store
+.\#*
+**.orig
+**.swp
+*~
+\#*\#
