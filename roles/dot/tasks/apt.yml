@@ -19,12 +19,14 @@
       - mumble
       - nethack-console
       - obs-studio
+      - openbox
       - rdesktop
       - sakura
       - scribus
       - smbclient
       - task-cinnamon-desktop
       - tigervnc-viewer
+      - tint2
       - transmission
       - vlc
       - wireshark
@@ -35,6 +37,11 @@
     state: present
     name: nextcloud-desktop
     default_release: testing
+
+- name: Copy the openbox autostart script
+  copy:
+    src: autostart.sh
+    dest: '{{ ansible_env.HOME }}/.config/openbox/autostart.sh'
 
 - name: Copy the grub default file
   become: yes
