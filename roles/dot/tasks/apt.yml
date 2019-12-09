@@ -39,6 +39,11 @@
     name: nextcloud-desktop
     default_release: testing
 
+- name: Create openbox configuration directory
+  file:
+    path: '{{ ansible_env.HOME }}/.config/openbox'
+    state: directory
+
 - name: Copy the openbox autostart script
   copy:
     src: autostart.sh
