@@ -42,6 +42,7 @@
       - samba
       - spamassassin
       - spamc
+      - tftpd-hpa
       - tigervnc-standalone-server
       - zabbix-frontend-php
       - zabbix-server-pgsql
