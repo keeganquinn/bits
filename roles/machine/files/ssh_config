@@ -45,6 +45,11 @@ Host lilguy
     User root
     ForwardAgent yes
 
+Host sink
+    Hostname sink.quinn.tk
+    User root
+    ForwardAgent yes
+
 Host wave
     Hostname wave.quinn.tk
     User root
