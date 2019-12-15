@@ -3,10 +3,15 @@
   homebrew:
     state: present
     name:
-      - ffmpeg
       - irssi
       - minicom
       - nethack
+
+- name: Install ffmpeg brew
+  homebrew:
+    name: homebrew-ffmpeg/ffmpeg/ffmpeg
+    install_options: with-fdk-aac
+    state: present
 
 - name: Install desktop casks
   homebrew_cask:
