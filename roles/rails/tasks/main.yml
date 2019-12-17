@@ -49,14 +49,6 @@
     group: deploy
     mode: 0755
 
-- name: Copy Rails configuration
-  become: yes
-  copy:
-    src: '{{ inventory_hostname }}/rails/'
-    dest: /etc/rails
-    owner: deploy
-    group: deploy
-
 - name: Install rbenv for the deploy user
   become: yes
   become_user: deploy
