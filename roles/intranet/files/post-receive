@@ -34,11 +34,13 @@ git_multimail.REVISION_INTRO_TEMPLATE = """\
 in repository %(repo_shortname)s.
 
 """
+git_multimail.REVISION_FOOTER_TEMPLATE = ""
 git_multimail.COMBINED_INTRO_TEMPLATE = """\
 %(pusher)s pushed a commit to %(refname_type)s %(short_refname)s
 in repository %(repo_shortname)s.
 
 """
+git_multimail.COMBINED_FOOTER_TEMPLATE = ""
 
 # Specify which "git config" section contains the configuration for
 # git-multimail:
