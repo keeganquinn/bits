@@ -1,3 +1,2 @@
 gem 'dotenv'
-gem 'foreman'
 gem 'puma', '~> 3.7'
