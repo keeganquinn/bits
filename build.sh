@@ -7,6 +7,7 @@ set -ex
 export PATH="/usr/local/sbin:/usr/sbin:$PATH"
 
 find . -name '*.html' -print0 | xargs -0 -n1 -t tidy -eq
+find . -name '*.sh' -print0 | xargs -0 -n1 -t shellcheck
 
 ansible-lint deploy.yml dot.yml
 
