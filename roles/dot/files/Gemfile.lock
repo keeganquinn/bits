@@ -1,0 +1,50 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.0)
+    ffi (1.11.3)
+    foreman (0.86.0)
+    haml (5.1.2)
+      temple (>= 0.8.0)
+      tilt
+    jaro_winkler (1.5.4)
+    parallel (1.19.1)
+    parser (2.7.0.0)
+      ast (~> 2.4.0)
+    rainbow (3.0.0)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+    rubocop (0.78.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.5.2)
+      rubocop (>= 0.71.0)
+    rubocop-rspec (1.37.1)
+      rubocop (>= 0.68.1)
+    ruby-progressbar (1.10.1)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    temple (0.8.2)
+    tilt (2.0.10)
+    unicode-display_width (1.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  foreman
+  haml
+  rubocop-performance
+  rubocop-rspec
+  sass
+
+BUNDLED WITH
+   2.0.2

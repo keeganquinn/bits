@@ -11,6 +11,9 @@ cleanup() {
 trap cleanup INT TERM
 
 
+bundle update --gemfile roles/dot/files/Gemfile
+
+
 # Keep version/paths in sync with roles/redmine/tasks/main.yml
 
 redmine_version="redmine-4.0.6"
@@ -32,7 +35,7 @@ cp roles/redmine/files/database.yml \
 cp roles/redmine/files/ruby-version \
    "${scratch}/${redmine_version}/.ruby-version"
 
-(cd "${scratch}/${redmine_version}" && gem install bundler && bundle update)
+(cd "${scratch}/${redmine_version}" && bundle update)
 cp "${scratch}/${redmine_version}/Gemfile.lock" roles/redmine/files/
 
 
