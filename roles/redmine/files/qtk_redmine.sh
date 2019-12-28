@@ -10,7 +10,6 @@ export REDMINE_LANG=en
 "${rbenv}" exec gem install bundler
 "${rbenv}" exec bundle install
 "${rbenv}" exec bundle exec rake generate_secret_token
-"${rbenv}" exec bundle exec rake assets:precompile
 "${rbenv}" exec bundle exec rake db:migrate
 "${rbenv}" exec bundle exec rake redmine:load_default_data
 "${rbenv}" sudo foreman export systemd /etc/systemd/system \
