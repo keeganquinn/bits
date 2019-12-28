@@ -17,45 +17,39 @@
     dest: '{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build'
     version: master
 
-- name: Install Ruby 2.6.5
-  command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.6.5'
+- name: Install Ruby 2.7.0
+  command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.7.0'
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.0'
 
-- name: Install Bundler for Ruby 2.6.5
-  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.0.2'
+- name: Install Bundler for Ruby 2.7.0
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.1.2'
   environment:
-    RBENV_VERSION: 2.6.5
+    RBENV_VERSION: 2.7.0
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.0.2'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/bundler-2.1.2'
 
-- name: Install haml for Ruby 2.6.5
-  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install haml'
-  environment:
-    RBENV_VERSION: 2.6.5
-  args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/bin/haml'
+- name: Create rbenv gems directory
+  file:
+    path: '{{ ansible_env.HOME }}/.rbenv/gems'
+    state: directory
 
-- name: Install rubocop-performance for Ruby 2.6.5
-  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-performance:1.5.0'
-  environment:
-    RBENV_VERSION: 2.6.5
-  args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/rubocop-performance-1.5.0'
+- name: Copy standard Gemfile
+  copy:
+    src: Gemfile
+    dest: '{{ ansible_env.HOME }}/.rbenv/gems/Gemfile'
 
-- name: Install rubocop-rspec for Ruby 2.6.5
-  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install rubocop-rspec:1.36.0'
-  environment:
-    RBENV_VERSION: 2.6.5
-  args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/rubocop-rspec-1.36.0'
+- name: Copy standard Gemfile.lock
+  copy:
+    src: Gemfile.lock
+    dest: '{{ ansible_env.HOME }}/.rbenv/gems/Gemfile.lock'
 
-- name: Install Sass for Ruby 2.6.5
-  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install sass'
+- name: Install standard gems for Ruby 2.7.0
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/bundle install --gemfile {{ ansible_env.HOME }}/.rbenv/gems/Gemfile'
   environment:
-    RBENV_VERSION: 2.6.5
+    RBENV_VERSION: 2.7.0
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.6.5/bin/scss'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.0/bin/scss'
 
 - name: Set default Ruby
   command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'

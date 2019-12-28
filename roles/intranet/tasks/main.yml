@@ -129,22 +129,6 @@
     job: /usr/bin/php -f /var/www/nextcloud/cron.php
     user: www-data
 
-- name: Install rbenv for the jenkins user
-  become: yes
-  become_user: jenkins
-  git:
-    repo: https://github.com/rbenv/rbenv.git
-    dest: /var/lib/jenkins/.rbenv
-    version: master
-
-- name: Install ruby-build for the jenkins user
-  become: yes
-  become_user: jenkins
-  git:
-    repo: https://github.com/rbenv/ruby-build.git
-    dest: /var/lib/jenkins/.rbenv/plugins/ruby-build
-    version: master
-
 - name: Copy the bashrc for the jenkins user
   become: yes
   copy:
@@ -161,18 +145,34 @@
     owner: jenkins
     group: jenkins
 
-- name: Install Ruby 2.6.5 for the jenkins user
+- name: Install rbenv for the jenkins user
   become: yes
   become_user: jenkins
-  command: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.6.5
+  git:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: /var/lib/jenkins/.rbenv
+    version: master
+
+- name: Install ruby-build for the jenkins user
+  become: yes
+  become_user: jenkins
+  git:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: /var/lib/jenkins/.rbenv/plugins/ruby-build
+    version: master
+
+- name: Install Ruby 2.7.0 for the jenkins user
+  become: yes
+  become_user: jenkins
+  command: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.7.0
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.6.5
+    creates: /var/lib/jenkins/.rbenv/versions/2.7.0
 
 - name: Install Bundler for the jenkins user
   become: yes
   become_user: jenkins
-  command: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.0.2
+  command: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.1.2
   environment:
-    RBENV_VERSION: 2.6.5
+    RBENV_VERSION: 2.7.0
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/bundler-2.0.2
+    creates: /var/lib/jenkins/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/bundler-2.1.2
