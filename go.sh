@@ -6,26 +6,6 @@ set -e
 
 ssh-add -l >/dev/null || ssh-add
 
-read -rs -p 'Vault password: ' vault_password
-echo
-
-
-scratch=$(mktemp -d)
-chmod 0700 "${scratch}"
-cleanup() {
-    rm -rf "${scratch}"
-    stty echo
-    exit
-}
-trap cleanup INT TERM
-
-export ANSIBLE_VAULT_PASSWORD_FILE="${scratch}/vault_password"
-echo "${vault_password}" > "${ANSIBLE_VAULT_PASSWORD_FILE}"
-
-
 grep -E -q "^$(hostname)$" ansible.hosts || ansible-playbook dot.yml
 
 ansible-playbook deploy.yml
-
-
-cleanup

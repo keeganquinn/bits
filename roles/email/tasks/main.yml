@@ -40,15 +40,6 @@
     src: '{{ inventory_hostname }}/motd'
     dest: /etc/motd
 
-- name: Copy sasldb2 file
-  become: yes
-  copy:
-    src: sasldb2
-    dest: /etc/sasldb2
-    owner: root
-    group: sasl
-    mode: 0660
-
 - name: Create postfix user
   become: yes
   user:
@@ -168,14 +159,6 @@
   become: yes
   copy: src=sasl-smtpd.conf dest=/etc/postfix/sasl/smtpd.conf
   notify: restart postfix
-
-- name: Copy postfix sasl_passwd file
-  become: yes
-  copy:
-    src: '{{ inventory_hostname }}/postfix/sasl_passwd'
-    dest: /etc/postfix/sasl_passwd
-    mode: 0600
-  notify: rebuild postfix sasl_passwd
 
 - name: Copy postfix transport file
   become: yes
