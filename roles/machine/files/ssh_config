@@ -27,11 +27,11 @@ Host artifact
     ForwardAgent yes
 
 Host one
-    Hostname one.local
+    Hostname one.quinn.tk
     ForwardAgent yes
 
 Host zero
-    Hostname zero.local
+    Hostname zero.quinn.tk
     ForwardAgent yes
 
 
