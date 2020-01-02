@@ -54,20 +54,6 @@
     - '{{ inventory_hostname }}/nginx/'
   notify: restart nginx
 
-- name: Copy SSL certificates
-  become: yes
-  copy:
-    src: ssl/certs/
-    dest: /etc/ssl/certs
-  notify: restart nginx
-
-- name: Copy SSL keys
-  become: yes
-  copy:
-    src: ssl/private/
-    dest: /etc/ssl/private
-  notify: restart nginx
-
 - name: Create /etc/letsencrypt/renewal-hooks
   become: yes
   file:

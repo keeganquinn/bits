@@ -124,16 +124,6 @@
   become: yes
   copy: src=opendkim/keys/mail.txt dest=/etc/opendkim/keys/mail.txt
 
-- name: Copy opendkim private key
-  become: yes
-  copy:
-    src: opendkim/keys/mail.private
-    dest: /etc/opendkim/keys/mail.private
-    owner: opendkim
-    group: opendkim
-    mode: 0600
-  notify: restart opendkim
-
 - name: Copy postfix main configuration
   become: yes
   copy:
