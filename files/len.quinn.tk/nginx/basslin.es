@@ -103,6 +103,21 @@ server {
         }
     }
 
+    location /releases.json {
+        add_header Access-Control-Allow-Origin "*";
+        add_header Access-Control-Allow-Methods "POST,GET,OPTIONS";
+        add_header Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Origin,Content-Type,Content-Disposition,Range";
+        add_header Access-Control-Expose-Headers 'Content-Length,Content-Range';
+
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_redirect off;
+        proxy_pass http://bln_puma;
+    }
+
     location ~ ^/(.*)/ads.txt$ {
         return 301 /ads.txt;
     }
