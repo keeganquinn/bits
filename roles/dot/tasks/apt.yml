@@ -32,12 +32,12 @@
       - vlc
       - wireshark
 
-- name: Install nextcloud-desktop from testing
+- name: Install nextcloud-desktop from backports
   become: yes
   apt:
     state: present
     name: nextcloud-desktop
-    default_release: testing
+    default_release: buster-backports
 
 - name: Create openbox configuration directory
   file:

@@ -64,9 +64,9 @@
       - unrar
       - unzip
 
-- name: Install nextcloud-desktop-cmd from testing
+- name: Install nextcloud-desktop-cmd from backports
   become: yes
   apt:
     state: present
     name: nextcloud-desktop-cmd
-    default_release: testing
+    default_release: buster-backports
