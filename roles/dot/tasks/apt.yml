@@ -6,7 +6,6 @@
     name:
       - barrier
       - blender
-      - ebumeter
       - ffmpeg
       - ffplay
       - fontforge
