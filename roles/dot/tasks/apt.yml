@@ -8,6 +8,7 @@
       - blender
       - ffmpeg
       - ffplay
+      - flac
       - fontforge
       - gimp
       - handbrake-gtk
@@ -16,6 +17,7 @@
       - keepassxc
       - libreoffice
       - minicom
+      - mp4v2-utils
       - mumble
       - nethack-console
       - obs-studio

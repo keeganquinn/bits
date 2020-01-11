@@ -3,8 +3,10 @@
   homebrew:
     state: present
     name:
+      - flac
       - irssi
       - minicom
+      - mp4v2
       - nethack
 
 - name: Install ffmpeg brew
