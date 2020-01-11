@@ -6,6 +6,7 @@
     name:
       - ansible-lint
       - autoconf
+      - bats
       - bison
       - build-essential
       - cpanminus
