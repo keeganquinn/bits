@@ -10,8 +10,10 @@ set -e
 PROJECTS=(
     "animamagica /srv/git/animamagica.git"
     "basslin.es /srv/git/basslin.es.git"
+    "bln_player https://github.com/keeganquinn/bln_player.git"
     "cwnmyr https://github.com/keeganquinn/cwnmyr.git"
-    "partystarter /srv/git/partystarter.git")
+    "partystarter /srv/git/partystarter.git"
+    "quinn.tk /srv/git/quinn.tk.git")
 
 scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
@@ -26,10 +28,12 @@ for pspec in "${PROJECTS[@]}"; do
     work="${scratch:?}/${project[0]}"
 
     git clone -q "${project[1]}" "${work}"
-    if ! yarn outdated --cwd "${work}" >/dev/null; then
+    if [ -f "${work}/yarn.lock" ] \
+           && ! yarn outdated --cwd "${work}" >/dev/null; then
         echo "${project[0]}: JS dependencies need update"
     fi
-    if ! (cd "${work}"; bundle outdated --strict) >/dev/null; then
+    if [ -f "${work}/Gemfile.lock" ] \
+           && ! (cd "${work}"; bundle outdated --strict) >/dev/null; then
         echo "${project[0]}: Ruby dependencies need update"
     fi
     rm -rf "${work}"
