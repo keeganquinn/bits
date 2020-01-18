@@ -49,6 +49,7 @@
       - deborphan
       - dos2unix
       - emacs
+      - figlet
       - file
       - finger
       - fonts-hack

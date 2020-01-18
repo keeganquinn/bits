@@ -18,6 +18,7 @@
     name:
       - bind
       - dos2unix
+      - figlet
       - lftp
       - nmap
       - p7zip
