@@ -22,6 +22,7 @@
       - nethack-console
       - obs-studio
       - openbox
+      - powermgmt-base
       - rdesktop
       - sakura
       - scribus
