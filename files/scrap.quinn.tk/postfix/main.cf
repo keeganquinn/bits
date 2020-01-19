@@ -1,4 +1,5 @@
 mydomain = quinn.tk
+mydestination = scrap.quinn.tk, cloud.quinn.tk, localhost
 
 compatibility_level = 2
 mynetworks_style = host
