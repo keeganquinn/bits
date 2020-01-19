@@ -10,6 +10,7 @@
       - ffplay
       - flac
       - fontforge
+      - forensics-full
       - gimp
       - handbrake-gtk
       - inkscape
