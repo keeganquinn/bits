@@ -43,6 +43,7 @@
   apt:
     state: present
     name:
+      - aide
       - apt-listchanges
       - bind9utils
       - curl
