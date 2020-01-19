@@ -72,3 +72,7 @@
     state: present
     name: nextcloud-desktop-cmd
     default_release: buster-backports
+
+- name: Copy 80_aide_local config fragment
+  become: yes
+  copy: src=80_aide_local dest=/etc/aide/aide.conf.d/80_aide_local

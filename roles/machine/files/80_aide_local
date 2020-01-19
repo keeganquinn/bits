@@ -1,0 +1,4 @@
+/home$ VarDir
+!/home/.*
+/srv$ VarDir
+!/srv/.*
