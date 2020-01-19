@@ -10,6 +10,7 @@
       - logcheck
       - nginx
       - rkhunter
+      - sshguard
       - zabbix-agent
 
 - name: Copy fail2ban configuration file
