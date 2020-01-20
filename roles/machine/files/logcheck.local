@@ -1,17 +1,26 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dhclient\[[[:digit:]]+\]: DHCP(REQUEST|RELEASE) (for [.0-9]{7,15} )?on [[:alnum:].-]+ to [.0-9]{7,15} port 67( \(xid=0x[0-9a-f]{1,8}\))?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?imap\([[:alnum:]]+\)<.*><.*>: Logged out .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\)<.*><.*>: sieve: msgid=<?.*>?( \(((added by )?[^[:space:]]+|sfid-[_[:xdigit:]]+)\)?)?[[:space:]]*: (stored mail into mailbox '.*'|marked message to be discarded if not explicitly delivered \(discard action\)|(forwarded to|sent vacation response to|discarding vacation response for message implicitly delivered to|not sending vacation response to system address|discarding vacation response to mailinglist recipient|discarded vacation reply to|discarding vacation response to (auto-submitted|precedence=(bulk|Bulk|list)) message from|discarded duplicate (vacation response|forward) to) <[^[:space:]]*>)$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([[:alnum:]]+\): Connect from local$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([[:alnum:]]+\): Disconnect from local: .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\): Connect from local$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\): Disconnect from local: .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Login: user=<[-_.@[:alnum:]]+>, method=[[:alnum:]-]+, rip=[.:[:xdigit:]]+, lip=[.:[:xdigit:]]+(, (TLS( handshake)?|secured))?, .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/dnsblog\[[[:digit:]]+\]: addr [^[:space:]]+ listed by domain [^[:space:]]+ as [^[:space:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/[ls]mtp\[[[:digit:]]+\]: [[:upper:][:digit:]]+: to=<[^[:space:]]+>,( orig_to=<[^[:space:]]+>,)? relay=[._[:alnum:]-]+\[[^[:space:]]+\](:[[:digit:]]{1,5})?, (conn_use=[[:digit:]]+, )?delay=[.[:digit:]]+(, delays=([.[:digit:]]+/){3}[.[:digit:]]+)?(, dsn=2(\.[[:digit:]]+){2})?, status=sent \(2[[:digit:]][[:digit:]] .+\)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+ to \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DNSBL rank [[:digit:]]+ for \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: PASS OLD \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: PREGREET [[:digit:]]+ after [^[:space:]]+ from \[[^[:space:]]+\]:[[:digit:]]+: .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: NOQUEUE: reject: RCPT from [-._[:alnum:]]*\[[.[:digit:]]+\]:[.[:digit:]]+: 550 5\.7\.1 Service unavailable; .*; from=<[^[:space:]]*>,( to=<[^[:space:]]+>,)? proto=E?SMTP, helo=<[^[:space:]]+>$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: WHITELISTED \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+ .*commands=[[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+ .*commands=[[:digit:]]+(/[[:digit:]]+)?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: [[:alnum:]]+: client=[^[:space:]]+, sasl_method=[-[:alnum:]]+, sasl_username=[-_.@[:alnum:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: lost connection after [[:upper:]]+( \([[:digit:]]+ bytes\))? from [._[:alnum:]-]+\[(unknown|[[:xdigit:].:]{3,39})\]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: timeout after [-[:upper:]]+( \([[:digit:]]+ bytes\))? from [^[:space:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: [-._[:alnum:]]+\[[.[:digit:]]+\]: SASL (LOGIN|PLAIN|(DIGEST|CRAM)-MD5|APOP) authentication failed(:[ [:alnum:]]*)?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (spamd|check|re(port|voke))\[[[:digit:]]+\]: (spamd: )?result: [.YN] [ [:digit:]-]+ - ([._[:alnum:],]+ )?scantime=[[:digit:].]+,size=[[:digit:]]+,(user=[^,]+,uid=[[:digit:]]+,required_score=[[:digit:].]+,rhost=[._[:alnum:]-]+,raddr=[[:digit:].]+,rport=[/[:alnum:].-]+,)?mid=(<[^[:space:]]+>|\(unknown\))(rmid=(<[^[:space:]]+>|\(unknown\)),)?,(bayes=[.[:digit:]]+(e-[[:digit:]]+)?,)?autolearn=(ham|spam|no|disabled|unavailable)(,shortcircuit=(ham|spam|no))? .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection closed by [:.[:xdigit:]]+ port [[:digit:]]+ \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnected from user [^[:space:]]+ [:[:xdigit:].]+ port [[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Attack from \"[^[:space:]]+\" on service [[:digit:]]+ with danger [[:digit:]]+.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Blocking \"[^[:space:]]+\" for [[:digit:]]+ secs \([[:digit:]]+ attacks in [[:digit:]]+ secs, after [[:digit:]]+ abuses over [[:digit:]]+ secs.\)$
