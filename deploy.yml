@@ -4,6 +4,13 @@
 
   roles:
     - machine
+    - deploy
+
+- name: Desktop machine configuration
+  hosts: electron.quinn.tk, scrap.quinn.tk
+
+  roles:
+    - dot
 
 - name: Core server configuration
   hosts: scrap.quinn.tk, len.quinn.tk
@@ -25,7 +32,6 @@
   hosts: scrap.quinn.tk
 
   roles:
-    - dot
     - intranet
     - qa
     - redmine

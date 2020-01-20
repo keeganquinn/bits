@@ -1,0 +1,36 @@
+---
+- name: Create deploy user
+  become: yes
+  user:
+    name: deploy
+    comment: Application Deployment
+    shell: /bin/bash
+    groups: sudo
+
+- name: Add the main SSH public key for the deploy user
+  become: yes
+  authorized_key:
+    user: deploy
+    key: "{{ lookup('file', 'roles/machine/files/authorized_keys') }}"
+
+- name: Add the deploy SSH public key for the deploy user
+  become: yes
+  authorized_key:
+    user: deploy
+    key: "{{ lookup('file', 'authorized_keys') }}"
+
+- name: Copy the bash configuration file for the deploy user
+  become: yes
+  copy:
+    src: roles/machine/files/bashrc
+    dest: /home/deploy/.bashrc
+    owner: deploy
+    group: deploy
+
+- name: Copy the profile for the deploy user
+  become: yes
+  copy:
+    src: roles/machine/files/profile
+    dest: /home/deploy/.profile
+    owner: deploy
+    group: deploy
