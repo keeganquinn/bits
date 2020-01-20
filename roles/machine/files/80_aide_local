@@ -1,4 +1,8 @@
-/home$ VarDir
 !/home/.*
-/srv$ VarDir
+!/run/.*
 !/srv/.*
+!/tmp/.*
+!/var/backups/.*
+!/var/lib/.*
+!/var/log/.*
+!/var/spool/.*
