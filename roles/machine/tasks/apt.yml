@@ -91,3 +91,7 @@
 - name: Copy rkhunter default file
   become: yes
   copy: src=rkhunter dest=/etc/default/rkhunter
+
+- name: Copy sshguard whitelist file
+  become: yes
+  copy: src=whitelist dest=/etc/sshguard/whitelist
