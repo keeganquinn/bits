@@ -33,11 +33,17 @@
     shell: /bin/bash
     groups: sudo
 
-- name: Copy the SSH public key for the deploy user
+- name: Add the main SSH public key for the deploy user
   become: yes
   authorized_key:
     user: deploy
     key: "{{ lookup('file', 'roles/machine/files/authorized_keys') }}"
+
+- name: Add the deploy SSH public key for the deploy user
+  become: yes
+  authorized_key:
+    user: deploy
+    key: "{{ lookup('file', 'authorized_keys') }}"
 
 - name: Copy rebundle script
   become: yes
