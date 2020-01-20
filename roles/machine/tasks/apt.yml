@@ -56,12 +56,15 @@
       - fonts-hack
       - git
       - lftp
+      - logcheck
       - mlocate
       - nmap
       - p7zip
+      - rkhunter
       - rsync
       - screen
       - sox
+      - sshguard
       - tcpdump
       - unrar
       - unzip
@@ -73,6 +76,14 @@
     name: nextcloud-desktop-cmd
     default_release: buster-backports
 
-- name: Copy 80_aide_local config fragment
+- name: Copy 80_aide_local configuration fragment
   become: yes
   copy: src=80_aide_local dest=/etc/aide/aide.conf.d/80_aide_local
+
+- name: Copy logcheck configuration file
+  become: yes
+  copy: src=logcheck.conf dest=/etc/logcheck/logcheck.conf
+
+- name: Copy rkhunter default file
+  become: yes
+  copy: src=rkhunter dest=/etc/default/rkhunter

@@ -7,10 +7,7 @@
       - certbot
       - fail2ban
       - fcgiwrap
-      - logcheck
       - nginx
-      - rkhunter
-      - sshguard
       - zabbix-agent
 
 - name: Copy fail2ban configuration file
@@ -21,14 +18,6 @@
     owner: root
     group: root
   notify: restart fail2ban
-
-- name: Copy logcheck configuration file
-  become: yes
-  copy: src=logcheck.conf dest=/etc/logcheck/logcheck.conf
-
-- name: Copy rkhunter default file
-  become: yes
-  copy: src=rkhunter dest=/etc/default/rkhunter
 
 - name: Generate Diffie-Hellman parameters for nginx
   become: yes
