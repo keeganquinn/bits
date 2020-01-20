@@ -84,6 +84,10 @@
   become: yes
   copy: src=logcheck.conf dest=/etc/logcheck/logcheck.conf
 
+- name: Copy logcheck local ignore file
+  become: yes
+  copy: src=logcheck.local dest=/etc/logcheck/ignore.d.server/local
+
 - name: Copy rkhunter default file
   become: yes
   copy: src=rkhunter dest=/etc/default/rkhunter

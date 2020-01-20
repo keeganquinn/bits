@@ -1,0 +1,5 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([[:alnum:]]+\): Connect from local$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/submission/smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/submission/smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+ ehlo=[[:digit:]]+ starttls=[[:digit:]]+ auth=[[:digit:]]+ mail=[[:digit:]]+ rcpt=[[:digit:]]+ data=[[:digit:]]+ quit=[[:digit:]]+ commands=[[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/submission/smtpd\[[[:digit:]]+\]: [[:alnum:]]+: client=[^[:space:]]+, sasl_method=[-[:alnum:]]+, sasl_username=[-_.@[:alnum:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Attack from \"[^[:space:]]+\" on service [[:digit:]]+ with danger [[:digit:]]+.$
