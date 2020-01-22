@@ -44,10 +44,10 @@
     - '{{ inventory_hostname }}/nginx/'
   notify: restart nginx
 
-- name: Create /etc/letsencrypt/renewal-hooks
+- name: Create /etc/letsencrypt/renewal-hooks/deploy
   become: yes
   file:
-    path: /etc/letsencrypt/renewal-hooks
+    path: /etc/letsencrypt/renewal-hooks/deploy
     state: directory
     mode: 0755
     owner: root
@@ -57,6 +57,6 @@
   become: yes
   copy:
     src: deploy.hook
-    dest: /etc/letsencrypt/renewal-hooks/deploy
+    dest: /etc/letsencrypt/renewal-hooks/deploy/nginx
     mode: 0755
   notify: renew certbot
