@@ -64,3 +64,14 @@ git_multimail.run_as_post_receive_hook(environment, mailer)
 trigger = "https://jenkins.quinn.tk/git/notifyCommit?url=" + os.getcwd()
 response = urllib2.urlopen(trigger)
 print response.read()
+
+
+# Trigger update in Redmine.
+rmconfig = git_multimail.Config('redminehook')
+rmproject = rmconfig.get('project')
+rmservicekey = rmconfig.get('servicekey')
+if rmproject and rmservicekey:
+    redmine = "https://redmine.quinn.tk/sys/fetch_changesets?id=" + \
+        rmproject + "&key=" + rmservicekey
+    rmresponse = urllib2.urlopen(redmine)
+    print rmresponse.read()
