@@ -1,0 +1,9 @@
+---
+- name: Install xmit packages
+  become: yes
+  apt:
+    state: present
+    name:
+      - icecast2
+      - inspircd
+      - mumble-server

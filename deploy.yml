@@ -28,6 +28,12 @@
     - build
     - rails
 
+- name: Extranet configuration
+  hosts: len.quinn.tk
+
+  roles:
+    - xmit
+
 - name: Intranet configuration
   hosts: scrap.quinn.tk
 
