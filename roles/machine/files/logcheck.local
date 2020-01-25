@@ -7,19 +7,27 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ NetworkManager\[[[:digit:]]+\]: <info> .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ nm-dispatcher: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ PackageKit: daemon (start|quit)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wpa_supplicant\[[[:digit:]]+\]: [[:alnum:].-]+: CTRL-EVENT-BEACON-LOSS$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ wpa_supplicant\[[[:digit:]]+\]: [[:alnum:].-]+: WPA: Group rekeying completed with [.:[:xdigit:]]+ \[[^[:space:]]+\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?imap\([[:alnum:]]+\)<.*><.*>: Logged out .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\)<.*><.*>: sieve: msgid=<?.*>?( \(((added by )?[^[:space:]]+|sfid-[_[:xdigit:]]+)\)?)?[[:space:]]*: (stored mail into mailbox '.*'|marked message to be discarded if not explicitly delivered \(discard action\)|(forwarded to|sent vacation response to|discarding vacation response for message implicitly delivered to|not sending vacation response to system address|discarding vacation response to mailinglist recipient|discarded vacation reply to|discarding vacation response to (auto-submitted|precedence=(bulk|Bulk|list)) message from|discarded duplicate (vacation response|forward) to) <[^[:space:]]*>)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\): Connect from local$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\): Disconnect from local: .*$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Disconnected \(no auth attempts in [[:digit:]]+ secs\): .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Disconnected \(auth failed, [[:digit:]]+ attempts in [[:digit:]]+ secs\): .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: (Aborted login|Disconnected) \(no auth attempts in [[:digit:]]+ secs\): .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Login: user=<[-_.@[:alnum:]]+>, method=[[:alnum:]-]+, rip=[.:[:xdigit:]]+, lip=[.:[:xdigit:]]+(, (TLS( handshake)?|secured))?, .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: client [^[:space:]]+ [^[:space:]]+ ([^[:space:]]+): query \(cache\) '[^[:space:]]+' denied$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: client [^[:space:]]+ [^[:space:]]+ ([^[:space:]]+): transfer of '[^[:space:]]+': IXFR ended$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: _default: sending trust-anchor-telemetry query '.*'$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: managed-keys-zone: Key [[:digit:]]+ for zone \. acceptance timer complete: key now trusted$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: resolver priming query complete$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: message has signatures from .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: s=[^[:space:]]+ d=[^[:space:]]+ SSL$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/dnsblog\[[[:digit:]]+\]: addr [^[:space:]]+ listed by domain [^[:space:]]+ as [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/[ls]mtp\[[[:digit:]]+\]: [[:upper:][:digit:]]+: to=<[^[:space:]]+>,( orig_to=<[^[:space:]]+>,)? relay=[._[:alnum:]-]+\[[^[:space:]]+\](:[[:digit:]]{1,5})?, (conn_use=[[:digit:]]+, )?delay=[.[:digit:]]+(, delays=([.[:digit:]]+/){3}[.[:digit:]]+)?(, dsn=2(\.[[:digit:]]+){2})?, status=sent \(2[[:digit:]][[:digit:]] .+\)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+ to \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: BARE NEWLINE from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: COMMAND PIPELINING from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: COMMAND (PIPELINING|TIME LIMIT) from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DNSBL rank [[:digit:]]+ for \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: HANGUP after [^[:space:]]+ from \[[^[:space:]]+\]:[[:digit:]]+ in tests (before|after) SMTP handshake$
@@ -28,6 +36,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: PREGREET [[:digit:]]+ after [^[:space:]]+ from \[[^[:space:]]+\]:[[:digit:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: NOQUEUE: reject: RCPT from [-._[:alnum:]]*\[[.[:digit:]]+\]:[.[:digit:]]+: 550 5\.7\.1 Service unavailable; .*; from=<[^[:space:]]*>,( to=<[^[:space:]]+>,)? proto=E?SMTP, helo=<[^[:space:]]+>$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: WHITELISTED \[[^[:space:]]+\]:[[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: cache [^[:space:]]+ full cleanup: retained=[[:digit:]]+ dropped=[[:digit:]]+ entries$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: (dis)?connect from [^[:space:]]+ .*commands=[[:digit:]]+(/[[:digit:]]+)?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: [[:alnum:]]+: client=[^[:space:]]+, sasl_method=[-[:alnum:]]+, sasl_username=[-_.@[:alnum:]]+$
@@ -37,7 +46,8 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (spamd|check|re(port|voke))\[[[:digit:]]+\]: (spamd: )?result: [.YN] [ [:digit:]-]+ - ([._[:alnum:],]+ )?scantime=[[:digit:].]+,size=[[:digit:]]+,(user=[^,]+,uid=[[:digit:]]+,required_score=[[:digit:].]+,rhost=[._[:alnum:]-]+,raddr=[[:digit:].]+,rport=[/[:alnum:].-]+,)?mid=(<[^[:space:]]+>|\(unknown\))(rmid=(<[^[:space:]]+>|\(unknown\)),)?,(bayes=[.[:digit:]]+(e-[[:digit:]]+)?,)?autolearn=(ham|spam|no|disabled|unavailable)(,shortcircuit=(ham|spam|no))? .*$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection closed by (authenticating user [^[:space:]]+ )?[:.[:xdigit:]]+ port [[:digit:]]+ \[preauth\]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Bad protocol version identification '.*' from [:[:xdigit:].]+ port [[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection closed by ((authenticating|invalid) user [^[:space:]]+ )?[:.[:xdigit:]]+ port [[:digit:]]+ \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection reset by [:.[:xdigit:]]+ port [[:digit:]]+ \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnected from (authenticating )?(user [^[:space:]]+ )?[:[:xdigit:].]+ port [[:digit:]]+( \[preauth\])?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnecting authenticating user [^[:space:]]+ [:[:xdigit:].]+ port [[:digit:]]+: .*$
@@ -45,6 +55,8 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Invalid user [^[:space:]]+ from [:[:xdigit:].]+ port [[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:[:xdigit:].]+ port [[:digit:]]+:[[:digit:]]+: .{0,256} \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: PAM service([^[:space:]]+) ignoring max retries; [[:digit:]]+ > [[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Unable to negotiate with [:[:xdigit:].]+ port [[:digit:]]+: no matching cipher found. Their offer: .* \[preauth\]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: maximum authentication attempts exceeded for [^[:space:]]+ from [:[:xdigit:].]+ port [[:digit:]]+ ssh2 \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Attack from \"[^[:space:]]+\" on service [[:digit:]]+ with danger [[:digit:]]+.$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Blocking \"[^[:space:]]+\" for [[:digit:]]+ secs \([[:digit:]]+ attacks in [[:digit:]]+ secs, after [[:digit:]]+ abuses over [[:digit:]]+ secs.\)$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: [^[:space:]]+: Succeeded.$
