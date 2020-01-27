@@ -3,6 +3,8 @@
 !/srv/.*
 !/tmp/.*
 !/var/backups/.*
+!/var/cache/apt/.*
+!/var/cache/man/.*
 !/var/lib/.*
 !/var/log/.*
 !/var/spool/.*
