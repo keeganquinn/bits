@@ -29,7 +29,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/dnsblog\[[[:digit:]]+\]: addr [^[:space:]]+ listed by domain [^[:space:]]+ as [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/[ls]mtp\[[[:digit:]]+\]: [[:upper:][:digit:]]+: to=<[^[:space:]]+>,( orig_to=<[^[:space:]]+>,)? relay=[._[:alnum:]-]+\[[^[:space:]]+\](:[[:digit:]]{1,5})?, (conn_use=[[:digit:]]+, )?delay=[.[:digit:]]+(, delays=([.[:digit:]]+/){3}[.[:digit:]]+)?(, dsn=2(\.[[:digit:]]+){2})?, status=sent \(2[[:digit:]][[:digit:]] .+\)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+ to \[[^[:space:]]+\]:[[:digit:]]+$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: BARE NEWLINE from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: BARE NEWLINE from \[[^[:space:]]+\]:[[:digit:]]+ after.*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: COMMAND (PIPELINING|TIME LIMIT) from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DNSBL rank [[:digit:]]+ for \[[^[:space:]]+\]:[[:digit:]]+$
@@ -46,11 +46,15 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: [[:alnum:]]+: client=[^[:space:]]+, sasl_method=[-[:alnum:]]+, sasl_username=[-_.@[:alnum:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: improper command pipelining after [^[:space:]]+ from [^[:space:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: lost connection after [[:upper:]]+( \([[:digit:]]+ bytes\))? from [._[:alnum:]-]+\[(unknown|[[:xdigit:].:]{3,39})\]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: SSL_accept error from [^[:space:]]+: -1$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: timeout after [-[:upper:]]+( \([[:digit:]]+ bytes\))? from [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: [-._[:alnum:]]+\[[.[:digit:]]+\]: SASL (LOGIN|PLAIN|(DIGEST|CRAM)-MD5|APOP) authentication failed(:[ [:alnum:]]*)?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: TLS library problem: .*unknown protocol.*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: hostname [^[:space:]]+ does not resolve to address .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: TLS handshake failed for service=smtpd peer=\[[^[:space:]]+\]:[[:digit:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: warning: TLS library problem: .*unknown protocol.*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (spamd|check|re(port|voke))\[[[:digit:]]+\]: (spamd: )?result: [.YN] [ [:digit:]-]+ - ([._[:alnum:],]+ )?scantime=[[:digit:].]+,size=[[:digit:]]+,(user=[^,]+,uid=[[:digit:]]+,required_score=[[:digit:].]+,rhost=[._[:alnum:]-]+,raddr=[[:digit:].]+,rport=[/[:alnum:].-]+,)?mid=(<[^[:space:]]+>|\(unknown\))(rmid=(<[^[:space:]]+>|\(unknown\)),)?,(bayes=[.[:digit:]]+(e-[[:digit:]]+)?,)?autolearn=(ham|spam|no|disabled|unavailable)(,shortcircuit=(ham|spam|no))? .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Bad protocol version identification '.*' from [:[:xdigit:].]+ port [[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection closed by ((authenticating|invalid) user [^[:space:]]+ )?[:.[:xdigit:]]+ port [[:digit:]]+ \[preauth\]$
