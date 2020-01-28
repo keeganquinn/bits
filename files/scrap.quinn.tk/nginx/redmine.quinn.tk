@@ -1,9 +1,5 @@
 # -*- nginx -*-
 
-upstream redmine_puma {
-    server unix:///srv/rails/redmine/shared/puma.sock fail_timeout=0;
-}
-
 server {
     listen 80;
     listen [::]:80;
@@ -16,7 +12,7 @@ server {
     }
 
     location / {
-        return 301 https://redmine.quinn.tk$request_uri;
+        return 301 https://pm.quinn.tk$request_uri;
     }
 }
 
@@ -38,25 +34,11 @@ server {
     access_log /var/log/nginx/redmine.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/redmine.quinn.tk-error.log warn;
 
-    root /srv/rails/redmine/current/public;
-
-    location ^~ /assets/ {
-        gzip_static on;
-        expires max;
-        add_header Cache-Control public;
+    location /.well-known {
+        alias /srv/rails/redmine/current/public/.well-known;
     }
 
-    try_files $uri/index.html $uri @redmine_puma;
-    location @redmine_puma {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_redirect off;
-        proxy_pass http://redmine_puma;
+    location / {
+        return 301 https://pm.quinn.tk$request_uri;
     }
-
-    client_max_body_size 4G;
-    keepalive_timeout 10;
 }
