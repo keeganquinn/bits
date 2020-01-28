@@ -1,7 +1,7 @@
 bits
 ====
 
-[![Build Status](https://jenkins.quinn.tk/job/bits/badge/icon)](https://jenkins.quinn.tk/job/bits/)
+[![Build Status](https://ci.quinn.tk/job/bits/badge/icon)](https://ci.quinn.tk/job/bits/)
 
 This repository started life back in 2011 as a collection of configuration
 files that I wanted to keep in version control. Since then, it has expanded
