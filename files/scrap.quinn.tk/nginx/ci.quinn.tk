@@ -1,0 +1,17 @@
+# -*- nginx -*-
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ci.quinn.tk;
+
+    access_log off;
+
+    location /.well-known {
+        alias /srv/www/jenkins.quinn.tk/.well-known;
+    }
+
+    location / {
+        return 301 https://jenkins.quinn.tk$request_uri;
+    }
+}

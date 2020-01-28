@@ -1,0 +1,17 @@
+# -*- nginx -*-
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name pm.quinn.tk;
+
+    access_log off;
+
+    location /.well-known {
+        alias /srv/rails/redmine/current/public/.well-known;
+    }
+
+    location / {
+        return 301 https://redmine.quinn.tk$request_uri;
+    }
+}
