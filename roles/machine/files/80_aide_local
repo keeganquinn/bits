@@ -4,6 +4,7 @@
 !/tmp/.*
 !/var/backups/.*
 !/var/cache/apt/.*
+!/var/cache/cups/.*
 !/var/cache/man/.*
 !/var/lib/.*
 !/var/log/.*
