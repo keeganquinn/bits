@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020012500
+        2020012800
         ; refresh
         30M
         ; retry
@@ -92,12 +92,14 @@ $GENERATE 50-250 s1d${0,3,d} A 10.11.23.$
 animamagica             CNAME   len
 animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap
+ci                      CNAME   scrap
 cloud                   CNAME   scrap
 cwnmyr                  CNAME   len
 cwnmyr-staging          CNAME   scrap
 jenkins                 CNAME   scrap
 lists                   CNAME   len
 mail                    CNAME   scrap
+pm                      CNAME   scrap
 redmine                 CNAME   scrap
 staging                 CNAME   scrap
 xmit                    CNAME   len
