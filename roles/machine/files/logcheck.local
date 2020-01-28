@@ -52,6 +52,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: [-._[:alnum:]]+\[[.[:digit:]]+\]: SASL (LOGIN|PLAIN|(DIGEST|CRAM)-MD5|APOP) authentication failed(:[ [:alnum:]]*)?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: TLS library problem: .*unknown protocol.*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: hostname [^[:space:]]+ does not resolve to address .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: non-SMTP command from [^[:space:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: TLS handshake failed for service=smtpd peer=\[[^[:space:]]+\]:[[:digit:]]+$
