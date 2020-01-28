@@ -15,6 +15,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?lmtp\([[:alnum:]]+\): Disconnect from local: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Disconnected: Too many invalid commands \(no auth attempts in [[:digit:]]+ secs\): .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Disconnected \(auth failed, [[:digit:]]+ attempts in [[:digit:]]+ secs\): .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Disconnected \(disconnected before auth was ready, waited [[:digit:]]+ secs\): .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: (Aborted login|Disconnected) \(no auth attempts in [[:digit:]]+ secs\): .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Login: user=<[-_.@[:alnum:]]+>, method=[[:alnum:]-]+, rip=[.:[:xdigit:]]+, lip=[.:[:xdigit:]]+(, (TLS( handshake)?|secured))?, .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: client [^[:space:]]+ [^[:space:]]+ ([^[:space:]]+): query \(cache\) '[^[:space:]]+' denied$
@@ -46,7 +47,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: [[:alnum:]]+: client=[^[:space:]]+, sasl_method=[-[:alnum:]]+, sasl_username=[-_.@[:alnum:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: improper command pipelining after [^[:space:]]+ from [^[:space:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: lost connection after [[:upper:]]+( \([[:digit:]]+ bytes\))? from [._[:alnum:]-]+\[(unknown|[[:xdigit:].:]{3,39})\]$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: SSL_accept error from [^[:space:]]+: -1$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: SSL_accept error from [^[:space:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: timeout after [-[:upper:]]+( \([[:digit:]]+ bytes\))? from [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: [-._[:alnum:]]+\[[.[:digit:]]+\]: SASL (LOGIN|PLAIN|(DIGEST|CRAM)-MD5|APOP) authentication failed(:[ [:alnum:]]*)?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: TLS library problem: .*unknown protocol.*$
