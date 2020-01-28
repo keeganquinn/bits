@@ -8,7 +8,7 @@ server {
     access_log off;
 
     location /.well-known {
-        alias /srv/www/jenkins.quinn.tk/.well-known;
+        alias /var/lib/jenkins/html/.well-known;
     }
 
     location / {
@@ -60,6 +60,6 @@ server {
     }
 
     location /.well-known {
-        alias /srv/www/jenkins.quinn.tk/.well-known;
+        alias /var/lib/jenkins/html/.well-known;
     }
 }

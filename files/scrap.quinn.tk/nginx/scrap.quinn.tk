@@ -6,7 +6,7 @@ server {
     server_name scrap.quinn.tk scrap.local;
 
     location /.well-known {
-        alias /srv/www/scrap.quinn.tk/.well-known;
+        alias /var/www/html/.well-known;
     }
 
     location / {
@@ -30,7 +30,7 @@ server {
     add_header Strict-Transport-Security "max-age=31536000";
 
     location /.well-known {
-        alias /srv/www/scrap.quinn.tk/.well-known;
+        alias /var/www/html/.well-known;
     }
 
     location / {
