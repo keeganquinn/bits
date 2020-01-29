@@ -59,6 +59,6 @@ lmtp      unix  -       -       y       -       -       lmtp
 anvil     unix  -       -       y       -       1       anvil
 scache    unix  -       -       y       -       1       scache
 
-spamassassin unix -     n       n       -       -       pipe
+spamassassin unix -     n       n       -       1       pipe
     user=debian-spamd argv=/usr/bin/spamc -U /var/run/spamd.sock -f -e
     /usr/sbin/sendmail -oi -f ${sender} ${recipient}
