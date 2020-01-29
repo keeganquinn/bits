@@ -23,8 +23,10 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: _default: sending trust-anchor-telemetry query '.*'$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: managed-keys-zone: Key [[:digit:]]+ for zone \. acceptance timer complete: key now trusted$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: resolver priming query complete$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: validating [^[:space:]]+: no valid signature found$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: message has signatures from .*$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: s=[^[:space:]]+ d=[^[:space:]]+ SSL$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: s=[^[:space:]]+ d=[^[:space:]]+ SSL.*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: bad signature data$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max connection rate [[:digit:]]+/[[:digit:]]+s for (.*) at .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max connection count [[:digit:]]+ for (.*) at .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/dnsblog\[[[:digit:]]+\]: addr [^[:space:]]+ listed by domain [^[:space:]]+ as [^[:space:]]+$
