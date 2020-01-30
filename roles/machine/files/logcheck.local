@@ -19,6 +19,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Disconnected \(disconnected before auth was ready, waited [[:digit:]]+ secs\): .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: (Aborted login|Disconnected) \(no auth attempts in [[:digit:]]+ secs\): .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Login: user=<[-_.@[:alnum:]]+>, method=[[:alnum:]-]+, rip=[.:[:xdigit:]]+, lip=[.:[:xdigit:]]+(, (TLS( handshake)?|secured))?, .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: REFUSED unexpected RCODE resolving '[^[:space:]]+': [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: client [^[:space:]]+ [^[:space:]]+ ([^[:space:]]+): query \(cache\) '[^[:space:]]+' denied$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: client [^[:space:]]+ [^[:space:]]+ ([^[:space:]]+): transfer of '[^[:space:]]+': IXFR ended$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: _default: sending trust-anchor-telemetry query '.*'$
