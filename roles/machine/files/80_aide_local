@@ -1,3 +1,7 @@
+/etc/cups/ppd$ VarDir
+/etc/letsencrypt$ VarDir
+/var/cache/apt$ VarDir
+
 !/etc/cups/ppd/.*
 !/home/.*
 !/run/.*
