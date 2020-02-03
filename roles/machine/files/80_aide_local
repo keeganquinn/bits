@@ -1,5 +1,8 @@
+/etc/apt$ VarDir
+/etc/apt/trusted.gpg.d$ VarDir
 /etc/cups/ppd$ VarDir
 /etc/letsencrypt$ VarDir
+/root/.ansible/tmp$ VarDir
 /var/cache/apt$ VarDir
 
 !/etc/cups/ppd/.*
