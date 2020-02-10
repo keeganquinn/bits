@@ -12,6 +12,7 @@
 !/tmp/.*
 !/var/backups/.*
 !/var/cache/apt/.*
+!/var/cache/apt-xapian-index/.*
 !/var/cache/cups/.*
 !/var/cache/man/.*
 !/var/lib/.*
