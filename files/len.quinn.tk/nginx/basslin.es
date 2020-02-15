@@ -78,6 +78,10 @@ server {
 
     try_files $uri/index.html $uri @bln_puma;
     location @bln_puma {
+        if (-f $document_root/../tmp/maintenance.txt) {
+            return 503;
+        }
+
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Proto https;
@@ -147,5 +151,13 @@ server {
         alias /home/$1/public_html$2;
         index index.html index.htm;
         autoindex on;
+    }
+
+    error_page 503 @maintenance;
+
+    location @maintenance {
+        if (!-f $request_filename) {
+            rewrite ^(.*)$ /maintenance.html break;
+        }
     }
 }
