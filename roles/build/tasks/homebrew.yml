@@ -11,6 +11,7 @@
       - ghostscript
       - graphviz
       - imagemagick@6
+      - libsodium
       - node
       - pkg-config
       - postgresql

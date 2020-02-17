@@ -22,6 +22,7 @@
       - libnet-ssleay-perl
       - libpq-dev
       - libreadline6-dev
+      - libsodium-dev
       - libssl-dev
       - libyaml-dev
       - nodejs
