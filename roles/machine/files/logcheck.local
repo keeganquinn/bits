@@ -86,10 +86,17 @@
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Listening on|Closed) GnuPG cryptographic agent and passphrase cache \(access for web browsers\).$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Listening on|Closed) CUPS Scheduler.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Starting|Started) Daily man-db regeneration\.(\.\.)?$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) Perl-based spam filter using text analysis\.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) LSB: process and login accounting\.(\.\.)?$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Listening on|Closed) Sound System.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Startup finished in ([[:digit:]]+ms|[[:digit:]]+.[[:digit:]]+s).$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd-logind\[[0-9]+\]: Session [[:digit:]]+ logged out. Waiting for processes to exit.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: packagekit.service: Main process exited, code=killed, status=15/TERM$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ [^[:space:]]+: I, \[.*\]  INFO -- omniauth: ([^[:space:]]+) Request phase initiated.$
-^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd: pam_unix\(systemd-user:session\): session (opened|closed) for user [^[:space:]]+( by \(uid=0\))?$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ [^[:space:]]+: pam_unix\([^[:space:]]+:session\): session (opened|closed) for user [^[:space:]]+( by \(uid=0\))?$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: spamd: server hit by SIGHUP, restarting$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: spamd: child \[[[:digit:]]+\] killed successfully: interrupted, signal 2 \(0002\)$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: spamd: server socket closed, type IO::Socket::UNIX$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd: spamd: restarting using '.*'$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: zoom: able to use [[:digit:]]+/[[:digit:]]+ 'body_0' compiled rules \(.*%\)$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: spamd: server started on UNIX domain socket /var/run/spamd.sock \(running version .*\)$
