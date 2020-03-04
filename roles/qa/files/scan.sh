@@ -39,9 +39,9 @@ for pspec in "${PROJECTS[@]}"; do
     rm -rf "${work}"
 done
 
-cleanup
-
 echo "Ruby: 2.7.0 - check https://www.ruby-lang.org/"
 echo "Redmine: 4.1.0 - check https://redmine.org/"
 echo "Roundcube: 1.4.2 - check https://roundcube.net/"
 echo "Nextcloud: check https://cloud.quinn.tk/settings/admin/overview"
+
+cleanup
