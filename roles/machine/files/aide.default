@@ -53,24 +53,24 @@ COPYNEWDB=no
 
 # Set this to yes to truncate the detailed changes part in the mail. The full
 # output will still be listed in the log file.
-TRUNCATEDETAILS=no
+TRUNCATEDETAILS=yes
 
 # Set this to yes to suppress file changes by package and security
 # updates from appearing in the e-mail report. Filtered file changes will
 # still be listed in the log file. This option parses the /var/log/dpkg.log
 # file and implies TRUNCATEDETAILS=yes
-FILTERUPDATES=no
+FILTERUPDATES=yes
 
 # Set this to yes to suppress file changes by package installations
 # from appearing in the e-mail report. Filtered file changes will still
 # be listed in the log file. This option parses the /var/log/dpkg.log file and
 # implies TRUNCATEDETAILS=yes.
-FILTERINSTALLATIONS=no
+FILTERINSTALLATIONS=yes
 
 # This parameter defines how many lines to return per e-mail. Output longer
 # than this value will be truncated in the e-mail sent out.
 # Set value to "0" to disable this option.
-LINES=1000
+LINES=10000
 
 # This parameter gives a grep regular expression. If given, all output lines
 # that _don't_ match the regexp are listed first in the script's output. This
