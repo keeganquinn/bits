@@ -1,4 +1,14 @@
 ---
+- name: Install redmine packages
+  become: yes
+  apt:
+    state: present
+    name:
+      - bzr
+      - cvs
+      - mercurial
+      - subversion
+
 - name: Create redmine user in Postgres
   become: yes
   become_user: postgres
