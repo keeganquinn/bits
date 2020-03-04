@@ -35,7 +35,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/[ls]mtp\[[[:digit:]]+\]: [[:upper:][:digit:]]+: to=<[^[:space:]]+>,( orig_to=<[^[:space:]]+>,)? relay=[._[:alnum:]-]+\[[^[:space:]]+\](:[[:digit:]]{1,5})?, (conn_use=[[:digit:]]+, )?delay=[.[:digit:]]+(, delays=([.[:digit:]]+/){3}[.[:digit:]]+)?(, dsn=2(\.[[:digit:]]+){2})?, status=sent \(2[[:digit:]][[:digit:]] .+\)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+ to \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: BARE NEWLINE from \[[^[:space:]]+\]:[[:digit:]]+ after.*$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: COMMAND (PIPELINING|TIME LIMIT) from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: COMMAND (PIPELINING|(COUNT|TIME) LIMIT) from \[[^[:space:]]+\]:[[:digit:]]+ after .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DISCONNECT \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: DNSBL rank [[:digit:]]+ for \[[^[:space:]]+\]:[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/postscreen\[[[:digit:]]+\]: HANGUP after [^[:space:]]+ from \[[^[:space:]]+\]:[[:digit:]]+ in tests (before|after) SMTP handshake$
