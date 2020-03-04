@@ -76,3 +76,8 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Attack from \"[^[:space:]]+\" on service [[:digit:]]+ with danger [[:digit:]]+.$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Blocking \"[^[:space:]]+\" for [[:digit:]]+ secs \([[:digit:]]+ attacks in [[:digit:]]+ secs, after [[:digit:]]+ abuses over [[:digit:]]+ secs.\)$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: [^[:space:]]+: Succeeded.$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Created slice User Slice of UID [[:digit:]]+.$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Starting D-Bus User Message Bus Socket.$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Listening on D-Bus User Message Bus Socket.$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Listening on GnuPG cryptographic agent and passphrase cache \(access for web browsers\).$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Startup finished in [[:digit:]]+ms.$
