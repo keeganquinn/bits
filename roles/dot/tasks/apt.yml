@@ -28,6 +28,7 @@
       - sakura
       - scribus
       - smbclient
+      - snmp-mibs-downloader
       - task-cinnamon-desktop
       - tigervnc-viewer
       - tint2
