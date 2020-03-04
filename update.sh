@@ -17,7 +17,7 @@ bundle update --gemfile roles/dot/files/Gemfile
 # Keep version/paths in sync with roles/redmine/tasks/main.yml
 
 redmine_version="redmine-4.1.0"
-curl -sS http://www.redmine.org/releases/"${redmine_version}".tar.gz | \
+curl -sS https://www.redmine.org/releases/"${redmine_version}".tar.gz | \
     tar xvfz - -C "${scratch}"
 
 mkdir "${scratch}/${redmine_version}/.bundle"
