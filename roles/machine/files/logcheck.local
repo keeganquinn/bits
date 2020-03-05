@@ -87,6 +87,8 @@
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Listening on|Closed) CUPS Scheduler.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Starting|Started) Daily man-db regeneration\.(\.\.)?$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) Perl-based spam filter using text analysis\.$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) Samba SMB Daemon\.$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Reloading|Reloaded) A high performance web server and a reverse proxy server\.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Starting|Started|Stopping|Stopped) LSB: process and login accounting\.(\.\.)?$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: (Listening on|Closed) Sound System.$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ systemd\[[0-9]+\]: Startup finished in ([[:digit:]]+ms|[[:digit:]]+.[[:digit:]]+s).$
@@ -100,3 +102,5 @@
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd: spamd: restarting using '.*'$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: zoom: able to use [[:digit:]]+/[[:digit:]]+ 'body_0' compiled rules \(.*%\)$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: spamd: server started on UNIX domain socket /var/run/spamd.sock \(running version .*\)$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ colord\[[0-9]+\]: failed to get session \[pid [[:digit:]]+\]: No data available$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ kernel: \[.*\] Process accounting resumed$
