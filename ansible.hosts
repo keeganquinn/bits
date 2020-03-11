@@ -1,7 +1,6 @@
 localhost ansible_connection=local
 
 [servers]
-electron.quinn.tk
 len.quinn.tk
 scrap.quinn.tk
 turn.personaltelco.net

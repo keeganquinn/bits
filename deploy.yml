@@ -7,7 +7,7 @@
     - deploy
 
 - name: Desktop machine configuration
-  hosts: electron.quinn.tk, scrap.quinn.tk
+  hosts: scrap.quinn.tk
 
   roles:
     - dot
