@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len.quinn.tk. hostmaster.quinn.tk. (
         ; serial
-        2019121100
+        2020031000
         ; refresh
         30M
         ; retry
@@ -21,7 +21,7 @@ $TTL 2d
         NS      scrap.quinn.tk.
 
 1       PTR     s0edge.quinn.tk.
-2       PTR     beacon.quinn.tk.
+2       PTR     base.quinn.tk.
 3       PTR     wave.quinn.tk.
 4       PTR     vie.quinn.tk.
 5       PTR     spot.quinn.tk.
