@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020031000
+        2020031200
         ; refresh
         30M
         ; retry
@@ -54,7 +54,7 @@ artifact        AAAA    2601:1c2:4c00:e66d::5c34
 base            A       10.11.22.2
 base            AAAA    2601:1c2:4c00:e66d::5033
 electron        A       10.11.22.7
-electron        AAAA    2601:1c2:4c00:e66d::a6bb
+electron        AAAA    2601:1c2:4c00:e66d::2431
 lilguy          A       10.11.22.6
 lilguy          AAAA    2601:1c2:4c00:e66d::4f38
 one             A       10.11.22.11
