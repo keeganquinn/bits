@@ -60,6 +60,7 @@
       - mlocate
       - nmap
       - p7zip
+      - postfix
       - rkhunter
       - rsync
       - screen

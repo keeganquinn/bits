@@ -5,7 +5,6 @@
     state: present
     name:
       - opendkim
-      - postfix
       - procmail
       - sasl2-bin
 
