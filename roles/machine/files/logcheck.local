@@ -104,3 +104,4 @@
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ spamd\[[0-9]+\]: spamd: server started on UNIX domain socket /var/run/spamd.sock \(running version .*\)$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ colord\[[0-9]+\]: failed to get session \[pid [[:digit:]]+\]: No data available$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ kernel: \[.*\] Process accounting resumed$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ dnsmasq-dhcp\[[0-9]+\]: Ignoring domain [^[:space:]]+ for DHCP host name [^[:space:]]+$
