@@ -46,59 +46,59 @@
 
 - name: Copy cups configuration
   become: yes
-  copy: src=cupsd.conf dest=/etc/cups/cupsd.conf
+  copy: src=cupsd.conf dest=/etc/cups/cupsd.conf backup=yes
 
 - name: Copy rsnapshot configuration
   become: yes
-  copy: src=rsnapshot.conf dest=/etc/rsnapshot.conf
+  copy: src=rsnapshot.conf dest=/etc/rsnapshot.conf backup=yes
 
 - name: Copy rsnapshot crontab
   become: yes
-  copy: src=rsnapshot.cron dest=/etc/cron.d/rsnapshot
+  copy: src=rsnapshot.cron dest=/etc/cron.d/rsnapshot backup=yes
 
 - name: Copy network interfaces
   become: yes
-  copy: src=interfaces dest=/etc/network/interfaces
+  copy: src=interfaces dest=/etc/network/interfaces backup=yes
 
 - name: Copy DHCP client configuration
   become: yes
-  copy: src=dhclient.conf dest=/etc/dhcp
+  copy: src=dhclient.conf dest=/etc/dhcp backup=yes
 
 - name: Copy iptables rules
   become: yes
-  copy: src=iptables.rules dest=/etc/network/iptables.rules
+  copy: src=iptables.rules dest=/etc/network/iptables.rules backup=yes
 
 - name: Copy prefix_delegation script
   become: yes
-  copy: src=prefix_delegation dest=/etc/dhcp/dhclient-exit-hooks.d/
+  copy: src=prefix_delegation dest=/etc/dhcp/dhclient-exit-hooks.d/ backup=yes
 
 - name: Copy smb.conf
   become: yes
-  copy: src=smb.conf dest=/etc/samba/smb.conf
+  copy: src=smb.conf dest=/etc/samba/smb.conf backup=yes
   notify: restart smbd
 
 - name: Copy sysctl.conf
   become: yes
-  copy: src=sysctl.conf dest=/etc/sysctl.conf
+  copy: src=sysctl.conf dest=/etc/sysctl.conf backup=yes
   notify: reload sysctl
 
 - name: Copy vncserver-keegan service
   become: yes
-  copy: src=vncserver-keegan.service dest=/etc/systemd/system/
+  copy: src=vncserver-keegan.service dest=/etc/systemd/system/ backup=yes
 
 - name: Copy dnsmasq configuration
   become: yes
-  copy: src=dnsmasq.conf dest=/etc/dnsmasq.conf
+  copy: src=dnsmasq.conf dest=/etc/dnsmasq.conf backup=yes
   notify: restart dnsmasq
 
 - name: Copy php-fpm configuration
   become: yes
-  copy: src=php.ini dest=/etc/php/7.3/fpm/php.ini
+  copy: src=php.ini dest=/etc/php/7.3/fpm/php.ini backup=yes
   notify: restart php-fpm
 
 - name: Copy php-fpm pool configuration
   become: yes
-  copy: src=www.conf dest=/etc/php/7.3/fpm/pool.d/www.conf
+  copy: src=www.conf dest=/etc/php/7.3/fpm/pool.d/www.conf backup=yes
   notify: restart php-fpm
 
 - name: Create nextcloud user in Postgres
