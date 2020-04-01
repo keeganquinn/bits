@@ -29,7 +29,7 @@
     - rails
 
 - name: Extranet configuration
-  hosts: len.quinn.tk
+  hosts: scrap.quinn.tk
 
   roles:
     - xmit
