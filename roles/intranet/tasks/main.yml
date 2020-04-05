@@ -157,18 +157,18 @@
     dest: /var/lib/jenkins/.rbenv/plugins/ruby-build
     version: master
 
-- name: Install Ruby 2.7.0 for the jenkins user
+- name: Install Ruby 2.7.1 for the jenkins user
   become: yes
   become_user: jenkins
-  command: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.7.0
+  command: /var/lib/jenkins/.rbenv/bin/rbenv install -s 2.7.1
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.7.0
+    creates: /var/lib/jenkins/.rbenv/versions/2.7.1
 
 - name: Install Bundler for the jenkins user
   become: yes
   become_user: jenkins
-  command: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.1.2
+  command: /var/lib/jenkins/.rbenv/shims/gem install bundler:2.1.4
   environment:
-    RBENV_VERSION: 2.7.0
+    RBENV_VERSION: 2.7.1
   args:
-    creates: /var/lib/jenkins/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/bundler-2.1.2
+    creates: /var/lib/jenkins/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/bundler-2.1.4

@@ -17,17 +17,17 @@
     dest: '{{ ansible_env.HOME }}/.rbenv/plugins/ruby-build'
     version: master
 
-- name: Install Ruby 2.7.0
-  command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.7.0'
+- name: Install Ruby 2.7.1
+  command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv install -s 2.7.1'
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.0'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.1'
 
-- name: Install Bundler for Ruby 2.7.0
-  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.1.2'
+- name: Install Bundler for Ruby 2.7.1
+  command: '{{ ansible_env.HOME }}/.rbenv/shims/gem install bundler:2.1.4'
   environment:
-    RBENV_VERSION: 2.7.0
+    RBENV_VERSION: 2.7.1
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/bundler-2.1.2'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/bundler-2.1.4'
 
 - name: Create rbenv gems directory
   file:
@@ -44,12 +44,12 @@
     src: Gemfile.lock
     dest: '{{ ansible_env.HOME }}/.rbenv/gems/Gemfile.lock'
 
-- name: Install standard gems for Ruby 2.7.0
+- name: Install standard gems for Ruby 2.7.1
   command: '{{ ansible_env.HOME }}/.rbenv/shims/bundle install --gemfile {{ ansible_env.HOME }}/.rbenv/gems/Gemfile'
   environment:
-    RBENV_VERSION: 2.7.0
+    RBENV_VERSION: 2.7.1
   args:
-    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.0/bin/scss'
+    creates: '{{ ansible_env.HOME }}/.rbenv/versions/2.7.1/bin/scss'
 
 - name: Set default Ruby
   command: '{{ ansible_env.HOME }}/.rbenv/bin/rbenv global system'
