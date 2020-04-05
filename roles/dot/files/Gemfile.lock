@@ -3,27 +3,27 @@ GEM
   specs:
     ast (2.4.0)
     ffi (1.12.2)
-    foreman (0.87.0)
+    foreman (0.87.1)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
     jaro_winkler (1.5.4)
     parallel (1.19.1)
-    parser (2.7.0.4)
+    parser (2.7.1.0)
       ast (~> 2.4.0)
     rainbow (3.0.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.4)
-    rubocop (0.80.1)
+    rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
       rainbow (>= 2.2.2, < 4.0)
       rexml
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
     rubocop-rspec (1.38.1)
@@ -36,7 +36,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     temple (0.8.2)
     tilt (2.0.10)
-    unicode-display_width (1.6.1)
+    unicode-display_width (1.7.0)
 
 PLATFORMS
   ruby
