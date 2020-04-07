@@ -1,6 +1,6 @@
 ---
 - name: Upgrade brews
-  homebrew: update_homebrew=yes upgrade_all=yes
+  command: brew upgrade --ignore-pinned
 
 - name: Upgrade casks
   homebrew_cask: upgrade=yes
