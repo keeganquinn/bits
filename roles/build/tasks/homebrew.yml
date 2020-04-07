@@ -1,9 +1,16 @@
 ---
+- name: Install pip packages
+  pip:
+    executable: pip3
+    name:
+      - ansible
+      - ansible-lint
+      - linode-cli
+
 - name: Install build brews
   homebrew:
     state: present
     name:
-      - ansible-lint
       - autoconf
       - automake
       - bats
