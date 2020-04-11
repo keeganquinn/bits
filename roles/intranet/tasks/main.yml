@@ -35,6 +35,7 @@
       - php-xml
       - php-zip
       - postgresql
+      - reprepro
       - rsnapshot
       - samba
       - spamassassin
