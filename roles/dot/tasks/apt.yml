@@ -21,6 +21,7 @@
       - mp4v2-utils
       - mumble
       - nethack-console
+      - nextcloud-desktop
       - obs-studio
       - openbox
       - powermgmt-base
@@ -35,13 +36,6 @@
       - transmission
       - vlc
       - wireshark
-
-- name: Install nextcloud-desktop from backports
-  become: yes
-  apt:
-    state: present
-    name: nextcloud-desktop
-    default_release: buster-backports
 
 - name: Create openbox configuration directory
   file:
