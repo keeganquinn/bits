@@ -19,6 +19,12 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
+- name: Add quinn.tk APT key
+  become: yes
+  apt_key:
+    url: https://xmit.quinn.tk/debian/repo.gpg.key
+    state: present
+
 - name: Add yarn APT key
   become: yes
   apt_key:

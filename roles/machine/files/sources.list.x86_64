@@ -4,4 +4,5 @@ deb http://security.debian.org/ buster/updates main contrib non-free
 deb https://pkg.jenkins.io/debian-stable binary/
 deb http://www.deb-multimedia.org buster main non-free
 deb https://deb.nodesource.com/node_12.x buster main
+deb https://xmit.quinn.tk/debian/ buster main
 deb https://dl.yarnpkg.com/debian/ stable main
