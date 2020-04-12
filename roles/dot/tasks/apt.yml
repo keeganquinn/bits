@@ -32,6 +32,7 @@
       - snmp-mibs-downloader
       - task-cinnamon-desktop
       - tigervnc-viewer
+      - tiled
       - tint2
       - transmission
       - vlc
