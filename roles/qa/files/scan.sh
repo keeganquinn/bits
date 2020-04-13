@@ -28,8 +28,8 @@ for pspec in "${PROJECTS[@]}"; do
     work="${scratch:?}/${project[0]}"
 
     git clone -q "${project[1]}" "${work}"
-    if [ -f "${work}/yarn.lock" ] \
-           && ! yarn outdated --cwd "${work}" >/dev/null; then
+    if [ -f "${work}/package-lock.json" ] \
+           && ! (cd "${work}"; npm outdated) >/dev/null; then
         echo "${project[0]}: JS dependencies need update"
     fi
     if [ -f "${work}/Gemfile.lock" ] \

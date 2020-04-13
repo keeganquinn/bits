@@ -25,7 +25,6 @@
       - redis
       - sloccount
       - tidy-html5
-      - yarn
 
 - name: Install build casks
   homebrew_cask:

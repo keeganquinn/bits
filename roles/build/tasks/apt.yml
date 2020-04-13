@@ -33,7 +33,6 @@
       - shellcheck
       - sloccount
       - tidy
-      - yarn
       - zlib1g-dev
 
 - name: Create root user in Postgres

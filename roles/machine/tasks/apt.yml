@@ -25,13 +25,6 @@
     url: https://xmit.quinn.tk/debian/repo.gpg.key
     state: present
 
-- name: Add yarn APT key
-  become: yes
-  apt_key:
-    url: https://dl.yarnpkg.com/debian/pubkey.gpg
-    state: present
-  when: ansible_architecture == 'x86_64'
-
 - name: Copy APT sources
   become: yes
   copy: src='sources.list.{{ ansible_architecture }}' dest=/etc/apt/sources.list
