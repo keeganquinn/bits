@@ -26,6 +26,15 @@ Host artifact
     Hostname artifact.local
     ForwardAgent yes
 
+Host electron
+    Hostname electron.quinn.tk
+    ForwardAgent yes
+
+Host factor
+    Hostname factor.quinn.tk
+    ForwardAgent yes
+    AddressFamily inet
+
 Host one
     Hostname one.quinn.tk
     ForwardAgent yes
@@ -36,10 +45,6 @@ Host zero
 
 
 # Network devices
-Host electron
-    Hostname electron.quinn.tk
-    ForwardAgent yes
-
 Host lilguy
     Hostname lilguy.quinn.tk
     User root
