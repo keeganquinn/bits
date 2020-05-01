@@ -15,6 +15,7 @@
 !/var/cache/apt-xapian-index/.*
 !/var/cache/cups/.*
 !/var/cache/man/.*
+!/var/cache/samba/.*
 !/var/lib/.*
 !/var/log/.*
 !/var/spool/.*
