@@ -51,6 +51,14 @@ zone "basslin.es" {
   file "basslin.es";
 };
 
+zone "sacredflame.life" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "sacredflame.life";
+};
+
 zone "hrd503.cf" {
   type slave;
   notify no;

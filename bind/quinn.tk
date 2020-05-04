@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020041600
+        2020050400
         ; refresh
         30M
         ; retry
@@ -100,6 +100,7 @@ lists                   CNAME   len
 mail                    CNAME   scrap
 pm                      CNAME   scrap
 redmine                 CNAME   scrap
+sacredflame-staging     CNAME   scrap
 staging                 CNAME   scrap
 xmit                    CNAME   scrap
 zabbix                  CNAME   scrap

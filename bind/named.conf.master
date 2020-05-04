@@ -102,6 +102,15 @@ zone "basslin.es" {
   file "/etc/bind/generic";
 };
 
+zone "sacredflame.life" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/generic";
+};
+
 zone "hrd503.cf" {
   type master;
   allow-query { any; };
