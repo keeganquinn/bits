@@ -13,7 +13,8 @@ PROJECTS=(
     "bln_player https://github.com/keeganquinn/bln_player.git"
     "cwnmyr https://github.com/keeganquinn/cwnmyr.git"
     "partystarter /srv/git/partystarter.git"
-    "quinn.tk /srv/git/quinn.tk.git")
+    "quinn.tk /srv/git/quinn.tk.git"
+    "sacredflame /srv/git/sacredflame.git")
 
 scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
@@ -41,7 +42,7 @@ done
 
 echo "Ruby: 2.7.1 - check https://www.ruby-lang.org/"
 echo "Redmine: 4.1.1 - check https://redmine.org/"
-echo "Roundcube: 1.4.3 - check https://roundcube.net/"
+echo "Roundcube: 1.4.4 - check https://roundcube.net/"
 echo "Nextcloud: check https://cloud.quinn.tk/settings/admin/overview"
 
 cleanup
