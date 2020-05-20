@@ -1,4 +1,12 @@
 ---
+- name: setup redmine
+  become: yes
+  become_user: deploy
+  command: ./qtk_redmine.sh
+  args:
+    chdir: /srv/rails/redmine/current
+  notify: restart redmine
+
 - name: restart redmine
   become: yes
   service: name=redmine.target state=restarted enabled=yes

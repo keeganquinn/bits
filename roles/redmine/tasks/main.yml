@@ -53,7 +53,7 @@
     dest: /srv/rails/redmine/releases
     remote_src: yes
     creates: /srv/rails/redmine/releases/redmine-4.1.1/README.rdoc
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Link current Redmine release
   become: yes
@@ -65,7 +65,7 @@
     mode: 0755
     owner: deploy
     group: deploy
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Link environment for Redmine
   become: yes
@@ -76,7 +76,7 @@
     state: link
     owner: deploy
     group: deploy
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy local Gemfile for Redmine
   become: yes
@@ -84,7 +84,7 @@
   copy:
     src: Gemfile.local
     dest: /srv/rails/redmine/current
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy Gemfile.lock for Redmine
   become: yes
@@ -92,7 +92,7 @@
   copy:
     src: Gemfile.lock
     dest: /srv/rails/redmine/current
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy Procfile for Redmine
   become: yes
@@ -100,7 +100,7 @@
   copy:
     src: Procfile
     dest: /srv/rails/redmine/current
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy setup script for Redmine
   become: yes
@@ -109,7 +109,7 @@
     src: qtk_redmine.sh
     dest: /srv/rails/redmine/current
     mode: 0755
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy Ruby version selector for Redmine
   become: yes
@@ -117,7 +117,7 @@
   copy:
     src: ruby-version
     dest: /srv/rails/redmine/current/.ruby-version
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy Redmine configuration
   become: yes
@@ -125,7 +125,7 @@
   copy:
     src: configuration.yml
     dest: /srv/rails/redmine/current/config
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy Redmine database configuration
   become: yes
@@ -133,7 +133,7 @@
   copy:
     src: database.yml
     dest: /srv/rails/redmine/current/config
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy Puma configuration for Redmine
   become: yes
@@ -141,7 +141,7 @@
   copy:
     src: puma.rb
     dest: /srv/rails/redmine/current/config
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Create bundle configuration directory for Redmine
   become: yes
@@ -152,7 +152,7 @@
     mode: 0755
     owner: deploy
     group: deploy
-  notify: restart redmine
+  notify: setup redmine
 
 - name: Copy bundle configuration for Redmine
   become: yes
@@ -160,13 +160,4 @@
   copy:
     src: bundle.config
     dest: /srv/rails/redmine/current/.bundle/config
-  notify: restart redmine
-
-- name: Run setup script for Redmine
-  become: yes
-  become_user: deploy
-  command: ./qtk_redmine.sh
-  args:
-    chdir: /srv/rails/redmine/current
-    creates: /srv/rails/redmine/current/qtk_redmine.stamp
-  notify: restart redmine
+  notify: setup redmine
