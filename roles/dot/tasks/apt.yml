@@ -37,6 +37,7 @@
       - transmission
       - vlc
       - wireshark
+      - youtube-dl
 
 - name: Create openbox configuration directory
   file:
