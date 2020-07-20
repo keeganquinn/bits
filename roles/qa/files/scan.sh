@@ -42,7 +42,7 @@ done
 
 echo "Ruby: 2.7.1 - check https://www.ruby-lang.org/"
 echo "Redmine: 4.1.1 - check https://redmine.org/"
-echo "Roundcube: 1.4.6 - check https://roundcube.net/"
+echo "Roundcube: 1.4.7 - check https://roundcube.net/"
 echo "Nextcloud: check https://cloud.quinn.tk/settings/admin/overview"
 
 cleanup
