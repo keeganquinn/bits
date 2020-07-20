@@ -11,6 +11,8 @@ iface lo inet loopback
 allow-hotplug eth0
 iface eth0 inet dhcp
   pre-up iptables-restore < /etc/network/iptables.rules
+  up wondershaper eth0 5000 5000
+  down wondershaper remove eth0
 iface eth0 inet6 dhcp
   request_prefix 1
   post-up sysctl -w net.ipv6.conf.eth0.accept_ra=2

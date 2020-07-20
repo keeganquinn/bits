@@ -43,6 +43,7 @@
       - spamc
       - tftpd-hpa
       - tigervnc-standalone-server
+      - wondershaper
       - zabbix-frontend-php
       - zabbix-server-pgsql
 
