@@ -5,7 +5,6 @@
     state: present
     name:
       - barrier
-      - blender
       - ffmpeg
       - ffplay
       - flac
