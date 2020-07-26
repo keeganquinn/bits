@@ -46,6 +46,10 @@
       - zabbix-frontend-php
       - zabbix-server-pgsql
 
+- name: Install wondercake
+  become: yes
+  copy: src=wondercake dest=/usr/local/sbin/wondercake mode=0755
+
 - name: Copy cups configuration
   become: yes
   copy: src=cupsd.conf dest=/etc/cups/cupsd.conf backup=yes
