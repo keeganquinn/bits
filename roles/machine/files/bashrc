@@ -2,7 +2,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 export EDITOR="emacs"
-export PATH="$HOME/.rbenv/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.local/bin:/usr/local/sbin:$PATH"
 if hash rbenv 2>/dev/null; then
     eval "$(rbenv init -)"
 fi
