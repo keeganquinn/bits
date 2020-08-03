@@ -4,7 +4,6 @@
   apt:
     state: present
     name:
-      - ansible-lint
       - autoconf
       - bats
       - bison
@@ -28,7 +27,7 @@
       - nodejs
       - pbuilder
       - postgresql
-      - python-psycopg2
+      - python3-pip
       - redis-server
       - shellcheck
       - sloccount

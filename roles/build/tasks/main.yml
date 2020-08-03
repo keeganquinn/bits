@@ -4,3 +4,11 @@
     - files:
         - '{{ ansible_pkg_mgr }}.yml'
       skip: true
+
+- name: Install pip packages
+  pip:
+    executable: pip3
+    name:
+      - ansible
+      - ansible-lint
+      - linode-cli
