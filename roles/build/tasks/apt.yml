@@ -27,7 +27,6 @@
       - nodejs
       - pbuilder
       - postgresql
-      - python3-pip
       - redis-server
       - shellcheck
       - sloccount

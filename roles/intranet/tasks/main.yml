@@ -166,3 +166,12 @@
     RBENV_VERSION: 2.7.1
   args:
     creates: /var/lib/jenkins/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/bundler-2.1.4
+
+- name: Install pip packages for the jenkins user
+  become: yes
+  become_user: jenkins
+  pip:
+    executable: pip3
+    name:
+      - ansible
+      - ansible-lint

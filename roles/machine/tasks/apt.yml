@@ -57,6 +57,7 @@
       - nmap
       - p7zip
       - postfix
+      - python3-pip
       - rkhunter
       - rsync
       - screen

@@ -65,3 +65,11 @@
   copy:
     src: youtube-dl.conf
     dest: '{{ ansible_env.HOME }}/.config/youtube-dl/config'
+
+- name: Install pip packages
+  pip:
+    executable: pip3
+    name:
+      - ansible
+      - ansible-lint
+      - linode-cli
