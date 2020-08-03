@@ -11,6 +11,7 @@
       - fontforge
       - forensics-full
       - gimp
+      - grub-pc
       - handbrake-gtk
       - inkscape
       - irssi
