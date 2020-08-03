@@ -22,7 +22,10 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(pop3|imap)-login: Login: user=<[-_.@[:alnum:]]+>, method=[[:alnum:]-]+, rip=[.:[:xdigit:]]+, lip=[.:[:xdigit:]]+(, (TLS( handshake)?|secured))?, .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: REFUSED unexpected RCODE resolving '[^[:space:]]+': [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: SERVFAIL unexpected RCODE resolving '[^[:space:]]+': [^[:space:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: broken trust chain resolving '[^[:space:]]+': [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: chase DS servers resolving '[^[:space:]]+': [^[:space:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: no valid RRSIG resolving '[^[:space:]]+': [^[:space:]]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: RRSIG has expired resolving '[^[:space:]]+': [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: lame server resolving '[^[:space:]]+' \(in '[^[:space:]]+'\?\): [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: skipping nameserver '[^[:space:]]+' because it is a CNAME, while resolving '[^[:space:]]+'$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: client [^[:space:]]+ [^[:space:]]+ ([^[:space:]]+): query \(cache\) '[^[:space:]]+' denied$
@@ -30,8 +33,12 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: _default: sending trust-anchor-telemetry query '.*'$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: managed-keys-zone: Key [[:digit:]]+ for zone \. acceptance timer complete: key now trusted$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: resolver priming query complete$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: DNS format error from [^[:space:]]+ resolving [^[:space:]]+: Name [^[:space:]]+ \(SOA\) not subdomain of zone [^[:space:]]+ -- invalid response$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: DNS format error from [^[:space:]]+ resolving [^[:space:]]+ for client [^[:space:]]+: Name [^[:space:]]+ \(SOA\) not subdomain of zone [^[:space:]]+ -- invalid response$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: no valid signature found$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: no valid signature found \(DS\)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: got insecure response; parent indicates it should be secure$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: verify failed due to bad signature \(keyid=[[:digit:]]+\): RRSIG has expired$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: message has signatures from .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: s=[^[:space:]]+ d=[^[:space:]]+ SSL.*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: bad signature data$
