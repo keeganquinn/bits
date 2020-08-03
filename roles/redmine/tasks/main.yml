@@ -9,22 +9,6 @@
       - mercurial
       - subversion
 
-- name: Create redmine user in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_user:
-    name: redmine
-    password: redmine
-    encrypted: yes
-
-- name: Create redmine database in Postgres
-  become: yes
-  become_user: postgres
-  postgresql_db:
-    name: redmine
-    owner: redmine
-    encoding: UTF-8
-
 - name: Create /srv/rails/redmine/releases
   become: yes
   become_user: deploy
