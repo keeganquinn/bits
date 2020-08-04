@@ -1,4 +1,5 @@
 ServerAliveInterval 60
+User keegan
 
 # Servers
 Host len
@@ -38,6 +39,12 @@ Host factor
 Host one
     Hostname one.quinn.tk
     ForwardAgent yes
+
+Host wsl
+    Hostname localhost
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
 
 Host zero
     Hostname zero.quinn.tk
