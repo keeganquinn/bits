@@ -47,8 +47,8 @@ server {
 }
 
 server {
-    listen 443 ssl http2 default_server;
-    listen [::]:443 ssl http2 default_server;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name basslin.es;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/basslin.es/fullchain.pem;
