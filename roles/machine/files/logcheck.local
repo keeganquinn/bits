@@ -35,6 +35,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: resolver priming query complete$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: DNS format error from [^[:space:]]+ resolving [^[:space:]]+: Name [^[:space:]]+ \(SOA\) not subdomain of zone [^[:space:]]+ -- invalid response$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: DNS format error from [^[:space:]]+ resolving [^[:space:]]+ for client [^[:space:]]+: Name [^[:space:]]+ \(SOA\) not subdomain of zone [^[:space:]]+ -- invalid response$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]: DNS format error from [^[:space:]]+ resolving [^[:space:]]+ for client [^[:space:]]+: empty question section$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: no valid signature found$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: no valid signature found \(DS\)$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ named\[[[:digit:]]+\]:  ? ?validating [^[:space:]]+: got insecure response; parent indicates it should be secure$
@@ -67,7 +68,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: SSL_accept error from [^[:space:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: timeout after [-[:upper:]]+( \([[:digit:]]+ bytes\))? from [^[:space:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: [-._[:alnum:]]+\[[.[:digit:]]+\]: SASL (LOGIN|PLAIN|(DIGEST|CRAM)-MD5|APOP) authentication failed(:[ [:alnum:]]*)?$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: TLS library problem: .*(unknown protocol|version too low|wrong version number).*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: TLS library problem: .*(unknown ca|unknown protocol|version too low|wrong version number).*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: hostname [^[:space:]]+ does not resolve to address .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/(submission/)?smtpd\[[[:digit:]]+\]: warning: non-SMTP command from [^[:space:]]+: .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/tlsproxy\[[[:digit:]]+\]: CONNECT from \[[^[:space:]]+\]:[[:digit:]]+$
@@ -84,7 +85,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Invalid user [^[:space:]]* from [:[:xdigit:].]+ port [[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:[:xdigit:].]+ port [[:digit:]]+:[[:digit:]]+: .{0,256} \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: PAM service([^[:space:]]+) ignoring max retries; [[:digit:]]+ > [[:digit:]]+$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Unable to negotiate with [:[:xdigit:].]+ port [[:digit:]]+: no matching (cipher|key exchange method) found. Their offer: .* \[preauth\]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Unable to negotiate with [:[:xdigit:].]+ port [[:digit:]]+: no matching (cipher|host key type|key exchange method) found. Their offer: .* \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: maximum authentication attempts exceeded for [^[:space:]]+ from [:[:xdigit:].]+ port [[:digit:]]+ ssh2 \[preauth\]$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Attack from \"[^[:space:]]+\" on service [[:digit:]]+ with danger [[:digit:]]+.$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshguard\[[[:digit:]]+\]: Blocking \"[^[:space:]]+\" for [[:digit:]]+ secs \([[:digit:]]+ attacks in [[:digit:]]+ secs, after [[:digit:]]+ abuses over [[:digit:]]+ secs.\)$
@@ -118,3 +119,5 @@
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ kernel: \[.*\] Process accounting resumed$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ dnsmasq-dhcp\[[0-9]+\]: Ignoring domain [^[:space:]]+ for DHCP host name [^[:space:]]+$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ miniupnpd\[[0-9]+\]: PCPSendUnsolicitedAnnounce\(\) IPv6 sendto\(\): Bad file descriptor$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ zabbix_agentd\[[0-9]+\]: Starting Zabbix Agent \[Zabbix server\]. Zabbix .* \(revision .*\).$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ zabbix_agentd\[[0-9]+\]: Press Ctrl\+C to exit.$
