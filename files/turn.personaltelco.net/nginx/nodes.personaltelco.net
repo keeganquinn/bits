@@ -5,8 +5,8 @@ upstream cwnmyr_puma {
 }
 
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80;
+    listen [::]:80;
     server_name nodes.personaltelco.net;
 
     access_log off;
@@ -21,8 +21,8 @@ server {
 }
 
 server {
-    listen 443 ssl http2 default_server;
-    listen [::]:443 ssl http2 default_server;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
     server_name nodes.personaltelco.net;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/nodes.personaltelco.net/fullchain.pem;
