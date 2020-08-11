@@ -28,7 +28,7 @@ mkdir "${scratch}/${redmine_version}/.bundle"
     echo 'BUNDLE_WITHOUT: "production"'
 ) > "${scratch}/${redmine_version}/.bundle/config"
 
-cp roles/redmine/files/Gemfile.local roles/redmine/files/Gemfile.lock \
+cp roles/redmine/files/Gemfile roles/redmine/files/Gemfile.lock \
    "${scratch}/${redmine_version}/"
 cp roles/redmine/files/database.yml \
    "${scratch}/${redmine_version}/config/"

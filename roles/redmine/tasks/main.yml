@@ -62,11 +62,11 @@
     group: deploy
   notify: setup redmine
 
-- name: Copy local Gemfile for Redmine
+- name: Copy Gemfile for Redmine
   become: yes
   become_user: deploy
   copy:
-    src: Gemfile.local
+    src: Gemfile
     dest: /srv/rails/redmine/current
   notify: setup redmine
 

@@ -1,2 +1,0 @@
-gem 'dotenv'
-gem 'puma', '~> 3.7'
