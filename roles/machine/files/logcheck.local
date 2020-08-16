@@ -119,5 +119,5 @@
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ kernel: \[.*\] Process accounting resumed$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ dnsmasq-dhcp\[[0-9]+\]: Ignoring domain [^[:space:]]+ for DHCP host name [^[:space:]]+$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ miniupnpd\[[0-9]+\]: PCPSendUnsolicitedAnnounce\(\) IPv6 sendto\(\): Bad file descriptor$
-^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ zabbix_agentd\[[0-9]+\]: Starting Zabbix Agent \[Zabbix server\]. Zabbix .* \(revision .*\).$
+^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ zabbix_agentd\[[0-9]+\]: Starting Zabbix Agent \[.*\]. Zabbix .* \(revision .*\).$
 ^[[:alpha:]]{3} [ :[:digit:]]{11} [._[:alnum:]\-]+ zabbix_agentd\[[0-9]+\]: Press Ctrl\+C to exit.$
