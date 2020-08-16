@@ -5,5 +5,4 @@
     state: present
     name:
       - icecast2
-      - inspircd
       - mumble-server
