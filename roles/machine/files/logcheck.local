@@ -43,6 +43,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: message has signatures from .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: s=[^[:space:]]+ d=[^[:space:]]+ SSL.*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: bad signature data$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:alnum:]]+: key retrieval failed \(.*\): '.*' record not found$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max connection rate [[:digit:]]+/[[:digit:]]+s for (.*) at .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max connection count [[:digit:]]+ for (.*) at .*$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/dnsblog\[[[:digit:]]+\]: addr [^[:space:]]+ listed by domain [^[:space:]]+ as [^[:space:]]+$
