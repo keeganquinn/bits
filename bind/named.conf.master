@@ -202,6 +202,33 @@ zone "mailballotvote.com" {
   file "/etc/bind/generic";
 };
 
+zone "carson.productions" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/generic";
+};
+
+zone "klug.city" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/generic";
+};
+
+zone "klug.pictures" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/generic";
+};
+
 zone "klug.pw" {
   type master;
   allow-query { any; };

@@ -140,6 +140,30 @@ zone "mailballotvote.com" {
   file "mailballotvote.com";
 };
 
+zone "carson.productions" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "carson.productions";
+};
+
+zone "klug.city" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "klug.city";
+};
+
+zone "klug.pictures" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "klug.pictures";
+};
+
 zone "klug.pw" {
   type slave;
   notify no;
