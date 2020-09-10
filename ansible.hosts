@@ -3,4 +3,3 @@ localhost ansible_connection=local
 [servers]
 len.quinn.tk
 scrap.quinn.tk
-turn.personaltelco.net
