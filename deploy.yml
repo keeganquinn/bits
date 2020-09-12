@@ -20,19 +20,13 @@
     - nameserver
 
 - name: Application server configuration
-  hosts: scrap.quinn.tk, len.quinn.tk, turn.personaltelco.net
+  hosts: scrap.quinn.tk, len.quinn.tk
 
   roles:
     - email
     - webserver
     - build
     - rails
-
-- name: Extranet configuration
-  hosts: scrap.quinn.tk
-
-  roles:
-    - xmit
 
 - name: Intranet configuration
   hosts: scrap.quinn.tk
@@ -41,3 +35,4 @@
     - intranet
     - qa
     - redmine
+    - xmit
