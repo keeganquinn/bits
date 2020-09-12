@@ -7,7 +7,23 @@
       - certbot
       - fcgiwrap
       - nginx
+      - suricata-oinkmaster
       - zabbix-agent
+
+- name: Check for OSSEC installation
+  become: yes
+  stat: path=/var/ossec/bin/ossec-agentd
+  register: ossec_result
+
+- name: Install OSSEC agent
+  become: yes
+  apt: name=ossec-hids-agent state=present
+  when: not ossec_result.stat.exists
+
+- name: Copy Suricata configuration
+  become: yes
+  copy: src=suricata.yaml dest=/etc/suricata/suricata.yaml backup=yes
+  notify: restart suricata
 
 - name: Generate Diffie-Hellman parameters for nginx
   become: yes

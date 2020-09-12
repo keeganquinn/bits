@@ -1,4 +1,10 @@
 ---
+- name: Add atomicorp APT key
+  become: yes
+  apt_key:
+    url: https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt
+    state: present
+
 - name: Add jenkins APT key
   become: yes
   apt_key:

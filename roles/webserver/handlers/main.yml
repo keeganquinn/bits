@@ -6,3 +6,7 @@
 - name: restart nginx
   become: yes
   service: name=nginx state=restarted enabled=yes
+
+- name: restart suricata
+  become: yes
+  service: name=suricata state=restarted enabled=yes

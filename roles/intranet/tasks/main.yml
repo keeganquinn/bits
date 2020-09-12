@@ -21,6 +21,7 @@
       - motion
       - olsrd
       - openvpn
+      - ossec-hids-server
       - php
       - php-apcu
       - php-bcmath
@@ -101,6 +102,14 @@
 - name: Copy miniupnpd configuration
   become: yes
   copy: src=miniupnpd.conf dest=/etc/miniupnpd/miniupnpd.conf backup=yes
+
+- name: Copy OSSEC configuration
+  become: yes
+  copy: src=ossec.conf dest=/var/ossec/etc/ossec.conf backup=yes
+
+- name: Copy OSSEC local rules
+  become: yes
+  copy: src=local_rules.xml dest=/var/ossec/rules/local_rules.xml backup=yes
 
 - name: Copy php-fpm configuration
   become: yes

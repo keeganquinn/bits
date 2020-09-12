@@ -18,4 +18,7 @@
 !/var/cache/samba/.*
 !/var/lib/.*
 !/var/log/.*
+!/var/ossec/logs/.*
+!/var/ossec/queue/.*
+!/var/ossec/stats/.*
 !/var/spool/.*
