@@ -19,6 +19,7 @@
       - ldap-utils
       - miniupnpd
       - motion
+      - nut
       - olsrd
       - openvpn
       - ossec-hids-server
