@@ -57,7 +57,6 @@
       - fonts-hack
       - git
       - lftp
-      - logcheck
       - mlocate
       - nextcloud-desktop-cmd
       - nmap
@@ -80,14 +79,6 @@
 - name: Copy aide local configuration fragment
   become: yes
   copy: src=aide.local dest=/etc/aide/aide.conf.d/80_aide_local
-
-- name: Copy logcheck configuration file
-  become: yes
-  copy: src=logcheck.conf dest=/etc/logcheck/logcheck.conf
-
-- name: Copy logcheck local ignore file
-  become: yes
-  copy: src=logcheck.local dest=/etc/logcheck/ignore.d.server/local
 
 - name: Copy rkhunter default file
   become: yes
