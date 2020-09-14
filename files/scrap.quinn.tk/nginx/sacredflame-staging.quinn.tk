@@ -1,9 +1,5 @@
 # -*- nginx -*-
 
-upstream sacredflame_puma {
-    server unix:///srv/rails/sacredflame/shared/puma.sock fail_timeout=0;
-}
-
 server {
     listen 80;
     listen [::]:80;
@@ -39,41 +35,5 @@ server {
     access_log /var/log/nginx/sacredflame-staging.quinn.tk-access.log combined if=$log_ua;
     error_log /var/log/nginx/sacredflame-staging.quinn.tk-error.log warn;
 
-    root /srv/rails/sacredflame/current/public;
-
-    location /.well-known/apple-app-site-association {
-        default_type application/json;
-    }
-
-    location ^~ /assets/ {
-        gzip_static on;
-        expires max;
-        add_header Cache-Control public;
-    }
-
-    try_files $uri/index.html $uri @sacredflame_puma;
-    location @sacredflame_puma {
-        if (-f $document_root/../tmp/maintenance.txt) {
-            return 503;
-        }
-
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_redirect off;
-        proxy_pass http://sacredflame_puma;
-    }
-
-    client_max_body_size 4G;
-    keepalive_timeout 10;
-
-    error_page 503 @maintenance;
-
-    location @maintenance {
-        if (!-f $request_filename) {
-            rewrite ^(.*)$ /maintenance.html break;
-        }
-    }
+    root /srv/www/sacredflame.life;
 }
