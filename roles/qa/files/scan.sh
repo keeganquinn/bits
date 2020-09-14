@@ -11,9 +11,8 @@ PROJECTS=(
     "animamagica /srv/git/animamagica.git"
     "basslin.es /srv/git/basslin.es.git"
     "bln_player https://github.com/keeganquinn/bln_player.git"
-    "cwnmyr https://github.com/keeganquinn/cwnmyr.git"
-    "partystarter /srv/git/partystarter.git"
-    "quinn.tk /srv/git/quinn.tk.git")
+    "quinn.tk /srv/git/quinn.tk.git"
+    "sacredflame /srv/git/sacredflame.git")
 
 scratch=$(mktemp -d)
 chmod 0700 "${scratch}"
