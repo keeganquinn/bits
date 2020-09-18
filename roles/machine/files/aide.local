@@ -4,6 +4,10 @@
 /etc/letsencrypt$ VarDir
 /root/.ansible/tmp$ VarDir
 /var/cache/apt$ VarDir
+/var/ossec/active-response$ VarDir
+/etc/hosts.deny$ VarFile
+/etc/suricata/rules/.* VarFile
+/var/ossec/etc/shared/merged.mg$ VarFile
 
 !/etc/cups/ppd/.*
 !/home/.*
