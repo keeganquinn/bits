@@ -51,7 +51,7 @@
 
 - name: Install wondercake
   become: yes
-  copy: src=wondercake dest=/usr/local/sbin/wondercake mode=0755
+  copy: src=wondercake.sh dest=/usr/local/sbin/wondercake mode=0755
 
 - name: Copy cups configuration
   become: yes
