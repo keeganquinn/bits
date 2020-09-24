@@ -4,9 +4,9 @@
 
 $TTL 2d
 
-@ IN    SOA     len.quinn.tk. hostmaster.quinn.tk. (
+@ IN    SOA     len.qtk.io. hostmaster.qtk.io. (
         ; serial
-        2020031000
+        2020092300
         ; refresh
         30M
         ; retry
@@ -17,9 +17,9 @@ $TTL 2d
         1h
         )
 
-        NS      len.quinn.tk.
-        NS      scrap.quinn.tk.
+        NS      len.qtk.io.
+        NS      scrap.qtk.io.
 
-1       PTR     s1edge.quinn.tk.
+1       PTR     s1edge.qtk.io.
 
-$GENERATE 50-250 $ PTR s1d${0,3,d}.quinn.tk.
+$GENERATE 50-250 $ PTR s1d${0,3,d}.qtk.io.

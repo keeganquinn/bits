@@ -15,7 +15,7 @@
   cron:
     env: yes
     name: MAILTO
-    value: dev@quinn.tk
+    value: dev@qtk.io
 
 - name: Schedule dependency scan
   become: yes

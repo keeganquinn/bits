@@ -1,7 +1,7 @@
 bits
 ====
 
-[![Build Status](https://ci.quinn.tk/job/bits/badge/icon)](https://ci.quinn.tk/job/bits/)
+[![Build Status](https://ci.qtk.io/job/bits/badge/icon)](https://ci.qtk.io/job/bits/)
 
 This repository started life back in 2011 as a collection of configuration
 files that I wanted to keep in version control. Since then, it has expanded
@@ -13,4 +13,4 @@ I make no guarantees that any of this code will be directly useful to anyone
 else, but feel free to have a look if you like configuration files or
 Ansible roles.
 
-For more information about me and my work: https://quinn.tk/
+For more information about me and my work: https://qtk.io/

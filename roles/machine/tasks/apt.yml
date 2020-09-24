@@ -25,10 +25,10 @@
     state: present
   when: ansible_architecture == 'x86_64'
 
-- name: Add quinn.tk APT key
+- name: Add qtk.io APT key
   become: yes
   apt_key:
-    url: https://xmit.quinn.tk/debian/repo.gpg.key
+    url: https://xmit.qtk.io/debian/repo.gpg.key
     state: present
 
 - name: Copy APT sources

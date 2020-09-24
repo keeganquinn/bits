@@ -3,15 +3,15 @@ User keegan
 
 # Servers
 Host len
-    Hostname len.quinn.tk
+    Hostname len.qtk.io
     ForwardAgent yes
 
 Host pi
-    Hostname pi.quinn.tk
+    Hostname pi.qtk.io
     ForwardAgent yes
 
 Host scrap
-    Hostname scrap.quinn.tk
+    Hostname scrap.qtk.io
     ForwardAgent yes
 
 
@@ -28,16 +28,16 @@ Host artifact
     ForwardAgent yes
 
 Host electron
-    Hostname electron.quinn.tk
+    Hostname electron.qtk.io
     ForwardAgent yes
 
 Host factor
-    Hostname factor.quinn.tk
+    Hostname factor.qtk.io
     ForwardAgent yes
     AddressFamily inet
 
 Host one
-    Hostname one.quinn.tk
+    Hostname one.qtk.io
     ForwardAgent yes
 
 Host wsl
@@ -47,28 +47,28 @@ Host wsl
     ForwardX11Trusted yes
 
 Host zero
-    Hostname zero.quinn.tk
+    Hostname zero.qtk.io
     ForwardAgent yes
 
 
 # Network devices
 Host lilguy
-    Hostname lilguy.quinn.tk
+    Hostname lilguy.qtk.io
     User root
     ForwardAgent yes
 
 Host sink
-    Hostname sink.quinn.tk
+    Hostname sink.qtk.io
     User root
     ForwardAgent yes
 
 Host wave
-    Hostname wave.quinn.tk
+    Hostname wave.qtk.io
     User root
     ForwardAgent yes
 
 Host widget
-    Hostname widget.quinn.tk
+    Hostname widget.qtk.io
     User root
     ForwardAgent yes
 

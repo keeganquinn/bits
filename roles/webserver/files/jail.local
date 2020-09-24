@@ -1,5 +1,5 @@
 [DEFAULT]
-destemail = keegan@quinn.tk
+destemail = keegan@qtk.io
 sendername = Fail2Ban
 
 [sshd]

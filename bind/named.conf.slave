@@ -3,6 +3,14 @@ masters primary {
   2600:3c01::f03c:91ff:fee9:47cb;
 };
 
+zone "qtk.io" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "qtk.io";
+};
+
 zone "quinn.tk" {
   type slave;
   notify no;

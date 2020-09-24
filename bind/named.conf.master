@@ -48,13 +48,23 @@ masters hidden-slaves {
   2601:1c2:4c00:e66d::1;
 };
 
+zone "qtk.io" {
+  type master;
+  allow-query { any; };
+  allow-transfer { "slaves"; };
+  notify yes;
+  also-notify { hidden-slaves; };
+  file "/etc/bind/qtk.io";
+};
+
+# old domain for transition only
 zone "quinn.tk" {
   type master;
   allow-query { any; };
   allow-transfer { "slaves"; };
   notify yes;
   also-notify { hidden-slaves; };
-  file "/etc/bind/quinn.tk";
+  file "/etc/bind/qtk.io";
 };
 
 zone "22.11.10.in-addr.arpa" {

@@ -11,7 +11,7 @@ PROJECTS=(
     "animamagica /srv/git/animamagica.git"
     "basslin.es /srv/git/basslin.es.git"
     "bln_player https://github.com/keeganquinn/bln_player.git"
-    "quinn.tk /srv/git/quinn.tk.git"
+    "qtk.io /srv/git/qtk.io.git"
     "sacredflame /srv/git/sacredflame.git")
 
 scratch=$(mktemp -d)
@@ -41,6 +41,6 @@ done
 echo "Ruby: 2.7.1 - check https://www.ruby-lang.org/"
 echo "Redmine: 4.1.1 - check https://redmine.org/"
 echo "Roundcube: 1.4.8 - check https://roundcube.net/"
-echo "Nextcloud: check https://cloud.quinn.tk/settings/admin/overview"
+echo "Nextcloud: check https://cloud.qtk.io/settings/admin/overview"
 
 cleanup

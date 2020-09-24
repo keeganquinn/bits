@@ -1,5 +1,5 @@
 localhost ansible_connection=local
 
 [servers]
-len.quinn.tk
-scrap.quinn.tk
+len.qtk.io
+scrap.qtk.io

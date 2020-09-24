@@ -1,0 +1,11 @@
+# -*- nginx -*-
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name sniz.net www.sniz.net;
+
+    access_log off;
+
+    return 301 https://qtk.io$request_uri;
+}

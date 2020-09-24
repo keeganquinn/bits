@@ -1,0 +1,3 @@
+cloud.qtk.io lmtp:unix:private/dovecot-lmtp
+scrap.qtk.io lmtp:unix:private/dovecot-lmtp
+* smtp:qtk.io:587

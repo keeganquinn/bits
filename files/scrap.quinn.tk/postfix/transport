@@ -1,3 +1,0 @@
-cloud.quinn.tk lmtp:unix:private/dovecot-lmtp
-scrap.quinn.tk lmtp:unix:private/dovecot-lmtp
-* smtp:quinn.tk:587

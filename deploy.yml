@@ -7,20 +7,20 @@
     - deploy
 
 - name: Desktop machine configuration
-  hosts: scrap.quinn.tk
+  hosts: scrap.qtk.io
 
   roles:
     - dot
 
 - name: Core server configuration
-  hosts: scrap.quinn.tk, len.quinn.tk
+  hosts: scrap.qtk.io, len.qtk.io
 
   roles:
     - ftp
     - nameserver
 
 - name: Application server configuration
-  hosts: scrap.quinn.tk, len.quinn.tk
+  hosts: scrap.qtk.io, len.qtk.io
 
   roles:
     - email
@@ -29,7 +29,7 @@
     - rails
 
 - name: Intranet configuration
-  hosts: scrap.quinn.tk
+  hosts: scrap.qtk.io
 
   roles:
     - intranet
