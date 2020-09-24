@@ -1,3 +1,4 @@
+/$ VarDir
 /etc/apt$ VarDir
 /etc/apt/trusted.gpg.d$ VarDir
 /etc/cups/ppd$ VarDir
