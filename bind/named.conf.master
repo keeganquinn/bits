@@ -45,16 +45,6 @@ zone "qtk.io" {
   file "/etc/bind/qtk.io";
 };
 
-# old domain for transition only
-zone "quinn.tk" {
-  type master;
-  allow-query { any; };
-  allow-transfer { "slaves"; };
-  notify yes;
-  also-notify { hidden-slaves; };
-  file "/etc/bind/qtk.io";
-};
-
 zone "22.11.10.in-addr.arpa" {
   type master;
   allow-query { any; };

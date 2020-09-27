@@ -11,14 +11,6 @@ zone "qtk.io" {
   file "qtk.io";
 };
 
-zone "quinn.tk" {
-  type slave;
-  notify no;
-  allow-query { any; };
-  masters { primary; };
-  file "quinn.tk";
-};
-
 zone "22.11.10.in-addr.arpa" {
   type slave;
   notify no;
