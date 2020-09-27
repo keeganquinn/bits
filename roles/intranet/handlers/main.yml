@@ -7,6 +7,10 @@
   become: yes
   service: name=dnsmasq state=restarted enabled=yes
 
+- name: restart ossec
+  become: yes
+  service: name=ossec state=restarted enabled=yes
+
 - name: restart php-fpm
   become: yes
   service: name=php7.3-fpm state=restarted enabled=yes
