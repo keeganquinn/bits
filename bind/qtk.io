@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020092300
+        2020100500
         ; refresh
         30M
         ; retry
@@ -35,13 +35,10 @@ mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/9
 
 www     CNAME   @
 
-; DC-hosted systems
+; linode
 len     A       45.79.65.28
 len     AAAA    2600:3c01::f03c:91ff:fee9:47cb
 len     TXT     "v=spf1 a -all"
-
-pi      A       89.18.165.159
-pi      AAAA    2a00:f10:103:201:ba27:ebff:fe73:17b5
 
 ; site 0
 scrap   A       67.189.70.230
@@ -93,13 +90,8 @@ animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap
 ci                      CNAME   scrap
 cloud                   CNAME   scrap
-cwnmyr                  CNAME   len
-cwnmyr-staging          CNAME   scrap
-jenkins                 CNAME   scrap
-lists                   CNAME   len
 mail                    CNAME   scrap
 pm                      CNAME   scrap
-redmine                 CNAME   scrap
 sacredflame-staging     CNAME   scrap
 staging                 CNAME   scrap
 xmit                    CNAME   scrap
