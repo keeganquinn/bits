@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020100500
+        2020102000
         ; refresh
         30M
         ; retry
@@ -90,6 +90,7 @@ animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap
 ci                      CNAME   scrap
 cloud                   CNAME   scrap
+es                      CNAME   scrap
 mail                    CNAME   scrap
 pm                      CNAME   scrap
 sacredflame-staging     CNAME   scrap

@@ -4,6 +4,7 @@
   apt:
     state: present
     name:
+      - apache2-utils
       - apacheds
       - cups
       - dnsmasq
@@ -12,17 +13,20 @@
       - dovecot-lmtpd
       - dovecot-managesieved
       - dovecot-sieve
+      - elasticsearch
+      - filebeat
       - firmware-linux-nonfree
       - iftop
       - ipv6calc
       - jenkins
+      - kibana
       - ldap-utils
+      - logstash
       - miniupnpd
       - motion
       - nut
       - olsrd
       - openvpn
-      - wazuh-manager
       - php
       - php-apcu
       - php-bcmath
@@ -46,6 +50,8 @@
       - spamc
       - tftpd-hpa
       - tigervnc-standalone-server
+      - wazuh-api
+      - wazuh-manager
       - zabbix-frontend-php
       - zabbix-server-pgsql
 
