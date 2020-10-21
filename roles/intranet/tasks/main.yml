@@ -22,7 +22,7 @@
       - nut
       - olsrd
       - openvpn
-      - ossec-hids-server
+      - wazuh-manager
       - php
       - php-apcu
       - php-bcmath
@@ -104,14 +104,19 @@
   become: yes
   copy: src=miniupnpd.conf dest=/etc/miniupnpd/miniupnpd.conf backup=yes
 
-- name: Copy OSSEC configuration
+- name: Copy Wazuh/OSSEC configuration
   become: yes
   copy: src=ossec.conf dest=/var/ossec/etc/ossec.conf backup=yes
   notify: restart ossec
 
-- name: Copy OSSEC local rules
+- name: Copy Wazuh/OSSEC local rules
   become: yes
-  copy: src=local_rules.xml dest=/var/ossec/rules/local_rules.xml backup=yes
+  copy: src=local_rules.xml dest=/var/ossec/etc/rules/local_rules.xml backup=yes
+  notify: restart ossec
+
+- name: Copy Wazuh/OSSEC Suricata rules
+  become: yes
+  copy: src=suricata_rules.xml dest=/var/ossec/etc/rules/suricata_rules.xml backup=yes
   notify: restart ossec
 
 - name: Copy php-fpm configuration

@@ -1,0 +1,33 @@
+<group name="snort-fast,">
+  <!-- Alert if a level 1 threat is identified -->
+  <rule id="300011" level="10">
+    <category>ids</category>
+    <match>[Priority: 1]</match>
+    <description>Suricata level 1 alert</description>
+  </rule>
+
+  <!-- Alert if multiple level 1 threats are identified -->
+  <rule id="300012" level="11" frequency="5" timeframe="120" ignore="90">
+    <if_matched_sid>300011</if_matched_sid>
+    <same_source_ip />
+    <description>Many high-severity Suricata alerts</description>
+  </rule>
+
+  <rule id="300013" level="12" frequency="10" timeframe="120" ignore="90">
+    <if_matched_sid>300011</if_matched_sid>
+    <same_source_ip />
+    <description>Several high-severity Suricata alerts</description>
+  </rule>
+
+  <rule id="300014" level="13" frequency="20" timeframe="120" ignore="90">
+    <if_matched_sid>300011</if_matched_sid>
+    <same_source_ip />
+    <description>Numerous high-severity Suricata alerts</description>
+  </rule>
+
+  <rule id="300015" level="14" frequency="50" timeframe="120" ignore="90">
+    <if_matched_sid>300011</if_matched_sid>
+    <same_source_ip />
+    <description>Multiple high-severity Suricata alerts</description>
+  </rule>
+</group>

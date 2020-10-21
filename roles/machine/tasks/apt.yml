@@ -1,10 +1,4 @@
 ---
-- name: Add atomicorp APT key
-  become: yes
-  apt_key:
-    url: https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt
-    state: present
-
 - name: Add jenkins APT key
   become: yes
   apt_key:
@@ -29,6 +23,12 @@
   become: yes
   apt_key:
     url: https://xmit.qtk.io/debian/repo.gpg.key
+    state: present
+
+- name: Add wazuh APT key
+  become: yes
+  apt_key:
+    url: https://packages.wazuh.com/key/GPG-KEY-WAZUH
     state: present
 
 - name: Copy APT sources

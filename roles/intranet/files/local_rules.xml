@@ -1,23 +1,4 @@
-<!-- @(#) $Id: ./etc/rules/local_rules.xml, 2011/09/08 dcid Exp $
-
-  -  Example of local rules for OSSEC.
-  -
-  -  Copyright (C) 2009 Trend Micro Inc.
-  -  All rights reserved.
-  -
-  -  This program is a free software; you can redistribute it
-  -  and/or modify it under the terms of the GNU General Public
-  -  License (version 2) as published by the FSF - Free Software
-  -  Foundation.
-  -
-  -  License details: http://www.ossec.net/en/licensing.html
-  -->
-
-
-<!-- Modify it at your will. -->
-
 <group name="local,syslog,">
-
   <!-- Note that rule id 5711 is defined at the ssh_rules file
     -  as a ssh failed login. This is just an example
     -  since ip 192.0.2.1 shouldn't be used anywhere.
@@ -29,11 +10,10 @@
     <description>Example of rule that will ignore sshd </description>
     <description>failed logins from IP 1.1.1.1.</description>
   </rule>
-  
-  
+
   <!-- This example will ignore ssh failed logins for the user name XYZABC.
     -->
-  <!--  
+  <!--
   <rule id="100020" level="0">
     <if_sid>5711</if_sid>
     <user_pcre2>XYZABC</user_pcre2>
@@ -41,51 +21,4 @@
     <description>failed logins for user XYZABC.</description>
   </rule>
   -->
-  
-  <rule id="100002" level="0">
-    <if_sid>1002</if_sid>
-    <program_name>sshguard</program_name>
-    <description>Ignore sshguard messages.</description>
-  </rule>
-  
-</group> <!-- SYSLOG,LOCAL -->
-
-<group name="snort-fast,">
-
-  <!-- Alert if a level 1 threat is identified -->
-  <rule id="300011" level="10">
-    <category>ids</category>
-    <match>[Priority: 1]</match>
-    <description>Suricata level 1 alert</description>
-  </rule>
-
-  <!-- Alert if multiple level 1 threats are identified -->
-  <rule id="300012" level="11" frequency="5" timeframe="120" ignore="90">
-    <if_matched_sid>300011</if_matched_sid>
-    <same_source_ip />
-    <description>Many high-severity Suricata alerts</description>
-  </rule>
-
-  <rule id="300013" level="12" frequency="10" timeframe="120" ignore="90">
-    <if_matched_sid>300011</if_matched_sid>
-    <same_source_ip />
-    <description>Several high-severity Suricata alerts</description>
-  </rule>
-
-  <rule id="300014" level="13" frequency="20" timeframe="120" ignore="90">
-    <if_matched_sid>300011</if_matched_sid>
-    <same_source_ip />
-    <description>Numerous high-severity Suricata alerts</description>
-  </rule>
-
-  <rule id="3000015" level="14" frequency="50" timeframe="120" ignore="90">
-    <if_matched_sid>300011</if_matched_sid>
-    <same_source_ip />
-    <description>Multiple high-severity Suricata alerts</description>
-  </rule>
 </group>
-
-
-
-
-<!-- EOF -->

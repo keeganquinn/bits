@@ -10,14 +10,14 @@
       - suricata-oinkmaster
       - zabbix-agent
 
-- name: Check for OSSEC installation
+- name: Check for Wazuh/OSSEC installation
   become: yes
-  stat: path=/var/ossec/bin/ossec-agentd
+  stat: path=/var/ossec/bin/ossec-execd
   register: ossec_result
 
-- name: Install OSSEC agent
+- name: Install Wazuh/OSSEC agent
   become: yes
-  apt: name=ossec-hids-agent state=present
+  apt: name=wazuh-agent state=present
   when: not ossec_result.stat.exists
 
 - name: Copy Suricata configuration
