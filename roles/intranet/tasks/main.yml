@@ -115,6 +115,10 @@
   copy: src=ossec.conf dest=/var/ossec/etc/ossec.conf backup=yes
   notify: restart ossec
 
+- name: Copy Wazuh/OSSEC Linux agent configuration
+  become: yes
+  copy: src=linux-agent.conf dest=/var/ossec/etc/shared/linux/agent.conf backup=yes
+
 - name: Copy Wazuh/OSSEC local rules
   become: yes
   copy: src=local_rules.xml dest=/var/ossec/etc/rules/local_rules.xml backup=yes
