@@ -6,23 +6,11 @@
     - machine
     - deploy
 
-- name: Desktop machine configuration
-  hosts: scrap.qtk.io
-
-  roles:
-    - dot
-
-- name: Core server configuration
+- name: Server configuration
   hosts: scrap.qtk.io, len.qtk.io
 
   roles:
-    - ftp
     - nameserver
-
-- name: Application server configuration
-  hosts: scrap.qtk.io, len.qtk.io
-
-  roles:
     - email
     - webserver
     - build
@@ -32,6 +20,7 @@
   hosts: scrap.qtk.io
 
   roles:
+    - dot
     - intranet
     - qa
     - redmine
