@@ -1,4 +1,17 @@
 ---
+- name: Create OpenSSH configuration directory for root
+  become: yes
+  file: path=/root/.ssh state=directory
+
+- name: Copy OpenSSH client configuration for root
+  become: yes
+  copy: src=ssh_config dest=/root/.ssh/config backup=yes
+
+- name: Copy OpenSSH server configuration
+  become: yes
+  copy: src=sshd_config dest=/etc/ssh/sshd_config backup=yes
+  notify: restart sshd
+
 - name: Copy sudo configuration
   become: yes
   copy: src=nopasswd.sudoers dest=/etc/sudoers.d/nopasswd mode=0440

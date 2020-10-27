@@ -4,14 +4,12 @@ User keegan
 # Servers
 Host len
     Hostname len.qtk.io
-    ForwardAgent yes
-
-Host pi
-    Hostname pi.qtk.io
+    Port 2222
     ForwardAgent yes
 
 Host scrap
     Hostname scrap.qtk.io
+    Port 2222
     ForwardAgent yes
 
 
@@ -25,19 +23,23 @@ Host athlon
 # Local machines
 Host artifact
     Hostname artifact.local
+    Port 2222
     ForwardAgent yes
 
 Host electron
     Hostname electron.qtk.io
+    Port 2222
     ForwardAgent yes
 
 Host factor
     Hostname factor.qtk.io
+    Port 2222
     ForwardAgent yes
     AddressFamily inet
 
 Host one
     Hostname one.qtk.io
+    Port 2222
     ForwardAgent yes
 
 Host wsl
@@ -48,40 +50,12 @@ Host wsl
 
 Host zero
     Hostname zero.qtk.io
+    Port 2222
     ForwardAgent yes
 
 
 # Network devices
-Host lilguy
-    Hostname lilguy.qtk.io
-    User root
-    ForwardAgent yes
-
-Host sink
-    Hostname sink.qtk.io
-    User root
-    ForwardAgent yes
-
 Host wave
     Hostname wave.qtk.io
     User root
-    ForwardAgent yes
-
-Host widget
-    Hostname widget.qtk.io
-    User root
-    ForwardAgent yes
-
-
-# PTP servers
-Host drei
-    Hostname drei.personaltelco.net
-    ForwardAgent yes
-
-Host knod
-    Hostname knod.personaltelco.net
-    ForwardAgent yes
-
-Host turn
-    Hostname turn.personaltelco.net
     ForwardAgent yes
