@@ -148,6 +148,14 @@ zone "carson.productions" {
   file "carson.productions";
 };
 
+zone "kennedy.place" {
+  type slave;
+  notify no;
+  allow-query { any; };
+  masters { primary; };
+  file "kennedy.place";
+};
+
 zone "klug.city" {
   type slave;
   notify no;
