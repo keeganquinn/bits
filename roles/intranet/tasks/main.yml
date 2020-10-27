@@ -13,19 +13,19 @@
       - dovecot-lmtpd
       - dovecot-managesieved
       - dovecot-sieve
-      - elasticsearch
+      - elasticsearch-oss
       - filebeat
       - firmware-linux-nonfree
       - iftop
       - ipv6calc
       - jenkins
-      - kibana
       - ldap-utils
-      - logstash
       - miniupnpd
       - motion
       - nut
       - olsrd
+      - opendistroforelasticsearch
+      - opendistroforelasticsearch-kibana
       - openvpn
       - php
       - php-apcu
@@ -50,7 +50,6 @@
       - spamc
       - tftpd-hpa
       - tigervnc-standalone-server
-      - wazuh-api
       - wazuh-manager
       - zabbix-frontend-php
       - zabbix-server-pgsql

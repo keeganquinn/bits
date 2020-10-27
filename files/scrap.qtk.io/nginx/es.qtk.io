@@ -35,10 +35,12 @@ server {
     error_log /var/log/nginx/es.qtk.io-error.log warn;
 
     location / {
-        proxy_pass http://127.0.0.1:5601;
-        proxy_redirect http:// https://;
-        auth_basic "Restricted";
-        auth_basic_user_file /etc/nginx/conf.d/kibana.htpasswd;
+        proxy_pass https://127.0.0.1:5601;
+        proxy_redirect off;
+        proxy_buffering off;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "Keep-Alive";
+        proxy_set_header Proxy-Connection "Keep-Alive";
     }
 
     location /.well-known {
