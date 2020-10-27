@@ -7,7 +7,7 @@
     - deploy
 
 - name: Server configuration
-  hosts: scrap.qtk.io, len.qtk.io
+  hosts: scrap, len
 
   roles:
     - nameserver
@@ -17,7 +17,7 @@
     - rails
 
 - name: Intranet configuration
-  hosts: scrap.qtk.io
+  hosts: scrap
 
   roles:
     - dot
