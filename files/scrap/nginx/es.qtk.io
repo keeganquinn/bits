@@ -38,9 +38,12 @@ server {
         proxy_pass https://127.0.0.1:5601;
         proxy_redirect off;
         proxy_buffering off;
+
         proxy_http_version 1.1;
         proxy_set_header Connection "Keep-Alive";
         proxy_set_header Proxy-Connection "Keep-Alive";
+
+        client_body_buffer_size 128k;
     }
 
     location /.well-known {
