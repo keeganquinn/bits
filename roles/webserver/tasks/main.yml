@@ -25,6 +25,10 @@
   copy: src=suricata.yaml dest=/etc/suricata/suricata.yaml backup=yes
   notify: restart suricata
 
+- name: Copy Suricata logrotate settings
+  become: yes
+  copy: src=suricata.logrotate dest=/etc/logrotate.d/suricata backup=yes
+
 - name: Generate Diffie-Hellman parameters for nginx
   become: yes
   command: openssl dhparam -out /etc/nginx/dhparams.pem 2048
