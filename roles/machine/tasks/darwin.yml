@@ -1,0 +1,4 @@
+---
+- name: Copy OpenSSH server configuration
+  become: yes
+  copy: src=sshd_config dest=/etc/ssh/sshd_config backup=yes
