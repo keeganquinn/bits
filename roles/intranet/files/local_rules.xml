@@ -1,24 +1,10 @@
 <group name="local,syslog,">
-  <!-- Note that rule id 5711 is defined at the ssh_rules file
-    -  as a ssh failed login. This is just an example
-    -  since ip 192.0.2.1 shouldn't be used anywhere.
-    -  Level 0 means ignore.
-    -->
-  <rule id="100001" level="0">
-    <if_sid>5711</if_sid>
-    <srcip>192.0.2.1</srcip>
-    <description>Example of rule that will ignore sshd </description>
-    <description>failed logins from IP 1.1.1.1.</description>
+  <!-- Increase frequency of standard POST flood rule to reduce
+       false positives. -->
+  <rule id="31533" level="10" timeframe="20" frequency="40" overwrite="yes">
+    <if_matched_sid>31530</if_matched_sid>
+    <same_source_ip />
+    <description>High amount of POST requests in a small period of time (likely bot).</description>
+    <group>pci_dss_6.5,pci_dss_11.4,gdpr_IV_35.7.d,nist_800_53_SA.11,nist_800_53_SI.4,tsc_CC6.6,tsc_CC7.1,tsc_CC8.1,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
   </rule>
-
-  <!-- This example will ignore ssh failed logins for the user name XYZABC.
-    -->
-  <!--
-  <rule id="100020" level="0">
-    <if_sid>5711</if_sid>
-    <user_pcre2>XYZABC</user_pcre2>
-    <description>Example of rule that will ignore sshd </description>
-    <description>failed logins for user XYZABC.</description>
-  </rule>
-  -->
 </group>
