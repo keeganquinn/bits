@@ -100,7 +100,7 @@ server {
         fastcgi_pass nextcloud_handler;
         fastcgi_intercept_errors on;
         fastcgi_request_buffering off;
-        fastcgi_buffer_size 64k;
+        fastcgi_buffer_size 16k;
         fastcgi_buffers 256 512k;
         fastcgi_ignore_headers X-Accel-Buffering;
     }

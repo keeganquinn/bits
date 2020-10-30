@@ -45,5 +45,7 @@ server {
         fastcgi_pass zabbix_handler;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 16 32k;
     }
 }

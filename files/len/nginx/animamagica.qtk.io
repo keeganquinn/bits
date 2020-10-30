@@ -63,6 +63,8 @@ server {
         proxy_set_header Connection "Upgrade";
         proxy_redirect off;
         proxy_pass http://animamagica_puma;
+        proxy_buffer_size 16k;
+        proxy_buffers 128 256k;
     }
 
     client_max_body_size 4G;
