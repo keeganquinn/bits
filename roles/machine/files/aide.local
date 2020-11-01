@@ -1,4 +1,5 @@
 /$ VarDir
+/dev/shm/performanceanalyzer$ VarDir
 /etc/apt$ VarDir
 /etc/apt/trusted.gpg.d$ VarDir
 /etc/cups/ppd$ VarDir
@@ -8,8 +9,16 @@
 /var/ossec/active-response$ VarDir
 /etc/hosts.deny$ VarFile
 /etc/suricata/rules/.* VarFile
-/var/ossec/etc/shared/merged.mg$ VarFile
+/var/ossec/etc/shared/default$ VarDir
+/var/ossec/etc/shared/default/merged.mg$ VarFile
+/var/ossec/etc/shared/linux$ VarDir
+/var/ossec/etc/shared/linux/merged.mg$ VarFile
+/var/ossec/logs$ VarDir
+/var/ossec/tmp$ VarDir
+/var/ossec/var/db/agents$ VarDir
+/var/ossec/var/multigroups$ VarDir
 
+!/dev/shm/performanceanalyzer/.*
 !/etc/cups/ppd/.*
 !/home/.*
 !/run/.*
@@ -26,4 +35,6 @@
 !/var/ossec/logs/.*
 !/var/ossec/queue/.*
 !/var/ossec/stats/.*
+!/var/ossec/var/db/agents/.*
+!/var/ossec/var/multigroups/.*
 !/var/spool/.*
