@@ -44,6 +44,7 @@ Host one
 
 Host wsl
     Hostname localhost
+    Port 2222
     ForwardAgent yes
     ForwardX11 yes
     ForwardX11Trusted yes
