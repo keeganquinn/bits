@@ -1,14 +1,12 @@
 /$ VarDir
-/dev/shm/performanceanalyzer$ VarDir
 /etc/apt$ VarDir
 /etc/apt/trusted.gpg.d$ VarDir
 /etc/cups/ppd$ VarDir
-/etc/letsencrypt$ VarDir
-/root/.ansible/tmp$ VarDir
-/var/cache/apt$ VarDir
-/var/ossec/active-response$ VarDir
+/etc/cups/ppd/.* VarFile
 /etc/hosts.deny$ VarFile
 /etc/suricata/rules/.* VarFile
+/root/.ansible/tmp$ VarDir
+/var/ossec/active-response$ VarDir
 /var/ossec/etc/shared/default$ VarDir
 /var/ossec/etc/shared/default/merged.mg$ VarFile
 /var/ossec/etc/shared/linux$ VarDir
@@ -16,25 +14,23 @@
 /var/ossec/logs$ VarDir
 /var/ossec/tmp$ VarDir
 /var/ossec/var/db/agents$ VarDir
+/var/ossec/var/db/agents/.* VarFile
 /var/ossec/var/multigroups$ VarDir
+/var/ossec/var/multigroups/.* VarFile
+/var/ossec/var/run$ VarDir
+/var/ossec/var/run/.* VarFile
+/var/ossec/var/wodles/syscollector$ VarFile
 
-!/dev/shm/performanceanalyzer/.*
-!/etc/cups/ppd/.*
+!/dev/shm/.*
 !/home/.*
 !/run/.*
 !/srv/.*
 !/tmp/.*
 !/var/backups/.*
-!/var/cache/apt/.*
-!/var/cache/apt-xapian-index/.*
-!/var/cache/cups/.*
-!/var/cache/man/.*
-!/var/cache/samba/.*
+!/var/cache/.*
 !/var/lib/.*
 !/var/log/.*
 !/var/ossec/logs/.*
 !/var/ossec/queue/.*
 !/var/ossec/stats/.*
-!/var/ossec/var/db/agents/.*
-!/var/ossec/var/multigroups/.*
 !/var/spool/.*
