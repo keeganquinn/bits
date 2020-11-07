@@ -8,6 +8,10 @@ ssh-add -l >/dev/null || ssh-add
 
 rm -f files/*/nginx/*~
 
-grep -E -q "^$(hostname)$" ansible.hosts || ansible-playbook dot.yml
+options=()
+[ "$(uname -s)" == "Darwin" ] && options=(--ask-become-pass)
+
+grep -E -q "^$(hostname -s)$" ansible.hosts || \
+    ansible-playbook "${options[@]}" dot.yml
 
 ansible-playbook deploy.yml
