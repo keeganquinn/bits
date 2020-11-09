@@ -4,8 +4,10 @@
 /etc/cups/ppd$ VarDir
 /etc/cups/ppd/.* VarFile
 /etc/hosts.deny$ VarFile
+/etc/letsencrypt$ VarDir
 /etc/suricata/rules/.* VarFile
 /root/.ansible/tmp$ VarDir
+/usr/share/kibana/optimize/wazuh/config/wazuh-registry.json$ VarFile
 /var/ossec/active-response$ VarDir
 /var/ossec/etc/shared/default$ VarDir
 /var/ossec/etc/shared/default/merged.mg$ VarFile
