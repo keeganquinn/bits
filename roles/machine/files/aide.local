@@ -36,4 +36,5 @@
 !/var/ossec/logs/.*
 !/var/ossec/queue/.*
 !/var/ossec/stats/.*
+!/var/ossec/var/run/.*
 !/var/spool/.*
