@@ -11,7 +11,7 @@
       - graphviz
       - imagemagick@6
       - libsodium
-      - node
+      - node@14
       - pkg-config
       - postgresql
       - redis
