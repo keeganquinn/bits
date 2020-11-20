@@ -5,7 +5,10 @@
     name: deploy
     comment: Application Deployment
     shell: /bin/bash
-    groups: sudo
+    groups:
+      - adm
+      - sudo
+      - systemd-journal
 
 - name: Add the main SSH public key for the deploy user
   become: yes
@@ -19,6 +22,15 @@
     user: deploy
     key: "{{ lookup('file', 'authorized_keys') }}"
 
+- name: Copy OpenSSH client configuration for the deploy user
+  become: yes
+  copy:
+    src: roles/machine/files/ssh_config
+    dest: /home/deploy/.ssh/config
+    owner: deploy
+    group: deploy
+    backup: yes
+
 - name: Copy the bash configuration file for the deploy user
   become: yes
   copy:
@@ -26,6 +38,7 @@
     dest: /home/deploy/.bashrc
     owner: deploy
     group: deploy
+    backup: yes
 
 - name: Copy the profile for the deploy user
   become: yes
@@ -34,3 +47,4 @@
     dest: /home/deploy/.profile
     owner: deploy
     group: deploy
+    backup: yes
