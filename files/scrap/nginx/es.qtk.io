@@ -40,8 +40,7 @@ server {
         proxy_buffering off;
 
         proxy_http_version 1.1;
-        proxy_set_header Connection "Keep-Alive";
-        proxy_set_header Proxy-Connection "Keep-Alive";
+        proxy_pass_request_headers on;
 
         client_body_buffer_size 128k;
     }
