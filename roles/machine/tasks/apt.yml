@@ -49,6 +49,7 @@
       - apt-listchanges
       - bind9utils
       - curl
+      - dbconfig-no-thanks
       - deborphan
       - dos2unix
       - emacs
