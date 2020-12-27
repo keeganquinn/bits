@@ -5,6 +5,7 @@
     state: present
     name:
       - opendkim
+      - opendmarc
       - procmail
       - sasl2-bin
 
