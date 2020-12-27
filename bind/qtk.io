@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020102000
+        2020122702
         ; refresh
         30M
         ; retry
@@ -29,8 +29,8 @@ $TTL 2d
         AAAA    2600:3c01::f03c:91ff:fee9:47cb
 
         TXT     "google-site-verification=1OfHR563epbyfz3VTSwSMZYbwATJ6j3vsAXSND-0yIQ"
-        TXT     "v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@qtk.io"
         TXT     "v=spf1 mx a include:_spf.google.com ~all"
+_dmarc  TXT     "v=DMARC1;p=reject;pct=100;fo=0;rua=mailto:postmaster@qtk.io"
 mail._domainkey TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/99IBr17xO4t61WBOl46n5W0WN3zeRg6HDIMKzXDtFZ0051OI2kqWmIFJOuTRXE82yJVtZnQVVoealfGBf1Ly2YuAfxOKdgIb93UGVzcB2oVhOJl3JYQBAKSQS4eFeI18MN/LT8NpEGK16T9qOWJKdG18YeodoGaiXLK3iWkUrwIDAQAB"
 
 www     CNAME   @
