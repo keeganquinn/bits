@@ -46,7 +46,7 @@
     name: postfix
     comment: Postfix
     shell: /bin/false
-    groups: opendkim,sasl
+    groups: opendkim,opendmarc,sasl
 
 - name: Create /etc/opendkim
   become: yes
@@ -93,6 +93,15 @@
     owner: opendkim
     group: opendkim
 
+- name: Create /var/spool/postfix/var/run/opendmarc
+  become: yes
+  file:
+    path: /var/spool/postfix/var/run/opendmarc
+    state: directory
+    mode: 0750
+    owner: opendmarc
+    group: opendmarc
+
 - name: Copy opendkim configuration
   become: yes
   copy: src=opendkim.conf dest=/etc/opendkim.conf
@@ -123,6 +132,11 @@
 - name: Copy opendkim public key
   become: yes
   copy: src=opendkim/keys/mail.txt dest=/etc/opendkim/keys/mail.txt
+
+- name: Copy opendmarc configuration
+  become: yes
+  copy: src=opendmarc.conf dest=/etc/opendmarc.conf
+  notify: restart opendmarc
 
 - name: Copy postfix main configuration
   become: yes
