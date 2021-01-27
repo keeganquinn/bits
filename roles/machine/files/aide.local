@@ -9,6 +9,7 @@
 /root/.ansible/tmp$ VarDir
 /usr/share/kibana$ VarDir
 /usr/share/kibana/optimize/wazuh/config/wazuh-registry.json$ VarFile
+/usr/share/zabbix/.well-known$ VarDir
 /var/ossec/active-response$ VarDir
 /var/ossec/etc/shared/default$ VarDir
 /var/ossec/etc/shared/default/merged.mg$ VarFile
@@ -23,6 +24,8 @@
 /var/ossec/var/run$ VarDir
 /var/ossec/var/run/.* VarFile
 /var/ossec/var/wodles/syscollector$ VarFile
+/var/www/html/.well-known$ VarDir
+/var/www/nextcloud$ VarDir
 /var/www/nextcloud/config/config.php$ VarFile
 
 !/dev/shm/.*
