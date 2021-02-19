@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2020122702
+        2021021900
         ; refresh
         30M
         ; retry
@@ -41,36 +41,36 @@ len     AAAA    2600:3c01::f03c:91ff:fee9:47cb
 len     TXT     "v=spf1 a -all"
 
 ; site 0
-scrap   A       67.189.70.230
-scrap   AAAA    2001:558:6025:53:e03b:c46f:8cf6:13da
+scrap   A       73.11.66.175
+scrap   AAAA    2001:558:6025:53:c86c:1aef:b55e:e39e
 scrap   MX      10      len
 scrap   TXT     "v=spf1 mx a -all"
 
 artifact        A       10.11.22.9
-artifact        AAAA    2601:1c2:4c00:e66d::5c34
+artifact        AAAA    2601:1c2:4c00:35::99a3
 base            A       10.11.22.2
-base            AAAA    2601:1c2:4c00:e66d::5033
+base            AAAA    2601:1c2:4c00:35::5033
 electron        A       10.11.22.7
-electron        AAAA    2601:1c2:4c00:e66d::2431
+electron        AAAA    2601:1c2:4c00:35::2431
 factor          A       10.11.22.12
-factor          AAAA    2601:1c2:4c00:e66d::5ec6
+factor          AAAA    2601:1c2:4c00:35::5ec6
 lilguy          A       10.11.22.6
-lilguy          AAAA    2601:1c2:4c00:e66d::4f38
+lilguy          AAAA    2601:1c2:4c00:35::4f38
 one             A       10.11.22.11
-one             AAAA    2601:1c2:4c00:e66d::4ed6
+one             AAAA    2601:1c2:4c00:35::4ed6
 sink            A       10.11.22.8
-sink            AAAA    2601:1c2:4c00:e66d::96ba
+sink            AAAA    2601:1c2:4c00:35::96ba
 spot            A       10.11.22.5
-spot            AAAA    2601:1c2:4c00:e66d::ef97
+spot            AAAA    2601:1c2:4c00:35::ef97
 vie             A       10.11.22.4
-vie             AAAA    2601:1c2:4c00:e66d::4d47
+vie             AAAA    2601:1c2:4c00:35::4d47
 wave            A       10.11.22.3
-wave            AAAA    2601:1c2:4c00:e66d::a385
+wave            AAAA    2601:1c2:4c00:35::a385
 zero            A       10.11.22.10
-zero            AAAA    2601:1c2:4c00:e66d::ccf1
+zero            AAAA    2601:1c2:4c00:35::ccf1
 
 s0edge  A       10.11.22.1
-s0edge  AAAA    2601:1c2:4c00:e66d::1
+s0edge  AAAA    2601:1c2:4c00:35::1
 s0gw    A       67.189.68.1
 s0gw    AAAA    2001:558:6025:53::1
 $GENERATE 50-250 s0d${0,3,d} A 10.11.22.$
