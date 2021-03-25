@@ -39,7 +39,7 @@ for pspec in "${PROJECTS[@]}"; do
 done
 
 echo "Ruby: 2.7.2 - check https://www.ruby-lang.org/"
-echo "Redmine: 4.1.1 - check https://redmine.org/"
+echo "Redmine: 4.1.2 - check https://redmine.org/"
 echo "Roundcube: 1.4.11 - check https://roundcube.net/"
 echo "Nextcloud: check https://cloud.qtk.io/settings/admin/overview"
 
