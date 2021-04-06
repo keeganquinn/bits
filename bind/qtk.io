@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2021021900
+        2021040500
         ; refresh
         30M
         ; retry
@@ -61,7 +61,7 @@ one             AAAA    2601:1c2:4c00:35::4ed6
 sink            A       10.11.22.8
 sink            AAAA    2601:1c2:4c00:35::96ba
 spot            A       10.11.22.5
-spot            AAAA    2601:1c2:4c00:35::ef97
+spot            AAAA    2601:1c2:4c00:35::7c98
 vie             A       10.11.22.4
 vie             AAAA    2601:1c2:4c00:35::4d47
 wave            A       10.11.22.3
