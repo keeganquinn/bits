@@ -8,6 +8,7 @@ export RAILS_ENV=production
 export REDMINE_LANG=en
 
 "${rbenv}" exec gem install bundler
+"${rbenv}" exec gem install foreman
 "${rbenv}" exec bundle install
 "${rbenv}" exec bundle exec rake generate_secret_token
 "${rbenv}" exec bundle exec rake db:migrate
