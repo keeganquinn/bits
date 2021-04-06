@@ -8,7 +8,9 @@
 /etc/suricata/rules/.* VarFile
 /root/.ansible/tmp$ VarDir
 /usr/share/kibana$ VarDir
-/usr/share/kibana/optimize/wazuh/config/wazuh-registry.json$ VarFile
+/usr/share/kibana/data/wazuh/config/wazuh-registry.json$ VarFile
+/usr/share/kibana/data/wazuh/logs/wazuhapp.log$ VarFile
+/usr/share/kibana/data/wazuh/logs/wazuhapp-plain.log$ VarFile
 /usr/share/zabbix/.well-known$ VarDir
 /var/ossec/active-response$ VarDir
 /var/ossec/etc/shared/default$ VarDir
