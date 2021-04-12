@@ -54,24 +54,28 @@ server {
         access_log off;
     }
 
-    location = /.well-known/carddav {
-        return 301 $scheme://$host/remote.php/dav;
-    }
-    location = /.well-known/caldav {
-        return 301 $scheme://$host/remote.php/dav;
-    }
-
     # set max upload size
     client_max_body_size 512m;
 
-    # Disable gzip to avoid the removal of the ETag header
-    gzip off;
+    # Enable gzip but do not remove ETag headers
+    gzip on;
+    gzip_vary on;
+    gzip_comp_level 4;
+    gzip_min_length 256;
+    gzip_proxied expired no-cache no-store private no_last_modified no_etag auth;
+    gzip_types application/atom+xml application/javascript application/json application/ld+json application/manifest+json application/rss+xml application/vnd.geo+json application/vnd.ms-fontobject application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml font/opentype image/bmp image/svg+xml image/x-icon text/cache-manifest text/css text/plain text/vcard text/vnd.rim.location.xloc text/vtt text/x-component text/x-cross-domain-policy;
 
-    error_page 403 /core/templates/403.php;
-    error_page 404 /core/templates/404.php;
+    # Remove X-Powered-By, which is an information leak
+    fastcgi_hide_header X-Powered-By;
 
-    location /.well-known {
-        alias /var/www/nextcloud/.well-known;
+    location ^~ /.well-known {
+        location = /.well-known/carddav { return 301 /remote.php/dav/; }
+        location = /.well-known/caldav  { return 301 /remote.php/dav/; }
+
+        location /.well-known/acme-challenge { try_files $uri $uri/ =404; }
+        location /.well-known/pki-validation { try_files $uri $uri/ =404; }
+
+        return 301 /index.php$request_uri;
     }
 
     location / {
