@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2021041200
+        2021042400
         ; refresh
         30M
         ; retry
@@ -85,7 +85,7 @@ s1gw    AAAA    2001:558:4060:54::1
 $GENERATE 50-250 s1d${0,3,d} A 10.11.23.$
 
 ; aliases
-animamagica             CNAME   len
+animamagica             CNAME   scrap
 animamagica-staging     CNAME   scrap
 basslines-staging       CNAME   scrap
 ci                      CNAME   scrap
