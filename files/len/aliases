@@ -13,7 +13,4 @@ noc: root
 security: root
 logcheck: root
 root: keegan
-
-# old mailing list addresses
-cwnmyr: keegan
 dev: keegan
