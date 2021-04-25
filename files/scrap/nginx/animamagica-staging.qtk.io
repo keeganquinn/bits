@@ -1,9 +1,5 @@
 # -*- nginx -*-
 
-upstream animamagica_puma {
-    server unix:///srv/rails/animamagica/shared/puma.sock fail_timeout=0;
-}
-
 server {
     listen 80;
     listen [::]:80;
@@ -16,7 +12,7 @@ server {
     }
 
     location / {
-        return 301 https://animamagica-staging.qtk.io$request_uri;
+        return 301 https://animamagica.qtk.io$request_uri;
     }
 }
 
@@ -38,43 +34,11 @@ server {
     access_log /var/log/nginx/animamagica-staging.qtk.io-access.log combined if=$log_ua;
     error_log /var/log/nginx/animamagica-staging.qtk.io-error.log warn;
 
-    root /srv/rails/animamagica/current/public;
-
-    location /.well-known/apple-app-site-association {
-        default_type application/json;
+    location /.well-known {
+        alias /srv/rails/animamagica/current/public/.well-known;
     }
 
-    location ^~ /assets/ {
-        gzip_static on;
-        expires max;
-        add_header Cache-Control public;
-    }
-
-    try_files $uri/index.html $uri @animamagica_puma;
-    location @animamagica_puma {
-        if (-f $document_root/../tmp/maintenance.txt) {
-            return 503;
-        }
-
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_redirect off;
-        proxy_pass http://animamagica_puma;
-        proxy_buffer_size 16k;
-        proxy_buffers 128 256k;
-    }
-
-    client_max_body_size 4G;
-    keepalive_timeout 10;
-
-    error_page 503 @maintenance;
-
-    location @maintenance {
-        if (!-f $request_filename) {
-            rewrite ^(.*)$ /maintenance.html break;
-        }
+    location / {
+        return 301 https://animamagica.qtk.io$request_uri;
     }
 }
