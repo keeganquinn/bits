@@ -16,8 +16,8 @@ bundle update --gemfile roles/dot/files/Gemfile
 
 # Keep version/paths in sync with roles/redmine/tasks/main.yml
 
-redmine_version="redmine-4.1.2"
-curl -sS https://www.redmine.org/releases/"${redmine_version}".tar.gz | \
+redmine_version="redmine-4.2.1"
+wget -q -O - "https://redmine.org/releases/${redmine_version}.tar.gz" | \
     tar xvfz - -C "${scratch}"
 
 mkdir "${scratch}/${redmine_version}/.bundle"
@@ -28,7 +28,7 @@ mkdir "${scratch}/${redmine_version}/.bundle"
     echo 'BUNDLE_WITHOUT: "production"'
 ) > "${scratch}/${redmine_version}/.bundle/config"
 
-cp roles/redmine/files/Gemfile roles/redmine/files/Gemfile.lock \
+cp roles/redmine/files/Gemfile.local roles/redmine/files/Gemfile.lock \
    "${scratch}/${redmine_version}/"
 cp roles/redmine/files/database.yml \
    "${scratch}/${redmine_version}/config/"
