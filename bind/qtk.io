@@ -6,7 +6,7 @@ $TTL 2d
 
 @ IN    SOA     len hostmaster (
         ; serial
-        2021042400
+        2021061300
         ; refresh
         30M
         ; retry
@@ -49,7 +49,7 @@ scrap   TXT     "v=spf1 mx a -all"
 artifact        A       10.11.22.9
 artifact        AAAA    2601:1c2:4c00:35::99a3
 base            A       10.11.22.2
-base            AAAA    2601:1c2:4c00:35::5033
+base            AAAA    2601:1c2:4c00:35::5050
 electron        A       10.11.22.7
 electron        AAAA    2601:1c2:4c00:35::2431
 factor          A       10.11.22.12
